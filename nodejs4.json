@@ -1,0 +1,37 @@
+{
+    "homepage": "http://nodejs.org",
+    "version": "4.4.0",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url":
+            [
+                "https://github.com/npm/npm/archive/v3.8.1.zip",
+                "https://nodejs.org/dist/v4.4.0/win-x64/node.exe"
+            ],
+            "hash": [
+                "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e",
+                "57b68aa386d828afb6b36c10953c95108b5f8e257562a9d9650f2597006879ed"
+            ]
+        },
+        "32bit": {
+            "url":
+            [
+                "https://github.com/npm/npm/archive/v3.8.1.zip",
+                "https://nodejs.org/dist/v4.4.0/win-x86/node.exe"
+            ],
+            "hash": [
+                "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e",
+                "23f6e19089ed4dc97dcf981ba5a1c5e2e9d726bc8857f434158bf3ed2dc161d5"
+            ]
+        }
+    },
+    "extract_dir": [
+        "npm-3.8.1"
+    ],
+    "extract_to": [
+        "node_modules\\npm"
+    ],
+    "pre_install": "copy-item $dir\\node_modules\\npm\\bin\\npm.cmd $dir",
+    "env_add_path":  "\\"
+}
