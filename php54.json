@@ -1,11 +1,17 @@
 {
     "homepage": "http://windows.php.net",
-    "version": "5.4.44",
+    "version": "5.5.45",
     "license": "http://www.php.net/license/",
-    "url": "http://windows.php.net/downloads/releases/php-5.4.44-Win32-VC9-x86.zip",
-    "hash": "sha1:2fcc47dff254ccae812ce2ccfd4ddf4f21ce9e8d",
+    "url": "http://windows.php.net/downloads/releases/php-5.4.45-Win32-VC9-x86.zip",
+    "hash": "sha1:133d5b02843b6791fe67199e4a730a3d6aa2d402",
     "bin": "php.exe",
-    "post_install": "cp \"$dir\\php.ini-production\" \"$dir\\php.ini\"",
+    "post_install": "
+#Copy PHP configuration file to expected location
+cp \"$dir\\php.ini-production\" \"$dir\\php.ini\"
+
+#Enable extensions to be found in installation-relative folder (the default is to search C:/php)
+(gc \"$dir\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\php.ini\"
+",
     "checkver": {
         "url": "http://windows.php.net/download/",
         "re": "<h3 id=\"php-5.4\".*?>.*?\\(([0-9\\.]+)\\)</h3>"
