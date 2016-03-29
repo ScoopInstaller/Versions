@@ -4,20 +4,15 @@
     "license": "http://www.php.net/license/",
     "architecture": {
         "64bit": {
-            "url": [
-                "http://windows.php.net/downloads/releases/php-5.5.33-Win32-VC11-x64.zip",
-                "https://raw.githubusercontent.com/MPLew-is/scoop-wamp/master/visual-c-redistributables/11/64-bit/msvcr110.dll"
-            ],
-            "hash": [
-                "sha1:43c321a240f2c743c53ab6a4e25aefe23518724d",
-                "sha256:ae996edb9b050677c4f82d56092efdc75f0addc97a14e2c46753e2db3f6bd732"
-            ]
+            "url": "http://windows.php.net/downloads/releases/php-5.5.33-Win32-VC11-x64.zip",
+            "hash": "sha1:43c321a240f2c743c53ab6a4e25aefe23518724d"
         },
         "32bit": {
             "url": "http://windows.php.net/downloads/releases/php-5.5.33-Win32-VC11-x86.zip",
             "hash": "sha1:b4eb6204a00e2555222cef288159aa391213d8ec"
         }
     },
+    "depends": "vc-redist11",
     "bin": "php.exe",
     "post_install": "
 #Copy PHP configuration file to expected location
