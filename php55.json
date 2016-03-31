@@ -1,21 +1,21 @@
 {
     "homepage": "http://windows.php.net",
-    "version": "5.5.33",
+    "version": "5.5.34",
     "license": "http://www.php.net/license/",
     "architecture": {
         "64bit": {
             "url": [
-                "http://windows.php.net/downloads/releases/php-5.5.33-Win32-VC11-x64.zip",
+                "http://windows.php.net/downloads/releases/php-5.5.34-Win32-VC11-x64.zip",
                 "https://raw.githubusercontent.com/MPLew-is/scoop-wamp/master/visual-c-redistributables/11/64-bit/msvcr110.dll"
             ],
             "hash": [
-                "sha1:43c321a240f2c743c53ab6a4e25aefe23518724d",
+                "sha1:6496a91e214c2d496253037e1f75bd93e43b12cf",
                 "sha256:ae996edb9b050677c4f82d56092efdc75f0addc97a14e2c46753e2db3f6bd732"
             ]
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/releases/php-5.5.33-Win32-VC11-x86.zip",
-            "hash": "sha1:b4eb6204a00e2555222cef288159aa391213d8ec"
+            "url": "http://windows.php.net/downloads/releases/php-5.5.34-Win32-VC11-x86.zip",
+            "hash": "sha1:6f41be14dac37f44a52cd9d3028265d5174c82be"
         }
     },
     "bin": "php.exe",
