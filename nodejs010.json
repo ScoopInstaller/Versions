@@ -1,0 +1,24 @@
+{
+    "homepage": "https://nodejs.org",
+    "version": "0.10.42",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://nodejs.org/dist/v0.10.42/x64/node-v0.10.42-x64.msi",
+            "hash": "sha1:1fb7f51eea2c7ab26b1f179329b3f946e16bc30b"
+        },
+        "32bit": {
+            "url": "https://nodejs.org/dist/v0.10.42/node-v0.10.42-x86.msi",
+            "hash": "sha1:bd9e06a957992d6148714d77223476cb35cb7e69"
+        }
+    },
+    "env_add_path": "nodejs",
+    "post_install": "
+        # Remove npmrc that makes global modules get installed in AppData\\Roaming\\npm
+        rm $dir\\nodejs\\node_modules\\npm\\npmrc
+        # npm update -g
+        # Install essential globals
+        # npm install -g rimraf live-server
+        ",
+    "checkver": "<p class=\"version\">Current Version: v([0-9\\.]+)</p>"
+}
