@@ -1,21 +1,21 @@
 {
     "homepage": "http://windows.php.net",
-    "version": "5.6.20",
+    "version": "5.6.29",
     "license": "http://www.php.net/license/",
     "architecture": {
         "64bit": {
             "url": [
-                "http://windows.php.net/downloads/releases/php-5.6.20-Win32-VC11-x64.zip",
+                "http://windows.php.net/downloads/releases/php-5.6.29-Win32-VC11-x64.zip",
                 "https://raw.githubusercontent.com/MPLew-is/scoop-wamp/master/visual-c-redistributables/11/64-bit/msvcr110.dll"
             ],
             "hash": [
-                "sha1:af7a5e61fa167e00daae4cb4249b0ce3b24d94a6",
-                "sha256:ae996edb9b050677c4f82d56092efdc75f0addc97a14e2c46753e2db3f6bd732"
+                "sha1:83a325a5dc09884ce227de00c4b1c90a63d2e2f5",
+                "sha256:2f0899d5a89b8eea9b388234af857364c3cd28e6bfddda1a51d5f605140bbda5"
             ]
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/releases/php-5.6.20-Win32-VC11-x86.zip",
-            "hash": "sha1:a239e0693a284e25b6823d8e3df3b3ca28bfa30f"
+            "url": "http://windows.php.net/downloads/releases/php-5.6.29-Win32-VC11-x86.zip",
+            "hash": "sha1:cb58af8546b063dcb90eb73ae8fce882c6c31a75"
         }
     },
     "bin": "php.exe",
