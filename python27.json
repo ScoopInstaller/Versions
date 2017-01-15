@@ -1,15 +1,15 @@
 {
-    "homepage": "http://www.python.org",
-    "license": "http://docs.python.org/2/license.html",
-    "version": "2.7.12",
+    "homepage": "https://www.python.org/",
+    "license": "https://docs.python.org/2/license.html",
+    "version": "2.7.13",
     "architecture": {
         "64bit": {
-            "url": "https://www.python.org/ftp/python/2.7.12/python-2.7.12.amd64.msi",
-            "hash": "909fded3cca65feaf9e1db943e886586eb27f0f4396c977868ad6489063a3912"
+            "url": "https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi",
+            "hash": "md5:268fd335aad649df7474adb13b6cf394"
         },
         "32bit": {
-            "url": "https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi",
-            "hash": "3ac291535bcf15fd5a15bcd29b066570e8d2a0cab4f3b92a2372f41aa09a4f48"
+            "url": "https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi",
+            "hash": "md5:0f057ab4490e63e528eaa4a70df711d9"
         }
     },
     "bin": [
@@ -36,5 +36,13 @@
         $create_reg.Invoke(\"Python\\PythonCore\\2.7\\PythonPath\", `
             \"$dir;$dir\\Lib\\;$dir\\DLLs\\\")
     ",
-    "checkver": "<p>Latest: <a.*>.*</a> - <a href=\".*\">Python ([0-9\\.]+)</a></p>"
+    "checkver": "Latest:.*>Python [\\d.]+.*>Python ([\\d.]+)",
+	"autoupdate": {
+		"64bit": {
+			"url": "https://www.python.org/ftp/python/$version/python-$version.amd64.msi"
+		},
+		"32bit": {
+			"url": "https://www.python.org/ftp/python/$version/python-$version.msi"
+		}
+	}
 }
