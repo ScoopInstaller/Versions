@@ -1,26 +1,26 @@
 {
-    "homepage": "http://www.apachelounge.com",
-    "version": "2.4.18",
+    "homepage": "https://www.apachelounge.com/",
+    "version": "2.4.25",
     "license": "Apache 2.0",
     "architecture": {
         "64bit": {
             "url": [
-                "https://www.apachelounge.com/download/VC14/binaries/httpd-2.4.18-win64-VC14.zip",
-                "https://raw.githubusercontent.com/MPLew-is/scoop-wamp/master/visual-c-redistributables/14/64-bit/vcruntime140.dll"
+                "https://www.apachelounge.com/download/VC14/binaries/httpd-2.4.25-win64-VC14.zip",
+                "https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x64.exe"
             ],
             "hash": [
-                "sha256:543aff046b0ea2bf58be76d7d20fcd1fa16eec9ae836ca4639feb1c2a7e09cfa",
-                "sha256:acf65e565021f2017815fc5ec8a3145cf6c15e75c132cf23a378cc943e68327c"
+                "c4625c3abd688941fc80548b8c8314e1c5278804a019c14bffc92dc49a087905",
+                "5eea714e1f22f1875c1cb7b1738b0c0b1f02aec5ecb95f0fdb1c5171c6cd93a3"
             ]
         },
         "32bit": {
             "url": [
-                "https://www.apachelounge.com/download/VC14/binaries/httpd-2.4.18-win32-VC14.zip",
-                "https://raw.githubusercontent.com/MPLew-is/scoop-wamp/master/visual-c-redistributables/14/32-bit/vcruntime140.dll"
+                "https://www.apachelounge.com/download/VC14/binaries/httpd-2.4.25-win32-VC14.zip",
+                "https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x86.exe"
             ],
             "hash": [
-                "sha256:2259bea85cbcb4e9e525bfff0863b4ae3eae5f91fddb153191fd310575a04f38",
-                "sha256:b7c13f8519340257ba6ae3129afce961f137e394dde3e4e41971b9f912355f5e"
+                "",
+                "fdd1e1f0dcae2d0aa0720895eff33b927d13076e64464bb7c7e5843b7667cd14"
             ]
         }
     },
@@ -39,7 +39,7 @@
     ],
     "post_install": "
 #Copy needed DLL to bin subdirectory
-mv \"$dir\\vcruntime140.dll\" \"$dir\\bin\\vcruntime140.dll\"
+# mv \"$dir\\vcruntime140.dll\" \"$dir\\bin\\vcruntime140.dll\"
 
 # set directory in httpd.conf
 $conf = \"$dir/conf/httpd.conf\"
@@ -47,7 +47,8 @@ $root=(scoop which httpd | split-path -res -par | split-path -par) -replace '\\\
 (gc $conf) | % { $_ -replace 'c:/Apache24', \"$root\" } | sc $conf
 ",
     "checkver": {
-        "url": "http://www.apachelounge.com/download/",
+        "url": "https://www.apachelounge.com/download/",
         "re": "Apache ([0-9\\.]+) Win32"
-    }
+    },
+	"notes": "If you receive errors that vcruntime140.dll is not found, please run vc_redist.x64.exe or vc_redist.x86.exe (as adminstrator)"
 }
