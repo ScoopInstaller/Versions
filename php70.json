@@ -1,26 +1,26 @@
 {
-    "homepage": "http://windows.php.net",
-    "version": "7.0.6",
-    "license": "http://www.php.net/license/",
+    "homepage": "http://windows.php.net/",
+    "version": "7.0.14",
+    "license": "https://www.php.net/license/",
     "architecture": {
         "64bit": {
             "url": [
-                "http://windows.php.net/downloads/releases/php-7.0.6-Win32-VC14-x64.zip",
-                "https://raw.githubusercontent.com/MPLew-is/scoop-wamp/master/visual-c-redistributables/14/64-bit/vcruntime140.dll"
+                "http://windows.php.net/downloads/releases/php-7.0.14-Win32-VC14-x64.zip",
+                "https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x64.exe"
             ],
             "hash": [
-                "sha1:607e510e60903ea58e2194fb2a87a07d3744cdca",
-                "sha256:acf65e565021f2017815fc5ec8a3145cf6c15e75c132cf23a378cc943e68327c"
+                "sha1:a7bf672ef1b99a8603c3f3d84bd54b3b27bf93d7",
+                "5eea714e1f22f1875c1cb7b1738b0c0b1f02aec5ecb95f0fdb1c5171c6cd93a3"
             ]
         },
         "32bit": {
             "url": [
-                "http://windows.php.net/downloads/releases/php-7.0.6-Win32-VC14-x86.zip",
-                "https://raw.githubusercontent.com/MPLew-is/scoop-wamp/master/visual-c-redistributables/14/32-bit/vcruntime140.dll"
+                "http://windows.php.net/downloads/releases/php-7.0.14-Win32-VC14-x86.zip",
+                "https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x86.exe"
             ],
             "hash": [
-               "sha1:e0c41a01c16b3633cfffceac9528cf5a44019778",
-                "sha256:b7c13f8519340257ba6ae3129afce961f137e394dde3e4e41971b9f912355f5e"
+               "sha1:fc3f6de7e4f410d778da8f25d4e7bc19395cf122",
+                "fdd1e1f0dcae2d0aa0720895eff33b927d13076e64464bb7c7e5843b7667cd14"
             ]
         }
     },
@@ -35,5 +35,6 @@ cp \"$dir\\php.ini-production\" \"$dir\\php.ini\"
     "checkver": {
         "url": "http://windows.php.net/download/",
         "re": "<h3 id=\"php-7.0\".*?>.*?\\(([0-9\\.]+)\\)</h3>"
-    }
+    },
+	"notes": "If you receive errors that vcruntime140.dll is not found, please run vc_redist.x64.exe or vc_redist.x86.exe"
 }
