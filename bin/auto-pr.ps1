@@ -1,6 +1,6 @@
 param(
     # overwrite upstream param
-    [String]$upstream = "lukesampson/scoop-extras:master"
+    [String]$upstream = "scoopinstaller/versions:master"
 )
 
 $bin = split-path (scoop which scoop)
