@@ -1,28 +1,26 @@
 {
     "homepage": "http://nodejs.org",
-    "version": "4.4.0",
+    "version": "4.8.0",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url":
-            [
-                "https://github.com/npm/npm/archive/v3.8.1.zip",
-                "https://nodejs.org/dist/v4.4.0/win-x64/node.exe"
+            "url": [
+                "https://nodejs.org/dist/v4.8.0/win-x64/node.exe",
+                "https://github.com/npm/npm/archive/v3.8.1.zip"
             ],
             "hash": [
-                "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e",
-                "57b68aa386d828afb6b36c10953c95108b5f8e257562a9d9650f2597006879ed"
+                "ea4d8dc0e77e744d78dbb5221f2711e77f90394a5a5296fc231757dd52afe9b0",
+                "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e"
             ]
         },
         "32bit": {
-            "url":
-            [
-                "https://github.com/npm/npm/archive/v3.8.1.zip",
-                "https://nodejs.org/dist/v4.4.0/win-x86/node.exe"
+            "url": [
+                "https://nodejs.org/dist/v4.8.0/win-x86/node.exe",
+                "https://github.com/npm/npm/archive/v3.8.1.zip"
             ],
             "hash": [
-                "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e",
-                "23f6e19089ed4dc97dcf981ba5a1c5e2e9d726bc8857f434158bf3ed2dc161d5"
+                "ea4d8dc0e77e744d78dbb5221f2711e77f90394a5a5296fc231757dd52afe9b0",
+                "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e"
             ]
         }
     },
@@ -33,5 +31,24 @@
         "node_modules\\npm"
     ],
     "pre_install": "copy-item $dir\\node_modules\\npm\\bin\\npm.cmd $dir",
-    "env_add_path":  "\\"
+    "env_add_path": "\\",
+    "checkver": {
+        "url": "https://nodejs.org/dist/latest-v4.x/",
+        "re": "node-v([\\d.]+)-x86.msi"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://nodejs.org/dist/v$version/win-x64/node.exe"
+            },
+            "32bit": {
+                "url": "https://nodejs.org/dist/v$version/win-x86/node.exe"
+            }
+        },
+        "hash": {
+            "mode": "extract",
+            "type": "sha256",
+            "url": "https://nodejs.org/dist/latest-v4.x/SHASUMS256.txt"
+        }
+    }
 }
