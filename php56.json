@@ -36,5 +36,21 @@ cp \"$dir\\php.ini-production\" \"$dir\\php.ini\"
         "url": "http://windows.php.net/download/",
         "re": "<h3 id=\"php-5.6\".*?>.*?\\(([0-9\\.]+)\\)</h3>"
     },
-	"notes": "If you receive errors that vcruntime110.dll is not found, please run vcredist_x64.exe or vcredist_x86.exe"
+	"notes": "If you receive errors that vcruntime110.dll is not found, please run vcredist_x64.exe or vcredist_x86.exe",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "http://windows.php.net/downloads/releases/php-$version-Win32-VC11-x64.zip"
+            },
+            "32bit": {
+                "url": "http://windows.php.net/downloads/releases/php-$version-Win32-VC11-x86.zip"
+            }
+        },
+        "hash": {
+            "mode": "extract",
+            "type": "sha1",
+            "url": "http://windows.php.net/downloads/releases/sha1sum.txt",
+            "find": "([a-z0-9]{40})\\s+(?:$basename)"
+        }
+    }
 }

@@ -37,12 +37,14 @@
             \"$dir;$dir\\Lib\\;$dir\\DLLs\\\")
     ",
     "checkver": "Latest:.*>Python [\\d.]+.*>Python ([\\d.]+)",
-	"autoupdate": {
-		"64bit": {
-			"url": "https://www.python.org/ftp/python/$version/python-$version.amd64.msi"
-		},
-		"32bit": {
-			"url": "https://www.python.org/ftp/python/$version/python-$version.msi"
-		}
-	}
+    "autoupdate": {
+        "architecture":  {
+            "64bit": {
+                "url": "https://www.python.org/ftp/python/$version/python-$version.amd64.msi"
+            },
+            "32bit": {
+                "url": "https://www.python.org/ftp/python/$version/python-$version.msi"
+            }
+        }
+    }
 }
