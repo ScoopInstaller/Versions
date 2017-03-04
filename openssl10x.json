@@ -1,0 +1,24 @@
+{
+    "_comment": "Hashes at https://slproweb.com/download/win32_openssl_hashes.json",
+    "architecture": {
+        "32bit": {
+            "hash": "b534f42ee00e92ad244bc7cfef1bebde6f5eb24f5f0d81dc4825604a58057e07",
+            "url": "https://slproweb.com/download/Win32OpenSSL_Light-1_0_2k.exe"
+        },
+        "64bit": {
+            "hash": "947dacf52b38d7d0a8d61074db97e356540c19cbc39e1438f1572aca1e1cd6d6",
+            "url": "https://slproweb.com/download/Win64OpenSSL_Light-1_0_2k.exe"
+        }
+    },
+    "bin": "bin\\openssl.exe",
+    "checkver": ">Win32 OpenSSL v(1.0.[\\w]+)\\s+Light<",
+    "description": "TLS/SSL toolkit (1.0.x branch)",
+    "env_add_path": "bin",
+    "env_set": {
+        "OPENSSL_CONF": "$dir\\bin\\openssl.cfg"
+    },
+    "homepage": "http://slproweb.com/products/Win32OpenSSL.html",
+    "innosetup": true,
+    "license": "https://www.openssl.org/source/license.html",
+    "version": "1.0.2k"
+}
