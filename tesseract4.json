@@ -1,0 +1,27 @@
+{
+    "checkver": {
+        "re": "tesseract-ocr-setup-([\\d.]+)dev\\.exe</a>\\s+\\(experimental\\)",
+        "url": "https://github.com/UB-Mannheim/tesseract/wiki"
+    },
+    "description": "OCR engine developed by Google",
+    "hash": "",
+    "homepage": "https://github.com/UB-Mannheim/tesseract/wiki",
+    "installer": {
+        "_comment": "/D option is ignored",
+        "args": [
+            "/S",
+            "/D=$dir"
+        ]
+    },
+    "license": "Apache-2.0",
+    "notes": "tesseract installs in C:\\Program Files (x86)\\Tesseract-OCR",
+    "post_install": "[Environment]::SetEnvironmentVariable(\"Path\", $env:Path + \";C:\\Program Files (x86)\\Tesseract-OCR\", [EnvironmentVariableTarget]::Machine)",
+    "uninstaller": {
+        "args": [
+            "/S"
+        ],
+        "file": "C:\\Program Files (x86)\\Tesseract-OCR\\tesseract-uninstall.exe"
+    },
+    "url": "http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-4.00.00dev.exe",
+    "version": "4.00.00"
+}
