@@ -1,25 +1,25 @@
 {
     "homepage": "http://nodejs.org",
-    "version": "4.8.1",
+    "version": "4.8.2",
     "license": "MIT",
     "architecture": {
         "64bit": {
             "url": [
-                "https://nodejs.org/dist/v4.8.1/win-x64/node.exe",
+                "https://nodejs.org/dist/v4.8.2/win-x64/node.exe",
                 "https://github.com/npm/npm/archive/v3.8.1.zip"
             ],
             "hash": [
-                "a37086eb408b2ab5c477a543f257ee10d2b7946b56e801e501529d7e15ca2b1e",
+                "1829b8c1295f28ac0fbfb3bb7467f2e7e6b42a5a3c07453e215800c08f67b133",
                 "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e"
             ]
         },
         "32bit": {
             "url": [
-                "https://nodejs.org/dist/v4.8.1/win-x86/node.exe",
+                "https://nodejs.org/dist/v4.8.2/win-x86/node.exe",
                 "https://github.com/npm/npm/archive/v3.8.1.zip"
             ],
             "hash": [
-                "affdc9b673eacba18bb22d86480bd7a7a56ba8d144630fbd2f121b8b5c57ffd6",
+                "daca7b85c4aaa8b0272e2339f19f0e8944c3c4121eb584c62bd441e7042857b1",
                 "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e"
             ]
         }
