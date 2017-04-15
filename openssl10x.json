@@ -5,11 +5,11 @@
     "license": "https://www.openssl.org/source/license.html",
     "architecture": {
         "32bit": {
-            "hash": "b534f42ee00e92ad244bc7cfef1bebde6f5eb24f5f0d81dc4825604a58057e07",
+            "hash": "sha512:1aacec4bf0e668acec9a3368008bc84122465f7f54cace1e957381b44f2e47605f7cd5e4c40de68c9b5a6d6a2626c5b861d5cb182f1bb4159a5ac4799da06e58",
             "url": "https://slproweb.com/download/Win32OpenSSL_Light-1_0_2k.exe"
         },
         "64bit": {
-            "hash": "947dacf52b38d7d0a8d61074db97e356540c19cbc39e1438f1572aca1e1cd6d6",
+            "hash": "sha512:c4f938b9558057a31bd30e5406f9a6b44e9ebd7d3e93b78c445b97f5be27692e045a9e589a9d55723a3c5b29d1df9cc7306a3d1ed43584df41e33b8cec23e291",
             "url": "https://slproweb.com/download/Win64OpenSSL_Light-1_0_2k.exe"
         }
     },
@@ -23,17 +23,16 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://slproweb.com/download/Win64OpenSSL-$underscoreVersion.exe"
+                "url": "https://slproweb.com/download/Win64OpenSSL_Light-$underscoreVersion.exe"
             },
             "32bit": {
-                "url": "https://slproweb.com/download/Win32OpenSSL-$underscoreVersion.exe"
+                "url": "https://slproweb.com/download/Win32OpenSSL_Light-$underscoreVersion.exe"
             }
         },
         "hash": {
-            "mode": "extract",
-            "find": "$basename.*\\s.*\\s.*\\s.*\\s.*\"([\\da-f]{64})\"",
+            "mode": "json",
+            "jp": "$.files[$basename].sha512",
             "url": "https://slproweb.com/download/win32_openssl_hashes.json"
         }
     }
 }
-
