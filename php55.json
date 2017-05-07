@@ -15,13 +15,13 @@
         },
         "32bit": {
             "url": [
-				"http://windows.php.net/downloads/releases/archives/php-5.5.37-Win32-VC11-x86.zip",
-				"https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe"
-			],
+                "http://windows.php.net/downloads/releases/archives/php-5.5.37-Win32-VC11-x86.zip",
+                "https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe"
+            ],
             "hash": [
-				"sha1:9f91140257db2595c4054b430663d38fda16a4b9",
-				"b924ad8062eaf4e70437c8be50fa612162795ff0839479546ce907ffa8d6e386"
-			]
+                "sha1:9f91140257db2595c4054b430663d38fda16a4b9",
+                "b924ad8062eaf4e70437c8be50fa612162795ff0839479546ce907ffa8d6e386"
+            ]
         }
     },
     "bin": "php.exe",
@@ -32,5 +32,5 @@ cp \"$dir\\php.ini-production\" \"$dir\\php.ini\"
 #Enable extensions to be found in installation-relative folder (the default is to search C:/php)
 (gc \"$dir\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\php.ini\"
 ",
-	"notes": "If you receive errors that msvcr110.dll is not found, please run vcredist_x64.exe or vcredist_x86.exe"
+    "notes": "If you receive errors that msvcr110.dll is not found, please run vcredist_x64.exe or vcredist_x86.exe"
 }

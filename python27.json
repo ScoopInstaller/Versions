@@ -15,9 +15,14 @@
     "bin": [
         "python.exe",
         "pythonw.exe",
-        [ "python.exe", "python2" ]
+        [
+            "python.exe",
+            "python2"
+        ]
     ],
-    "env_add_path": [ "scripts" ],
+    "env_add_path": [
+        "scripts"
+    ],
     "post_install": "
         python2 -m ensurepip
 
@@ -38,7 +43,7 @@
     ",
     "checkver": "Latest:.*>Python [\\d.]+.*>Python ([\\d.]+)",
     "autoupdate": {
-        "architecture":  {
+        "architecture": {
             "64bit": {
                 "url": "https://www.python.org/ftp/python/$version/python-$version.amd64.msi"
             },
