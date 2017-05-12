@@ -1,0 +1,24 @@
+{
+  "homepage": "https://love2d.org/",
+  "version": "0.10.1",
+  "architecture": {
+    "64bit": {
+      "url": "https://bitbucket.org/rude/love/downloads/love-0.10.1-win64.zip",
+      "hash": "1E1EA311DE841C136E0893F989ACBCA563CADD83BD4C9C49C159E459EE3C46D5",
+      "extract_dir": "love-0.10.1-win64"
+    },
+    "32bit": {
+      "url": "https://bitbucket.org/rude/love/downloads/love-0.10.1-win32.zip",
+      "hash": "7E47A8D1FEB85ACB8201B90F7CB62139601EBA6B3CEF85055D2C21185E0F8D71",
+      "extract_dir": "love-0.10.1-win32"
+    }
+  },
+  "bin": [
+    "love.exe",
+    ["love.exe", "love0.10.1"]
+  ],
+  "shortcuts": [
+    ["love.exe", "LÖVE 0.10.1"]
+  ],
+  "license": "zlib/libpng"
+}

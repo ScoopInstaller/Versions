@@ -1,0 +1,15 @@
+{
+  "homepage": "https://love2d.org/",
+  "version": "0.7.1",
+  "url": "https://bitbucket.org/rude/love/downloads/love-0.7.1-win-x86.zip",
+  "hash": "A504AEE6F7CC04796EB1B973EE4995E5E893A8EDF0A7617EB36355D8ECA535B2",
+  "extract_dir": "love-0.7.1-win-x86",
+  "bin": [
+    "love.exe",
+    ["love.exe", "love0.7.1"]
+  ],
+  "shortcuts": [
+    ["love.exe", "LÖVE 0.7.1"]
+  ],
+  "license": "zlib/libpng"
+}
