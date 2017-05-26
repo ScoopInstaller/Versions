@@ -1,16 +1,16 @@
 {
     "description": "TLS/SSL toolkit (1.0.x branch)",
     "homepage": "https://slproweb.com/products/Win32OpenSSL.html",
-    "version": "1.0.2k",
+    "version": "1.0.2L",
     "license": "https://www.openssl.org/source/license.html",
     "architecture": {
         "32bit": {
-            "hash": "sha512:1aacec4bf0e668acec9a3368008bc84122465f7f54cace1e957381b44f2e47605f7cd5e4c40de68c9b5a6d6a2626c5b861d5cb182f1bb4159a5ac4799da06e58",
-            "url": "https://slproweb.com/download/Win32OpenSSL_Light-1_0_2k.exe"
+            "hash": "sha512:b7b5b2ce6b9194cae91865eabde1dc225aef0becbd7fa3211b509cf078b446b3ecf30cfec5333af383a70560f444b82dd651faa11dc683481827a67bf5e51202",
+            "url": "https://slproweb.com/download/Win32OpenSSL_Light-1_0_2L.exe"
         },
         "64bit": {
-            "hash": "sha512:c4f938b9558057a31bd30e5406f9a6b44e9ebd7d3e93b78c445b97f5be27692e045a9e589a9d55723a3c5b29d1df9cc7306a3d1ed43584df41e33b8cec23e291",
-            "url": "https://slproweb.com/download/Win64OpenSSL_Light-1_0_2k.exe"
+            "hash": "sha512:6b9fa2110d94dac76765089d809c1a8e10d5aedc1464741c8f3283dcd4fd5b032658e074253b78d7b17f618751a5de0720bbf3a15680725198c7c46a51cbb20f",
+            "url": "https://slproweb.com/download/Win64OpenSSL_Light-1_0_2L.exe"
         }
     },
     "innosetup": true,
