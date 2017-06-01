@@ -4,25 +4,28 @@
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v7.10.0/node-v7.10.0-x64.msi",
-            "hash": "24a9170bab2f9f0afd54b1ca019f249cf30308d682151eb23dca3918dc6afff6"
+            "url": "https://nodejs.org/dist/v7.10.0/node-v7.10.0-win-x64.7z",
+            "hash": "cbd1a44efcd7c169f037460fbc4d1a05a105030f39631c9875247c6a70d0a91a",
+            "extract_dir": "node-v7.10.0-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v7.10.0/node-v7.10.0-x86.msi",
-            "hash": "17c036e4bd4698efeb771d81f21624bdc6ab907aa4a8584ad0e801a057eb4cee"
+            "url": "https://nodejs.org/dist/v7.10.0/node-v7.10.0-win-x86.7z",
+            "hash": "cef0c0298980b07b4cd94a141a092d4ff1fbcb89bc23fde64a0f5a3659d3ab64",
+            "extract_dir": "node-v7.10.0-win-x86"
         }
     },
-    "extract_dir": "nodejs",
     "persist": [
-        "bin"
+        "bin",
+        "cache"
     ],
     "env_add_path": [
         ".",
         "bin"
     ],
     "post_install": "
-# Set npm prefix to install modules inside bin
-Set-Content -Value \"prefix=$dir\\bin\" -Path $dir\\node_modules\\npm\\npmrc",
+        # Set npm prefix to install modules inside bin and npm cache so they persist
+        Set-Content -Value \"prefix=$persist_dir\\bin`ncache=$persist_dir\\cache\" -Path $dir\\node_modules\\npm\\npmrc
+    ",
     "checkver": {
         "url": "https://nodejs.org/dist/latest-v7.x/",
         "re": "node-v([\\d.]+)-x86.msi"
@@ -30,10 +33,12 @@ Set-Content -Value \"prefix=$dir\\bin\" -Path $dir\\node_modules\\npm\\npmrc",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://nodejs.org/dist/v$version/node-v$version-x64.msi"
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x64.7z",
+                "extract_dir": "node-v$version-win-x64"
             },
             "32bit": {
-                "url": "https://nodejs.org/dist/v$version/node-v$version-x86.msi"
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x86.7z",
+                "extract_dir": "node-v$version-win-x86"
             }
         },
         "hash": {

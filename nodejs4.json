@@ -4,34 +4,28 @@
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": [
-                "https://nodejs.org/dist/v4.8.3/win-x64/node.exe",
-                "https://github.com/npm/npm/archive/v3.8.1.zip"
-            ],
-            "hash": [
-                "a793a6ea651399a78ee6a4316dd81323d3644f4626171c73390d06b1133a29c3",
-                "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e"
-            ]
+            "url": "https://nodejs.org/dist/v4.8.3/node-v4.8.3-win-x64.7z",
+            "hash": "cccf63332b8e2b45c1366735a2f9a42073a34cc91b1bfbe5e2c2c2dcde3b71f1",
+            "extract_dir": "node-v4.8.3-win-x64"
         },
         "32bit": {
-            "url": [
-                "https://nodejs.org/dist/v4.8.3/win-x86/node.exe",
-                "https://github.com/npm/npm/archive/v3.8.1.zip"
-            ],
-            "hash": [
-                "774f32e53db439ad8c1270e4de5ab79bc4482b10c418dd14bf24216f51586312",
-                "f63d465e5a2efaf811f9afddf4748f28cfea0a9b5685e91e29f58f296978100e"
-            ]
+            "url": "https://nodejs.org/dist/v4.8.3/node-v4.8.3-win-x86.7z",
+            "hash": "f3b9ba365f82f0aa146a830f08d275481aa308fe2d7f6dfce4f1e7240dcf6fa2",
+            "extract_dir": "node-v4.8.3-win-x86"
         }
     },
-    "extract_dir": [
-        "npm-3.8.1"
+    "persist": [
+        "bin",
+        "cache"
     ],
-    "extract_to": [
-        "node_modules\\npm"
+    "env_add_path": [
+        ".",
+        "bin"
     ],
-    "pre_install": "copy-item $dir\\node_modules\\npm\\bin\\npm.cmd $dir",
-    "env_add_path": "\\",
+    "post_install": "
+        # Set npm prefix to install modules inside bin and npm cache so they persist
+        Set-Content -Value \"prefix=$persist_dir\\bin`ncache=$persist_dir\\cache\" -Path $dir\\node_modules\\npm\\npmrc
+    ",
     "checkver": {
         "url": "https://nodejs.org/dist/latest-v4.x/",
         "re": "node-v([\\d.]+)-x86.msi"
@@ -39,19 +33,16 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://nodejs.org/dist/v$version/win-x64/node.exe",
-                "hash": {
-                    "find": "([a-fA-F0-9]+)\\s+win-x64/node.exe",
-                    "url": "https://nodejs.org/dist/latest-v4.x/SHASUMS256.txt"
-                }
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x64.7z",
+                "extract_dir": "node-v$version-win-x64"
             },
             "32bit": {
-                "url": "https://nodejs.org/dist/v$version/win-x86/node.exe",
-                "hash": {
-                    "find": "([a-fA-F0-9]+)\\s+win-x86/node.exe",
-                    "url": "https://nodejs.org/dist/latest-v4.x/SHASUMS256.txt"
-                }
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x86.7z",
+                "extract_dir": "node-v$version-win-x86"
             }
+        },
+        "hash": {
+            "url": "$baseurl/SHASUMS256.txt.asc"
         }
     }
 }
