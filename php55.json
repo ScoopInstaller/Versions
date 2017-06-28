@@ -1,25 +1,25 @@
 {
-    "homepage": "http://windows.php.net/downloads/releases/archives/",
-    "version": "5.5.37",
+    "homepage": "http://windows.php.net/downloads/releases",
+    "version": "5.5.38",
     "license": "https://php.net/license/",
     "architecture": {
         "64bit": {
             "url": [
-                "http://windows.php.net/downloads/releases/archives/php-5.5.37-Win32-VC11-x64.zip",
+                "http://windows.php.net/downloads/releases/php-5.5.38-Win32-VC11-x64.zip",
                 "https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x64.exe"
             ],
             "hash": [
-                "sha1:e12c963298625c1de89ae206f949682e886f6455",
+                "2a5eec621c36b94a5f2c59706f219b598fafbef9930215760f854de6ffba0092",
                 "681be3e5ba9fd3da02c09d7e565adfa078640ed66a0d58583efad2c1e3cc4064"
             ]
         },
         "32bit": {
             "url": [
-                "http://windows.php.net/downloads/releases/archives/php-5.5.37-Win32-VC11-x86.zip",
+                "http://windows.php.net/downloads/releases/php-5.5.38-Win32-VC11-x86.zip",
                 "https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe"
             ],
             "hash": [
-                "sha1:9f91140257db2595c4054b430663d38fda16a4b9",
+                "800a7e2be97aace568848e6bb91c93114ba59793a4f89c8756c66b975f2311be",
                 "b924ad8062eaf4e70437c8be50fa612162795ff0839479546ce907ffa8d6e386"
             ]
         }
