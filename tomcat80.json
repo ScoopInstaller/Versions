@@ -3,11 +3,11 @@
     "version": "8.0.44",
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.0.44/bin/apache-tomcat-8.0.44-windows-x64.zip",
+            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.0.44/bin/apache-tomcat-8.0.44-windows-x64.zip",
             "hash": "sha1:b65afa0ccafba2a723b10163f8422e62aebbda7f"
         },
         "32bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.0.44/bin/apache-tomcat-8.0.44-windows-x86.zip",
+            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.0.44/bin/apache-tomcat-8.0.44-windows-x86.zip",
             "hash": "sha1:774aa8990376c25f05489225fda75a2d67706a36"
         }
     },
@@ -30,15 +30,22 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x64.zip"
+                "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x64.zip",
+                "hash": {
+                    "url": "https://www.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x64.zip.sha1",
+                    "find": "([a-fA-F0-9]+)",
+                    "mode": "extract"
+                }
             },
             "32bit": {
-                "url": "https://www.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x86.zip"
+                "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x86.zip",
+                "hash": {
+                    "url": "https://www.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x86.zip.sha1",
+                    "find": "([a-fA-F0-9]+)",
+                    "mode": "extract"
+                }
             }
         },
-        "extract_dir": "apache-tomcat-$version",
-        "hash": {
-            "url": "$url.sha1"
-        }
+        "extract_dir": "apache-tomcat-$version"
     }
 }
