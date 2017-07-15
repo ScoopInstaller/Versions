@@ -13,6 +13,7 @@
         }
     },
     "pre_install": "copy-item $dir\\py3.exe $dir\\uninstall.exe",
+    "post_install": "move-item \"$dir\\python*.dll\" \"$dir\\scripts\\\"",
     "installer": {
         "args": [
             "/quiet",
@@ -44,7 +45,6 @@
         ]
     ],
     "env_add_path": [
-        ".",
         "scripts"
     ],
     "checkver": {

@@ -40,6 +40,8 @@
             \"$dir\")
         $create_reg.Invoke(\"Python\\PythonCore\\2.7\\PythonPath\", `
             \"$dir;$dir\\Lib\\;$dir\\DLLs\\\")
+
+        move-item \"$dir\\python*.dll\" \"$dir\\scripts\\\"
     ",
     "checkver": "Latest:.*>Python [\\d.]+.*>Python ([\\d.]+)",
     "autoupdate": {
