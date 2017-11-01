@@ -1,0 +1,66 @@
+{
+    "homepage": "http://windows.php.net",
+    "version": "7.1.11",
+    "license": "https://php.net/license/",
+    "architecture": {
+        "64bit": {
+            "url": "http://windows.php.net/downloads/releases/php-7.1.11-Win32-VC14-x64.zip",
+            "hash": "2778b84b48ce3008672995a35c1d24b34ff515b06b93198f56648e23fd289013"
+        },
+        "32bit": {
+            "url": "http://windows.php.net/downloads/releases/php-7.1.11-Win32-VC14-x86.zip",
+            "hash": "8217a64962a609ccdfd4a4d56ec3b3d37fecfa2aa3e74dc15f8ccf6704e6784b"
+        }
+    },
+    "bin": [
+        "php.exe",
+        "php-cgi.exe"
+    ],
+    "persist": [
+        "cli",
+        [
+            "php.ini-production",
+            "cli\\php.ini"
+        ]
+    ],
+    "env_set": {
+        "PHP_INI_SCAN_DIR": "$dir\\cli;$dir\\cli\\conf.d;"
+    },
+    "post_install": "
+# Copy ini scan dir from old location before persistent update
+if ((Test-Path \"$dir\\..\\conf\") -and !(Test-Path \"$dir\\cli\\conf.d\")) {
+    Write-Host -ForegroundColor Cyan \"We are moving your php configuration to $dir\\cli\\conf.d\"
+    Move-Item \"$dir\\..\\conf\" \"$dir\\cli\\conf.d\"
+}
+
+# Create directory for custom PHP configuration
+if (!(Test-Path \"$dir\\cli\\conf.d\")) {
+    (New-Item -Type directory \"$dir\\cli\\conf.d\") | Out-Null
+}
+
+# Enable extensions to be found in installation-relative folder (the default is to search C:/php)
+(gc \"$dir\\cli\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\cli\\php.ini\"
+",
+    "checkver": {
+        "url": "http://windows.php.net/download/",
+        "re": "<h3 id=\"php-7.1\".*?>.*?\\(([\\d.]+)\\)</h3>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "http://windows.php.net/downloads/releases/php-$version-Win32-VC14-x64.zip"
+            },
+            "32bit": {
+                "url": "http://windows.php.net/downloads/releases/php-$version-Win32-VC14-x86.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/sha256sum.txt"
+        }
+    },
+    "suggest": {
+        "vcredist": [
+            "extras/vcredist2017"
+        ]
+    }
+}
