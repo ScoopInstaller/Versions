@@ -1,0 +1,41 @@
+{
+    "homepage": "http://www.7-zip.org/",
+    "description": "Multi-format compression/decompression tool (beta version)",
+    "license": "LGPL-2.1",
+    "version": "18.00",
+    "architecture": {
+        "64bit": {
+            "url": "http://7-zip.org/a/7z1800-x64.msi",
+            "hash": "c6da98a62acd80e75a992930d2e5026ee18cb61873c3b238ae9cbffd6873add1"
+        },
+        "32bit": {
+            "url": "http://7-zip.org/a/7z1800.msi",
+            "hash": "26f9275ebeaf6fe5094fc51fd0e9e1b87fd19ed6ecbe6b960051f735e62330ec"
+        }
+    },
+    "extract_dir": "Files/7-Zip",
+    "bin": [
+        "7z.exe",
+        "7zG.exe"
+    ],
+    "checkver": {
+        "re": "Download 7-Zip ([\\d.]+) beta",
+        "url": "http://www.7-zip.org/download.html"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "http://7-zip.org/a/7z$cleanVersion-x64.msi"
+            },
+            "32bit": {
+                "url": "http://7-zip.org/a/7z$cleanVersion.msi"
+            }
+        }
+    },
+    "shortcuts": [
+        [
+            "7zFM.exe",
+            "7zip"
+        ]
+    ]
+}
