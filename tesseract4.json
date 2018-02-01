@@ -1,10 +1,10 @@
 {
     "checkver": {
-        "re": "tesseract-ocr-setup-([\\d.]+)dev\\.exe</a>\\s+\\(experimental\\)",
+        "re": "tesseract-ocr-setup-([a-z0-9.-]+)\\.exe",
         "url": "https://github.com/UB-Mannheim/tesseract/wiki"
     },
     "description": "OCR engine developed by Google",
-    "hash": "68e905bbf7b0885aa34392322c3bef4a5de7687abb2c215204bed9a246883809",
+    "hash": "e3a49ecc66d687d5aea0d1a64ec231ea5b024f45a223a8d5d1959c99396fddc0",
     "homepage": "https://github.com/UB-Mannheim/tesseract/wiki",
     "installer": {
         "_comment": "/D option is ignored",
@@ -22,6 +22,6 @@
         ],
         "file": "C:\\Program Files (x86)\\Tesseract-OCR\\tesseract-uninstall.exe"
     },
-    "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-4.00.00dev.exe",
-    "version": "4.00.00"
+    "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-4.0.0-alpha.20180109.exe",
+    "version": "4.0.0-alpha.20180109"
 }
