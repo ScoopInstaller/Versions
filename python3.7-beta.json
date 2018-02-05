@@ -46,10 +46,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.python.org/ftp/python/$version/python-$version-amd64.exe#/py3.exe"
+                "url": "https://www.python.org/ftp/python/3.7.0/python-$version-amd64.exe#/py3.exe"
             },
             "32bit": {
-                "url": "https://www.python.org/ftp/python/$version/python-$version.exe#/py3.exe"
+                "url": "https://www.python.org/ftp/python/3.7.0/python-$version.exe#/py3.exe"
             }
         }
     }
