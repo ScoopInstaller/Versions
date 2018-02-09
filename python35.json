@@ -48,8 +48,8 @@
         "scripts"
     ],
     "checkver": {
-        "url": "https://www.python.org/downloads/",
-        "re": "Python (3.5.[\\d.]+)"
+        "url": "https://www.python.org/downloads/windows/",
+        "re": "python-(3.5.[\\d.]+)-amd64.exe"
     },
     "autoupdate": {
         "architecture": {
