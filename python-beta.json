@@ -1,15 +1,15 @@
 {
     "homepage": "https://www.python.org/",
     "license": "https://docs.python.org/3/license.html",
-    "version": "3.7.0b2",
+    "version": "3.7.0b3",
     "architecture": {
         "64bit": {
-            "url": "https://www.python.org/ftp/python/3.7.0/python-3.7.0b2-amd64.exe#/py3.exe",
-            "hash": "824b31ea788319b0d62b564802af2410aa51c100271061284cc416ad81fb6a05"
+            "url": "https://www.python.org/ftp/python/3.7.0/python-3.7.0b3-amd64.exe#/py3.exe",
+            "hash": "9fa71cb733ade25670700b7d4482903a295243e79ae7957e6368b21febb2963b"
         },
         "32bit": {
-            "url": "https://www.python.org/ftp/python/3.7.0/python-3.7.0b2.exe#/py3.exe",
-            "hash": "3423416f2e7dc91d79e3da8a66933d83914091820f9c008adb758f69ef7861f6"
+            "url": "https://www.python.org/ftp/python/3.7.0/python-3.7.0b3.exe#/py3.exe",
+            "hash": "26c7951114f99b0dab4cbebd01bd6639e4707c8504f7a5d5f318afd2c037a4b5"
         }
     },
     "pre_install": "copy-item $dir\\py3.exe $dir\\uninstall.exe",
