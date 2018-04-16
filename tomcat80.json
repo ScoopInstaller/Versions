@@ -1,17 +1,17 @@
 {
     "homepage": "https://tomcat.apache.org/",
-    "version": "8.0.50",
+    "version": "8.0.51",
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.0.50/bin/apache-tomcat-8.0.50-windows-x64.zip",
-            "hash": "sha1:7486b211d6c459eff7ee1d76ce0c2ce7bdcd61dc"
+            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.0.51/bin/apache-tomcat-8.0.51-windows-x64.zip",
+            "hash": "sha1:63fc529fabbeca8efa04fe069de2d06129eec7b6"
         },
         "32bit": {
-            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.0.50/bin/apache-tomcat-8.0.50-windows-x86.zip",
-            "hash": "sha1:0dfcabd2a852cf7879f5597b160ea570cd3e03b0"
+            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.0.51/bin/apache-tomcat-8.0.51-windows-x86.zip",
+            "hash": "sha1:451317e4fcaaeab4e21eae4638567eaaaca45132"
         }
     },
-    "extract_dir": "apache-tomcat-8.0.50",
+    "extract_dir": "apache-tomcat-8.0.51",
     "bin": "bin\\catalina.bat",
     "env_set": {
         "CATALINA_HOME": "$dir",
