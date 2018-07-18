@@ -37,15 +37,15 @@
         "bin\\logresolve.exe",
         "bin\\rotatelogs.exe"
     ],
-    "post_install": "
-#Copy needed DLL to bin subdirectory
-# mv \"$dir\\vcruntime140.dll\" \"$dir\\bin\\vcruntime140.dll\"
-
-# set directory in httpd.conf
-$conf = \"$dir/conf/httpd.conf\"
-$root=(scoop which httpd | split-path -res -par | split-path -par) -replace '\\\\', '/';
-(gc $conf) | % { $_ -replace 'c:/Apache24', \"$root\" } | sc $conf
-",
+    "post_install": [
+        "#Copy needed DLL to bin subdirectory",
+        "# mv \"$dir\\vcruntime140.dll\" \"$dir\\bin\\vcruntime140.dll\"",
+        "",
+        "# set directory in httpd.conf",
+        "$conf = \"$dir/conf/httpd.conf\"",
+        "$root=(scoop which httpd | split-path -res -par | split-path -par) -replace '\\\\', '/';",
+        "(gc $conf) | % { $_ -replace 'c:/Apache24', \"$root\" } | sc $conf"
+    ],
     "checkver": {
         "url": "https://www.apachelounge.com/download/",
         "re": "Apache ([\\d.]+) Win32"

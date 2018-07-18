@@ -13,13 +13,13 @@
         }
     },
     "env_add_path": "nodejs",
-    "post_install": "
-        # Remove npmrc that makes global modules get installed in AppData\\Roaming\\npm
-        rm \"$dir\\nodejs\\node_modules\\npm\\npmrc\"
-        # npm update -g
-        # Install essential globals
-        # npm install -g rimraf live-server
-        ",
+    "post_install": [
+        "# Remove npmrc that makes global modules get installed in AppData\\Roaming\\npm",
+        "rm \"$dir\\nodejs\\node_modules\\npm\\npmrc\"",
+        "# npm update -g",
+        "# Install essential globals",
+        "# npm install -g rimraf live-server"
+    ],
     "checkver": {
         "url": "https://nodejs.org/dist/latest-v0.10.x/",
         "re": "node-v([\\d.]+)-x86.msi"
