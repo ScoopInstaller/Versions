@@ -1,15 +1,15 @@
 {
     "homepage": "http://windows.php.net",
-    "version": "7.1.19",
+    "version": "7.1.20",
     "license": "https://php.net/license/",
     "architecture": {
         "64bit": {
-            "url": "http://windows.php.net/downloads/releases/php-7.1.19-Win32-VC14-x64.zip",
-            "hash": "5e05fb967f2d77a71d56b61c974383b4a18a856956864c9d07b38dfeaa3bb217"
+            "url": "http://windows.php.net/downloads/releases/php-7.1.20-Win32-VC14-x64.zip",
+            "hash": "8b143d3eaeadc404b61073cfe2f440c264e9219ebfd2ae3a08d8e1de504857bc"
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/releases/php-7.1.19-Win32-VC14-x86.zip",
-            "hash": "b152ce606260cc9401616c86e3fbf11cef1d4641c9835eab3b81758cd003ad69"
+            "url": "http://windows.php.net/downloads/releases/php-7.1.20-Win32-VC14-x86.zip",
+            "hash": "5387bf5b0e6a1dd1b7920b3d9655deac8d4554503635de7c04c2c40852081126"
         }
     },
     "bin": [
@@ -40,7 +40,7 @@
         "",
         "# Enable extensions to be found in installation-relative folder (the default is to search C:/php)",
         "(gc \"$dir\\cli\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\cli\\php.ini\""
-            ],
+    ],
     "checkver": {
         "url": "http://windows.php.net/download/",
         "re": "<h3 id=\"php-7.1\".*?>.*?\\(([\\d.]+)\\)</h3>"
