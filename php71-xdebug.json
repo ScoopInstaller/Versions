@@ -1,15 +1,15 @@
 {
     "homepage": "https://xdebug.org/",
-    "version": "2.6.0-7.1",
+    "version": "2.6.1-7.1",
     "license": "https://xdebug.org/license.php",
     "architecture": {
         "64bit": {
-            "url": "https://xdebug.org/files/php_xdebug-2.6.0-7.1-vc14-x86_64.dll#/php_xdebug.dll",
-            "hash": "2746dd13c77f1155c17dd0bae6308da9d857ea42507dc33977700ede5a107514"
+            "url": "https://xdebug.org/files/php_xdebug-2.6.1-7.1-vc14-x86_64.dll#/php_xdebug.dll",
+            "hash": "b2adba0a07ae3d6038d25c50a85484b98bae95df3c533d5f2607484d91b12e03"
         },
         "32bit": {
-            "url": "https://xdebug.org/files/php_xdebug-2.6.0-7.1-vc14.dll#/php_xdebug.dll",
-            "hash": "3482bab240b2879b1b4f10bb7c4ab8a4167db85bb98c6c26be8d6b36c5fa6934"
+            "url": "https://xdebug.org/files/php_xdebug-2.6.1-7.1-vc14.dll#/php_xdebug.dll",
+            "hash": "8c0cfa8cb74695361f0230b1d6bef4bbba01c089c17efcb4d108d7beba7462e1"
         }
     },
     "post_install": [
