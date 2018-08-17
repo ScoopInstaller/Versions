@@ -1,27 +1,51 @@
 {
+    "homepage": "https://github.com/UB-Mannheim/tesseract/wiki",
+    "license": "Apache-2.0",
+    "description": "OCR engine developed by Google.",
+    "version": "4.0.0-alpha.20180109",
+    "bin": [
+        "ambiguous_words.exe",
+        "classifier_tester.exe",
+        "cntraining.exe",
+        "combine_tessdata.exe",
+        "dawg2wordlist.exe",
+        "mftraining.exe",
+        "set_unicharset_properties.exe",
+        "shapeclustering.exe",
+        "tesseract.exe",
+        "text2image.exe",
+        "unicharset_extractor.exe",
+        "wordlist2dawg.exe"
+    ],
+    "persist": [
+        "tessdata"
+    ],
+    "notes": [
+        "64bit version is experimental.",
+        "Language data files can be downloaded from https://github.com/tesseract-ocr/tessdata"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v4.0.0-beta.1.20180608.exe#/dl.7z",
+            "hash": "40bd9a7291797f1515c3c27c22bfc8b9410025ae90e9e2822983f3069cae31b4"
+        },
+        "32bit": {
+            "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v4.0.0-beta.1.20180608.exe#/dl.7z",
+            "hash": "7554f28b9cae9db7130c492c2443215207bf45ddddb2dd502f9dea04fe6e1f62"
+        }
+    },
     "checkver": {
-        "re": "tesseract-ocr-setup-([a-z0-9.-]+)\\.exe",
+        "re": "tesseract-ocr-w32-setup-v(?<version>4.[\\d\\w.-]+)\\.exe",
         "url": "https://github.com/UB-Mannheim/tesseract/wiki"
     },
-    "description": "OCR engine developed by Google",
-    "hash": "e3a49ecc66d687d5aea0d1a64ec231ea5b024f45a223a8d5d1959c99396fddc0",
-    "homepage": "https://github.com/UB-Mannheim/tesseract/wiki",
-    "installer": {
-        "_comment": "/D option is ignored",
-        "args": [
-            "/S",
-            "/D=$dir"
-        ]
-    },
-    "license": "Apache-2.0",
-    "notes": "tesseract installs in C:\\Program Files (x86)\\Tesseract-OCR",
-    "post_install": "[Environment]::SetEnvironmentVariable(\"Path\", $env:Path + \";C:\\Program Files (x86)\\Tesseract-OCR\", [EnvironmentVariableTarget]::Machine)",
-    "uninstaller": {
-        "args": [
-            "/S"
-        ],
-        "file": "C:\\Program Files (x86)\\Tesseract-OCR\\tesseract-uninstall.exe"
-    },
-    "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-4.0.0-alpha.20180109.exe",
-    "version": "4.0.0-alpha.20180109"
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v$version.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v$version.exe#/dl.7z"
+            }
+        }
+    }
 }
