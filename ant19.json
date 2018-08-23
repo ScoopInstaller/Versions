@@ -1,0 +1,29 @@
+{
+    "homepage": "https://ant.apache.org/",
+    "version": "1.9.13",
+    "license": "Apache 2.0",
+    "url": "https://www-us.apache.org/dist/ant/binaries/apache-ant-1.9.13-bin.zip",
+    "hash": "sha512:873062cf789e1572ec4ef3cdbb15c0d3a57e5a0794068591565367d4cec15b9f9a24f59734a85170d61b23eb9288d6bafd35a9ae2b015b09c7a175e344cb4e1c",
+    "extract_dir": "apache-ant-1.9.13",
+    "env_add_path": "bin",
+    "env_set": {
+        "ANT_HOME": "$dir"
+    },
+    "suggest": {
+        "JDK": [
+            "java/oraclejdk",
+            "java/openjdk"
+        ]
+    },
+    "checkver": {
+        "url": "https://ant.apache.org/bindownload.cgi",
+        "re": "Currently, Apache Ant (?:[\\d.]+ and )?([\\d.]+) (?:is|are) the best"
+    },
+    "autoupdate": {
+        "url": "https://www-us.apache.org/dist/ant/binaries/apache-ant-$version-bin.zip",
+        "extract_dir": "apache-ant-$version",
+        "hash": {
+            "url": "$url.sha512"
+        }
+    }
+}
