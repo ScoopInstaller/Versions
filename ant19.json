@@ -17,7 +17,7 @@
     },
     "checkver": {
         "url": "https://ant.apache.org/bindownload.cgi",
-        "re": "Currently, Apache Ant (?:[\\d.]+ and )?([\\d.]+) (?:is|are) the best"
+        "re": "apache-ant-(1.9.\\d+)-bin.zip"
     },
     "autoupdate": {
         "url": "https://www-us.apache.org/dist/ant/binaries/apache-ant-$version-bin.zip",
