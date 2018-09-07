@@ -17,6 +17,9 @@
         "unicharset_extractor.exe",
         "wordlist2dawg.exe"
     ],
+    "env_set": {
+        "TESSDATA_PREFIX": "$dir"
+    },
     "persist": [
         "tessdata"
     ],
