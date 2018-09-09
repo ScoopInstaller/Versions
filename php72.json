@@ -1,0 +1,69 @@
+{
+    "homepage": "https://windows.php.net",
+    "license": {
+        "identifier": "PHP-3.01",
+        "url": "https://secure.php.net/license/"
+    },
+    "version": "7.2.9",
+    "architecture": {
+        "64bit": {
+            "url": "https://windows.php.net/downloads/releases/php-7.2.9-Win32-VC15-x64.zip",
+            "hash": "61482496fc51562171812ef09ef4daab68ca4c395c957f1bf5c883a8e6821252"
+        },
+        "32bit": {
+            "url": "https://windows.php.net/downloads/releases/php-7.2.9-Win32-VC15-x86.zip",
+            "hash": "56208021ea3578bfc2e62b7db802405c2b5b9456d0d5178f870b92cdbe612403"
+        }
+    },
+    "bin": [
+        "php.exe",
+        "php-cgi.exe"
+    ],
+    "persist": [
+        "cli",
+        [
+            "php.ini-production",
+            "cli\\php.ini"
+        ]
+    ],
+    "env_set": {
+        "PHP_INI_SCAN_DIR": "$dir\\cli;$dir\\cli\\conf.d;"
+    },
+    "post_install": [
+        "# Copy ini scan dir from old location before persistent update",
+        "if ((Test-Path \"$dir\\..\\conf\") -and !(Test-Path \"$dir\\cli\\conf.d\")) {",
+        "    Write-Host -ForegroundColor Cyan \"We are moving your php configuration to $dir\\cli\\conf.d\"",
+        "    Move-Item \"$dir\\..\\conf\" \"$dir\\cli\\conf.d\"",
+        "}",
+        "",
+        "# Create directory for custom PHP configuration",
+        "if (!(Test-Path \"$dir\\cli\\conf.d\")) {",
+        "    (New-Item -Type directory \"$dir\\cli\\conf.d\") | Out-Null",
+        "}",
+        "",
+        "# Enable extensions to be found in installation-relative folder (the default is to search C:/php)",
+        "(gc \"$dir\\cli\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\cli\\php.ini\""
+    ],
+    "checkver": {
+        "url": "https://windows.php.net/download/",
+        "re": "<h3 id=\"php-7.2\".*?>.*?\\(([\\d.]+)\\)</h3>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC15-x64.zip"
+            },
+            "32bit": {
+                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC15-x86.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/sha256sum.txt"
+        }
+    },
+    "suggest": {
+        "vcredist": [
+            "extras/vcredist2017"
+        ]
+    }
+}
