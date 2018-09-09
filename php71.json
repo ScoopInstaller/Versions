@@ -1,14 +1,17 @@
 {
-    "homepage": "http://windows.php.net",
+    "homepage": "https://windows.php.net",
+    "license": {
+        "identifier": "PHP-3.01",
+        "url": "https://secure.php.net/license/"
+    },
     "version": "7.1.21",
-    "license": "https://php.net/license/",
     "architecture": {
         "64bit": {
-            "url": "http://windows.php.net/downloads/releases/php-7.1.21-Win32-VC14-x64.zip",
+            "url": "https://windows.php.net/downloads/releases/php-7.1.21-Win32-VC14-x64.zip",
             "hash": "bc1afc8867372611a4c48601c2b1468dbcd052974423e2b2bbc20418a7782610"
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/releases/php-7.1.21-Win32-VC14-x86.zip",
+            "url": "https://windows.php.net/downloads/releases/php-7.1.21-Win32-VC14-x86.zip",
             "hash": "010bd254affbd7a478b47dcfa3292ec2484586b7458d5f4fe8b8c8c654b9f95e"
         }
     },
@@ -42,16 +45,16 @@
         "(gc \"$dir\\cli\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\cli\\php.ini\""
     ],
     "checkver": {
-        "url": "http://windows.php.net/download/",
+        "url": "https://windows.php.net/download/",
         "re": "<h3 id=\"php-7.1\".*?>.*?\\(([\\d.]+)\\)</h3>"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "http://windows.php.net/downloads/releases/php-$version-Win32-VC14-x64.zip"
+                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC14-x64.zip"
             },
             "32bit": {
-                "url": "http://windows.php.net/downloads/releases/php-$version-Win32-VC14-x86.zip"
+                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC14-x86.zip"
             }
         },
         "hash": {
@@ -60,7 +63,7 @@
     },
     "suggest": {
         "vcredist": [
-            "extras/vcredist2017"
+            "extras/vcredist2015"
         ]
     }
 }
