@@ -1,15 +1,18 @@
 {
-    "homepage": "http://windows.php.net",
-    "version": "5.6.37",
-    "license": "https://php.net/license/",
+    "homepage": "https://windows.php.net",
+    "license": {
+        "identifier": "PHP-3.01",
+        "url": "https://secure.php.net/license/"
+    },
+    "version": "5.6.38",
     "architecture": {
         "64bit": {
-            "url": "http://windows.php.net/downloads/releases/php-5.6.37-Win32-VC11-x64.zip",
-            "hash": "sha1:9f5542141fa33d2ed9da0aa2e67314f2fba948c3"
+            "url": "https://windows.php.net/downloads/releases/php-5.6.38-Win32-VC11-x64.zip",
+            "hash": "sha1:508ee61b062a59e16614f4b7877823aef2bc77ed"
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/releases/php-5.6.37-Win32-VC11-x86.zip",
-            "hash": "sha1:b805802715e1a397209b7ed9ede8b229ce82f272"
+            "url": "https://windows.php.net/downloads/releases/php-5.6.38-Win32-VC11-x86.zip",
+            "hash": "sha1:7b9766e71577893afd5aadf3915317d09d401d6e"
         }
     },
     "bin": "php.exe",
@@ -21,20 +24,20 @@
         "(gc \"$dir\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\php.ini\""
     ],
     "checkver": {
-        "url": "http://windows.php.net/download/",
+        "url": "https://windows.php.net/download/",
         "re": "<h3 id=\"php-5.6\".*?>.*?\\(([0-9\\.]+)\\)</h3>"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "http://windows.php.net/downloads/releases/php-$version-Win32-VC11-x64.zip"
+                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC11-x64.zip"
             },
             "32bit": {
-                "url": "http://windows.php.net/downloads/releases/php-$version-Win32-VC11-x86.zip"
+                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC11-x86.zip"
             }
         },
         "hash": {
-            "url": "http://windows.php.net/downloads/releases/sha1sum.txt"
+            "url": "https://windows.php.net/downloads/releases/sha1sum.txt"
         }
     },
     "suggest": {

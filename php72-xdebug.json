@@ -4,19 +4,19 @@
         "identifier": "PHP-3.0",
         "url": "https://xdebug.org/license.php"
     },
-    "version": "2.6.1-7.0",
+    "version": "2.6.1-7.2",
     "architecture": {
         "64bit": {
-            "url": "https://xdebug.org/files/php_xdebug-2.6.1-7.0-vc14-x86_64.dll#/php_xdebug.dll",
-            "hash": "4d61ffb7d4b8def2f1f8f9f08695048fc03844477719939f712f8ba53f646712"
+            "url": "https://xdebug.org/files/php_xdebug-2.6.1-7.2-vc15-x86_64.dll#/php_xdebug.dll",
+            "hash": "ae18f7659f55e7bfcf42c782d1cfa11373524630c182de5b882f9e37e8791385"
         },
         "32bit": {
-            "url": "https://xdebug.org/files/php_xdebug-2.6.1-7.0-vc14.dll#/php_xdebug.dll",
-            "hash": "7812579264b3eae5668b05024997f7b7fce5d6abf00a3b019563c7f779697dff"
+            "url": "https://xdebug.org/files/php_xdebug-2.6.1-7.2-vc15.dll#/php_xdebug.dll",
+            "hash": "ddedf1d0cea0e9fd36c49ba01c6afbea60d1299b3f86bba9cdf057b53ce2bee5"
         }
     },
     "post_install": [
-        "$phpconfd = \"$persist_dir\\..\\php70\\cli\\conf.d\"",
+        "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"",
         "if((test-path $phpconfd)) {",
         "    echo \"Enabling extension $(Convert-Path $phpconfd)\\xdebug.ini\"",
         "    echo \"zend_extension=$dir\\php_xdebug.dll\" | sc \"$phpconfd\\xdebug.ini\"",
@@ -28,15 +28,15 @@
     ],
     "checkver": {
         "url": "https://xdebug.org/download.php",
-        "re": "php_xdebug-([\\d.]+-7.0)-vc14-x86_64.dll"
+        "re": "php_xdebug-([\\d.]+-7.2)-vc15-x86_64.dll"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://xdebug.org/files/php_xdebug-$version-vc14-x86_64.dll#/php_xdebug.dll"
+                "url": "https://xdebug.org/files/php_xdebug-$version-vc15-x86_64.dll#/php_xdebug.dll"
             },
             "32bit": {
-                "url": "https://xdebug.org/files/php_xdebug-$version-vc14.dll#/php_xdebug.dll"
+                "url": "https://xdebug.org/files/php_xdebug-$version-vc15.dll#/php_xdebug.dll"
             }
         }
     }
