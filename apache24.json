@@ -1,25 +1,25 @@
 {
     "homepage": "https://www.apachelounge.com/",
-    "version": "2.4.33",
+    "version": "2.4.37",
     "license": "Apache 2.0",
     "architecture": {
         "64bit": {
             "url": [
-                "https://www.apachelounge.com/download/VC14/binaries/httpd-2.4.33-win64-VC14.zip",
+                "https://www.apachelounge.com/download/VC14/binaries/httpd-2.4.37-win64-VC14.zip",
                 "https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x64.exe"
             ],
             "hash": [
-                "659BE86B6F340592E825B6F3DF5EF0FB53DB5DE12EFD966CA9AB935432FD7D52",
+                "1ee3e392dd42e5a0fbcd8e4a597a81ca421f6d6a1240d55de6e0ec023e28e3e8",
                 "5eea714e1f22f1875c1cb7b1738b0c0b1f02aec5ecb95f0fdb1c5171c6cd93a3"
             ]
         },
         "32bit": {
             "url": [
-                "https://www.apachelounge.com/download/VC14/binaries/httpd-2.4.33-win32-VC14.zip",
+                "https://www.apachelounge.com/download/VC14/binaries/httpd-2.4.37-win32-VC14.zip",
                 "https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x86.exe"
             ],
             "hash": [
-                "CE9380F33787B1FF4E00400DFA071654E83AF87D4FF4462F7A2D52AA071672CE",
+                "d4c16411845528298de9ea2fd7d0ff652a53e08aa2505e0acce660947abbcd81",
                 "fdd1e1f0dcae2d0aa0720895eff33b927d13076e64464bb7c7e5843b7667cd14"
             ]
         }
