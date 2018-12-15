@@ -2,7 +2,7 @@
     "homepage": "https://github.com/UB-Mannheim/tesseract/wiki",
     "license": "Apache-2.0",
     "description": "OCR engine developed by Google.",
-    "version": "4.0.0-beta.4.20180912",
+    "version": "4.0.0.20181030",
     "bin": [
         "ambiguous_words.exe",
         "classifier_tester.exe",
@@ -29,12 +29,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v4.0.0-beta.4.20180912.exe#/dl.7z",
-            "hash": "c940c02d4437aa8de96b7b343c7852dd17e14d217957566b6e63cd7240585787"
+            "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v4.0.0.20181030.exe#/dl.7z",
+            "hash": "f590c1fb1a5e02781635758eada2d87084d64d1e6fb0f761ef8237e60d7ea8ea"
         },
         "32bit": {
-            "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v4.0.0-beta.4.20180912.exe#/dl.7z",
-            "hash": "514d130c5522e2e2b623cd84f6b975750080b50155846c409f6a8405343dafc8"
+            "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v4.0.0.20181030.exe#/dl.7z",
+            "hash": "edd28909ffb1d6961f9155441b8d9d5584c99cc8633ad5bb92f8bf4098201ea6"
         }
     },
     "checkver": {

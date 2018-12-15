@@ -4,15 +4,15 @@
         "identifier": "PHP-3.01",
         "url": "https://secure.php.net/license/"
     },
-    "version": "7.2.10",
+    "version": "7.2.13",
     "architecture": {
         "64bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.2.10-Win32-VC15-x64.zip",
-            "hash": "e261e095cc57a2cfe166ea0b38cdf3d41b7c81e7925c9380768a09dae3839643"
+            "url": "https://windows.php.net/downloads/releases/php-7.2.13-Win32-VC15-x64.zip",
+            "hash": "62e324152211b05f1a7504803d1c9b7650679823adea0b9e77968f6b338bf1d6"
         },
         "32bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.2.10-Win32-VC15-x86.zip",
-            "hash": "f7b25f6b763e2ef15dd13ae9276de14587a6c36b68ef9e9d19cdfa5fe0ac9d14"
+            "url": "https://windows.php.net/downloads/releases/php-7.2.13-Win32-VC15-x86.zip",
+            "hash": "a9a1ab0a4510fa4d32e088b864be9f4bd1003f25b977ebfbfd18602c7e9bed81"
         }
     },
     "bin": [
@@ -62,8 +62,6 @@
         }
     },
     "suggest": {
-        "vcredist": [
-            "extras/vcredist2017"
-        ]
+        "vcredist": "extras/vcredist2017"
     }
 }
