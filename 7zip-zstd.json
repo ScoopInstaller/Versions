@@ -2,18 +2,17 @@
     "homepage": "https://github.com/mcmilk/7-Zip-zstd/",
     "description": "Multi-format compression/decompression tool with brotli and other codecs (beta version)",
     "license": "LGPL-2.1",
-    "version": "17.01-v1.3.2-R1",
+    "version": "18.05-v1.3.7-R4",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/17.01-v1.3.2-R1/7z1701-zstd-x64.exe",
-            "hash": "554f70e5e0339744bb6719e30cc9b6ffecf9464f5fa436c5673dff770bce916a"
+            "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/18.05-v1.3.7-R4/7z18.05-zstd-x64.exe#/dl.7z",
+            "hash": "0bcb5770a7ffc64671d33726577dc1ff18395199753f9962bc8453dffe5934b8"
         },
         "32bit": {
-            "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/17.01-v1.3.2-R1/7z1701-zstd-x32.exe",
-            "hash": "fcd8771f03ccd885ed65082db0777048d914b9e36450ec8793ef8aeaa78c59cd"
+            "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/18.05-v1.3.7-R4/7z18.05-zstd-x32.exe#/dl.7z",
+            "hash": "8d8297a5176c5df328671325b854d39a55fbc99a1c247a91cb5ab10645552e76"
         }
     },
-    "extract_dir": "Files/7-Zip",
     "bin": [
         "7z.exe",
         "7zg.exe"
@@ -22,18 +21,12 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/$version/7z$cleanVersion-zstd-x64.exe"
+                "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/$version/7z$matchHead-zstd-x64.exe#/dl.7z"
             },
             "32bit": {
-                "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/$version/7z$cleanVersion-zstd-x32.exe"
+                "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/$version/7z$matchHead-zstd-x32.exe#/dl.7z"
             }
         }
-    },
-    "installer": {
-        "args": [
-            "/S",
-            "/D=$dir"
-        ]
     },
     "shortcuts": [
         [
