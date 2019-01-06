@@ -16,8 +16,6 @@
         "(gc \"$dir\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\php.ini\""
     ],
     "suggest": {
-        "vcredist": [
-            "extras/vcredist2008"
-        ]
+        "vcredist": "extras/vcredist2008"
     }
 }

@@ -28,8 +28,6 @@
         "if(!(test-path 'C:\\data\\db')) { mkdir 'C:\\data\\db' > $null }"
     ],
     "suggest": {
-        "vcredist": [
-            "extras/vcredist2017"
-        ]
+        "vcredist": "extras/vcredist2017"
     }
 }
