@@ -18,9 +18,7 @@
         "CATALINA_BASE": "$dir"
     },
     "suggest": {
-        "JRE": [
-            "java/openjdk"
-        ]
+        "JRE": "java/openjdk"
     },
     "checkver": {
         "url": "https://www.apache.org/dist/tomcat/tomcat-7/",

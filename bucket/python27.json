@@ -25,9 +25,7 @@
             "idle2"
         ]
     ],
-    "env_add_path": [
-        "scripts"
-    ],
+    "env_add_path": "scripts",
     "post_install": [
         "python2 -m ensurepip",
         "",

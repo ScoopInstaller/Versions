@@ -6,9 +6,7 @@
     "homepage": "http://www.vordweb.co.uk/standards/download_lynx.htm",
     "hash": "552bc68afd2ff9a5de88f26d76f55dd8697cf6082c6afb01b3d1a9942f4d3ee0",
     "bin": "lynx.cmd",
-    "persist": [
-        "$dir/lynx.cfg"
-    ],
+    "persist": "$dir/lynx.cfg",
     "pre_install": [
         "$q = [char]34",
         "set-content \"$dir/lynx.cfg\" -value $null",

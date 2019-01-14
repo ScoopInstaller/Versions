@@ -5,9 +5,7 @@
     "url": "https://cocl.us/sbt01316zip#/dl.zip",
     "hash": "e94d95ff2d64247b754782ea85e99187ea890dc4c918a7ba7dcb6091fdb5968c",
     "extract_dir": "sbt",
-    "bin": [
-        "bin\\sbt.bat"
-    ],
+    "bin": "bin\\sbt.bat",
     "checkver": {
         "url": "http://www.scala-sbt.org/0.13/docs/index.html",
         "re": "This\\sdocumentation\\sapplies\\sto\\ssbt\\s([\\d.]+)."

@@ -20,9 +20,7 @@
     "env_set": {
         "TESSDATA_PREFIX": "$dir"
     },
-    "persist": [
-        "tessdata"
-    ],
+    "persist": "tessdata",
     "notes": [
         "64bit version is experimental.",
         "Language data files can be downloaded from https://github.com/tesseract-ocr/tessdata"

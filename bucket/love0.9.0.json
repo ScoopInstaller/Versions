@@ -1,24 +1,30 @@
 {
-  "homepage": "https://love2d.org/",
-  "version": "0.9.0",
-  "architecture": {
-    "64bit": {
-      "url": "https://bitbucket.org/rude/love/downloads/love-0.9.0-win64.zip",
-      "hash": "B23FB28C1A76E9D1F880F2BFC92AC7A699968B5B46CBCC225ABBE220D091F8FD",
-      "extract_dir": "love-0.9.0-win64"
+    "homepage": "https://love2d.org/",
+    "version": "0.9.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://bitbucket.org/rude/love/downloads/love-0.9.0-win64.zip",
+            "hash": "B23FB28C1A76E9D1F880F2BFC92AC7A699968B5B46CBCC225ABBE220D091F8FD",
+            "extract_dir": "love-0.9.0-win64"
+        },
+        "32bit": {
+            "url": "https://bitbucket.org/rude/love/downloads/love-0.9.0-win32.zip",
+            "hash": "544964296091277FF80CCF26336730F46D2035F8527595AE6D2F5D40789ADCC8",
+            "extract_dir": "love-0.9.0-win32"
+        }
     },
-    "32bit": {
-      "url": "https://bitbucket.org/rude/love/downloads/love-0.9.0-win32.zip",
-      "hash": "544964296091277FF80CCF26336730F46D2035F8527595AE6D2F5D40789ADCC8",
-      "extract_dir": "love-0.9.0-win32"
-    }
-  },
-  "bin": [
-    "love.exe",
-    ["love.exe", "love0.9.0"]
-  ],
-  "shortcuts": [
-    ["love.exe", "LÖVE 0.9.0"]
-  ],
-  "license": "zlib/libpng"
+    "bin": [
+        "love.exe",
+        [
+            "love.exe",
+            "love0.9.0"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "love.exe",
+            "LÖVE 0.9.0"
+        ]
+    ],
+    "license": "zlib/libpng"
 }
