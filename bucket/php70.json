@@ -8,16 +8,17 @@
     "architecture": {
         "64bit": {
             "url": "https://windows.php.net/downloads/releases/php-7.0.33-Win32-VC14-x64.zip",
-            "hash": "sha1:a3d5b4a8439d48aa3b8845f3e009f7672e96350c"
+            "hash": "8a22c93732b576507888e011b147df80beee7b7e24f527cb6e1282b5228350c2"
         },
         "32bit": {
             "url": "https://windows.php.net/downloads/releases/php-7.0.33-Win32-VC14-x86.zip",
-            "hash": "sha1:fa85456ff03a4ebf26424cb5c31191770ffc0a48"
+            "hash": "5c5b7e3c4b80a6e8984dca6bb1a1e1909c5dfb2b83b0242978020f78a473ab9c"
         }
     },
     "bin": [
         "php.exe",
-        "php-cgi.exe"
+        "php-cgi.exe",
+        "phpdbg.exe"
     ],
     "persist": [
         "cli",
@@ -29,16 +30,19 @@
     "env_set": {
         "PHP_INI_SCAN_DIR": "$dir\\cli;$dir\\cli\\conf.d;"
     },
+    "pre_install": [
+        "# Create directory for custom PHP configuration",
+        "if (!(Test-Path \"$dir\\cli\\conf.d\")) {",
+        "    (New-Item -Type directory \"$dir\\cli\\conf.d\") | Out-Null",
+        "}"
+    ],
     "post_install": [
-        "#Copy PHP configuration file to expected location",
-        "cp \"$dir\\php.ini-production\" \"$dir\\php.ini\"",
-        "",
-        "#Enable extensions to be found in installation-relative folder (the default is to search C:/php)",
-        "(gc \"$dir\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\php.ini\""
+        "# Enable extensions to be found in installation-relative folder (the default is to search C:/php)",
+        "(gc \"$dir\\cli\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\cli\\php.ini\""
     ],
     "checkver": {
         "url": "https://windows.php.net/download/",
-        "re": "<h3 id=\"php-7.0\".*?>.*?\\(([0-9\\.]+)\\)</h3>"
+        "re": "<h3 id=\"php-7.0\".*?>.*?\\(([\\d.]+)\\)</h3>"
     },
     "autoupdate": {
         "architecture": {
@@ -50,7 +54,7 @@
             }
         },
         "hash": {
-            "url": "https://windows.php.net/downloads/releases/sha1sum.txt"
+            "url": "$baseurl/sha256sum.txt"
         }
     },
     "suggest": {
