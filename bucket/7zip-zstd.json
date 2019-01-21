@@ -1,23 +1,26 @@
 {
     "homepage": "https://github.com/mcmilk/7-Zip-zstd/",
     "description": "Multi-format compression/decompression tool with brotli and other codecs (beta version)",
-    "license": "LGPL-2.1",
-    "version": "18.05-v1.3.7-R4",
+    "license": "LGPL-2.1-or-later",
+    "version": "18.06-v1.3.8-R1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/18.05-v1.3.7-R4/7z18.05-zstd-x64.exe#/dl.7z",
-            "hash": "0bcb5770a7ffc64671d33726577dc1ff18395199753f9962bc8453dffe5934b8"
+            "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/18.06-v1.3.8-R1/7z18.06-zstd-x64.exe#/dl.7z",
+            "hash": "8cdd8951e07c871e80c287f6fc15e174dc486377c0dadcedec3812bbff48887e"
         },
         "32bit": {
-            "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/18.05-v1.3.7-R4/7z18.05-zstd-x32.exe#/dl.7z",
-            "hash": "8d8297a5176c5df328671325b854d39a55fbc99a1c247a91cb5ab10645552e76"
+            "url": "https://github.com/mcmilk/7-Zip-zstd/releases/download/18.06-v1.3.8-R1/7z18.06-zstd-x32.exe#/dl.7z",
+            "hash": "cae19be61fb418c6f8b38d3f53e5cc8b28e47b9eca6251dd85a42319c90c6336"
         }
     },
     "bin": [
         "7z.exe",
-        "7zg.exe"
+        "7zG.exe"
     ],
-    "checkver": "github",
+    "checkver": {
+        "github": "https://github.com/mcmilk/7-Zip-zstd/",
+        "regex": "/tag/(\\S+)\""
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
@@ -31,7 +34,7 @@
     "shortcuts": [
         [
             "7zFM.exe",
-            "7-Zip-Zstandard"
+            "7-Zip"
         ]
     ]
 }
