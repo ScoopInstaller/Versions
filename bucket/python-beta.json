@@ -1,18 +1,17 @@
 {
     "homepage": "https://www.python.org/",
-    "license": "https://docs.python.org/3/license.html",
-    "version": "3.7.0",
+    "license": "Python-2.0",
+    "version": "3.7.2rc1",
     "architecture": {
         "64bit": {
-            "url": "https://www.python.org/ftp/python/3.7.0/python-3.7.0-amd64.exe#/py3.exe",
-            "hash": "9d6afa39538aade3a2bacb099ef1c9f78e8d4afaefff99057b902118845c5dda"
+            "url": "https://www.python.org/ftp/python/3.7.2/python-3.7.2rc1-amd64.exe#/py3.exe",
+            "hash": "md5:b9f5c413c183b2d937730290200d12b5"
         },
         "32bit": {
-            "url": "https://www.python.org/ftp/python/3.7.0/python-3.7.0.exe#/py3.exe",
-            "hash": "559e56d293e05ff6159c3676da2b5a93081efad7a8acc74c12bb757e2b93daba"
+            "url": "https://www.python.org/ftp/python/3.7.2/python-3.7.2rc1.exe#/py3.exe",
+            "hash": "md5:53e054fbbec5bfea8f4c244a316e8ebe"
         }
     },
-    "pre_install": "copy-item $dir\\py3.exe $dir\\uninstall.exe",
     "installer": {
         "args": [
             "/quiet",
@@ -21,10 +20,11 @@
             "AssociateFiles=0",
             "Shortcuts=0",
             "InstallLauncherAllUsers=$(@{$true=1;$false=0}[$global])"
-        ]
+        ],
+        "keep": true
     },
     "uninstaller": {
-        "file": "uninstall.exe",
+        "file": "py3.exe",
         "args": [
             "/uninstall",
             "/quiet",
@@ -37,21 +37,30 @@
         [
             "python.exe",
             "python3"
+        ],
+        "Lib\\idlelib\\idle.bat",
+        [
+            "Lib\\idlelib\\idle.bat",
+            "idle3"
         ]
     ],
     "env_add_path": "scripts",
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
-        "re": "python-(3.7.[\\d\\w.]+)-amd64.exe"
+        "re": "Python ([\\d.]+[abcr]{1,2}[\\d]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.python.org/ftp/python/3.7.0/python-$version-amd64.exe#/py3.exe"
+                "url": "https://www.python.org/ftp/python/$matchHead/python-$version-amd64.exe#/py3.exe"
             },
             "32bit": {
-                "url": "https://www.python.org/ftp/python/3.7.0/python-$version.exe#/py3.exe"
+                "url": "https://www.python.org/ftp/python/$matchHead/python-$version.exe#/py3.exe"
             }
+        },
+        "hash": {
+            "url": "https://www.python.org/downloads/release/python-$cleanVersion/",
+            "find": "$basename[\\S\\s]+?([A-Fa-f0-9]{32})"
         }
     }
 }

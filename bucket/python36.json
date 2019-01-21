@@ -1,18 +1,17 @@
 {
     "homepage": "https://www.python.org/",
-    "license": "https://docs.python.org/3/license.html",
+    "license": "Python-2.0",
     "version": "3.6.8",
     "architecture": {
         "64bit": {
             "url": "https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe#/py3.exe",
-            "hash": "96088a58b7c43bc83b84e6b67f15e8706c614023dd64f9a5a14e81ff824adadc"
+            "hash": "md5:72f37686b7ab240ef70fdb931bdf3cb5"
         },
         "32bit": {
             "url": "https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe#/py3.exe",
-            "hash": "89871d432bc06e4630d7b64cb1a8451e53c80e68de29029976b12aad7dbfa5a0"
+            "hash": "md5:9c7b1ebdd3a8df0eebfda2f107f1742c"
         }
     },
-    "pre_install": "copy-item $dir\\py3.exe $dir\\uninstall.exe",
     "installer": {
         "args": [
             "/quiet",
@@ -21,10 +20,11 @@
             "AssociateFiles=0",
             "Shortcuts=0",
             "InstallLauncherAllUsers=$(@{$true=1;$false=0}[$global])"
-        ]
+        ],
+        "keep": true
     },
     "uninstaller": {
-        "file": "uninstall.exe",
+        "file": "py3.exe",
         "args": [
             "/uninstall",
             "/quiet",
@@ -45,16 +45,17 @@
         "Lib\\idlelib\\idle.bat",
         [
             "Lib\\idlelib\\idle.bat",
+            "idle3"
+        ],
+        [
+            "Lib\\idlelib\\idle.bat",
             "idle36"
         ]
     ],
-    "env_add_path": [
-        ".",
-        "scripts"
-    ],
+    "env_add_path": "scripts",
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
-        "re": "python-(3.6.[\\d.]+)-amd64.exe"
+        "re": "Python (3\\.6\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
@@ -64,6 +65,10 @@
             "32bit": {
                 "url": "https://www.python.org/ftp/python/$version/python-$version.exe#/py3.exe"
             }
+        },
+        "hash": {
+            "url": "https://www.python.org/downloads/release/python-$cleanVersion/",
+            "find": "$basename[\\S\\s]+?([A-Fa-f\\d]{32})"
         }
     }
 }
