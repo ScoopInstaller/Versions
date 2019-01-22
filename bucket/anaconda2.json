@@ -7,6 +7,8 @@
         "re": "Anaconda2-([\\d.]+)-Windows"
     },
     "bin": [
+        "python.exe",
+        "pythonw.exe",
         [
             "python.exe",
             "python2"
@@ -14,7 +16,6 @@
     ],
     "pre_install": "Write-Host 'Installing Anaconda 2. This can take up to 30 minutes on an HDD.' -ForegroundColor Magenta",
     "installer": {
-        "file": "anaconda2-installer.exe",
         "args": [
             "/S",
             "/InstallationType=JustMe",
@@ -23,32 +24,33 @@
         ]
     },
     "uninstaller": {
-        "file": "Uninstall-Anaconda.exe",
+        "file": "Uninstall-Anaconda2.exe",
         "args": "/S"
     },
+    "persist": "envs",
     "env_add_path": "Scripts",
     "architecture": {
         "64bit": {
-            "url": "https://repo.continuum.io/archive/Anaconda2-2018.12-Windows-x86_64.exe#/anaconda2-installer.exe",
-            "hash": "md5:10ff4176a94fcff86e6253b0cc82c782"
+            "url": "https://repo.continuum.io/archive/Anaconda2-2018.12-Windows-x86_64.exe",
+            "hash": "7571d334eac3b9bd4f3e199fc5f493f0601890620c22e6d487246bde90497425"
         },
         "32bit": {
-            "url": "https://repo.continuum.io/archive/Anaconda2-2018.12-Windows-x86.exe#/anaconda2-installer.exe",
-            "hash": "md5:f123fda0ec8928bb7d55d1ca72c0d784"
+            "url": "https://repo.continuum.io/archive/Anaconda2-2018.12-Windows-x86.exe",
+            "hash": "d75d51c8f9a7c345128805a55db3856f6999dd6aa11f31c0009c640fe0e8da61"
         }
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://repo.continuum.io/archive/Anaconda2-$version-Windows-x86_64.exe#/anaconda2-installer.exe"
+                "url": "https://repo.continuum.io/archive/Anaconda2-$version-Windows-x86_64.exe"
             },
             "32bit": {
-                "url": "https://repo.continuum.io/archive/Anaconda2-$version-Windows-x86.exe#/anaconda2-installer.exe"
+                "url": "https://repo.continuum.io/archive/Anaconda2-$version-Windows-x86.exe"
             }
         },
         "hash": {
-            "url": "$baseurl",
-            "find": "$basename<.*\\s+<.*\\s+<.*\\s+<td>([a-fA-F0-9]{32})</td>"
+            "url": "http://docs.anaconda.com/anaconda/install/hashes/$basename-hash/",
+            "regex": "([A-Fa-f0-9]{64})"
         }
     }
 }
