@@ -8,11 +8,11 @@
     "architecture": {
         "64bit": {
             "url": "https://windows.php.net/downloads/releases/php-5.6.40-Win32-VC11-x64.zip",
-            "hash": "sha1:ea981b76a8a2e69965e2d846dc3adc13a0944cae"
+            "hash": "b312df0b16ec645adfd7ad39ce6f9dd294a4dfeb8130ee8041f8af0f89f62904"
         },
         "32bit": {
             "url": "https://windows.php.net/downloads/releases/php-5.6.40-Win32-VC11-x86.zip",
-            "hash": "sha1:08693aaca85cf995e5829ac0d42211cff39d91e8"
+            "hash": "7285219b84fbe4fe17f6aab555524aba6775fb45c4122449bb53cfff423a6847"
         }
     },
     "bin": "php.exe",
@@ -25,7 +25,7 @@
     ],
     "checkver": {
         "url": "https://windows.php.net/download/",
-        "re": "<h3 id=\"php-5.6\".*?>.*?\\(([0-9\\.]+)\\)</h3>"
+        "re": "<h3 id=\"php-5\\.6\".*?>.*?\\(([0-9.]+)\\)<\\/h3>"
     },
     "autoupdate": {
         "architecture": {
@@ -37,7 +37,7 @@
             }
         },
         "hash": {
-            "url": "https://windows.php.net/downloads/releases/sha1sum.txt"
+            "url": "$baseurl/sha256sum.txt"
         }
     },
     "suggest": {
