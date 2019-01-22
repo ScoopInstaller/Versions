@@ -1,0 +1,61 @@
+{
+    "version": "4.5.12",
+    "homepage": "https://conda.io/miniconda.html",
+    "license": "BSD-3-Clause",
+    "checkver": {
+        "url": "https://repo.continuum.io/miniconda",
+        "re": "Miniconda2-([\\d.]+)-Windows"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://repo.continuum.io/miniconda/Miniconda2-4.5.12-Windows-x86_64.exe",
+            "hash": "md5:e7626f133e803ac970fe963507c62dc1"
+        },
+        "32bit": {
+            "url": "https://repo.continuum.io/miniconda/Miniconda2-4.5.12-Windows-x86.exe",
+            "hash": "md5:6c4300ec4aac538c47e82506277c31b8"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://repo.continuum.io/miniconda/Miniconda2-$version-Windows-x86_64.exe"
+            },
+            "32bit": {
+                "url": "https://repo.continuum.io/miniconda/Miniconda2-$version-Windows-x86.exe"
+            }
+        },
+        "hash": {
+            "url": "$baseurl",
+            "find": "$basename[\\S\\s]+?<td>([a-fA-F0-9]{32})</td>"
+        }
+    },
+    "installer": {
+        "args": [
+            "/S",
+            "/InstallationType=JustMe",
+            "/RegisterPython=0",
+            "/AddToPath=0",
+            "/D=$dir"
+        ]
+    },
+    "uninstaller": {
+        "file": "Uninstall-Miniconda2.exe",
+        "args": "/S"
+    },
+    "bin": [
+        "python.exe",
+        "pythonw.exe",
+        [
+            "python.exe",
+            "python2"
+        ]
+    ],
+    "persist": "envs",
+    "env_add_path": "Scripts",
+    "notes": [
+        "Currently conda envs activate and deactivate doesn't work on PowerShell,",
+        "for more information, see: https://github.com/conda/conda/issues/626,",
+        "or just execute: 'conda install -n root -c pscondaenvs pscondaenvs'"
+    ]
+}
