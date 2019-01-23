@@ -1,15 +1,15 @@
 {
     "homepage": "https://www.postgresql.org/",
-    "version": "10.5",
+    "version": "10.6",
     "license": "PostgreSQL",
     "architecture": {
         "64bit": {
-            "url": "https://get.enterprisedb.com/postgresql/postgresql-10.5-1-windows-x64-binaries.zip",
-            "hash": "9d0555a008fcea646fab191273d3d5811eeb90675f9dda3bebae425af670bed2"
+            "url": "https://get.enterprisedb.com/postgresql/postgresql-10.6-1-windows-x64-binaries.zip",
+            "hash": "b33c868354ac9e8412aba350581b37622f5b7f8ff561fbb31c0fe837d30b303c"
         },
         "32bit": {
-            "url": "https://get.enterprisedb.com/postgresql/postgresql-10.5-1-windows-binaries.zip",
-            "hash": "8ac09c0309755d0232119bce6cb9b64fd50f315a33773966f6a9eddc8125046d"
+            "url": "https://get.enterprisedb.com/postgresql/postgresql-10.6-1-windows-binaries.zip",
+            "hash": "d2415aa957745405ce50519a748505b8a5d6a586a53edc1a4569d88942f5a71a"
         }
     },
     "extract_dir": "pgsql",
@@ -27,8 +27,8 @@
     "post_install": "if (!(Test-Path \"$dir\\data\\pg_hba.conf\")) { iex \"initdb --username=postgres --encoding=UTF8 --locale=en --lc-collate=C\" }",
     "notes": "To start/stop service, run `pg_ctl start`, `pg_ctl stop`.",
     "checkver": {
-        "url": "https://www.enterprisedb.com/products-services-training/pgbindownload",
-        "re": "<b>Version ([\\d.]+)"
+        "url": "https://www.postgresql.org/ftp/source/",
+        "re": "v(10\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
