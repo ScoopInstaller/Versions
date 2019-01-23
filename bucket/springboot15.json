@@ -1,10 +1,10 @@
 {
-    "homepage": "https://projects.spring.io/spring-boot/",
-    "version": "1.5.18",
+    "homepage": "http://spring.io/projects/spring-boot",
+    "version": "1.5.19",
     "license": "Apache 2.0",
-    "hash": "b3c8c4bf92d4f112b883a17e7ad242e06a7619a0b57d195ac6e4e5ecd31ed494",
-    "url": "https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.5.18.RELEASE/spring-boot-cli-1.5.18.RELEASE-bin.zip",
-    "extract_dir": "spring-1.5.18.RELEASE",
+    "hash": "9078b97372e7550a5222a5874d68055645fe5cd05d963e9621676b6d802f5e85",
+    "url": "https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.5.19.RELEASE/spring-boot-cli-1.5.19.RELEASE-bin.zip",
+    "extract_dir": "spring-1.5.19.RELEASE",
     "bin": "bin\\spring.bat",
     "suggest": {
         "JDK": [
@@ -12,10 +12,7 @@
             "java/openjdk"
         ]
     },
-    "checkver": {
-        "github": "https://github.com/spring-projects/spring-boot",
-        "re": "/releases/tag/(?:v)?(1\\.5[\\d.]+)\\.RELEASE"
-    },
+    "checkver": "(1\\.5[\\d.]+)\\.RELEASE",
     "autoupdate": {
         "url": "https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/$version.RELEASE/spring-boot-cli-$version.RELEASE-bin.zip",
         "extract_dir": "spring-$version.RELEASE",
