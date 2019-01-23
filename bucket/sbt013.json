@@ -8,7 +8,7 @@
     "bin": "bin\\sbt.bat",
     "checkver": {
         "url": "http://www.scala-sbt.org/0.13/docs/index.html",
-        "re": "This\\sdocumentation\\sapplies\\sto\\ssbt\\s([\\d.]+)."
+        "re": "applies to sbt ([\\d.]+)\\."
     },
     "autoupdate": {
         "url": "https://cocl.us/sbt$cleanVersionzip#/dl.zip",
