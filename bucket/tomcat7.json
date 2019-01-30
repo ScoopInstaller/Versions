@@ -1,17 +1,17 @@
 {
     "homepage": "https://tomcat.apache.org/",
-    "version": "7.0.90",
+    "version": "7.0.92",
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v7.0.90/bin/apache-tomcat-7.0.90-windows-x64.zip",
-            "hash": "sha1:910776d00adb2348d32410214629b4771f435244"
+            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v7.0.92/bin/apache-tomcat-7.0.92-windows-x64.zip",
+            "hash": "eedbdaec2afd9285c8c1c6d9d925d12716c4c72d445dad70a2ccade31eaf79a0"
         },
         "32bit": {
-            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v7.0.90/bin/apache-tomcat-7.0.90-windows-x86.zip",
-            "hash": "sha1:5925a8781926439fc76310e611de852d09abd2e9"
+            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v7.0.92/bin/apache-tomcat-7.0.92-windows-x86.zip",
+            "hash": "7d3d08f5eec5c50e7ecf79fa02db5aa2ad7eb8ed12d75a5652765d5254313a8f"
         }
     },
-    "extract_dir": "apache-tomcat-7.0.90",
+    "extract_dir": "apache-tomcat-7.0.92",
     "bin": "bin\\catalina.bat",
     "env_set": {
         "CATALINA_HOME": "$dir",
