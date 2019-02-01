@@ -32,9 +32,6 @@
                 "url": "https://beta.rclone.org/rclone-beta-latest-windows-386.zip",
                 "extract_dir": "rclone-v$version-beta-windows-386"
             }
-        },
-        "hash": {
-            "url": "$url.md5"
         }
     }
 }
