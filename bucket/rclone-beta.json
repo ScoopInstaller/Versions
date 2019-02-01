@@ -1,37 +1,37 @@
 {
-  "version": "1.45-133-g291f2709",
-  "bin": [
-    [
-      "rclone.exe",
-      "rclone-beta"
-    ]
-  ],
-  "architecture": {
-    "64bit": {
-      "url": "https://beta.rclone.org/rclone-beta-latest-windows-amd64.zip",
-      "extract_dir": "rclone-v1.45-133-g291f2709-beta-windows-amd64",
-      "hash": "015e53a38417047e4f60c08892f8c93e94e51d98f78aec71be451a118899644e"
-    },
-    "32bit": {
-      "url": "https://beta.rclone.org/rclone-beta-latest-windows-386.zip",
-      "extract_dir": "rclone-v1.45-133-g291f2709-beta-windows-386",
-      "hash": "1f053740d715b8a7292961f587e9fe9b4e81c6005ec4b7fcaccc89f391e2edf1"
-    }
-  },
-  "checkver": {
-    "url": "https://beta.rclone.org/version.txt",
-    "re": "rclone v([1-9]+\\.[0-9]+-[0-9]+-[a-z0-9]+)-beta"
-  },
-  "autoupdate": {
+    "version": "1.45-133-g291f2709",
+    "bin": [
+        [
+            "rclone.exe",
+            "rclone-beta"
+        ]
+    ],
     "architecture": {
-      "64bit": {
-        "url": "https://beta.rclone.org/rclone-beta-latest-windows-amd64.zip",
-        "extract_dir": "rclone-v$version-beta-windows-amd64"
-      },
-      "32bit": {
-        "url": "https://beta.rclone.org/rclone-beta-latest-windows-386.zip",
-        "extract_dir": "rclone-v$version-beta-windows-386"
-      }
+        "64bit": {
+            "url": "https://beta.rclone.org/rclone-beta-latest-windows-amd64.zip",
+            "extract_dir": "rclone-v1.45-133-g291f2709-beta-windows-amd64",
+            "hash": "015e53a38417047e4f60c08892f8c93e94e51d98f78aec71be451a118899644e"
+        },
+        "32bit": {
+            "url": "https://beta.rclone.org/rclone-beta-latest-windows-386.zip",
+            "extract_dir": "rclone-v1.45-133-g291f2709-beta-windows-386",
+            "hash": "1f053740d715b8a7292961f587e9fe9b4e81c6005ec4b7fcaccc89f391e2edf1"
+        }
+    },
+    "checkver": {
+        "url": "https://beta.rclone.org/version.txt",
+        "re": "rclone v([1-9]+\\.[0-9]+-[0-9]+-[a-z0-9]+)-beta"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://beta.rclone.org/rclone-beta-latest-windows-amd64.zip",
+                "extract_dir": "rclone-v$version-beta-windows-amd64"
+            },
+            "32bit": {
+                "url": "https://beta.rclone.org/rclone-beta-latest-windows-386.zip",
+                "extract_dir": "rclone-v$version-beta-windows-386"
+            }
+        }
     }
-  }
 }

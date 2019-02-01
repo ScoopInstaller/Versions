@@ -1,17 +1,17 @@
 {
     "homepage": "https://dev.mysql.com/downloads/mysql/",
-    "version": "5.6.42",
+    "version": "5.6.43",
     "license": "GPLv2",
     "architecture": {
         "64bit": {
-            "url": "https://dev.mysql.com/get/mysql-5.6.42-winx64.zip",
-            "hash": "d9319cb681ef1f311f18c5f9175f4b47e961e2929d1311112ed49b9a0084557d",
-            "extract_dir": "mysql-5.6.42-winx64"
+            "url": "https://dev.mysql.com/get/mysql-5.6.43-winx64.zip",
+            "hash": "88f10e1ff1d4c10b86c95d00258882117ea7bf722a1afc626ec3ef1beabe65e4",
+            "extract_dir": "mysql-5.6.43-winx64"
         },
         "32bit": {
-            "url": "https://dev.mysql.com/get/mysql-5.6.42-win32.zip",
-            "hash": "edb1c3dd71c1b3842b636d40c9777eae0244989a91bbd0f6d912988fc641df0d",
-            "extract_dir": "mysql-5.6.42-win32"
+            "url": "https://dev.mysql.com/get/mysql-5.6.43-win32.zip",
+            "hash": "21262992aa56c8d1e2d39c0f2b264dc1f76893d328bb6f1530d8cc5d04062f83",
+            "extract_dir": "mysql-5.6.43-win32"
         }
     },
     "bin": [

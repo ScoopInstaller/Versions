@@ -1,17 +1,17 @@
 {
     "homepage": "https://tomcat.apache.org/",
-    "version": "8.5.33",
+    "version": "8.5.35",
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33-windows-x64.zip",
-            "hash": "sha1:e535093b04da7795d1e1bcde255dd91b8d2d463f"
+            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.5.35/bin/apache-tomcat-8.5.35-windows-x64.zip",
+            "hash": "3f4b973deb3fdc0b1a309459d16d4a7d2b77ae4c34dbe01bc7b080543f80f295"
         },
         "32bit": {
-            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33-windows-x86.zip",
-            "hash": "sha1:ad6a28c0c97ce95006c0850d5e57602a12c12386"
+            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.5.35/bin/apache-tomcat-8.5.35-windows-x86.zip",
+            "hash": "74b1d2b162a7ff1d72cdafcdf4093828f58205ea7cec4293c7182f9cb98f27cd"
         }
     },
-    "extract_dir": "apache-tomcat-8.5.33",
+    "extract_dir": "apache-tomcat-8.5.35",
     "bin": "bin\\catalina.bat",
     "env_set": {
         "CATALINA_HOME": "$dir",
