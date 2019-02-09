@@ -1,5 +1,5 @@
 {
-    "version": "1.45-133-g291f2709",
+    "version": "1.46-002-g71d18903",
     "bin": [
         [
             "rclone.exe",
@@ -9,13 +9,13 @@
     "architecture": {
         "64bit": {
             "url": "https://beta.rclone.org/rclone-beta-latest-windows-amd64.zip",
-            "extract_dir": "rclone-v1.45-133-g291f2709-beta-windows-amd64",
-            "hash": "015e53a38417047e4f60c08892f8c93e94e51d98f78aec71be451a118899644e"
+            "extract_dir": "rclone-v1.46-002-g71d18903-beta-windows-amd64",
+            "hash": "4c6588ceed038fe2ee26b6f0dd5ffea508efa9ce42c27d3be0faa340b70b75de"
         },
         "32bit": {
             "url": "https://beta.rclone.org/rclone-beta-latest-windows-386.zip",
-            "extract_dir": "rclone-v1.45-133-g291f2709-beta-windows-386",
-            "hash": "1f053740d715b8a7292961f587e9fe9b4e81c6005ec4b7fcaccc89f391e2edf1"
+            "extract_dir": "rclone-v1.46-002-g71d18903-beta-windows-386",
+            "hash": "a7dbad36662c0d15cbc90f0cb8f2496bef527af1e58434e2ef531a3e164f100c"
         }
     },
     "checkver": {
