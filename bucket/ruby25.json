@@ -1,0 +1,46 @@
+{
+    "homepage": "https://rubyinstaller.org",
+    "version": "2.5.3-1",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.3-1/rubyinstaller-2.5.3-1-x64.7z",
+            "hash": "eabd682a6fb886a22168f568b9c508318f045dc2e130b2668e39c4a81d340ec9",
+            "extract_dir": "rubyinstaller-2.5.3-1-x64"
+        },
+        "32bit": {
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.3-1/rubyinstaller-2.5.3-1-x86.7z",
+            "hash": "dc24e05c2c1490c74c6a7256c015cb786fb5f1898f2d8c92cbe4ca8fa271f24a",
+            "extract_dir": "rubyinstaller-2.5.3-1-x86"
+        }
+    },
+    "persist": "gems",
+    "env_add_path": [
+        "bin",
+        "gems\\bin"
+    ],
+    "env_set": {
+        "GEM_HOME": "$dir\\gems",
+        "GEM_PATH": "$dir\\gems"
+    },
+    "suggest": {
+        "MSYS2": "msys2"
+    },
+    "post_install": "gem install rake",
+    "notes": "Install MSYS2 via 'scoop install msys2' and then run 'ridk install' to install the toolchain!",
+    "checkver": {
+        "url": "https://github.com/oneclick/rubyinstaller2/releases",
+        "re": "/releases/tag/(?:v|RubyInstaller-)?(2\\.5[\\d.]+(?:-[\\d])?)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-$version/rubyinstaller-$version-x64.7z",
+                "extract_dir": "rubyinstaller-$version-x64"
+            },
+            "32bit": {
+                "url": "https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-$version/rubyinstaller-$version-x86.7z",
+                "extract_dir": "rubyinstaller-$version-x86"
+            }
+        }
+    }
+}
