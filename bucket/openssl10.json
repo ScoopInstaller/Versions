@@ -1,19 +1,19 @@
 {
     "description": "TLS/SSL toolkit (1.0.x branch)",
     "homepage": "https://slproweb.com/products/Win32OpenSSL.html",
-    "version": "1.0.2q",
+    "version": "1.0.2r",
     "license": {
         "identifier": "OpenSSL|SSLeay",
         "url": "https://www.openssl.org/source/license-openssl-ssleay.txt"
     },
     "architecture": {
         "32bit": {
-            "url": "https://slproweb.com/download/Win32OpenSSL_Light-1_0_2q.exe",
-            "hash": "0605a16d41cba761beee3930c4a2e5c6a20b20b28d4abd0608028d8aee0fe438"
+            "url": "https://slproweb.com/download/Win32OpenSSL_Light-1_0_2r.exe",
+            "hash": "73b7678cc4890ef123cacdfbc81f549262d09dd167dbe212f96b94745e561722"
         },
         "64bit": {
-            "url": "https://slproweb.com/download/Win64OpenSSL_Light-1_0_2q.exe",
-            "hash": "3c8de534115fe7c3d53919d4727bcb1413920299c61f2413503a06815b4aa957"
+            "url": "https://slproweb.com/download/Win64OpenSSL_Light-1_0_2r.exe",
+            "hash": "a61a6f1bc175b92f4462e4b6576cef53b764ce7f81fadc2151f00307f2f3e565"
         }
     },
     "innosetup": true,
