@@ -55,7 +55,7 @@
     "env_add_path": "scripts",
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
-        "re": "Python (3\\.5\\.[\\d.]+)"
+        "re": "python-(3\\.5\\.[\\d.]+)-"
     },
     "autoupdate": {
         "architecture": {
