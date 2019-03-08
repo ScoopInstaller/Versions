@@ -1,0 +1,41 @@
+{
+    "homepage": "https://tomcat.apache.org/",
+    "version": "8.5.38",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38-windows-x64.zip",
+            "hash": "sha512:fadfcf639b81b18590ef796ec0a132c76d19db097abfaf451b92f0102f0bea994309503d0b70fdcbd0843d84fabd09310100f0e9004cc91e1826eceab993943c"
+        },
+        "32bit": {
+            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38-windows-x86.zip",
+            "hash": "sha512:6bad40514848721a80a76f29e767d85ff3f24a90e8d603039e9d8385af3cf5b74d7456ae300d1c9293331f1837e82d750fb002f52e9f568e108b1c3e45889e02"
+        }
+    },
+    "extract_dir": "apache-tomcat-8.5.38",
+    "bin": "bin\\catalina.bat",
+    "env_set": {
+        "CATALINA_HOME": "$dir",
+        "CATALINA_BASE": "$dir"
+    },
+    "suggest": {
+        "JRE": "java/openjdk"
+    },
+    "checkver": {
+        "url": "https://www.apache.org/dist/tomcat/tomcat-8/?C=M;O=D",
+        "re": "v(?<version>8.[\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x64.zip"
+            },
+            "32bit": {
+                "url": "https://www.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x86.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha512"
+        },
+        "extract_dir": "apache-tomcat-$version"
+    }
+}
