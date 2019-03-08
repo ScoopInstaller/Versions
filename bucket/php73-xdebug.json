@@ -4,43 +4,43 @@
         "identifier": "Xdebug-1.01",
         "url": "https://xdebug.org/license.php"
     },
-    "version": "2.7.0-7.1",
+    "version": "2.7.0-7.3",
     "architecture": {
         "64bit": {
-            "url": "https://xdebug.org/files/php_xdebug-2.7.0-7.1-vc14-x86_64.dll#/php_xdebug.dll",
-            "hash": "8d50d94f80cda8b84d48ad9452a46baaa10d07c5d0bff7aded6afdb2c6db7a1a"
+            "url": "https://xdebug.org/files/php_xdebug-2.7.0-7.3-vc15-x86_64.dll#/php_xdebug.dll",
+            "hash": "cfc538319c10153fcc34f66ec57c06b10c66ab6fd298dca1bd6a2ca94645ea15"
         },
         "32bit": {
-            "url": "https://xdebug.org/files/php_xdebug-2.7.0-7.1-vc14.dll#/php_xdebug.dll",
-            "hash": "110268950838463e414527ea776dcc3c3b872e1677314e447c2525834ccc9321"
+            "url": "https://xdebug.org/files/php_xdebug-2.7.0-7.3-vc15.dll#/php_xdebug.dll",
+            "hash": "89db53094322082cf622125078e47e9b2d90ee362f114f5f58d4d21758f1ce1d"
         }
     },
     "post_install": [
-        "$phpconfd = \"$persist_dir\\..\\php71\\cli\\conf.d\"",
+        "$phpconfd = \"$persist_dir\\..\\php73\\cli\\conf.d\"",
         "$ini = \"zend_extension=$dir\\php_xdebug.dll`n[xdebug]`nxdebug.remote_enable=on`nxdebug.remote_autostart=on`nxdebug.remote_connect_back=on\"",
         "if(!(test-path $phpconfd\\xdebug.ini)) {",
         "    Write-Output \"Enabling extension $(Convert-Path $phpconfd)\\xdebug.ini\"",
         "    Add-Content -Value $ini -Path \"$phpconfd\\xdebug.ini\"",
         "} else {",
-        "    Write-Host -f Yellow \"PHP 7.1 was not installed through scoop, you have to activate php_xdebug.dll manually! Add the following:`n\"",
+        "    Write-Host -f Yellow \"PHP 7.3 was not installed through scoop, you have to activate php_xdebug.dll manually! Add the following:`n\"",
         "    Write-Host -f Cyan \"$ini`n`n\"",
         "}"
     ],
     "notes": [
-        "Xdebug is already enabled if PHP 7.1 was installed through scoop!",
+        "Xdebug is already enabled if PHP 7.3 was installed through scoop!",
         "Otherwise add '$dir\\php_xdebug.dll' to your php.ini"
     ],
     "checkver": {
         "url": "https://xdebug.org/download.php",
-        "re": "php_xdebug-([\\d.]+-7.1)-vc14-x86_64.dll"
+        "re": "php_xdebug-([\\d.]+-7.3)-vc15-x86_64.dll"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://xdebug.org/files/php_xdebug-$version-vc14-x86_64.dll#/php_xdebug.dll"
+                "url": "https://xdebug.org/files/php_xdebug-$version-vc15-x86_64.dll#/php_xdebug.dll"
             },
             "32bit": {
-                "url": "https://xdebug.org/files/php_xdebug-$version-vc14.dll#/php_xdebug.dll"
+                "url": "https://xdebug.org/files/php_xdebug-$version-vc15.dll#/php_xdebug.dll"
             }
         },
         "hash": {
