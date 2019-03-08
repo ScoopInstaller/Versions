@@ -1,17 +1,17 @@
 {
     "homepage": "https://tomcat.apache.org/",
-    "version": "7.0.92",
+    "version": "7.0.93",
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v7.0.92/bin/apache-tomcat-7.0.92-windows-x64.zip",
-            "hash": "eedbdaec2afd9285c8c1c6d9d925d12716c4c72d445dad70a2ccade31eaf79a0"
+            "url": "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.93/bin/apache-tomcat-7.0.93-windows-x64.zip",
+            "hash": "sha512:2c3bf0645c0c1b28d38e38f2666e9e9adb688d7cad647a7baf16cbbba843723dda51c3af7c5ba926539d8bb9a4069318e183d58e1241572116360e0cb6c6694e"
         },
         "32bit": {
-            "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v7.0.92/bin/apache-tomcat-7.0.92-windows-x86.zip",
-            "hash": "7d3d08f5eec5c50e7ecf79fa02db5aa2ad7eb8ed12d75a5652765d5254313a8f"
+            "url": "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.93/bin/apache-tomcat-7.0.93-windows-x86.zip",
+            "hash": "sha512:0595045f34a36914deb1fea7276c8335f6b4745aba6b8558abb598103ad4eceda831bd6a6c9e7f42e6a0d21be0715fc9b389f696a2767acff258f739bfa66d7e"
         }
     },
-    "extract_dir": "apache-tomcat-7.0.92",
+    "extract_dir": "apache-tomcat-7.0.93",
     "bin": "bin\\catalina.bat",
     "env_set": {
         "CATALINA_HOME": "$dir",
@@ -21,25 +21,20 @@
         "JRE": "java/openjdk"
     },
     "checkver": {
-        "url": "https://www.apache.org/dist/tomcat/tomcat-7/",
-        "re": "v(?<version>7.0.[\\d]+)"
+        "url": "https://www.apache.org/dist/tomcat/tomcat-7/?C=M;O=D",
+        "re": "v(?<version>[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x64.zip",
-                "hash": {
-                    "url": "https://www.apache.org/dist/tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x64.zip.sha1",
-                    "find": "([a-fA-F0-9]+)"
-                }
+                "url": "https://www.apache.org/dist/tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x64.zip"
             },
             "32bit": {
-                "url": "https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x86.zip",
-                "hash": {
-                    "url": "https://www.apache.org/dist/tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x86.zip.sha1",
-                    "find": "([a-fA-F0-9]+)"
-                }
+                "url": "https://www.apache.org/dist/tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x86.zip"
             }
+        },
+        "hash": {
+            "url": "$url.sha512"
         },
         "extract_dir": "apache-tomcat-$version"
     }
