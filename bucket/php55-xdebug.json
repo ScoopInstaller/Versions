@@ -22,12 +22,12 @@
         "    Write-Output \"Enabling extension $(Convert-Path $phpconfd)\\xdebug.ini\"",
         "    Add-Content -Value $ini -Path \"$phpconfd\\xdebug.ini\"",
         "} else {",
-        "    Write-Host -f Yellow \"PHP was not installed through scoop, you have to activate php_xdebug.dll manually! Add the following:`n\"",
+        "    Write-Host -f Yellow \"PHP 5.5 was not installed through scoop, you have to activate php_xdebug.dll manually! Add the following:`n\"",
         "    Write-Host -f Cyan \"$ini`n`n\"",
         "}"
     ],
     "notes": [
-        "Xdebug is already enabled if PHP was installed through scoop!",
+        "Xdebug is already enabled if PHP 5.5 was installed through scoop!",
         "Otherwise add '$dir\\php_xdebug.dll' to your php.ini"
     ],
     "checkver": {
