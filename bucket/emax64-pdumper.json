@@ -1,0 +1,41 @@
+{
+    "homepage": "https://ntemacs.sourceforge.io",
+    "description": "\r\n* 64-bit Windows build of emacs-pdumper branch (27.0.50).\r\n* Pathed with ImageMagick 7 support. Binaries and libs inclued.\r\n* PDF-Tools (epdfinfo.exe) inclued. [emax.7z packge]\r\n* Features[1]: \"XPM JPEG TIFF GIF PNG RSVG IMAGEMAGICK SOUND NOTIFY ACL GNUTLS LIBXML2 ZLIB TOOLKIT_SCROLL_BARS MODULES THREADS JSON CANNOT_DUMP LCMS2\"\r\n* Optimized clean build. Options[2]: \"--without-compress-install --without-dbus --with-modules 'CFLAGS= -O2 -g3'\"\r\n* Built and tested on a clean Windows 10 system.\r\n* addpm modified to not create/update any registry HOME entries. It only creates shortcuts as it should.",
+    "version": "20180619",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/m-parashar/emax64/releases/download/pdumper-20180619/emax64-pdumper-bin-20180619.7z",
+            "hash": "sha512:375106c45990228709da310934fbe565b02fa241f7dfe575bc6d508de60a0b6d5d7ccbd6ed7508ad6ed8fde9392125b0d144391a0f57365e479c52a6f68120b9"
+        }
+    },
+    "extract_dir": "emax64pd",
+    "bin": [
+        "bin\\runemacs.exe",
+        "bin\\emacs.exe",
+        "bin\\emacsclientw.exe",
+        "bin\\emacs-27.0.50.exe"
+    ],
+    "shortcuts": [
+        [
+            "bin\\runemacs.exe",
+            "EMAX64"
+        ],
+        [
+            "bin\\emacsclientw.exe",
+            "EMAX64 Client",
+            " -c -n -a \"\""
+        ]
+    ],
+    "checkver": {
+        "url": "https://github.com/m-parashar/emax64/releases.atom",
+        "regex": "\\/releases\\/tag\\/pdumper-(\\d+)"
+    },
+    "autoupdate":{
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/m-parashar/emax64/releases/download/pdumper-$version/emax64-pdumper-bin-$version.7z"
+            }
+        }
+    }
+}
