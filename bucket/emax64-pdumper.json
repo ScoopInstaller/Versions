@@ -1,6 +1,6 @@
 {
     "homepage": "https://ntemacs.sourceforge.io",
-    "description": "\r\n* 64-bit Windows build of emacs-pdumper branch (27.0.50).\r\n* Pathed with ImageMagick 7 support. Binaries and libs inclued.\r\n* PDF-Tools (epdfinfo.exe) inclued. [emax.7z packge]\r\n* Features[1]: \"XPM JPEG TIFF GIF PNG RSVG IMAGEMAGICK SOUND NOTIFY ACL GNUTLS LIBXML2 ZLIB TOOLKIT_SCROLL_BARS MODULES THREADS JSON CANNOT_DUMP LCMS2\"\r\n* Optimized clean build. Options[2]: \"--without-compress-install --without-dbus --with-modules 'CFLAGS= -O2 -g3'\"\r\n* Built and tested on a clean Windows 10 system.\r\n* addpm modified to not create/update any registry HOME entries. It only creates shortcuts as it should.",
+    "description": "An optimized clean build of emacs-pdumper branch (27.0.50) for 64-bit Windows. Built with `--without-compress-install --without-dbus --with-modules 'CFLAGS= -O2 -g3'`",
     "version": "20180619",
     "license": "GPL-3.0-or-later",
     "architecture": {
