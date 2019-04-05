@@ -1,5 +1,5 @@
 {
-    "version": "2018.12",
+    "version": "2019.03",
     "license": "BSD-3-Clause",
     "homepage": "https://www.anaconda.com/",
     "checkver": {
@@ -31,12 +31,12 @@
     "env_add_path": "Scripts",
     "architecture": {
         "64bit": {
-            "url": "https://repo.continuum.io/archive/Anaconda2-2018.12-Windows-x86_64.exe",
-            "hash": "7571d334eac3b9bd4f3e199fc5f493f0601890620c22e6d487246bde90497425"
+            "url": "https://repo.continuum.io/archive/Anaconda2-2019.03-Windows-x86_64.exe",
+            "hash": "96c21ae0d152755e8f4ac4a593da4063e0f3796064dbe25dbbad163e926f94ec"
         },
         "32bit": {
-            "url": "https://repo.continuum.io/archive/Anaconda2-2018.12-Windows-x86.exe",
-            "hash": "d75d51c8f9a7c345128805a55db3856f6999dd6aa11f31c0009c640fe0e8da61"
+            "url": "https://repo.continuum.io/archive/Anaconda2-2019.03-Windows-x86.exe",
+            "hash": "76be4b3d1f7a1207b786cbb54b3ed526126ee0d4facf41e662b4136224581860"
         }
     },
     "autoupdate": {
