@@ -31,8 +31,8 @@
         "tesseract-languages": "tesseract3-languages"
     },
     "checkver": {
-        "re": "tesseract-ocr-setup-(3.[\\d\\w.-]+)\\.exe",
-        "url": "https://digi.bib.uni-mannheim.de/tesseract/?C=M;O=D"
+        "url": "https://digi.bib.uni-mannheim.de/tesseract/?C=M;O=D",
+        "regex": "tesseract-ocr-setup-(3.[\\d\\w.-]+)\\.exe"
     },
     "autoupdate": {
         "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-$version.exe#/dl.7z"
