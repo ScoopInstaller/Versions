@@ -2,6 +2,7 @@
     "homepage": "https://atom.io/",
     "version": "1.36.0-beta2",
     "license": "MIT",
+    "description": "The hackable text editor (beta edition).",
     "architecture": {
         "64bit": {
             "url": "https://github.com/atom/atom/releases/download/v1.36.0-beta2/atom-x64-1.36.0-beta2-full.nupkg",
@@ -14,8 +15,8 @@
     },
     "extract_dir": "lib\\net45",
     "bin": [
-        "\\resources\\cli\\atom.cmd",
-        "\\resources\\app\\apm\\bin\\apm.cmd"
+        "resources\\cli\\atom.cmd",
+        "resources\\app\\apm\\bin\\apm.cmd"
     ],
     "shortcuts": [
         [
