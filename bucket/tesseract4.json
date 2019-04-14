@@ -1,30 +1,8 @@
 {
     "homepage": "https://github.com/UB-Mannheim/tesseract/wiki",
     "license": "Apache-2.0",
-    "description": "OCR engine developed by Google.",
     "version": "4.1.0.20190314",
-    "bin": [
-        "ambiguous_words.exe",
-        "classifier_tester.exe",
-        "cntraining.exe",
-        "combine_tessdata.exe",
-        "dawg2wordlist.exe",
-        "mftraining.exe",
-        "set_unicharset_properties.exe",
-        "shapeclustering.exe",
-        "tesseract.exe",
-        "text2image.exe",
-        "unicharset_extractor.exe",
-        "wordlist2dawg.exe"
-    ],
-    "env_set": {
-        "TESSDATA_PREFIX": "$dir"
-    },
-    "persist": "tessdata",
-    "notes": [
-        "64bit version is experimental.",
-        "Language data files can be downloaded from https://github.com/tesseract-ocr/tessdata"
-    ],
+    "description": "Open Source OCR Engine",
     "architecture": {
         "64bit": {
             "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v4.1.0.20190314.exe#/dl.7z",
@@ -35,9 +13,38 @@
             "hash": "87b8041504f304e6e7d942acab7683989eed2440a6c8f8581755810c96ec18f8"
         }
     },
+    "bin": [
+        "ambiguous_words.exe",
+        "classifier_tester.exe",
+        "cntraining.exe",
+        "combine_lang_model.exe",
+        "combine_tessdata.exe",
+        "dawg2wordlist.exe",
+        "lstmeval.exe",
+        "lstmtraining.exe",
+        "merge_unicharsets.exe",
+        "mftraining.exe",
+        "set_unicharset_properties.exe",
+        "shapeclustering.exe",
+        "tesseract.exe",
+        "text2image.exe",
+        "unicharset_extractor.exe",
+        "wordlist2dawg.exe"
+    ],
+    "env_set": {
+        "TESSDATA_PREFIX": "$persist_dir\\tessdata"
+    },
+    "persist": "tessdata",
+    "notes": [
+        "Recognition data files can be installed via \"scoop install tesseract4-languages\"",
+        "or downloaded manually from https://github.com/tesseract-ocr/tessdata_fast"
+    ],
+    "suggest": {
+        "tesseract-languages": "tesseract4-languages"
+    },
     "checkver": {
-        "re": "tesseract-ocr-w32-setup-v(?<version>4.[\\d\\w.-]+)\\.exe",
-        "url": "https://github.com/UB-Mannheim/tesseract/wiki"
+        "url": "https://digi.bib.uni-mannheim.de/tesseract/?C=M;O=D",
+        "regex": "tesseract-ocr-w32-setup-v(4.[\\d\\w.-]+)\\.exe"
     },
     "autoupdate": {
         "architecture": {

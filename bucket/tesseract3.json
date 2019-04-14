@@ -2,6 +2,7 @@
     "homepage": "https://github.com/UB-Mannheim/tesseract/wiki",
     "license": "Apache-2.0",
     "version": "3.05.02-20180621",
+    "description": "Open Source OCR Engine",
     "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-3.05.02-20180621.exe#/dl.7z",
     "hash": "26bd9ab1fadf0334a6fb60a45269d87e8a60824df82b7cc74c6d665c0fc1ec0c",
     "bin": [
@@ -22,10 +23,16 @@
         "TESSDATA_PREFIX": "$persist_dir\\tessdata"
     },
     "persist": "tessdata",
-    "notes": "Language data files can be downloaded from https://github.com/tesseract-ocr/tessdata",
+    "notes": [
+        "Recognition data files can be installed via \"scoop install tesseract3-languages\"",
+        "or downloaded manually from https://github.com/tesseract-ocr/tessdata"
+    ],
+    "suggest": {
+        "tesseract-languages": "tesseract3-languages"
+    },
     "checkver": {
-        "re": "tesseract-ocr-setup-(?<version>3.[\\d\\w.-]+).exe",
-        "url": "https://github.com/UB-Mannheim/tesseract/wiki"
+        "url": "https://digi.bib.uni-mannheim.de/tesseract/?C=M;O=D",
+        "regex": "tesseract-ocr-setup-(3.[\\d\\w.-]+)\\.exe"
     },
     "autoupdate": {
         "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-$version.exe#/dl.7z"
