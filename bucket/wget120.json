@@ -1,0 +1,20 @@
+{
+    "homepage": "https://eternallybored.org/misc/wget/",
+    "license": "GPL-3.0",
+    "version": "1.20",
+    "architecture": {
+        "64bit": {
+            "url": "https://eternallybored.org/misc/wget/releases/old/wget-1.20-win64.zip",
+            "hash": "30a42d3fb78758a5bc4bf9acc661584cac7958bf33b35ce7927b5e49d380449f"
+        },
+        "32bit": {
+            "url": "https://eternallybored.org/misc/wget/releases/old/wget-1.20-win32.zip",
+            "hash": "a38f689548729c58b79aabde6778d05a43f7222e133ae185474b8902663c63a9"
+        }
+    },
+    "bin": "wget.exe",
+    "depends": "cacert",
+    "post_install": "\"ca_certificate=$(appdir cacert $global)\\current\\cacert.pem\" | out-file \"$dir\\wget.ini\" -encoding default",
+    "checkver": "<title>GNU Wget ([\\d.]+) for Windows",
+    "notes": "Version 1.20.3 has issues. See https://github.com/lukesampson/scoop/issues/3331 and https://eternallybored.org/misc/wget/"
+}
