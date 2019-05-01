@@ -1,5 +1,6 @@
 {
     "homepage": "https://nodejs.org",
+    "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
     "version": "9.11.2",
     "license": "MIT",
     "architecture": {
@@ -42,7 +43,7 @@
             }
         },
         "hash": {
-            "url": "$baseurl/SHASUMS256.txt.asc"
+            "url": "$baseurl/SHASUMS256.txt"
         }
     }
 }

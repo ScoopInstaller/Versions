@@ -1,18 +1,18 @@
 {
     "homepage": "https://nodejs.org",
     "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
-    "version": "7.10.1",
+    "version": "10.15.3",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v7.10.1/node-v7.10.1-win-x64.7z",
-            "hash": "38be44aa73fd057d22b13f5b5adf55008add5b890d9c018cff416515af44ff08",
-            "extract_dir": "node-v7.10.1-win-x64"
+            "url": "https://nodejs.org/dist/v10.15.3/node-v10.15.3-win-x64.7z",
+            "hash": "9df98cac063229aca443c040fd342a96667891bb8eda821d10aa4d49347d7add",
+            "extract_dir": "node-v10.15.3-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v7.10.1/node-v7.10.1-win-x86.7z",
-            "hash": "0568d134d189521a0a0c933082dc7192a0c07b753d2dca9a6c61ee219de7745e",
-            "extract_dir": "node-v7.10.1-win-x86"
+            "url": "https://nodejs.org/dist/v10.15.3/node-v10.15.3-win-x86.7z",
+            "hash": "597a372964252daaba4cb8dcac57305f79cffeeca579625f0cd6ab85d29ccdda",
+            "extract_dir": "node-v10.15.3-win-x86"
         }
     },
     "persist": [
@@ -28,7 +28,7 @@
         "Set-Content -Value \"prefix=$persist_dir\\bin`ncache=$persist_dir\\cache\" -Path \"$dir\\node_modules\\npm\\npmrc\""
     ],
     "checkver": {
-        "url": "https://nodejs.org/dist/latest-v7.x/",
+        "url": "https://nodejs.org/dist/latest-v10.x/",
         "re": "node-v([\\d.]+)-x86.msi"
     },
     "autoupdate": {
