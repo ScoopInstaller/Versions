@@ -19,6 +19,8 @@
             "PowerShell Core"
         ]
     ],
+    "pre_install": "if(!(Test-Path \"$dir\\profile.ps1\")) { New-Item \"$dir\\profile.ps1\" -ItemType File }",
+    "persist": "profile.ps1",
     "checkver": {
         "url": "https://github.com/PowerShell/PowerShell/releases.atom",
         "re": "\\/releases\\/tag\\/(?:v)?([\\d.]+-[a-z]+[\\d.]+)"
