@@ -1,16 +1,16 @@
 {
     "homepage": "https://atom.io/",
-    "version": "1.39.0-beta1",
+    "version": "1.39.0-beta2",
     "license": "MIT",
     "description": "The hackable text editor (beta edition).",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/atom/atom/releases/download/v1.39.0-beta1/atom-x64-1.39.0-beta1-full.nupkg",
-            "hash": "sha1:1e661cf700db55483d0f0f16db8b6c27d2883d94"
+            "url": "https://github.com/atom/atom/releases/download/v1.39.0-beta2/atom-x64-1.39.0-beta2-full.nupkg",
+            "hash": "sha1:98b31496c93e6708dc22053b2f02f5b06112c185"
         },
         "32bit": {
-            "url": "https://github.com/atom/atom/releases/download/v1.39.0-beta1/atom-1.39.0-beta1-full.nupkg",
-            "hash": "sha1:ec36f4d25f76101ef5b0551e88f9488eb8125c79"
+            "url": "https://github.com/atom/atom/releases/download/v1.39.0-beta2/atom-1.39.0-beta2-full.nupkg",
+            "hash": "sha1:ffbef23498e2f07476003dc285b2b2730f74c321"
         }
     },
     "extract_dir": "lib\\net45",
