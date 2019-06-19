@@ -7,11 +7,11 @@
     "version": "7.0.33",
     "architecture": {
         "64bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.0.33-Win32-VC14-x64.zip",
+            "url": "https://windows.php.net/downloads/releases/archives/php-7.0.33-Win32-VC14-x64.zip",
             "hash": "8a22c93732b576507888e011b147df80beee7b7e24f527cb6e1282b5228350c2"
         },
         "32bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.0.33-Win32-VC14-x86.zip",
+            "url": "https://windows.php.net/downloads/releases/archives/php-7.0.33-Win32-VC14-x86.zip",
             "hash": "5c5b7e3c4b80a6e8984dca6bb1a1e1909c5dfb2b83b0242978020f78a473ab9c"
         }
     },
@@ -40,23 +40,6 @@
         "# Enable extensions to be found in installation-relative folder (the default is to search C:/php)",
         "(gc \"$dir\\cli\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\cli\\php.ini\""
     ],
-    "checkver": {
-        "url": "https://windows.php.net/download/",
-        "re": "<h3 id=\"php-7.0\".*?>.*?\\(([\\d.]+)\\)</h3>"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC14-x64.zip"
-            },
-            "32bit": {
-                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC14-x86.zip"
-            }
-        },
-        "hash": {
-            "url": "$baseurl/sha256sum.txt"
-        }
-    },
     "suggest": {
         "vcredist": "extras/vcredist2015"
     }
