@@ -1,5 +1,7 @@
 {
+    "homepage": "https://neovim.io/",
     "version": "nightly",
+    "description": "Vim-fork focused on extensibility and usability",
     "license": {
         "identifier": "Apache-2.0,MIT,Vim",
         "url": "https://github.com/neovim/neovim/blob/master/LICENSE"
@@ -12,10 +14,6 @@
             "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win32.zip"
         }
     },
-    "suggest": {
-        "vcredist": "extras/vcredist2015"
-    },
-    "homepage": "https://neovim.io/",
     "bin": [
         "Neovim\\bin\\nvim.exe",
         "Neovim\\bin\\nvim-qt.exe"
@@ -25,5 +23,8 @@
             "Neovim\\bin\\nvim-qt.exe",
             "Neovim"
         ]
-    ]
+    ],
+    "suggest": {
+        "vcredist": "extras/vcredist2015"
+    }
 }
