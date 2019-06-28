@@ -44,7 +44,7 @@
     ],
     "checkver": {
         "url": "https://www.mongodb.com/download-center/community",
-        "re": "([\\d.]+) \\(development release\\)"
+        "re": ">([\\d.]+) \\(development release\\)"
     },
     "autoupdate": {
         "architecture": {
