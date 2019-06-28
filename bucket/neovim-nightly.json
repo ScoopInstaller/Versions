@@ -14,13 +14,14 @@
             "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win32.zip"
         }
     },
+    "extract_dir": "Neovim",
     "bin": [
-        "Neovim\\bin\\nvim.exe",
-        "Neovim\\bin\\nvim-qt.exe"
+        "bin\\nvim.exe",
+        "bin\\nvim-qt.exe"
     ],
     "shortcuts": [
         [
-            "Neovim\\bin\\nvim-qt.exe",
+            "bin\\nvim-qt.exe",
             "Neovim"
         ]
     ],
