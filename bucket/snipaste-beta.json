@@ -1,0 +1,45 @@
+{
+    "homepage": "https://www.snipaste.com/",
+    "version": "2.2.0",
+    "license": "Freeware",
+    "description": "Snip & Paste, a simple but powerful snipping tool.",
+    "architecture": {
+        "64bit": {
+            "url": "https://bitbucket.org/liule/snipaste/downloads/Snipaste-2.2.0-Beta-x64.zip",
+            "hash": "sha1:7c8fc059ec2e2b305e962c5dc4a748ebd660e248"
+        },
+        "32bit": {
+            "url": "https://bitbucket.org/liule/snipaste/downloads/Snipaste-2.2.0-Beta-x86.zip",
+            "hash": "sha1:947650527a768fc5bf05329381b6dd2b5e5348a1"
+        }
+    },
+    "pre_install": "if (!(Test-Path \"$dir\\config.ini\")) { Set-Content \"$dir\\config.ini\" '' -Encoding ASCII }",
+    "persist": [
+        "history",
+        "config.ini"
+    ],
+    "bin": "Snipaste.exe",
+    "shortcuts": [
+        [
+            "Snipaste.exe",
+            "Snipaste"
+        ]
+    ],
+    "suggest": {
+        "vcredist": "extras/vcredist2015"
+    },
+    "checkver": "(?sm)Desktop.*?>v([\\d.]+) Beta",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://bitbucket.org/liule/snipaste/downloads/Snipaste-$version-Beta-x64.zip"
+            },
+            "32bit": {
+                "url": "https://bitbucket.org/liule/snipaste/downloads/Snipaste-$version-Beta-x86.zip"
+            }
+        },
+        "hash": {
+            "url": "https://dl.snipaste.com/sha-1.txt"
+        }
+    }
+}
