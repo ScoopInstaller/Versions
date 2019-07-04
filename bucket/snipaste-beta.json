@@ -13,7 +13,7 @@
             "hash": "sha1:947650527a768fc5bf05329381b6dd2b5e5348a1"
         }
     },
-    "pre_install": "if (!(Test-Path \"$dir\\config.ini\")) { Set-Content \"$dir\\config.ini\" '' -Encoding ASCII }",
+    "pre_install": "if (!(Test-Path \"$persist_dir\\config.ini\")) { Set-Content \"$dir\\config.ini\" '' -Encoding ASCII }",
     "persist": [
         "history",
         "config.ini"
