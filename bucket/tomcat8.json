@@ -1,17 +1,17 @@
 {
     "homepage": "https://tomcat.apache.org/",
-    "version": "8.5.42",
+    "version": "8.5.43",
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42-windows-x64.zip",
-            "hash": "sha512:5a92d41d078d3963d58c38dfa1e47a8e42d9d8320bf2c0dc1ab2aceda2d9c1bc90794a711a8eedabfd4ea4b61c7a8c9a96a5db14a1b9beea9bf1db5e9767034b"
+            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.5.43/bin/apache-tomcat-8.5.43-windows-x64.zip",
+            "hash": "sha512:31b217562485d725f087379f06e87e72ce31d8b3359debc1a12e4aba1a562e2f4a36635387d29909105e3c7936f468810dbb8494483551350c15c302ea3ae0d6"
         },
         "32bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42-windows-x86.zip",
-            "hash": "sha512:427e02445194b41919c554709b84865bbde1d5dcf37fc498a4ab11ecbd3a84125f03e2d2a0ac93d1536eab1fcc5109f529a56e31e01d237026fef8435298bce0"
+            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.5.43/bin/apache-tomcat-8.5.43-windows-x86.zip",
+            "hash": "sha512:1f87005ffc285c8cf5cb204cb2a7ab35da1347796af262c7ea2dfa250b25598a36c4714dcc27d91062d292a6d1d2d08615da6c1e28db432950ccc4d463f548cc"
         }
     },
-    "extract_dir": "apache-tomcat-8.5.42",
+    "extract_dir": "apache-tomcat-8.5.43",
     "bin": "bin\\catalina.bat",
     "env_set": {
         "CATALINA_HOME": "$dir",
