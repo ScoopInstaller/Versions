@@ -1,35 +1,34 @@
 {
-    "description": "TLS/SSL toolkit (1.0.x branch)",
     "homepage": "https://slproweb.com/products/Win32OpenSSL.html",
-    "version": "1.0.2s",
+    "version": "1.1.1c",
     "license": {
         "identifier": "OpenSSL|SSLeay",
         "url": "https://www.openssl.org/source/license-openssl-ssleay.txt"
     },
     "architecture": {
-        "32bit": {
-            "url": "https://slproweb.com/download/Win32OpenSSL-1_0_2s.exe",
-            "hash": "92be0ecb3b8cd533fe1839ddcd20dc3ab4cddbe21c3025fe6cc0ca5442136334"
-        },
         "64bit": {
-            "url": "https://slproweb.com/download/Win64OpenSSL-1_0_2s.exe",
-            "hash": "498288f0584612c0e0234805bc227aa3992ea173c534e2f9c650568598c122a5"
+            "url": "https://slproweb.com/download/Win64OpenSSL_Light-1_1_1c.exe",
+            "hash": "69723821b9d55760e59be647ceb7ecf26e3ae044ebab4e3c4b492105a5992ef8"
+        },
+        "32bit": {
+            "url": "https://slproweb.com/download/Win32OpenSSL_Light-1_1_1c.exe",
+            "hash": "69ae9e27c98a2ac87c210a22e1ab556ad65ab8b3a859b7f9cf1b109bd0530eac"
         }
     },
     "innosetup": true,
     "bin": "bin\\openssl.exe",
     "env_add_path": "bin",
     "env_set": {
-        "OPENSSL_CONF": "$dir\\bin\\openssl.cfg"
+        "OPENSSL_CONF": "$dir\\bin\\cnf\\openssl.cnf"
     },
-    "checkver": ">Win32 OpenSSL v(1\\.0\\.[\\w]+)<",
+    "checkver": "Win32 OpenSSL v([^\\s]+)\\s+Light",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://slproweb.com/download/Win64OpenSSL-$underscoreVersion.exe"
+                "url": "https://slproweb.com/download/Win64OpenSSL_Light-$underscoreVersion.exe"
             },
             "32bit": {
-                "url": "https://slproweb.com/download/Win32OpenSSL-$underscoreVersion.exe"
+                "url": "https://slproweb.com/download/Win32OpenSSL_Light-$underscoreVersion.exe"
             }
         },
         "hash": {
