@@ -1,11 +1,11 @@
 {
-    "description": "TLS/SSL toolkit (1.0.x branch)",
     "homepage": "https://slproweb.com/products/Win32OpenSSL.html",
     "version": "1.0.2s",
     "license": {
         "identifier": "OpenSSL|SSLeay",
         "url": "https://www.openssl.org/source/license-openssl-ssleay.txt"
     },
+    "description": "TLS/SSL toolkit (1.0.x branch)",
     "architecture": {
         "32bit": {
             "url": "https://slproweb.com/download/Win32OpenSSL-1_0_2s.exe",
@@ -18,7 +18,6 @@
     },
     "innosetup": true,
     "bin": "bin\\openssl.exe",
-    "env_add_path": "bin",
     "env_set": {
         "OPENSSL_CONF": "$dir\\bin\\openssl.cfg"
     },

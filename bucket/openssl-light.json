@@ -5,6 +5,7 @@
         "identifier": "OpenSSL|SSLeay",
         "url": "https://www.openssl.org/source/license-openssl-ssleay.txt"
     },
+    "description": "TLS/SSL toolkit (Light)",
     "architecture": {
         "64bit": {
             "url": "https://slproweb.com/download/Win64OpenSSL_Light-1_1_1c.exe",
@@ -15,9 +16,15 @@
             "hash": "69ae9e27c98a2ac87c210a22e1ab556ad65ab8b3a859b7f9cf1b109bd0530eac"
         }
     },
-    "innosetup": true,
+    "depends": "innounp",
+    "installer": {
+        "script": [
+            "Expand-InnoArchive -Path \"$dir\\$fname\"",
+            "Expand-InnoArchive -Path \"$dir\\$fname\" -DestinationPath \"$dir\\bin\" -ExtractDir '{cf}' -Removal",
+            "Rename-Item \"$dir\\bin\\SSL\" 'cnf' -Force"
+        ]
+    },
     "bin": "bin\\openssl.exe",
-    "env_add_path": "bin",
     "env_set": {
         "OPENSSL_CONF": "$dir\\bin\\cnf\\openssl.cnf"
     },
