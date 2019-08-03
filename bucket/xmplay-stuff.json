@@ -5,6 +5,15 @@
     "description": "The latest (potentially unstable) build of XMPlay, a Win32 audio player. In the Un4seen forum, it is refferred to as the \"stuff version\".",
     "url": "https://www.un4seen.com/stuff/xmplay.exe",
     "hash": "sha512:ef9752857d9a9dc71b4d2bf04b4f2cd7f37fe14282d5cbc7d8e7800cd4b1074540333087c4e3163a74fd05f6e05e6d87011496f62a3cce9420c2ed3d9f1f9046",
+    "pre_install": [
+        "# Create placeholder files",
+        "function CreateFile([String[]] $file) {",
+        "    foreach ($f in $file) {",
+        "        if (! (Test-Path \"$dir\\$f\")) { New-Item \"$dir\\$f\" -ItemType 'File' | Out-Null }",
+        "    }",
+        "}",
+        "CreateFile 'xmplay.ini', 'xmplay.library', 'xmplay.pls'"
+    ],
     "bin": "xmplay.exe",
     "shortcuts": [
         [
@@ -12,27 +21,18 @@
             "XMPlay (Stuff Version)"
         ]
     ],
-    "pre_install": [
-        "# Create placeholder files",
-        "function CreateFile([String] $file, [String] $content = $null) {",
-        "    if(!(Test-Path \"$persist_dir\\$file\")) {",
-        "        Write-Host \"Create placeholder for xmplay: $file\"",
-        "        New-Item -Force -Path \"$persist_dir\\$file\" -ItemType file -Value $content | Out-Null",
-        "    }",
-        "}",
-        "CreateFile xmplay.ini",
-        "CreateFile xmplay.library",
-        "CreateFile xmplay.pls"
-    ],
     "persist": [
         "xmplay.ini",
         "xmplay.library",
         "xmplay.pls",
-        "user-plugins",
-        "xmp-skin"
+        "plugins",
+        "skins"
     ],
     "checkver": {
         "url": "https://www.un4seen.com/xmplay-stuff.php",
         "regex": "([\\d.]+)</span>"
+    },
+    "autoupdate": {
+        "url": "https://www.un4seen.com/stuff/xmplay.exe"
     }
 }
