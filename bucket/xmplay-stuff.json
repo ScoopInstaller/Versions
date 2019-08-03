@@ -14,7 +14,12 @@
         "}",
         "CreateFile 'xmplay.ini', 'xmplay.library', 'xmplay.pls'"
     ],
-    "bin": "xmplay.exe",
+    "bin": [
+        [
+            "xmplay.exe",
+            "xmplay-stuff"
+        ]
+    ],
     "shortcuts": [
         [
             "xmplay.exe",
