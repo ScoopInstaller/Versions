@@ -34,7 +34,7 @@
                 "url": "https://github.com/atom/atom/releases/download/v$version/atom-beta-x64-$version-full.nupkg",
                 "hash": {
                     "url": "$baseurl/RELEASES-x64",
-                    "regex": "([a-fA-F0-9]+)\\s+?(?:atom-beta-$version-full.nupkg)"
+                    "regex": "$sha1\\s*atom-beta-$version-full.nupkg"
                 }
             },
             "32bit": {
