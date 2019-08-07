@@ -1,17 +1,17 @@
 {
     "homepage": "https://tomcat.apache.org/",
-    "version": "7.0.94",
+    "version": "7.0.96",
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94-windows-x64.zip",
-            "hash": "sha512:b0c8422abfcde8a0cc41469f9f5be37ed6673ea7ef5a2c2c3cb5f288910a6a56183df7e63fd61764dcb836cd608843079fcd389552280311b9ee49bf183a5dd3"
+            "url": "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.96/bin/apache-tomcat-7.0.96-windows-x64.zip",
+            "hash": "sha512:47967b1846307bc53d596ac73a6e6756cdcbdc8feb709eb5e6f55ae05395d77f34dcbf7ccf071b64de5038476ee4bc51f9b720b1f5badc549440255ad4e96dda"
         },
         "32bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94-windows-x86.zip",
-            "hash": "sha512:1c223ac9c914e7ed85e02c6b323360c7948bfc796711bf59d6e7d9eb0c22db0028e90c24af102ca5a8d03609429aa5cdf9c77ea9736eaa08d36d1f72b3d0ace3"
+            "url": "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.96/bin/apache-tomcat-7.0.96-windows-x86.zip",
+            "hash": "sha512:49ce6cc86080a17757ef29dd4d6bf441db80dd158c144b955e6337df3c3897e6c4cece795ed2c6d8f1621632db4d04dd9748ed5939ff06489a3cef4eeb3c9cff"
         }
     },
-    "extract_dir": "apache-tomcat-7.0.94",
+    "extract_dir": "apache-tomcat-7.0.96",
     "bin": "bin\\catalina.bat",
     "env_set": {
         "CATALINA_HOME": "$dir",

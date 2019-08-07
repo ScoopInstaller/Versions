@@ -1,18 +1,18 @@
 {
     "homepage": "https://nodejs.org",
     "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
-    "version": "10.16.0",
+    "version": "10.16.2",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v10.16.0/node-v10.16.0-win-x64.7z",
-            "hash": "52e7a86e1e0407567b57ba73868ba27715c2f08b316762adc97145157fa24d71",
-            "extract_dir": "node-v10.16.0-win-x64"
+            "url": "https://nodejs.org/dist/v10.16.2/node-v10.16.2-win-x64.7z",
+            "hash": "79f58ff41473ebc24fa5b0391a458e81258035b65b31e057b50c204d3cf6590b",
+            "extract_dir": "node-v10.16.2-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v10.16.0/node-v10.16.0-win-x86.7z",
-            "hash": "a83febd36596f9bc0d9ebf35da29eb0f8ffed04cc36a6fecad942473120d39d6",
-            "extract_dir": "node-v10.16.0-win-x86"
+            "url": "https://nodejs.org/dist/v10.16.2/node-v10.16.2-win-x86.7z",
+            "hash": "bfbc8516b67769942ad50bcb964e7025d3591915ecf4d3ad6e966160858ca699",
+            "extract_dir": "node-v10.16.2-win-x86"
         }
     },
     "persist": [
