@@ -1,16 +1,16 @@
 {
     "homepage": "https://atom.io/",
-    "version": "1.40.0-beta1",
+    "version": "1.41.0-beta1",
     "license": "MIT",
     "description": "The hackable text editor (portable beta edition).",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/atom/atom/releases/download/v1.40.0-beta1/atom-beta-x64-1.40.0-beta1-full.nupkg",
-            "hash": "sha1:efb36328f303698b0006432cc4859f37393cd12f"
+            "url": "https://github.com/atom/atom/releases/download/v1.41.0-beta1/atom-beta-x64-1.41.0-beta1-full.nupkg",
+            "hash": "sha1:d345950966c4e7fa7c3a98c01af638bc9f8078f9"
         },
         "32bit": {
-            "url": "https://github.com/atom/atom/releases/download/v1.40.0-beta1/atom-beta-1.40.0-beta1-full.nupkg",
-            "hash": "sha1:21fd29c8be0e04a2327d07a048a5f7a803dbe40d"
+            "url": "https://github.com/atom/atom/releases/download/v1.41.0-beta1/atom-beta-1.41.0-beta1-full.nupkg",
+            "hash": "sha1:053febedf40b7c94d150dc8cf825f7ec34bc8ac0"
         }
     },
     "extract_dir": "lib\\net45",

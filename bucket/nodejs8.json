@@ -1,18 +1,18 @@
 {
     "homepage": "https://nodejs.org",
     "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
-    "version": "8.16.0",
+    "version": "8.16.1",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v8.16.0/node-v8.16.0-win-x64.7z",
-            "hash": "0dd9dc3c0713d59a6a45c1eb39198efb38d2ccc8be1946710d43163a6f12626c",
-            "extract_dir": "node-v8.16.0-win-x64"
+            "url": "https://nodejs.org/dist/v8.16.1/node-v8.16.1-win-x64.7z",
+            "hash": "a70cd3c72351675bc3f4c51bedd293b173cb42ea973ef1c1dc19d90c6f769f17",
+            "extract_dir": "node-v8.16.1-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v8.16.0/node-v8.16.0-win-x86.7z",
-            "hash": "e3036ab4155535eff798c4ca9a21534c9954ecc9ab9e14de45c74bc386b6b162",
-            "extract_dir": "node-v8.16.0-win-x86"
+            "url": "https://nodejs.org/dist/v8.16.1/node-v8.16.1-win-x86.7z",
+            "hash": "c524468cf0d278b8daf4f4e864fad75fe457fadfc9f920aa93be8271529bf189",
+            "extract_dir": "node-v8.16.1-win-x86"
         }
     },
     "persist": [
