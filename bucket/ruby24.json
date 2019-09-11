@@ -1,16 +1,16 @@
 {
     "homepage": "https://rubyinstaller.org",
-    "version": "2.4.6-1",
+    "version": "2.4.7-1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.4.6-1/rubyinstaller-2.4.6-1-x64.7z",
-            "hash": "741e36113dd976b6f3702467d9be533072a27a0f4b27225d51e5d44f7cccc11b",
-            "extract_dir": "rubyinstaller-2.4.6-1-x64"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.4.7-1/rubyinstaller-2.4.7-1-x64.7z",
+            "hash": "e9884acea95452c820caac78b30c405bf7385114357f0a4b510b4161c6114928",
+            "extract_dir": "rubyinstaller-2.4.7-1-x64"
         },
         "32bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.4.6-1/rubyinstaller-2.4.6-1-x86.7z",
-            "hash": "61ed7333020c7fff9f17c0ac16f6cab382e946e6f119799ad51e700d890ab2ee",
-            "extract_dir": "rubyinstaller-2.4.6-1-x86"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.4.7-1/rubyinstaller-2.4.7-1-x86.7z",
+            "hash": "a89ad2d91057e8e4fc58129c7de4aa33d48ec6e9a53a12d703356362e1599910",
+            "extract_dir": "rubyinstaller-2.4.7-1-x86"
         }
     },
     "persist": "gems",
