@@ -1,16 +1,16 @@
 {
     "homepage": "https://rubyinstaller.org",
-    "version": "2.5.6-1",
+    "version": "2.5.7-1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.5.6-1/rubyinstaller-2.5.6-1-x64.7z",
-            "hash": "1182dc45b96632e81b4ed0e300066c17d7bf422670dc2a29d3c3f4327e2c1188",
-            "extract_dir": "rubyinstaller-2.5.6-1-x64"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.5.7-1/rubyinstaller-2.5.7-1-x64.7z",
+            "hash": "38b0b0d6a5bd0b3de43649e94a94573cb50e80699a29224f84e82a88d722c8f3",
+            "extract_dir": "rubyinstaller-2.5.7-1-x64"
         },
         "32bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.5.6-1/rubyinstaller-2.5.6-1-x86.7z",
-            "hash": "97198edee094466052e0265b5d81b963908c2d4ee46490e96626bbcf42c52994",
-            "extract_dir": "rubyinstaller-2.5.6-1-x86"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.5.7-1/rubyinstaller-2.5.7-1-x86.7z",
+            "hash": "04466eb15d22c0d71d1319f17b8cbe5bb506b0b4170ab51016b0e0bee95b2500",
+            "extract_dir": "rubyinstaller-2.5.7-1-x86"
         }
     },
     "persist": "gems",
