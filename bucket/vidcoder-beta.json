@@ -21,11 +21,9 @@
         "home",
         "VidCoder.exe.config"
     ],
+    "bin": "VidCoderCLI.exe",
     "shortcuts": [
-        [
-            "VidCoder.exe",
-            "VidCoder Beta"
-        ]
+        [ "VidCoder.exe", "VidCoder Beta" ]
     ],
     "checkver": {
         "url": "https://github.com/RandomEngy/VidCoder/releases",
