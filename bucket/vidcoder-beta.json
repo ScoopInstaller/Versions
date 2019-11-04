@@ -9,20 +9,23 @@
             "hash": "81798ebfe50d7024b19aa8d0e474fbca3606275efaf2ad2f58bf9ba35018e6fd"
         }
     },
+    "pre_install": [
+        "$config = [xml](Get-Content \"$dir\\VidCoder.exe.config\")",
+        "$elem = $config.CreateElement('add')",
+        "$elem.SetAttribute('key', 'SettingsDirectory')",
+        "$elem.SetAttribute('value', \"$persist_dir\\home\")",
+        "$config.configuration.appSettings.appendChild($elem) | Out-Null",
+        "$config.Save(\"$dir\\VidCoder.exe.config\")"
+    ],
+    "persist": [
+        "home",
+        "VidCoder.exe.config"
+    ],
     "shortcuts": [
         [
             "VidCoder.exe",
             "VidCoder Beta"
         ]
-    ],
-    "persist": "user_data",
-    "post_install": [
-        "$config = [xml](Get-Content \"$dir\\VidCoder.exe.config\")",
-        "$elem = $config.CreateElement('add')",
-        "$elem.SetAttribute('key', 'SettingsDirectory')",
-        "$elem.SetAttribute('value', \"$persist_dir\\user_data\")",
-        "[void]$config.configuration.appSettings.appendChild($elem)",
-        "$config.Save(\"$dir\\VidCoder.exe.config\")"
     ],
     "checkver": {
         "url": "https://github.com/RandomEngy/VidCoder/releases",
