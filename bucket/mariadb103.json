@@ -1,18 +1,18 @@
 {
     "homepage": "https://mariadb.org",
-    "version": "10.3.18",
+    "version": "10.3.19",
     "license": "GPL-2.0-only",
     "description": "Community developed fork of MySQL server.",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.mariadb.com/MariaDB/mariadb-10.3.18/winx64-packages/mariadb-10.3.18-winx64.zip",
-            "hash": "7fc64098a4d5f4853277ce6279b3d1ba5adc503a0013a0ed23b16709abd75935",
-            "extract_dir": "mariadb-10.3.18-winx64"
+            "url": "https://downloads.mariadb.com/MariaDB/mariadb-10.3.19/winx64-packages/mariadb-10.3.19-winx64.zip",
+            "hash": "f425ffa1f46dd7f798f96df2d7691fdfd39b359eb1001205d73d361c2c98cacd",
+            "extract_dir": "mariadb-10.3.19-winx64"
         },
         "32bit": {
-            "url": "https://downloads.mariadb.com/MariaDB/mariadb-10.3.18/winx32-packages/mariadb-10.3.18-winx32.zip",
-            "hash": "656e9b35041fb4a0c1bcb9d4f6a0be3528f1db50f0f9c00f81dd0a5b9ac96a20",
-            "extract_dir": "mariadb-10.3.18-win32"
+            "url": "https://downloads.mariadb.com/MariaDB/mariadb-10.3.19/win32-packages/mariadb-10.3.19-win32.zip",
+            "hash": "49a9a1339b2617759b7533ade423b6f593bfad7a0c7acb996b10fb4790fed3f0",
+            "extract_dir": "mariadb-10.3.19-win32"
         }
     },
     "bin": [
