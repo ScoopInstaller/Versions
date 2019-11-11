@@ -21,7 +21,7 @@
         "cp \"$dir\\php.ini-production\" \"$dir\\php.ini\"",
         "",
         "#Enable extensions to be found in installation-relative folder (the default is to search C:/php)",
-        "(gc \"$dir\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\php.ini\""
+        "(Get-Content \"$dir\\cli\\php.ini\") | % { $_ -replace ';\\s?(extension_dir = \"ext\")', '$1' } | Set-Content \"$dir\\cli\\php.ini\""
     ],
     "suggest": {
         "vcredist": "extras/vcredist2012"
