@@ -1,16 +1,16 @@
 {
     "homepage": "http://strawberryperl.com",
     "description": "Strawberry Perl with extra PDL related modules and external libraries.",
-    "version": "5.30.0.1",
+    "version": "5.30.1.1",
     "license": "Artistic-1.0-Perl|GPL-1.0-only",
     "architecture": {
         "32bit": {
-            "url": "http://strawberryperl.com/download/5.30.0.1/strawberry-perl-5.30.0.1-32bit-PDL.zip",
-            "hash": "sha1:84fa91a034fde2c466637af3bd54bf0c3347950f"
+            "url": "http://strawberryperl.com/download/5.30.1.1/strawberry-perl-5.30.1.1-32bit-PDL.zip",
+            "hash": "sha1:31cf4cc0fc4d68355bc01494cbe8c917b2c86590"
         },
         "64bit": {
-            "url": "http://strawberryperl.com/download/5.30.0.1/strawberry-perl-5.30.0.1-64bit-PDL.zip",
-            "hash": "sha1:5dbf07f1236de298f8a7bbdb5706df414fc704cf"
+            "url": "http://strawberryperl.com/download/5.30.1.1/strawberry-perl-5.30.1.1-64bit-PDL.zip",
+            "hash": "sha1:7fa0fa9f7171fbc2001ba2971db8f20a39021f4b"
         }
     },
     "post_install": [
