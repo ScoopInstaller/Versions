@@ -1,0 +1,22 @@
+{
+    "homepage": "https://dahlbyk.github.io/posh-git/",
+    "description": "A PowerShell module which provides Git/PowerShell integration.",
+    "version": "2020.04.12-04.22.08-14e274d4f3",
+    "license": "MIT",
+    "url": "https://github.com/dahlbyk/posh-git/archive/14e274d4f3701e1f543d9bc39ac12e9dfad04895.zip",
+    "hash": "efe378bd6318941fbc41730881def9524e4418877482e28df1a750e7eec65fd3",
+    "extract_dir": "posh-git-14e274d4f3701e1f543d9bc39ac12e9dfad04895\\src",
+    "psmodule": {
+        "name": "posh-git"
+    },
+    "checkver": {
+        "url": "https://github.com/dahlbyk/posh-git/commits/master.atom",
+        "regex": "(?ms)<id[^>]*>\\s*\\S+/(?<sha>(?<shortSha>[0-9a-f]{10})[0-9a-f]*)\\s*</id>.*?<updated[^>]*>\\s*(?<year>\\d+)-(?<month>\\d+)-(?<day>\\d+)T(?<hour>\\d+):(?<minute>\\d+):(?<second>\\d+)Z\\s*</updated>",
+        "replace": "${year}.${month}.${day}-${hour}.${minute}.${second}-${shortSha}"
+    },
+    "autoupdate": {
+        "url": "https://github.com/dahlbyk/posh-git/archive/$matchSha.zip",
+        "extract_dir": "posh-git-$matchSha\\src"
+    },
+    "notes": "See usage: https://github.com/dahlbyk/posh-git#using-posh-git"
+}
