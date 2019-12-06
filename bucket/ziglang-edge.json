@@ -14,14 +14,13 @@
     "checkver": {
         "url": "https://ziglang.org/download/index.json",
         "jsonpath": "$.master.src.tarball",
-        "regex": "zig-(?<version>\\d.{4})(?<commit>\\+[^\\.]+)",
-        "replace": "${version}${commit}"
+        "regex": "zig-([\\da-f.+]+).tar.xz"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://ziglang.org/builds/zig-windows-x86_64-$matchVersion$matchCommit.zip",
-                "extract_dir": "zig-windows-x86_64-$matchVersion$matchCommit"
+                "url": "https://ziglang.org/builds/zig-windows-x86_64-$version.zip",
+                "extract_dir": "zig-windows-x86_64-$version"
             }
         },
         "hash": {
