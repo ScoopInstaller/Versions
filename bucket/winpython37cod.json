@@ -5,7 +5,7 @@
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/winpython/WinPython_3.7/3.7.6.0/WinPython64-3.7.6.0cod.exe#/dl.7z",
+            "url": "https://downloads.sourceforge.net/project/winpython/WinPython_3.7/3.7.6.0/Winpython64-3.7.6.0cod.exe#/dl.7z",
             "hash": "eab496d6f7f2489068e80e0dd4956ca37e8160979d30f4bf555578a21421b811",
             "extract_dir": "WPy64-3760"
         }
@@ -118,7 +118,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.sourceforge.net/project/winpython/WinPython_$majorVersion.$minorVersion/$version/WinPython64-$versioncod.exe#/dl.7z",
+                "url": "https://downloads.sourceforge.net/project/winpython/WinPython_$majorVersion.$minorVersion/$version/Winpython64-$versioncod.exe#/dl.7z",
                 "extract_dir": "WPy64-$cleanVersion"
             }
         },
