@@ -1,8 +1,8 @@
 {
     "version": "4.0.2",
-    "description": "Static analysis tool for Java.",
+    "description": "Static analysis tool for Java",
     "homepage": "https://spotbugs.github.io/",
-    "license": "LGPL-2.1",
+    "license": "LGPL-2.1-only",
     "suggest": {
         "JDK": [
             "java/oraclejdk",
@@ -16,9 +16,12 @@
     "shortcuts": [
         [
             "bin\\spotbugs.bat",
-            "SpotBugs"
+            "SpotBugs",
+            "",
+            "bin\\spotbugs.ico"
         ]
     ],
+    "persist": "plugin",
     "checkver": {
         "url": "https://api.github.com/repos/spotbugs/spotbugs/releases",
         "jp": "$[0].tag_name"
