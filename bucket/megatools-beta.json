@@ -1,5 +1,5 @@
 {
-    "version": "1.11.0-git-20200404",
+    "version": "1.11.0-git-20200501",
     "description": "Command line client for Mega.nz",
     "homepage": "https://megatools.megous.com/",
     "license": {
@@ -8,14 +8,14 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://megatools.megous.com/builds/experimental/megatools-1.11.0-git-20200404-win64.zip",
-            "hash": "f4aa86258ae9e256b870f2049bd981050f0e8ff2d4145e58b92a46f4e60471fe",
-            "extract_dir": "megatools-1.11.0-git-20200404-win64"
+            "url": "https://megatools.megous.com/builds/experimental/megatools-1.11.0-git-20200501-win64.zip",
+            "hash": "149a4a6cd9fdba1b9221c15956873881ae1491f6f0010d7af03bc60195944c55",
+            "extract_dir": "megatools-1.11.0-git-20200501-win64"
         },
         "32bit": {
-            "url": "https://megatools.megous.com/builds/experimental/megatools-1.11.0-git-20200404-win32.zip",
-            "hash": "f89de531b7b0a5c6aba392dc63d7ba03855c8e2f6e711b1f6f6c85522d4e55fa",
-            "extract_dir": "megatools-1.11.0-git-20200404-win32"
+            "url": "https://megatools.megous.com/builds/experimental/megatools-1.11.0-git-20200501-win32.zip",
+            "hash": "6f650cd7f645bcaf17c877bb71fb2e02add3b5f483c4a9fe09596438d4173168",
+            "extract_dir": "megatools-1.11.0-git-20200501-win32"
         }
     },
     "persist": "mega.ini",
