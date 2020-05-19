@@ -1,6 +1,6 @@
 {
     "homepage": "https://helm.sh",
-    "description": "The package manager for Kubernetes. Use as helm2.",
+    "description": "The package manager for Kubernetes",
     "license": "Apache-2.0",
     "version": "2.16.6",
     "architecture": {
@@ -10,7 +10,13 @@
         }
     },
     "extract_dir": "windows-amd64",
-    "bin": [[ "helm.exe", "helm2" ]],
+    "bin": [
+        "helm.exe",
+        [
+            "helm.exe",
+            "helm2"
+        ]
+    ],
     "checkver": {
         "github": "https://github.com/kubernetes/helm",
         "regex": "tag/v(2\\.[\\d.]+)"
