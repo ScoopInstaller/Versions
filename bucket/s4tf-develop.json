@@ -1,0 +1,40 @@
+{
+    "homepage": "https://www.tensorflow.org/swift",
+    "description": "A next-generation platform for machine learning",
+    "license": {
+        "identifier": "Apache-2.0",
+        "url": "https://github.com/tensorflow/swift/blob/master/LICENSE"
+    },
+    "version": "30098-20200415",
+    "architecture": {
+        "64bit": {
+            "url": "https://storage.googleapis.com/azure-pipelines-storage/Swift%20for%20TensorFlow/Windows/s4tf-windows-x64-30098-20200415.1.exe",
+            "hash": "117B68AAF4651CF04B3F1E60804764C778D1230C928A659FDA2578179CDC7301"
+        }
+    },
+    "installer": {
+        "script": [
+            "foreach ($path in @($env:UniversalCRTSdkDir, $env:VCToolsInstallDir)) { if (!($path)) { throw \"Environment variables UniversalCRTSdkDir and VCToolsInstallDir is required, please run via Developer PowerShell for VS 2019\" } }",
+            "if (!(is_admin)) { throw \"Admin rights are required, please run as administrator\" }",
+            "Start-Process \"$dir\\s4tf-windows-x64-30098-20200415.1.exe\" -ArgumentList /silent -Wait",
+            "$SDKROOT=\"$env:SystemDrive\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\SDKs\\Windows.sdk\"",
+            "copy \"$SDKROOT\\usr\\share\\ucrt.modulemap\" \"$env:UniversalCRTSdkDir\\Include\\$env:UCRTVersion\\ucrt\\module.modulemap\"",
+            "copy \"$SDKROOT\\usr\\share\\visualc.modulemap\" \"$env:VCToolsInstallDir\\include\\module.modulemap\"",
+            "copy \"$SDKROOT\\usr\\share\\visualc.apinotes\" \"$env:VCToolsInstallDir\\include\\visualc.apinotes\"",
+            "copy \"$SDKROOT\\usr\\share\\winsdk.modulemap\" \"$env:UniversalCRTSdkDir\\Include\\$env:UCRTVersion\\um\\module.modulemap\""
+        ],
+        "keep": "true"
+    },
+    "uninstaller": {
+        "script": [
+            "foreach ($path in @($env:UniversalCRTSdkDir, $env:VCToolsInstallDir)) { if (!$path) { throw \"Environment variables UniversalCRTSdkDir and VCToolsInstallDir is required, please run via Developer PowerShell for VS 2019\" } }",
+            "if (!(is_admin)) { throw \"Admin rights are required, please run as administrator\" }",
+            "Start-Process \"$dir\\s4tf-windows-x64-30098-20200415.1.exe\" -ArgumentList @(\"/uninstall\", \"/silent\") -Wait",
+            "del \"$env:UniversalCRTSdkDir\\Include\\$env:UCRTVersion\\ucrt\\module.modulemap\"",
+            "del \"$env:VCToolsInstallDir\\include\\module.modulemap\"",
+            "del \"$env:VCToolsInstallDir\\include\\visualc.apinotes\"",
+            "del \"$env:UniversalCRTSdkDir\\Include\\$env:UCRTVersion\\um\\module.modulemap\""
+        ]
+    },
+    "notes": "MSVC v142, Windows Universal C Runtime, and Windows 10 SDK 10.0.17763.0 or later are required"
+}
