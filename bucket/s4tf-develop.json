@@ -14,7 +14,7 @@
     },
     "installer": {
         "script": [
-            "foreach ($path in @($env:UniversalCRTSdkDir, $env:VCToolsInstallDir)) { if (!($path)) { throw \"Environment variables UniversalCRTSdkDir and VCToolsInstallDir is required, please run via Developer PowerShell for VS 2019\" } }",
+            "if (!((Test-Path env:UniversalCRTSdkDir) -and (Test-Path env:VCToolsInstallDir))) { throw \"Environment variables UniversalCRTSdkDir and VCToolsInstallDir are required, please run via Developer PowerShell for VS 2019\" }",
             "if (!(is_admin)) { throw \"Admin rights are required, please run as administrator\" }",
             "Start-Process \"$dir\\s4tf-windows-x64-30098-20200415.1.exe\" -ArgumentList /silent -Wait",
             "$SDKROOT=\"$env:SystemDrive\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\SDKs\\Windows.sdk\"",
@@ -27,7 +27,7 @@
     },
     "uninstaller": {
         "script": [
-            "foreach ($path in @($env:UniversalCRTSdkDir, $env:VCToolsInstallDir)) { if (!$path) { throw \"Environment variables UniversalCRTSdkDir and VCToolsInstallDir is required, please run via Developer PowerShell for VS 2019\" } }",
+            "if (!((Test-Path env:UniversalCRTSdkDir) -and (Test-Path env:VCToolsInstallDir))) { throw \"Environment variables UniversalCRTSdkDir and VCToolsInstallDir are required, please run via Developer PowerShell for VS 2019\" }",
             "if (!(is_admin)) { throw \"Admin rights are required, please run as administrator\" }",
             "Start-Process \"$dir\\s4tf-windows-x64-30098-20200415.1.exe\" -ArgumentList @(\"/uninstall\", \"/silent\") -Wait",
             "del \"$env:UniversalCRTSdkDir\\Include\\$env:UCRTVersion\\ucrt\\module.modulemap\"",
