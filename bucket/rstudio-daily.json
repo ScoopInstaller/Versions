@@ -28,12 +28,12 @@
     "shortcuts": [
         [
             "bin\\rstudio.exe",
-            "R Studio"
+            "RStudio Daily"
         ]
     ],
     "checkver": {
-        "url": "https://dailies.rstudio.com",
-        "regex": "RStudio-([\\d.]+).exe"
+        "url": "https://dailies.rstudio.com/rstudio/oss/windows/xcopy/",
+        "regex": "RStudio-([\\d.]+).zip"
     },
     "autoupdate": {
         "architecture": {
