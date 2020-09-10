@@ -4,15 +4,15 @@
         "identifier": "PHP-3.01",
         "url": "https://secure.php.net/license/"
     },
-    "version": "7.4.8",
+    "version": "7.4.10",
     "architecture": {
         "64bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.4.8-Win32-VC15-x64.zip",
-            "hash": "553767b9f8c4b55a23141e78b449cdd4a460e21521d3734fe91012ca715df4bf"
+            "url": "https://windows.php.net/downloads/releases/php-7.4.10-Win32-VC15-x64.zip",
+            "hash": "5d6b1025d4467575dc71f91956f3351d25078114ab9d6d7a9ea6e918d3f76e5f"
         },
         "32bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.4.8-Win32-VC15-x86.zip",
-            "hash": "46f8f620cbbe78121af9e71b3beba48b45f7c5c9ce639a8a48a69be12f3034ac"
+            "url": "https://windows.php.net/downloads/releases/php-7.4.10-Win32-VC15-x86.zip",
+            "hash": "4bf45c1948532882b4902eb3184b334b0cf5a0a64ac60eb7c27a14963e262504"
         }
     },
     "bin": [
@@ -42,7 +42,7 @@
     ],
     "checkver": {
         "url": "https://windows.php.net/download/",
-        "re": "<h3 id=\"php-7.4\".*?>.*?\\(([\\d.]+)\\)</h3>"
+        "re": "<h3 id=\"php-7.4\".*?>.*?\\(([\\d.-]+)\\)</h3>"
     },
     "autoupdate": {
         "architecture": {
