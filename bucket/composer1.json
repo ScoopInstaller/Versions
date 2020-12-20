@@ -36,7 +36,7 @@
     },
     "checkver": {
         "url": "https://github.com/composer/composer/releases",
-        "regex": "tag/(1.[\\d.]+)[^-]"
+        "regex": "tag/(1\\.[\\d.]+)[^-]"
     },
     "autoupdate": {
         "url": "https://getcomposer.org/download/$version/composer.phar",
