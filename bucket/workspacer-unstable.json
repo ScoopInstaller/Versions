@@ -1,0 +1,18 @@
+{
+    "homepage": "https://www.workspacer.org",
+    "version": "unstable",
+    "description": "A tiling window manager for Windows 10",
+    "license": "MIT",
+    "notes": "Add \"context.Branch = Branch.None;\" at the start of your config to disable auto-updates.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/rickbutton/workspacer/releases/download/unstable/workspacer-unstable-latest.zip"
+        }
+    },
+    "shortcuts": [
+        [
+            "workspacer.exe",
+            "workspacer"
+        ]
+    ]
+}
