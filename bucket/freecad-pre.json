@@ -19,7 +19,7 @@
     ],
     "checkver": {
         "github": "https://github.com/FreeCAD/FreeCAD",
-        "regex": "releases/download/0.19_pre/FreeCAD_(?<build>[\\d.]+)-Win"
+        "regex": "releases/download/([\\w.]+)/FreeCAD_(?<build>[\\w.]+)-Win"
     },
     "autoupdate": {
         "architecture": {
