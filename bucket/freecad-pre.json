@@ -1,5 +1,5 @@
 {
-    "version": "0.19.24054",
+    "version": "0.19_pre",
     "description": "General-purpose parametric 3D CAD modeler and a building information modeling software with finite-element-method support.",
     "homepage": "https://www.freecadweb.org",
     "license": "LGPL-2.0-or-later",
@@ -19,7 +19,7 @@
     ],
     "checkver": {
         "github": "https://github.com/FreeCAD/FreeCAD",
-        "regex": "releases/download/([\\d.]+)/FreeCAD_(?<build>[\\w.]+)-Win"
+        "regex": "releases/download/0.19_pre/FreeCAD_(?<build>[\\d.]+)-Win"
     },
     "autoupdate": {
         "architecture": {
