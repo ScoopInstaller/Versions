@@ -1,0 +1,24 @@
+{
+    "version": "5.43.0",
+    "homepage": "https://www.linqpad.net",
+    "description": "LINQPad 5 for .NET Framework 4.6/4.7/4.8",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.linqpad.net/eula.txt"
+    },
+    "url": "https://linqpad.azureedge.net/public/LINQPad5.zip?cache=5.43.0.8121888",
+    "hash": "7178cb0165963841fffbd0fce6a3f8d6c00571cb99622f1e5e472d523b91dd8c",
+    "shortcuts": [
+        [
+            "linqpad.exe",
+            "LINQPad"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.linqpad.net/Download.aspx",
+        "regex": "LINQPad5Version">([\\d.]+)<"
+    },
+    "autoupdate": {
+        "url": "http://download.linqpad.net/public/LINQPad$majorVersion.zip"
+    }
+}
