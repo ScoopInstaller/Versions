@@ -16,7 +16,7 @@
     ],
     "checkver": {
         "url": "https://www.linqpad.net/Download.aspx",
-        "regex": "LINQPad5Version">([\\d.]+)<"
+        "regex": "LINQPad5Version"\>([\\d.]+)\<"
     },
     "autoupdate": {
         "url": "http://download.linqpad.net/public/LINQPad$majorVersion.zip"
