@@ -12,7 +12,7 @@
             "hash": "sha512:dd933e056ad0bef7825f182eca1a2cbf657bbda1655d9769e303002da784cdeb96dcffd3f24173a57edefbe62c7b35e0cd073df65e167825b41e77b02b2508bf"
         },
         "32bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45-windows-x86.zip",
+            "url": "https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45-windows-x86.zip",
             "hash": "sha512:9abe991fa8d06db0300a9f7a932ecc8374c369e088715382dc3a7a93a7c145f531125cb0a8d5653cf9b79cb99fbe7c3f3a93cbc19906cf3f323d123c31faec74"
         }
     },
@@ -27,16 +27,16 @@
         "webapps"
     ],
     "checkver": {
-        "url": "https://www.apache.org/dist/tomcat/tomcat-9/?C=M;O=D",
+        "url": "https://archive.apache.org/dist/tomcat/tomcat-9/?C=M;O=D",
         "regex": "v([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.apache.org/dist/tomcat/tomcat-$majorVersion/v$version/bin/apache-tomcat-$version-windows-x64.zip"
+                "url": "https://archive.apache.org/dist/tomcat/tomcat-$majorVersion/v$version/bin/apache-tomcat-$version-windows-x64.zip"
             },
             "32bit": {
-                "url": "https://www.apache.org/dist/tomcat/tomcat-$majorVersion/v$version/bin/apache-tomcat-$version-windows-x86.zip"
+                "url": "https://archive.apache.org/dist/tomcat/tomcat-$majorVersion/v$version/bin/apache-tomcat-$version-windows-x86.zip"
             }
         },
         "hash": {
