@@ -20,16 +20,5 @@
     "checkver": {
         "url": "https://www.blender.org/download/lts/",
         "regex": "blender-([\\w.]+)-windows64\\.zip"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://download.blender.org/release/Blender$majorVersion.$minorVersion/blender-$version-windows64.zip",
-                "extract_dir": "blender-$version-windows64"
-            }
-        },
-        "hash": {
-            "url": "$baseurl/blender-$version.sha256"
-        }
     }
 }
