@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://www.blender.org/download/Blender2.83/blender-2.83.14-windows64.zip",
-            "hash": "1F8F852802007A509634FEDBCD68E522928E80EE0264765A2A98A00A2BE20E41",
+            "hash": "1f8f852802007a509634fedbcd68e522928e80ee0264765a2a98a00a2be20e41",
             "extract_dir": "blender-2.83.14-windows64"
         }
     },
@@ -20,5 +20,15 @@
     "checkver": {
         "url": "https://www.blender.org/download/lts/",
         "regex": "blender-([\\w.]+)-windows64\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-$version.zip",
+                "hash": {
+                    "url": "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-$version.sha256"
+                }
+            }
+        }
     }
 }
