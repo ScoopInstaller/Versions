@@ -1,10 +1,10 @@
 {
-    "version": "3.8.5.14",
+    "version": "3.8.5.26",
     "license": "Freeware",
     "homepage": "https://www.un4seen.com/xmplay.html",
     "description": "The latest (potentially unstable) build of XMPlay, a Win32 audio player.",
     "url": "https://www.un4seen.com/stuff/xmplay.exe",
-    "hash": "14e4c29bee52221aacf11c60b5cc21c2aa15900740cd1ab4408ad42db577a1b4",
+    "hash": "12a93d06d7e1cbf47e6d3a517cd9ae575430fb0689d6e536091194639128abeb",
     "pre_install": [
         "# Create placeholder files",
         "function CreateFile([String[]] $file) {",
