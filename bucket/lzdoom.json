@@ -11,14 +11,8 @@
             "url": "https://github.com/drfrag666/gzdoom/releases/download/3.87c/LZDoom_3.87c_x86.zip"
         }
     },
-    "extract_dir": "Files\\LZDoom",
+    "extract_dir": "LZDoom_3.87c",
     "bin": "lzdoom.exe",
-    "shortcuts": [
-        [
-            "lzdoom.exe.exe",
-            "LZDoom"
-        ]
-    ],
     "checkver": {
         "url": "https://zdoom.org/downloads",
         "regex": "Download LZDoom ([\\d.]+)"
