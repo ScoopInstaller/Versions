@@ -1,0 +1,36 @@
+{
+    "version": "3.87c",
+    "description": "Doom Engine Port",
+    "homepage": "https://zdoom.org",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/drfrag666/gzdoom/releases/download/3.87c/LZDoom_3.87c_x64.zip"
+        },
+        "32bit": {
+            "url": "https://github.com/drfrag666/gzdoom/releases/download/3.87c/LZDoom_3.87c_x86.zip"
+        }
+    },
+    "extract_dir": "Files\\LZDoom",
+    "bin": "lzdoom.exe",
+    "shortcuts": [
+        [
+            "lzdoom.exe.exe",
+            "LZDoom"
+        ]
+    ],
+    "checkver": {
+        "url": "https://zdoom.org/downloads",
+        "regex": "Download LZDoom ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/drfrag666/gzdoom/releases/download/$cleanVersion/LZDoom_$cleanVersion_x64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/drfrag666/gzdoom/releases/download/$cleanVersion/LZDoom_$cleanVersion_x86.zip"
+            }
+        }
+    }
+}
