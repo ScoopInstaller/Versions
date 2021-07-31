@@ -1,0 +1,22 @@
+{
+    "version": "nightly",
+    "description": "Open source RGB lighting control that doesn't depend on manufacturer software.",
+    "homepage": "https://openrgb.org",
+    "license": "GPL-2.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://gitlab.com/Calcprogrammer1/OpenRGB/-/jobs/artifacts/master/download?job=Windows+64#/dl.zip",
+            "extract_dir": "OpenRGB Windows 64-bit"
+        },
+        "32bit": {
+            "url": "https://gitlab.com/Calcprogrammer1/OpenRGB/-/jobs/artifacts/master/download?job=Windows+32#/dl.zip",
+            "extract_dir": "OpenRGB Windows 32-bit"
+        }
+    },
+    "shortcuts": [
+        [
+            "OpenRGB.exe",
+            "OpenRGB"
+        ]
+    ]
+}
