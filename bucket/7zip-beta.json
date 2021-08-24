@@ -1,17 +1,17 @@
 {
     "homepage": "https://www.7-zip.org/",
     "description": "Multi-format compression/decompression tool (beta version)",
-    "license": "LGPL-2.1-or-later",
-    "version": "18.03",
+    "license": "https://www.7-zip.org/license.txt|LGPL-2.1-or-later|BSD-3-Clause",
+    "version": "21.03",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/sevenzip/7-Zip/18.03/7z1803-x64.msi",
-            "hash": "sha1:c2960c99f685f2f80475e5fce1e4c39ddd34fae3"
+            "url": "https://www.7-zip.org/a/7z2103-x64.exe",
+            "hash": "sha256:69b755f462d7d9018f4d8f004ffe7ca0fc64ef663246050dfbc864df039084b5"
         },
         "32bit": {
-            "url": "https://downloads.sourceforge.net/project/sevenzip/7-Zip/18.03/7z1803.msi",
-            "hash": "sha1:21ce157040d1cd54f2ad005dc6be7eabc2fdd88d"
-        }
+            "url": "https://www.7-zip.org/a/7z2103.exe",
+            "hash": "sha256:447916156f9f8a4d0bf9371745250ec4a59c6172993e428141bd2f28d68a0fb9"
+        },
     },
     "extract_dir": "Files/7-Zip",
     "bin": [
