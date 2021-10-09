@@ -52,7 +52,10 @@
             "idle36"
         ]
     ],
-    "env_add_path": "scripts",
+    "env_add_path": [
+        "scripts",
+        "."
+    ],
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
         "re": "python-(3\\.6\\.[\\d.]+)-"
