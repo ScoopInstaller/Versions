@@ -5,11 +5,11 @@ name: Excavator
 jobs:
   excavate:
     name: Excavator
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@main
     - name: Excavate
-      uses: Ash258/Scoop-GithubActions@stable
+      uses: Ash258/Scoop-GithubActions@stable-win
       env:
         # not sure if this is going to work:
         GITH_EMAIL: 220772+rasa@users.noreply.github.com
