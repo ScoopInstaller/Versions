@@ -45,25 +45,21 @@
         ]
     ],
     "checkver": {
-        "url": "https://raw.githubusercontent.com/NoMoreFood/putty-cac/master/binaries/puttycac-hash.txt",
-        "regex": "(?:puttycac-)([u\\d.]+)(?:\\.zip)"
+        "github": "https://github.com/NoMoreFood/putty-cac",
+        "regex": "tree/([\\w.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://raw.githubusercontent.com/NoMoreFood/putty-cac/$version/binaries/puttycac-64bit-$version.zip",
-                "hash": {
-                    "url": "https://raw.githubusercontent.com/NoMoreFood/putty-cac/$version/binaries/puttycac-hash.txt",
-                    "regex": "(?:SHA256\\s+)$sha256(?:\\s+$basename)"
-                }
+                "url": "https://raw.githubusercontent.com/NoMoreFood/putty-cac/$version/binaries/puttycac-64bit-$version.zip"
             },
             "32bit": {
-                "url": "https://raw.githubusercontent.com/NoMoreFood/putty-cac/$version/binaries/puttycac-$version.zip",
-                "hash": {
-                    "url": "https://raw.githubusercontent.com/NoMoreFood/putty-cac/$version/binaries/puttycac-hash.txt",
-                    "regex": "(?:SHA256\\s+)$sha256(?:\\s+$basename)"
-                }
+                "url": "https://raw.githubusercontent.com/NoMoreFood/putty-cac/$version/binaries/puttycac-$version.zip"
             }
+        },
+        "hash": {
+            "url": "$baseurl/puttycac-hash.txt",
+            "regex": "$sha256.*?$basename"
         }
     }
 }
