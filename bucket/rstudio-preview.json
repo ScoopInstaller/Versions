@@ -1,13 +1,16 @@
 {
-    "version": "1.2.5033-1",
-    "homepage": "https://www.rstudio.com/",
-    "description": "An IDE for R, which includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.",
+    "version": "2021.09.0-351",
+    "description": "An IDE for R with console, syntax-highlighting, editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.",
+    "homepage": "https://www.rstudio.com",
     "license": "AGPL-3.0-only",
+    "notes": "For 32bit, please install 'versions/rstudio11",
+    "depends": "r",
     "architecture": {
         "64bit": {
-            "url": "https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.2.5033.zip",
-            "hash": "d867c066f65aa1d9c3cf3c53a37cea2ff9f5e0d34be4f62898f32020e5920833",
+            "url": "https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-2021.09.0%2B351.exe#/dl.7z",
+            "hash": "f698d4a2eda99e90486cae868aef872b5cccf469e8c189c6fc03afd71d22cd0c",
             "post_install": [
+                "Remove-Item \"$dir\\`$*\" -Recurse",
                 "if (!(Test-Path \"$env:Appdata\\RStudio\")) {",
                 "    New-Item \"$env:Appdata\\RStudio\" -ItemType Directory -Force | Out-Null",
                 "    @(",
@@ -18,28 +21,27 @@
             ]
         }
     },
-    "depends": "r",
     "bin": "bin\\rstudio.exe",
     "shortcuts": [
         [
             "bin\\rstudio.exe",
-            "R Studio"
+            "RStudio Preview"
         ]
     ],
     "checkver": {
-        "url": "https://rstudio.com/products/rstudio/download/preview/",
-        "regex": ">RStudio v([\\d-.]+) Preview<"
+        "url": "https://www.rstudio.com/products/rstudio/download/preview/",
+        "regex": "windows/RStudio-([\\d.]+)%2B(\\d+)\\.exe",
+        "replace": "${1}-${2}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-$matchHead.zip",
+                "url": "https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-$match1%2B$match2.exe#/dl.7z",
                 "hash": {
-                    "url": "https://rstudio.com/products/rstudio/download/preview/",
-                    "regex": "(?s)$basename.*?$sha256"
+                    "url": "https://www.rstudio.com/products/rstudio/download/preview/",
+                    "regex": "(?s)/windows/.*?exe.*?$sha256"
                 }
             }
         }
-    },
-    "notes": "For 32bit, please install 'versions/rstudio11"
+    }
 }
