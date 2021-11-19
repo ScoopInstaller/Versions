@@ -1,10 +1,10 @@
 {
     "homepage": "http://lamexp.sourceforge.net",
-    "version": "4.17.2188",
+    "version": "4.19.2320",
     "description": "Audio Encoder Front-End.",
     "license": "GPL-2.0-or-later",
-    "url": "https://downloads.sourceforge.net/project/lamexp/LameXP.2018-11-10.Release-Static.Build-2188.zip",
-    "hash": "sha1:a54dccfe83fdd13d97ab3d80be1d81402a95ea4e",
+    "url": "https://downloads.sourceforge.net/project/lamexp/LameXP.2021-08-29.Release-Static.Build-2320.zip",
+    "hash": "sha1:c0a955eee0bd53a890912637d6b7cbcc7428568b",
     "depends": "qaac",
     "pre_install": [
         "Rename-Item \"$dir\\LameXP.exe\" \"$dir\\LameXP-Portable.exe\"",
