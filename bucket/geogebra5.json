@@ -1,19 +1,19 @@
 {
-    "version": "5.0.675.0",
+    "version": "5.0.676.0",
     "description": "A dynamic mathematics software for education that brings together geometry, algebra, spreadsheets, graphing, statistics and calculus.",
     "homepage": "https://www.geogebra.org/",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.geogebra.org/license"
     },
-    "url": "https://download.geogebra.org/installers/5.0/GeoGebra-Windows-Portable-5-0-675-0.zip",
-    "hash": "0d6b8d21ee44e68ddd00337fbf7672af4318ad9fd3f1b88cd5230fd5f79d1163",
+    "url": "https://download.geogebra.org/installers/5.0/GeoGebra-Windows-Portable-5-0-676-0.zip",
+    "hash": "db6e609549df71a044c4f6190414ab6127a3fae9998997d85168eadd2d04d87a",
     "installer": {
-      "script": [
-        "$old_dir = (Get-ChildItem ($dir.Path + '\\GeoGebra *')).Fullname",
-        "Move-Item -Path ($old_dir + '\\*') -Destination $dir",
-        "Remove-Item $old_dir"
-      ]
+        "script": [
+            "$old_dir = (Get-ChildItem ($dir.Path + '\\GeoGebra *')).Fullname",
+            "Move-Item -Path ($old_dir + '\\*') -Destination $dir",
+            "Remove-Item $old_dir"
+        ]
     },
     "bin": [
         [
