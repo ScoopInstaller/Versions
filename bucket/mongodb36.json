@@ -1,6 +1,6 @@
 {
     "homepage": "https://www.mongodb.org",
-    "version": "3.4.21",
+    "version": "3.6.13",
     "license": {
         "identifier": "SSPL-1.0",
         "url": "https://www.mongodb.com/licensing/server-side-public-license"
@@ -8,9 +8,9 @@
     "description": "A document database with the scalability and flexibility.",
     "architecture": {
         "64bit": {
-            "url": "https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.4.21-signed.msi",
-            "hash": "bb6a9781e4e46af3df08ecc40ca32deae97aaaf766586719ba6ad047ba3d13e9",
-            "extract_dir": "MongoDB\\Server\\3.4"
+            "url": "https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.13-signed.msi",
+            "hash": "b7cf208f31432fa511273a65a4a983866b98be4f7f5e61c5c99279a873f22b71",
+            "extract_dir": "MongoDB\\Server\\3.6"
         }
     },
     "bin": [
@@ -34,7 +34,7 @@
     ],
     "checkver": {
         "url": "https://www.mongodb.com/download-center/community",
-        "re": ">(3\\.4\\.\\d+) \\(previous release\\)"
+        "re": ">(3\\.6\\.\\d+) \\(previous release\\)"
     },
     "autoupdate": {
         "architecture": {
