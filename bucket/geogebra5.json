@@ -8,13 +8,7 @@
     },
     "url": "https://download.geogebra.org/installers/5.0/GeoGebra-Windows-Portable-5-0-676-0.zip",
     "hash": "db6e609549df71a044c4f6190414ab6127a3fae9998997d85168eadd2d04d87a",
-    "installer": {
-        "script": [
-            "$old_dir = (Get-ChildItem ($dir.Path + '\\GeoGebra *')).Fullname",
-            "Move-Item -Path ($old_dir + '\\*') -Destination $dir",
-            "Remove-Item $old_dir"
-        ]
-    },
+    "extract_dir": "GeoGebra 5.0.676.0",
     "bin": [
         [
             "GeoGebra.exe",
@@ -33,6 +27,7 @@
         "replace": "${1}.${2}.${3}.${4}"
     },
     "autoupdate": {
-        "url": "https://download.geogebra.org/installers/5.0/GeoGebra-Windows-Portable-$dashVersion.zip"
+        "url": "https://download.geogebra.org/installers/5.0/GeoGebra-Windows-Portable-$dashVersion.zip",
+        "extract_dir": "GeoGebra $version"
     }
 }
