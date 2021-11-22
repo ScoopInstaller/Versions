@@ -10,12 +10,17 @@
     "hash": "0d6b8d21ee44e68ddd00337fbf7672af4318ad9fd3f1b88cd5230fd5f79d1163",
     "installer": {
       "script": [
-        "cd $dir",
-        "Move-Item -Path ((Get-ChildItem 'GeoGebra *').Fullname + '\\*') -Destination $dir",
-        "Remove-Item (Get-ChildItem 'GeoGebra *').Fullname"
+        "$old_dir = (Get-ChildItem ($dir.Path + '\\GeoGebra *')).Fullname",
+        "Move-Item -Path ($old_dir + '\\*') -Destination $dir",
+        "Remove-Item $old_dir"
       ]
     },
-    "bin": "GeoGebra.exe",
+    "bin": [
+        [
+            "GeoGebra.exe",
+            "geogebra5"
+        ]
+    ],
     "shortcuts": [
         [
             "GeoGebra.exe",
