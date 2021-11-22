@@ -13,7 +13,8 @@
             "pre_install": [
                 "Rename-Item \"$dir\\Bandizip64.exe\" 'Bandizip.exe'",
                 "Remove-Item \"$dir\\Bandizip32.exe\"",
-                "if (!(Test-Path \"$persist_dir\\Bandizip.ini\")) { New-Item \"$dir\\Bandizip.ini\" | Out-Null }"
+                "if (!(Test-Path \"$persist_dir\\Bandizip.ini\")) { New-Item \"$dir\\Bandizip.ini\" -ItemType File | Out-Null }"
+
             ]
         },
         "32bit": {
