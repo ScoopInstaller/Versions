@@ -3,7 +3,7 @@
     "description": "A dynamic mathematics software for education that brings together geometry, algebra, spreadsheets, graphing, statistics and calculus.",
     "homepage": "https://www.geogebra.org/",
     "license": {
-        "identifier": "freeware for non-commercial use",
+        "identifier": "Freeware",
         "url": "https://www.geogebra.org/license"
     },
     "url": "https://download.geogebra.org/installers/5.0/GeoGebra-Windows-Portable-5-0-675-0.zip",
@@ -29,7 +29,7 @@
     ],
     "checkver": {
         "url": "https://download.geogebra.org/installers/5.0/version.txt",
-        "re": "(\\d+)-(\\d+)-(\\d+)-(\\d+)",
+        "regex": "(\\d+)-(\\d+)-(\\d+)-(\\d+)",
         "replace": "${1}.${2}.${3}.${4}"
     },
     "autoupdate": {
