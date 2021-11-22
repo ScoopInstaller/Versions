@@ -1,36 +1,40 @@
 {
     "homepage": "https://tomcat.apache.org/",
-    "version": "8.5.45",
+    "version": "8.5.73",
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.5.45/bin/apache-tomcat-8.5.45-windows-x64.zip",
-            "hash": "sha512:96e578c35c229515838540eee431369ec4a67d989788e9b93cc0ec20c33ede61995ece89d27f17466a8ed9624c5f6f3fee08cfb056eb8c32d4b947214dd2d866"
+            "url": "https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.73/bin/apache-tomcat-8.5.73-windows-x64.zip",
+            "hash": "sha512:8204b7e5a415cfee35e036bf81bc7f509b81d9ddc0f93eb14e0681882d6d0b1c5b72a69edfc21177f2598d4266f067deca6df7e5e9bda6464113afabbdbdfd1c"
         },
         "32bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.5.45/bin/apache-tomcat-8.5.45-windows-x86.zip",
-            "hash": "sha512:c4655b04824d7eca0f469724d2558707ff1b71001b7ffde172d3e18a50308a2f0e45b43bf114b5547f7bb6ab98a09222480c37f53cbb3626a5f4d23625454d3c"
+            "url": "https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.73/bin/apache-tomcat-8.5.73-windows-x86.zip",
+            "hash": "sha512:bfdaf81a7ab15702c61fd5f7dc00b5fee1663239baeee2f5e31fdda5b5dae1c0abf78c2894d8cde89671e5e67a6d2a2e53bd70b4e5b43628a2fc50a198fd80c5"
         }
     },
-    "extract_dir": "apache-tomcat-8.5.45",
+    "extract_dir": "apache-tomcat-8.5.73",
     "bin": "bin\\catalina.bat",
     "env_set": {
         "CATALINA_HOME": "$dir",
         "CATALINA_BASE": "$dir"
     },
+    "persist": [
+        "conf",
+        "webapps"
+    ],
     "suggest": {
         "JRE": "java/openjdk"
     },
     "checkver": {
-        "url": "https://www.apache.org/dist/tomcat/tomcat-8/?C=M;O=D",
+        "url": "https://archive.apache.org/dist/tomcat/tomcat-8/?C=M;O=D",
         "re": "v(?<version>[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x64.zip"
+                "url": "https://archive.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x64.zip"
             },
             "32bit": {
-                "url": "https://www.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x86.zip"
+                "url": "https://archive.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version-windows-x86.zip"
             }
         },
         "hash": {

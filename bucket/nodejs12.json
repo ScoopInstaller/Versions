@@ -1,18 +1,18 @@
 {
     "homepage": "https://nodejs.org",
     "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
-    "version": "12.9.1",
+    "version": "12.22.7",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v12.9.1/node-v12.9.1-win-x64.7z",
-            "hash": "631af2dc0e0a5966dbd736e27ea01b186f6d3f22fa2e569e7e3407ef3d96b689",
-            "extract_dir": "node-v12.9.1-win-x64"
+            "url": "https://nodejs.org/dist/v12.22.7/node-v12.22.7-win-x64.7z",
+            "hash": "372adf19f7f3c3b2cea0a320523600ca8a16020e1fec561ebf87193ffc80c94a",
+            "extract_dir": "node-v12.22.7-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v12.9.1/node-v12.9.1-win-x86.7z",
-            "hash": "8ffd55204b9d00d58456c4ae22e8ea9db440a9755a02f40ea1ee8321c50dd5cd",
-            "extract_dir": "node-v12.9.1-win-x86"
+            "url": "https://nodejs.org/dist/v12.22.7/node-v12.22.7-win-x86.7z",
+            "hash": "30b414b3944cd8f8d54b459d5fb87c04794a99d59dbbab53fcafe463c50bd0e2",
+            "extract_dir": "node-v12.22.7-win-x86"
         }
     },
     "persist": [
@@ -20,8 +20,8 @@
         "cache"
     ],
     "env_add_path": [
-        ".",
-        "bin"
+        "bin",
+        "."
     ],
     "post_install": [
         "# Set npm prefix to install modules inside bin and npm cache so they persist",

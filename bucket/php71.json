@@ -4,15 +4,15 @@
         "identifier": "PHP-3.01",
         "url": "https://secure.php.net/license/"
     },
-    "version": "7.1.32",
+    "version": "7.1.33",
     "architecture": {
         "64bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.1.32-Win32-VC14-x64.zip",
-            "hash": "0be9c61fe47dc6a811523ce330a6d8e38b3a5b270151173a96cfec224e36d5ba"
+            "url": "https://windows.php.net/downloads/releases/archives/php-7.1.33-Win32-VC14-x64.zip",
+            "hash": "2f6b0c6b62de88cf5cc16e68ac6d5e3b73fc01bcb03b51fe8c8534965b8e808c"
         },
         "32bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.1.32-Win32-VC14-x86.zip",
-            "hash": "222fde354eacfa3426e3400c10d16acce26b60356dd0066b6ad7ab420531393c"
+            "url": "https://windows.php.net/downloads/releases/archives/php-7.1.33-Win32-VC14-x86.zip",
+            "hash": "a2d5370b5d6f9125c3fab937f4b85aea8068875af30b8e3b665c633019a2a718"
         }
     },
     "bin": [
@@ -38,25 +38,8 @@
     ],
     "post_install": [
         "# Enable extensions to be found in installation-relative folder (the default is to search C:/php)",
-        "(gc \"$dir\\cli\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\cli\\php.ini\""
+        "(Get-Content \"$dir\\cli\\php.ini\") | % { $_ -replace ';\\s?(extension_dir = \"ext\")', '$1' } | Set-Content \"$dir\\cli\\php.ini\""
     ],
-    "checkver": {
-        "url": "https://windows.php.net/download/",
-        "re": "<h3 id=\"php-7.1\".*?>.*?\\(([\\d.]+)\\)</h3>"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC14-x64.zip"
-            },
-            "32bit": {
-                "url": "https://windows.php.net/downloads/releases/php-$version-Win32-VC14-x86.zip"
-            }
-        },
-        "hash": {
-            "url": "$baseurl/sha256sum.txt"
-        }
-    },
     "suggest": {
         "vcredist": "extras/vcredist2015"
     }

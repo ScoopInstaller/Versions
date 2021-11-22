@@ -1,41 +1,39 @@
 {
-    "version": "3.0.100-preview8-013656",
-    "homepage": "https://www.microsoft.com/net/",
-    "description": ".NET is a free, cross-platform, open source developer platform for building many different types of applications.",
-    "license": "MIT",
-    "architecture": {
-        "64bit": {
-            "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/3.0.100-preview8-013656/dotnet-sdk-3.0.100-preview8-013656-win-x64.zip",
-            "hash": "sha512:a957bddd6533233b8e6fdd5cd6d4afaeb4be79c3e3c57587cd842e5e61425038c79a4949a9702a388af7ec87ec4d01bdba28c7171063033f4fbbb2841bde7662"
-        },
-        "32bit": {
-            "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/3.0.100-preview8-013656/dotnet-sdk-3.0.100-preview8-013656-win-x86.zip",
-            "hash": "sha512:f54f565875f94a9de0dc053d3bd6906ed074cc32aab74a0a61f4d9b80bfbcbb846745f7020dd8484ce058a4fa50da022c97779b01085d2b51f66407745c25959"
-        }
+  "version": "6.0.100-rc.2.21505.57",
+  "homepage": "https://www.microsoft.com/net/",
+  "description": ".NET is a free, cross-platform, open source developer platform for building many different types of applications.",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.100-rc.2.21505.57/dotnet-sdk-6.0.100-rc.2.21505.57-win-x64.zip",
+      "hash": "eb0f1cc60c6a44060acd06a66fc6605046e817483b1322cf85b081db71ffbff8"
     },
-    "bin": "dotnet.exe",
-    "suggest": {
-        "Visual C++ Redistributable": "extras/vcredist2019"
-    },
-    "env_add_path": ".",
-    "env_set": {
-        "DOTNET_ROOT": "$dir"
-    },
-    "checkver": {
-        "url": "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json",
-        "jsonpath": "$..releases-index[?(@.support-phase == 'preview')].latest-sdk"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-win-x64.zip"
-            },
-            "32bit": {
-                "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-win-x86.zip"
-            }
-        },
-        "hash": {
-            "url": "https://dotnetcli.blob.core.windows.net/dotnet/checksums/$version-sdk-sha.txt"
-        }
+    "32bit": {
+      "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.100-rc.2.21505.57/dotnet-sdk-6.0.100-rc.2.21505.57-win-x86.zip",
+      "hash": "927cf0b561ab001fd60c06afc089e559c87fe327453db2b65a939f66632d2a1c"
     }
+  },
+  "bin": "dotnet.exe",
+  "env_add_path": ".",
+  "env_set": {
+    "DOTNET_ROOT": "$dir",
+    "MSBuildSDKsPath": "$dir\\sdk\\$version\\Sdks"
+  },
+  "suggest": {
+      "Visual C++ Redistributable": "extras/vcredist2019"
+  },
+  "checkver": {
+    "url": "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json",
+    "jsonpath": "$..releases-index[?(@.support-phase == 'preview' || @.support-phase == 'rc')].latest-sdk"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-win-x64.zip"
+      },
+      "32bit": {
+        "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-win-x86.zip"
+      }
+    }
+  }
 }
