@@ -1,9 +1,9 @@
 {
-    "version": "2019.03",
+    "version": "2019.10",
     "license": "BSD-3-Clause",
     "homepage": "https://www.anaconda.com/",
     "checkver": {
-        "url": "https://repo.continuum.io/archive",
+        "url": "https://docs.anaconda.com/anaconda/install/hashes/win-2-64/",
         "re": "Anaconda2-([\\d.]+)-Windows"
     },
     "bin": [
@@ -31,21 +31,21 @@
     "env_add_path": "Scripts",
     "architecture": {
         "64bit": {
-            "url": "https://repo.continuum.io/archive/Anaconda2-2019.03-Windows-x86_64.exe",
-            "hash": "96c21ae0d152755e8f4ac4a593da4063e0f3796064dbe25dbbad163e926f94ec"
+            "url": "https://repo.anaconda.com/archive/Anaconda2-2019.10-Windows-x86_64.exe",
+            "hash": "3e09c8e95e10f077be1e1d26f26df8d6a13356449e06d7d47ddc066fbaf435f5"
         },
         "32bit": {
-            "url": "https://repo.continuum.io/archive/Anaconda2-2019.03-Windows-x86.exe",
-            "hash": "76be4b3d1f7a1207b786cbb54b3ed526126ee0d4facf41e662b4136224581860"
+            "url": "https://repo.anaconda.com/archive/Anaconda2-2019.10-Windows-x86.exe",
+            "hash": "b4731acd02f96923922d995bb16984d71b4a934b7af6737984dd9eb5d8cc6389"
         }
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://repo.continuum.io/archive/Anaconda2-$version-Windows-x86_64.exe"
+                "url": "https://repo.anaconda.com/archive/Anaconda2-$version-Windows-x86_64.exe"
             },
             "32bit": {
-                "url": "https://repo.continuum.io/archive/Anaconda2-$version-Windows-x86.exe"
+                "url": "https://repo.anaconda.com/archive/Anaconda2-$version-Windows-x86.exe"
             }
         },
         "hash": {

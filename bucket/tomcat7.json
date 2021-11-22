@@ -1,36 +1,40 @@
 {
     "homepage": "https://tomcat.apache.org/",
-    "version": "7.0.94",
+    "version": "7.0.109",
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94-windows-x64.zip",
-            "hash": "sha512:b0c8422abfcde8a0cc41469f9f5be37ed6673ea7ef5a2c2c3cb5f288910a6a56183df7e63fd61764dcb836cd608843079fcd389552280311b9ee49bf183a5dd3"
+            "url": "https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.109/bin/apache-tomcat-7.0.109-windows-x64.zip",
+            "hash": "sha512:444b384fd6eff3210842e74b1470e31674dd43723903ebf65a037c9bcd2d6d0bc94d5fad97e840dea892b991ff37b12a35342593bbddc92f0aa36c9b1bbd2025"
         },
         "32bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94-windows-x86.zip",
-            "hash": "sha512:1c223ac9c914e7ed85e02c6b323360c7948bfc796711bf59d6e7d9eb0c22db0028e90c24af102ca5a8d03609429aa5cdf9c77ea9736eaa08d36d1f72b3d0ace3"
+            "url": "https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.109/bin/apache-tomcat-7.0.109-windows-x86.zip",
+            "hash": "sha512:e3ad4fb5c736092f4783a1285b8589eb610c21077883445a0e769b110a1f4e6da653ba671c3d55f25e4033beff683b4858dfa9f1e319819ebe6f0cb6aef2395a"
         }
     },
-    "extract_dir": "apache-tomcat-7.0.94",
+    "extract_dir": "apache-tomcat-7.0.109",
     "bin": "bin\\catalina.bat",
     "env_set": {
         "CATALINA_HOME": "$dir",
         "CATALINA_BASE": "$dir"
     },
+    "persist": [
+        "conf",
+        "webapps"
+    ],
     "suggest": {
         "JRE": "java/openjdk"
     },
     "checkver": {
-        "url": "https://www.apache.org/dist/tomcat/tomcat-7/?C=M;O=D",
+        "url": "https://archive.apache.org/dist/tomcat/tomcat-7/?C=M;O=D",
         "re": "v(?<version>[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.apache.org/dist/tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x64.zip"
+                "url": "https://archive.apache.org/dist/tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x64.zip"
             },
             "32bit": {
-                "url": "https://www.apache.org/dist/tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x86.zip"
+                "url": "https://archive.apache.org/dist/tomcat/tomcat-7/v$version/bin/apache-tomcat-$version-windows-x86.zip"
             }
         },
         "hash": {

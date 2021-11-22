@@ -1,16 +1,16 @@
 {
     "homepage": "http://strawberryperl.com",
     "description": "Strawberry Perl with extra PDL related modules and external libraries.",
-    "version": "5.30.0.1",
-    "license": "Artistic-1.0-Perl|GPL-1.0-only",
+    "version": "5.32.1.1",
+    "license": "GPL-1.0-or-later|Artistic-1.0-Perl",
     "architecture": {
         "32bit": {
-            "url": "http://strawberryperl.com/download/5.30.0.1/strawberry-perl-5.30.0.1-32bit-PDL.zip",
-            "hash": "sha1:84fa91a034fde2c466637af3bd54bf0c3347950f"
+            "url": "http://strawberryperl.com/download/5.32.1.1/strawberry-perl-5.32.1.1-32bit-PDL.zip",
+            "hash": "sha1:b989bfccf7967564afd10301e712d2c4ebc7acb3"
         },
         "64bit": {
-            "url": "http://strawberryperl.com/download/5.30.0.1/strawberry-perl-5.30.0.1-64bit-PDL.zip",
-            "hash": "sha1:5dbf07f1236de298f8a7bbdb5706df414fc704cf"
+            "url": "http://strawberryperl.com/download/5.32.1.1/strawberry-perl-5.32.1.1-64bit-PDL.zip",
+            "hash": "sha1:281a9f000bbe834267ef0855195f1cd5acb0d72c"
         }
     },
     "post_install": [
@@ -24,7 +24,10 @@
         "perl\\bin",
         "c\\bin"
     ],
-    "checkver": "Strawberry Perl ([\\d.]+)",
+    "checkver": {
+        "url": "http://strawberryperl.com/releases.html",
+        "regex": "strawberry-perl-([\\d.]+)-32bit-PDL\\.zip"
+    },
     "autoupdate": {
         "architecture": {
             "32bit": {

@@ -4,15 +4,15 @@
         "identifier": "Xdebug-1.01",
         "url": "https://xdebug.org/license.php"
     },
-    "version": "2.7.2-7.3",
+    "version": "3.1.1-7.3",
     "architecture": {
         "64bit": {
-            "url": "https://xdebug.org/files/php_xdebug-2.7.2-7.3-vc15-x86_64.dll#/php_xdebug.dll",
-            "hash": "0b318fe78df5103b5078e57f18ea17c3d356c43a37529215140ae9ff76bf524c"
+            "url": "https://xdebug.org/files/php_xdebug-3.1.1-7.3-vc15-x86_64.dll#/php_xdebug.dll",
+            "hash": "e155323a85cca35d83330aff0723f773a83971e200a803af0de74babe994d0df"
         },
         "32bit": {
-            "url": "https://xdebug.org/files/php_xdebug-2.7.2-7.3-vc15.dll#/php_xdebug.dll",
-            "hash": "9c85cf22057b6f0538d00cc8c4d38da1ac1ecd034bfc8783ad5e46be3ed00c1f"
+            "url": "https://xdebug.org/files/php_xdebug-3.1.1-7.3-vc15.dll#/php_xdebug.dll",
+            "hash": "1ad72eba561cb06ce8cf9e05e25a7fa19c8bac9bddea01f2c0e79040b3845a17"
         }
     },
     "post_install": [
@@ -31,7 +31,7 @@
         "Otherwise add '$dir\\php_xdebug.dll' to your php.ini"
     ],
     "checkver": {
-        "url": "https://xdebug.org/download.php",
+        "url": "https://xdebug.org/download/historical",
         "re": "php_xdebug-([\\d.]+-7.3)-vc15-x86_64.dll"
     },
     "autoupdate": {
@@ -44,8 +44,8 @@
             }
         },
         "hash": {
-            "url": "https://xdebug.org/download.php",
-            "regex": "$basename.+?([a-fA-F0-9]{64})"
+            "url": "https://xdebug.org/download/historical",
+            "regex": "([a-fA-F0-9]{64}).+?$basename"
         }
     }
 }
