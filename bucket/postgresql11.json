@@ -30,5 +30,16 @@
     "env_set": {
         "PGDATA": "$dir\\data"
     },
-    "persist": "data"
+    "persist": "data",
+    "checkver": {
+        "url": "https://www.postgresql.org/ftp/source/",
+        "re": "v(11\\.[\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://get.enterprisedb.com/postgresql/postgresql-$version-1-windows-x64-binaries.zip"
+            }
+        }
+    }
 }
