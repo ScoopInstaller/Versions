@@ -17,7 +17,7 @@
     "suggest": {
         "Visual C++ Redistributable": "extras/vcredist2019"
     },
-    "env_add_path": ".",
+    "env_add_path": "\\",
     "env_set": {
         "DOTNET_ROOT": "$dir",
         "MSBuildSDKsPath": "$dir\\sdk\\$version\\Sdks"
