@@ -4,14 +4,12 @@ on:
 name: Commented Pull Request
 jobs:
   pullRequestHandler:
-    name: Pull Request Validator
-    runs-on: ubuntu-latest
+    name: PullRequestHandler
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@main
-    - name: Pull Request Validation
-      uses: Ash258/Scoop-GithubActions@stable
+    - name: PullRequestHandler
+      uses: ScoopInstaller/Scoop-GithubActions@main
       if: startsWith(github.event.comment.body, '/verify')
       env:
-        # not sure if this is going to work:
-        GITH_EMAIL: 220772+rasa@users.noreply.github.com
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
