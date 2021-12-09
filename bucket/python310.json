@@ -1,5 +1,5 @@
 {
-    "version": "3.7.9",
+    "version": "3.10.1",
     "description": "A programming language that lets you work quickly and integrate systems more effectively.",
     "homepage": "https://www.python.org/",
     "license": "Python-2.0",
@@ -7,24 +7,24 @@
     "architecture": {
         "64bit": {
             "url": [
-                "https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe#/setup.exe",
+                "https://www.python.org/ftp/python/3.10.1/python-3.10.1-amd64.exe#/setup.exe",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/python/install-pep-514.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/python/uninstall-pep-514.reg"
             ],
             "hash": [
-                "md5:7083fed513c3c9a4ea655211df9ade27",
+                "md5:0e1c3a6ee3a05b5c4cd3d43fce8311a1",
                 "c2611c8010979a47cdeea1af17d5061d8df40c5356fd8c2f3ba9492d516a99d1",
                 "d9309423b693ed63aea6b1fbfc0c34f16842cdca22a1b3edef283b87567a53b9"
             ]
         },
         "32bit": {
             "url": [
-                "https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe#/setup.exe",
+                "https://www.python.org/ftp/python/3.10.1/python-3.10.1.exe#/setup.exe",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/python/install-pep-514.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/python/uninstall-pep-514.reg"
             ],
             "hash": [
-                "md5:1e6d31c98c68c723541f0821b3c15d52",
+                "md5:0b8c2ba677af4f47e534c7eee1c3cb03",
                 "c2611c8010979a47cdeea1af17d5061d8df40c5356fd8c2f3ba9492d516a99d1",
                 "d9309423b693ed63aea6b1fbfc0c34f16842cdca22a1b3edef283b87567a53b9"
             ]
@@ -81,7 +81,7 @@
         ],
         [
             "python.exe",
-            "python37"
+            "python310"
         ],
         "Lib\\idlelib\\idle.bat",
         [
@@ -90,7 +90,7 @@
         ],
         [
             "Lib\\idlelib\\idle.bat",
-            "idle37"
+            "idle310"
         ]
     ],
     "env_add_path": "Scripts",
@@ -100,7 +100,7 @@
     ],
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
-        "regex": "python-(3\\.7\\.[\\d.]+)-"
+        "regex": "python-(3\\.10\\.[\\d.]+)-"
     },
     "autoupdate": {
         "architecture": {
