@@ -1,0 +1,43 @@
+{
+    "version": "nightly",
+    "description": "Non-linear video editor aiming to provide a fully-featured alternative to high-end professional video editing software.",
+    "homepage": "https://olivevideoeditor.org",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://olivevideoeditor.org/dl/Olive-19eabf28-Windows-x86_64.zip",
+            "hash": "sha1:f4934518227207f2404f82842a431e392833291d"
+        }
+    },
+    "extract_dir": "olive-editor",
+    "pre_install": [
+        "'config.xml', 'layout', 'shortcuts' | ForEach-Object { New-Item \"$dir\\$_\" -ItemType File | Out-Null }",
+        "New-Item \"$dir\\portable\" -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "bin": "olive-editor.exe",
+    "shortcuts": [
+        [
+            "olive-editor.exe",
+            "Olive Editor Nightly"
+        ]
+    ],
+    "persist": [
+        "config.xml",
+        "layout",
+        "shortcuts"
+    ],
+    "checkver": {
+        "url": "https://olivevideoeditor.org/nightly.php",
+        "regex": "<td>(?<commit>[\\d\\w]{8})<\\/td>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://olivevideoeditor.org/dl/Olive-$matchCommit-Windows-x86_64.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha1"
+        }
+    }
+}
