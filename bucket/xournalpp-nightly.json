@@ -1,5 +1,5 @@
 {
-    "version": "1.1.0-20201124",
+    "version": "1.1.0-20211218",
     "description": "A handwriting notetaking software with PDF annotation support",
     "homepage": "https://github.com/xournalpp/xournalpp",
     "license": "GPL-2.0-or-later",
@@ -22,7 +22,7 @@
     ],
     "checkver": {
         "url": "https://github.com/xournalpp/xournalpp/releases/tag/nightly",
-        "regex": "(?<main>[\\d.]+).dev-nightly\\.(?<date>\\d{8})",
+        "regex": "(?<main>[\\d.]+)+dev-nightly\\.(?<date>\\d{8})",
         "replace": "${main}-${date}"
     },
     "autoupdate": {
