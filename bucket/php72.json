@@ -4,15 +4,15 @@
         "identifier": "PHP-3.01",
         "url": "https://secure.php.net/license/"
     },
-    "version": "7.2.25",
+    "version": "7.2.34",
     "architecture": {
         "64bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.2.25-Win32-VC15-x64.zip",
-            "hash": "95c71a3a1676f07f0f3e38f0dfe9210106d7ee70baa7d278c78cf12d949298cf"
+            "url": "https://windows.php.net/downloads/releases/php-7.2.34-Win32-VC15-x64.zip",
+            "hash": "3a3d026aacf8da57ff01ace2f78f8f57494744bfb669f8545cc8f9c4ff0450a5"
         },
         "32bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.2.25-Win32-VC15-x86.zip",
-            "hash": "526771175c54d367098059b005cc9f583f1d616fab495cef9aea96fbb7abc04e"
+            "url": "https://windows.php.net/downloads/releases/php-7.2.34-Win32-VC15-x86.zip",
+            "hash": "ae4def064fa2e38b40e3446fcab566fef673719500af626c1078eb4feaf56d84"
         }
     },
     "bin": [
@@ -42,7 +42,7 @@
     ],
     "checkver": {
         "url": "https://windows.php.net/download/",
-        "re": "<h3 id=\"php-7.2\".*?>.*?\\(([\\d.]+)\\)</h3>"
+        "re": "<h3 id=\"php-7.2\".*?>.*?\\(([\\d.-]+)\\)</h3>"
     },
     "autoupdate": {
         "architecture": {

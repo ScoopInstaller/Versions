@@ -4,15 +4,15 @@
         "identifier": "PHP-3.01",
         "url": "https://secure.php.net/license/"
     },
-    "version": "7.3.12",
+    "version": "7.3.33",
     "architecture": {
         "64bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.3.12-Win32-VC15-x64.zip",
-            "hash": "b12cb3989fba36e4225c361638b5b88dee16b9d3e8f3bb832df492eb74153f56"
+            "url": "https://windows.php.net/downloads/releases/php-7.3.33-Win32-VC15-x64.zip",
+            "hash": "eabf265d817ea534eeeeb51995693a8fd215bc6cfc42d5fcd5e5cd56a1d5da53"
         },
         "32bit": {
-            "url": "https://windows.php.net/downloads/releases/php-7.3.12-Win32-VC15-x86.zip",
-            "hash": "636e624650dd9ede84a5c0745bc320c194f8ac7898a75fa11b4324ac4c3392a8"
+            "url": "https://windows.php.net/downloads/releases/php-7.3.33-Win32-VC15-x86.zip",
+            "hash": "a73ab9dede3d0aa70a6625431d85a96b4637f06e113b711212a3ba52d6435f48"
         }
     },
     "bin": [
@@ -42,7 +42,7 @@
     ],
     "checkver": {
         "url": "https://windows.php.net/download/",
-        "re": "<h3 id=\"php-7.3\".*?>.*?\\(([\\d.]+)\\)</h3>"
+        "re": "<h3 id=\"php-7.3\".*?>.*?\\(([\\d.-]+)\\)</h3>"
     },
     "autoupdate": {
         "architecture": {

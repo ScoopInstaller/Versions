@@ -1,22 +1,22 @@
 {
     "homepage": "https://github.com/PowerShell/PowerShell",
-    "version": "7.0.0-preview.6",
+    "version": "7.3.0-preview.1",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.6/PowerShell-7.0.0-preview.6-win-x64.zip",
-            "hash": "cdda77c0f8bbed57249b0abc6e31db87ba302fad0cb76faa4ad77aab74e95811"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.3.0-preview.1/PowerShell-7.3.0-preview.1-win-x64.zip",
+            "hash": "31b0ce9a21dfebfc9c78e372b6476139519566267d48f6a884bae67a29f459c5"
         },
         "32bit": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.6/PowerShell-7.0.0-preview.6-win-x86.zip",
-            "hash": "9ebedfba967bf5f4c77672abfc8eed0beb11568e7a56b5d5f025cd9df6d44f2a"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.3.0-preview.1/PowerShell-7.3.0-preview.1-win-x86.zip",
+            "hash": "3be33281acb57f914b5b3cebe73ec3a27a58af35dfa4a8ebeb16f71943abe61d"
         }
     },
     "bin": "pwsh.exe",
     "shortcuts": [
         [
             "pwsh.exe",
-            "PowerShell Core"
+            "PowerShell"
         ]
     ],
     "pre_install": "if(!(Test-Path \"$dir\\profile.ps1\")) { New-Item \"$dir\\profile.ps1\" -ItemType File }",

@@ -1,19 +1,16 @@
 {
     "homepage": "https://slproweb.com/products/Win32OpenSSL.html",
-    "version": "1.1.1d",
-    "license": {
-        "identifier": "OpenSSL|SSLeay",
-        "url": "https://www.openssl.org/source/license-openssl-ssleay.txt"
-    },
+    "version": "3.0.1",
+    "license": "Apache-2.0",
     "description": "TLS/SSL toolkit (Light)",
     "architecture": {
         "64bit": {
-            "url": "https://slproweb.com/download/Win64OpenSSL_Light-1_1_1d.exe",
-            "hash": "eae077a1851cda3a1cbc64a7b61528c951dc7ef65d4aee67513523b56e2e6bb6"
+            "url": "https://slproweb.com/download/Win64OpenSSL_Light-3_0_1.exe",
+            "hash": "8d0ec8e03c9deb26989f850f64f30ac27e700c0c61e14f73dc530e16ad338a87"
         },
         "32bit": {
-            "url": "https://slproweb.com/download/Win32OpenSSL_Light-1_1_1d.exe",
-            "hash": "9d1ba9c5a1da9f732f9b138bc359263610d417e2f642bc3bf88215e62de2fc71"
+            "url": "https://slproweb.com/download/Win32OpenSSL_Light-3_0_1.exe",
+            "hash": "558e344aab4ce9d855bef800ab30550ec881d1dc282d4899b8f44561c7bd835f"
         }
     },
     "depends": "innounp",
