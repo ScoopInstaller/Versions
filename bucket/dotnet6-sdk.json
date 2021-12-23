@@ -24,7 +24,7 @@
     },
     "checkver": {
         "url": "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json",
-        "regex": "(?s)(?<rtv>[\\d.]+)[^\\d]*?([\\d.]+)[^\\d]*?lts"
+        "regex": "(?s)(?<rtv>[\\d.]+)[^\\d]*?(6[\\d.]+)[^\\d]*?NET"
     },
     "autoupdate": {
         "architecture": {
