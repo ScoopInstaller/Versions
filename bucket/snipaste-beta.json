@@ -29,7 +29,8 @@
         "vcredist": "extras/vcredist2015"
     },
     "checkver": {
-        "regex": "(?sm)Desktop.*?>v(?<main>[\\d.]+) Beta(?<build>\\d+)?",
+        "url": "https://bitbucket.org/liule/snipaste/downloads",
+        "regex": "Snipaste-(?<main>[\\d.]+)-Beta(?<build>[\\d]*)-x86\\.zip",
         "replace": "${main}-Beta${build}"
     },
     "autoupdate": {
