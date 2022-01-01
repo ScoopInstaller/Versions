@@ -1,16 +1,16 @@
 {
     "homepage": "https://www.7-zip.org/",
     "description": "Multi-format compression/decompression tool (beta version)",
-    "license": "LGPL-2.1-or-later",
-    "version": "18.03",
+    "license": "LGPL-2.1-or-later,BSD-3-Clause",
+    "version": "21.04",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/sevenzip/7-Zip/18.03/7z1803-x64.msi",
-            "hash": "sha1:c2960c99f685f2f80475e5fce1e4c39ddd34fae3"
+            "url": "https://www.7-zip.org/a/7z2104-x64.msi",
+            "hash": "bd3279095e3260b3857e8afac40f8c87d6e37df14b9a6dd9a01a7816b32fca73"
         },
         "32bit": {
-            "url": "https://downloads.sourceforge.net/project/sevenzip/7-Zip/18.03/7z1803.msi",
-            "hash": "sha1:21ce157040d1cd54f2ad005dc6be7eabc2fdd88d"
+            "url": "https://www.7-zip.org/a/7z2104.msi",
+            "hash": "88bfc660c094cd5805089789ef7edd6d1869bc682af8aa88475b5e2c853b71cb"
         }
     },
     "extract_dir": "Files/7-Zip",
@@ -25,10 +25,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.sourceforge.net/project/sevenzip/7-Zip/$version/7z$cleanVersion-x64.msi"
+                "url": "https://www.7-zip.org/a/7z$cleanVersion-x64.msi"
             },
             "32bit": {
-                "url": "https://downloads.sourceforge.net/project/sevenzip/7-Zip/$version/7z$cleanVersion.msi"
+                "url": "https://www.7-zip.org/a/7z$cleanVersion.msi"
             }
         }
     },
