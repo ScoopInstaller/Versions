@@ -50,7 +50,7 @@
         "replace": "${ver}-${build}"
     },
     "autoupdate": {
-        "url": "https://download.jetbrains.com/webstorm/WebStorm-$preReleaseVersion.exe#/cosi.7z",
+        "url": "https://download.jetbrains.com/webstorm/WebStorm-$preReleaseVersion.exe#/dl.7z",
         "hash": {
             "url": "$url.sha256"
         }
