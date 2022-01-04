@@ -13,14 +13,14 @@
     "bin": [
         [
             "chrome.exe",
-            "chromium",
+            "chromium-dev",
             "--user-data-dir=\"$dir\\User Data\""
         ]
     ],
     "shortcuts": [
         [
             "chrome.exe",
-            "Chromium",
+            "Chromium (dev)",
             "--user-data-dir=\"$dir\\User Data\""
         ]
     ],
