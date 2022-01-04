@@ -1,36 +1,28 @@
 {
-    "version": "99.0.4806.0-r955034",
+    "version": "99.0.4806.0-r955036",
     "description": "An open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
     "homepage": "https://www.chromium.org",
     "license": "BSD-3-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/955034/chrome-win.zip",
-            "hash": "31e9d0dd8422317182f0aebc998c129d5de62bf4864956d55a4923b380899da2"
+            "url": "https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/955036/chrome-win.zip",
+            "hash": "f4f5d2059cf53468410c0f5defcf9ee79f49029c5a302083bc32ef9c3d2b5e3b"
         }
     },
     "extract_dir": "chrome-win",
     "bin": [
+        "chrome.exe",
         [
             "chrome.exe",
-            "chromium-dev",
-            "--user-data-dir=\"$dir\\User Data\""
+            "chromium-dev"
         ]
     ],
     "shortcuts": [
         [
             "chrome.exe",
-            "Chromium (dev)",
-            "--user-data-dir=\"$dir\\User Data\""
+            "Chromium (dev)"
         ]
     ],
-    "post_install": [
-        "if (!(Test-Path \"$dir\\User Data\\*\") -and (Test-Path \"$env:LocalAppData\\Chromium\\User Data\")) {",
-        "    info '[Portable Mode]: Copying user data...'",
-        "    Copy-Item \"$env:LocalAppData\\Chromium\\User Data\\*\" \"$dir\\User Data\" -Recurse",
-        "}"
-    ],
-    "persist": "User Data",
     "checkver": {
         "url": "https://chromium.woolyss.com/api/?os=windows&bit=64&editor=%22The%20Chromium%20Authors%22&out=string",
         "regex": "version=(?<chromeVersion>[\\d.]+);revision=(?<build>[\\d]+)",
