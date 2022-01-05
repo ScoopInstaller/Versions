@@ -1,13 +1,13 @@
 {
-    "version": "2021.3.1-213.6461.21",
-    "description": "Cross-Platform IDE for Java by JetBrains. (Community Edition, Early Access Program)",
+    "version": "2021.3.1-213.6461.48",
+    "description": "Cross-Platform IDE for Java by JetBrains. (Release Candidate)",
     "homepage": "https://www.jetbrains.com/idea/",
     "license": {
         "identifier": "Apache-2.0",
         "url": "https://sales.jetbrains.com/hc/en-gb/articles/115001015290-Where-can-I-find-the-EULA-End-User-License-Agreement-"
     },
-    "url": "https://download.jetbrains.com/idea/ideaIC-213.6461.21.win.zip",
-    "hash": "f9ef04ca50b76f138f38eaf5ebee7a08a52067075da4b66b670d08e30c2e33be",
+    "url": "https://download.jetbrains.com/idea/ideaIC-213.6461.48.win.zip",
+    "hash": "881d594bccf6cc4f9f0ce817290ca98c3577d865cdb9576d3f7bbd2e9500a6e3",
     "extract_to": "IDE",
     "installer": {
         "script": "& \"$bucketsdir\\versions\\scripts\\jetbrains\\portable.ps1\" $dir $persist_dir"
@@ -23,7 +23,7 @@
             "shortcuts": [
                 [
                     "IDE\\bin\\idea64.exe",
-                    "JetBrains\\IDEA"
+                    "JetBrains\\IDEA (Release Candidate)"
                 ]
             ]
         },
@@ -32,7 +32,7 @@
             "shortcuts": [
                 [
                     "IDE\\bin\\idea.exe",
-                    "JetBrains\\IDEA"
+                    "JetBrains\\IDEA (Release Candidate)"
                 ]
             ]
         }
@@ -42,7 +42,7 @@
         "profile"
     ],
     "checkver": {
-        "url": "https://data.services.jetbrains.com/products/releases?code=IIC&latest=true&platform=zip&type=eap",
+        "url": "https://data.services.jetbrains.com/products/releases?code=IIC&latest=true&platform=zip&type=rc",
         "regex": "version\":\"(?<ver>[\\d.]+)\".*\"build\":\"(?<build>[\\d.]+)\"",
         "replace": "${ver}-${build}"
     },
