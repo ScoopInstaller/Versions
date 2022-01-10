@@ -29,7 +29,8 @@
             "64bit": {
                 "url": "https://github.com/logseq/logseq/releases/download/nightly/logseq-win-x64-$matchMain+nightly.$matchDate.exe#/dl.7z",
                 "hash": {
-                    "url": "$baseurl/SHA256SUMS.txt"
+                    "url": "$baseurl/SHA256SUMS.txt",
+                    "regex": "$sha256\\s{2}*$basename"
                 }
             }
         }
