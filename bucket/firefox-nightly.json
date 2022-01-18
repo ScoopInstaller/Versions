@@ -17,20 +17,14 @@
     "bin": [
         [
             "firefox.exe",
-            "firefox-nightly",
-            "-profile \"$dir\\profile\""
+            "firefox-nightly"
         ]
     ],
     "shortcuts": [
         [
             "firefox.exe",
-            "Firefox Nightly",
-            "-profile \"$dir\\profile\""
+            "Firefox Nightly"
         ]
-    ],
-    "persist": [
-        "distribution",
-        "profile"
     ],
     "checkver": {
         "url": "https://aus5.mozilla.org/update/6/Firefox/60.0/_/WINNT_x86_64-msvc-x64/en-US/nightly/_/_/_/_/update.xml",
