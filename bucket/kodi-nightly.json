@@ -52,6 +52,10 @@
             "32bit": {
                 "url": "https://mirrors.kodi.tv/nightlies/windows/win32/$matchWin32bit#/dl.7z"
             }
+        },
+        "hash": {
+            "url": "$url?mirrorlist",
+            "regex": "$sha256"
         }
     }
 }
