@@ -21,5 +21,15 @@
             "Rambox.exe",
             "Rambox Community Edition"
         ]
-    ]
+    ],
+    "checkver": {
+        "github": "https://github.com/ramboxapp/community-edition"
+    },
+    "autoupdate": {
+        "url": "https://github.com/ramboxapp/community-edition/releases/download/$version/Rambox-$version-win.exe#/dl.7z",
+        "hash": {
+            "url": "$baseurl/latest.yml",
+            "regex": "sha512: $base64"
+        }
+    }
 }
