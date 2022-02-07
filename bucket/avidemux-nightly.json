@@ -1,0 +1,41 @@
+{
+    "version": "220130",
+    "description": "Video editor designed for simple cutting, filtering and encoding tasks",
+    "homepage": "http://fixounet.free.fr/avidemux/",
+    "license": "GPL-2.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.avidemux.org/nightly/win64/avidemux_2.8.1 r220130_win64.exe#/dl.7z",
+            "hash": "1ef81cbbb975e0c9ae53e2687db0573d3b51285be9086dad1244853fe183f59f"
+        }
+    },
+    "bin": [
+        [
+            "avidemux_cli.exe",
+            "avidemux"
+        ]
+    ],
+    "post_install": "'$PLUGINSDIR', 'uninstall.exe' | ForEach-Object { Remove-Item \"$dir\\$_\" -Recurse -Force }",
+    "shortcuts": [
+        [
+            "avidemux.exe",
+            "Avidemux Nightly"
+        ],
+        [
+            "avidemux_jobs.exe",
+            "Avidemux Nightly Jobs"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.avidemux.org/nightly/win64/",
+        "regex": "(?<win64bit>avidemux_[\\d.]+ r(?<version>\\d+)_win64.exe)",
+        "reverse": true
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.avidemux.org/nightly/win64/$matchWin64bit#/dl.7z"
+            }
+        }
+    }
+}
