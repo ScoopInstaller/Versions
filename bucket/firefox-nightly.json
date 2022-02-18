@@ -20,7 +20,7 @@
         }
     },
     "extract_dir": "core",
-    "post_install": "firefox-nightly -CreateProfile \"Scoop-Nightly $dir\\profile\"",
+    "post_install": "firefox-nightly -CreateProfile \"Scoop-Nightly $persist_dir\\profile\"",
     "bin": [
         [
             "firefox.exe",
