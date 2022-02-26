@@ -26,7 +26,8 @@
         ]
     ],
     "checkver": {
-        "github": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/"
+        "url": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/releases",
+        "regex": "/tag/v([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/releases/download/v$version/processhacker-$version-bin.zip"
