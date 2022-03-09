@@ -1,4 +1,4 @@
-# Scoop Versions [![Build Status](https://ci.appveyor.com/api/projects/status/cb4jxcu3gygqotu7?svg=true)](https://ci.appveyor.com/project/r15ch13/scoopinstaller-versions "Build Status") [![Excavator](https://github.com/ScoopInstaller/Versions/actions/workflows/excavator.yml/badge.svg)](https://github.com/ScoopInstaller/Versions/actions/workflows/excavator.yml)
+# Scoop Versions [![Tests](https://github.com/ScoopInstaller/Versions/actions/workflows/ci.yml/badge.svg)](https://github.com/ScoopInstaller/Versions/actions/workflows/ci.yml) [![Excavator](https://github.com/ScoopInstaller/Versions/actions/workflows/excavator.yml/badge.svg)](https://github.com/ScoopInstaller/Versions/actions/workflows/excavator.yml)
 
 Alternative manifests for [Scoop](https://scoop.sh), the Windows command-line installer. For alpha, beta, nightly, dev, canary, insiders, release candidates, and frozen/older versions of app manifests.
 
