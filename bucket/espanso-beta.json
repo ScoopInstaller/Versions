@@ -1,0 +1,58 @@
+{
+    "version": "2.1.4-beta",
+    "description": "Text expander",
+    "homepage": "https://espanso.org",
+    "license": "GPL-3.0-only",
+    "suggest": {
+        "Microsoft Visual C++ Redistributables 2019": "extras/vcredist2019"
+    },
+    "architecture": {
+        "64bit": {
+            "url": [
+                "https://github.com/federico-terzi/espanso/releases/download/v2.1.4-beta/Espanso-Win-Portable-x86_64.zip",
+                "https://raw.githubusercontent.com/federico-terzi/espanso/v2.1.4-beta/scripts/resources/windows/icon.ico"
+            ],
+            "hash": [
+                "d77551fb4ccc9cf464dae68dcef684b29fe98736ede0f46549c84fec53059064",
+                "c38b68792057e1d30005aeef57049e90e3a986314b0d22ea68e2208347c3df6e"
+            ]
+        }
+    },
+    "extract_dir": "espanso-portable",
+    "bin": [
+        "espansod.exe",
+        "espanso.cmd"
+    ],
+    "shortcuts": [
+        [
+            "espansod.exe",
+            "Espanso",
+            "launcher",
+            "icon.ico"
+        ]
+    ],
+    "persist": ".espanso",
+    "checkver": {
+        "url": "https://github.com/federico-terzi/espanso/releases",
+        "regex": "v([\\d.]+-beta)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": [
+                    "https://github.com/federico-terzi/espanso/releases/download/v$version/Espanso-Win-Portable-x86_64.zip",
+                    "https://raw.githubusercontent.com/federico-terzi/espanso/v$version/scripts/resources/windows/icon.ico"
+                ],
+                "hash": [
+                    {
+                        "url": "$url.sha256.txt",
+                        "regex": "$sha256"
+                    },
+                    {
+                        
+                    }
+                ]
+            }
+        }
+    }
+}
