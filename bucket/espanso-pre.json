@@ -34,7 +34,7 @@
     "persist": ".espanso",
     "checkver": {
         "url": "https://github.com/federico-terzi/espanso/releases",
-        "regex": "v([\\d.]+-beta)"
+        "regex": "v([\\d.]+(?:-alpha|-beta))"
     },
     "autoupdate": {
         "architecture": {
