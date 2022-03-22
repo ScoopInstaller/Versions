@@ -34,8 +34,7 @@
             "64bit": {
                 "url": "https://github.com/federico-terzi/espanso/releases/download/v$version/Espanso-Win-Portable-x86_64.zip",
                 "hash": {
-                    "url": "$url.sha256.txt",
-                    "regex": "$sha256"
+                    "url": "$url.sha256.txt"
                 }
             }
         }
