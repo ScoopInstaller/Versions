@@ -15,6 +15,10 @@
             "extract_dir": "32bit"
         }
     },
+    "post_install": [
+        "$settings = 'ProcessHacker.exe.settings.xml'",
+        "(Get-Content $settings) | Where-Object {$_ -notmatch '\"IconGuids\"' -and $_ -notmatch '\"ProcessHacker.ExtendedTools.TrayIconGuids\"'} | Set-Content $settings"
+    ],
     "bin": [
         "ProcessHacker.exe",
         "peview.exe"
