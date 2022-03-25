@@ -19,7 +19,6 @@
         ]
     ],
     "pre_install": "if (!(Test-Path \"$persist_dir\\MultiPar.ini\")) { New-Item \"$dir\\MultiPar.ini\" -ItemType File | Out-Null }",
-
     "persist": "MultiPar.ini",
     "checkver": {
         "github": "https://github.com/Yutaka-Sawada/MultiPar"
