@@ -14,11 +14,7 @@
             "hash": "93f4a28a423250fff64b16f5c068a143d0f35100d055416c05609f1e890bf92d"
         }
     },
-    "post_install": [
-        "Remove-Item $original_dir\\usr\\bin\\scp.exe",
-        "Remove-Item $original_dir\\usr\\bin\\sftp.exe",
-        "Remove-Item $original_dir\\usr\\bin\\ssh*.exe"
-    ],
+    "post_install": "'scp', 'sftp', 'ssh*' | ForEach-Object { Remove-Item $original_dir\\usr\\bin\\$_.exe }",
     "env_set": {
         "GIT_INSTALL_ROOT": "$dir"
     },
