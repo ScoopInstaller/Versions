@@ -18,6 +18,7 @@
     "post_install": [
         "$settings = Get-ChildItem ProcessHacker.exe.settings.xml",
         "$settingsXml = [xml](Get-Content $settings)",
+        "if ($settingsXml.settings -eq $null) { return }",
         "($settingsXml.settings.ChildNodes | Where-Object { $_.name.Contains(\"IconGuids\") }) | ForEach-Object { [void]$_.ParentNode.RemoveChild($_) }",
         "$settingsXml.Save($settings)"
     ],
