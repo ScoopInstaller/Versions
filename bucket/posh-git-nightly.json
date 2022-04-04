@@ -1,11 +1,12 @@
 {
+    "version": "2022.03.31-18.03.01-cb070b7773",
+    "description": "A PowerShell module which provides Git/PowerShell integration. (nightly version)",
     "homepage": "https://dahlbyk.github.io/posh-git/",
-    "description": "A PowerShell module which provides Git/PowerShell integration.",
-    "version": "2020.04.12-04.22.08-14e274d4f3",
     "license": "MIT",
-    "url": "https://github.com/dahlbyk/posh-git/archive/14e274d4f3701e1f543d9bc39ac12e9dfad04895.zip",
-    "hash": "efe378bd6318941fbc41730881def9524e4418877482e28df1a750e7eec65fd3",
-    "extract_dir": "posh-git-14e274d4f3701e1f543d9bc39ac12e9dfad04895\\src",
+    "notes": "See usage: https://github.com/dahlbyk/posh-git#using-posh-git",
+    "url": "https://github.com/dahlbyk/posh-git/archive/cb070b777363ab5d51c6dff1ead22828e22122b2.zip",
+    "hash": "689b0a7af97cbafeef07d0be9b081200acea9d2dbcefad2ec72619ded069dbeb",
+    "extract_dir": "posh-git-cb070b777363ab5d51c6dff1ead22828e22122b2\\src",
     "psmodule": {
         "name": "posh-git"
     },
@@ -17,6 +18,5 @@
     "autoupdate": {
         "url": "https://github.com/dahlbyk/posh-git/archive/$matchSha.zip",
         "extract_dir": "posh-git-$matchSha\\src"
-    },
-    "notes": "See usage: https://github.com/dahlbyk/posh-git#using-posh-git"
+    }
 }
