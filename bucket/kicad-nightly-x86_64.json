@@ -1,10 +1,14 @@
 {
-    "version": "25890.b85fb9137f",
-    "description": "Nightly build of KiCAD 64bit: An Electronics Design Automation Suite",
+    "version": "27242.0a5438ec88",
+    "description": "Nightly build of KiCAD, an electronics design automation (EDA) suite.",
     "homepage": "https://kicad-pcb.org",
     "license": "GPL-3.0-only",
-    "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-msvc.r25890.b85fb9137f-x86_64.exe#/dl.7z",
-    "hash": "c40416749c8588822ac5c9ea3707d9399d604083bc244449c5e5ab6ff3277a5c",
+    "architecture": {
+        "64bit": {
+            "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-nightly-r27242.0a5438ec88-x86_64.exe#/dl.7z",
+            "hash": "49d1e60f9b562dd54070686ed634acf3bd1218a9600d199ecb5fff23e36f2aae"
+        }
+    },
     "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Recurse",
     "bin": "bin\\kicad.exe",
     "shortcuts": [
@@ -36,6 +40,10 @@
         "reverse": true
     },
     "autoupdate": {
-        "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-msvc.r$version-x86_64.exe#/dl.7z"
+        "architecture": {
+            "64bit": {
+                "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-nightly-r$version-x86_64.exe#/dl.7z"
+            }
+        }
     }
 }
