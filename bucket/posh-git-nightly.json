@@ -1,5 +1,5 @@
 {
-    "version": "2022.03.31-18.03.01-cb070b7773",
+    "version": "cb070b7773",
     "description": "A PowerShell module which provides Git/PowerShell integration. (nightly version)",
     "homepage": "https://dahlbyk.github.io/posh-git/",
     "license": "MIT",
@@ -11,8 +11,8 @@
     },
     "checkver": {
         "url": "https://github.com/dahlbyk/posh-git/commits/master.atom",
-        "regex": "(?ms)<id[^>]*>\\s*\\S+/(?<sha>(?<shortSha>[0-9a-f]{10})[0-9a-f]*)\\s*</id>.*?<updated[^>]*>\\s*(?<year>\\d+)-(?<month>\\d+)-(?<day>\\d+)T(?<hour>\\d+):(?<minute>\\d+):(?<second>\\d+)Z\\s*</updated>",
-        "replace": "${year}.${month}.${day}-${hour}.${minute}.${second}-${shortSha}"
+        "regex": "(?ms)<id[^>]*>\\s*\\S+/(?<sha>(?<shortSha>[0-9a-f]{10})[0-9a-f]*)\\s*</id>",
+        "replace": "${shortSha}"
     },
     "autoupdate": {
         "url": "https://github.com/dahlbyk/posh-git/archive/$matchSha.zip",
