@@ -1,21 +1,21 @@
 {
     "homepage": "https://dahlbyk.github.io/posh-git/",
     "description": "A PowerShell module which provides Git/PowerShell integration.",
-    "version": "1.0.0-beta4",
+    "version": "1.1.0",
     "license": "MIT",
-    "url": "https://github.com/dahlbyk/posh-git/archive/v1.0.0-beta4.zip",
-    "hash": "716b8cb5752711a651b87fd2fb12d292ba61abcd0679970dede49103ccf6c735",
-    "extract_dir": "posh-git-1.0.0-beta4\\src",
+    "notes": "See usage: https://github.com/dahlbyk/posh-git#using-posh-git",
+    "url": "https://github.com/dahlbyk/posh-git/archive/refs/tags/v1.1.0.zip",
+    "hash": "36b13c1b52aab5cd411c7c333ededfcb5c4b3d2b1ef895f2f13cede203cfe73a",
+    "extract_dir": "posh-git-1.1.0\\src",
     "psmodule": {
         "name": "posh-git"
     },
     "checkver": {
         "url": "https://github.com/dahlbyk/posh-git/releases",
-        "regex": "\\/releases\\/tag\\/(?:v|V)?1[\\d.]+(?:-beta\\w*)?"
+        "regex": "releases/tag/v([\\d.]+(?:-beta\\w*)?)"
     },
     "autoupdate": {
-        "url": "https://github.com/dahlbyk/posh-git/archive/v$version.zip",
+        "url": "https://github.com/dahlbyk/posh-git/archive/refs/tags/v$version.zip",
         "extract_dir": "posh-git-$version\\src"
-    },
-    "notes": "See usage: https://github.com/dahlbyk/posh-git#using-posh-git"
+    }
 }
