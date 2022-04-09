@@ -22,7 +22,7 @@
     ],
     "checkver": {
         "url": "https://api.github.com/repos/akiyosi/goneovim/releases/tags/nightly",
-        "regex": "\"target_commitish\": \"([0-9a-fA-F]{7})[0-9a-fA-F]*\"",
+        "regex": "\"target_commitish\": \"([0-9a-f]{7})[0-9a-f]*\"",
         "replace": "nightly-${1}"
     },
     "autoupdate": {
