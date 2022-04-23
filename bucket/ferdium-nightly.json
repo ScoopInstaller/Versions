@@ -8,9 +8,7 @@
     "architecture": {
         "64bit": {
             "installer": {
-                "script": [
-                    "Expand-7zipArchive -Path \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
-                ]
+                "script": "Expand-7zipArchive -Path \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
             }
         },
         "32bit": {
