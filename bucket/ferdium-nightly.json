@@ -13,9 +13,7 @@
         },
         "32bit": {
             "installer": {
-                "script": [
-                    "Expand-7zipArchive -Path \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
-                ]
+                "script": "Expand-7zipArchive -Path \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
             }
         }
     },
