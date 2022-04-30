@@ -1,10 +1,10 @@
 {
-    "version": "3.6.3",
+    "version": "4.1.3",
     "description": "A free software environment for statistical computing and graphics.",
     "homepage": "https://www.r-project.org",
     "license": "GPL-2.0-only",
     "notes": [
-        "For source packages installation, please install 'rtools35'.",
+        "For source packages installation, please install 'rtools40'.",
         "",
         "You'll need to type 'r.exe' to run R, because in Powershell 'r' runs the last command. Alternatively 'rterm' can be used to start the interactive R terminal session.",
         "",
@@ -15,8 +15,8 @@
         "",
         "Annoying, right?! You might want to check out Pshazz (scoop install pshazz)--this has a plugin to remove some crazy aliases from Powershell, as well as many other improvements."
     ],
-    "url": "https://cloud.r-project.org/bin/windows/base/old/3.6.3/R-3.6.3-win.exe",
-    "hash": "md5:840714b6dab0a5cb4452b12dc01ca881",
+    "url": "https://cloud.r-project.org/bin/windows/base/old/4.1.3/R-4.1.3-win.exe",
+    "hash": "79d1afdc3ca50fe3ca8510939b691aeb231e0cfebfbb8c26b1f0e1f09a7ab87c",
     "innosetup": true,
     "architecture": {
         "64bit": {
@@ -31,7 +31,7 @@
             "shortcuts": [
                 [
                     "bin\\x64\\Rgui.exe",
-                    "R 3.6.3"
+                    "R 4.1.3"
                 ]
             ]
         },
@@ -47,7 +47,7 @@
             "shortcuts": [
                 [
                     "bin\\i386\\Rgui.exe",
-                    "R 3.6.3"
+                    "R 4.1.3"
                 ]
             ]
         }
@@ -56,9 +56,9 @@
         "script": [
             "Remove-Item \"$dir\\bin\\R,*.exe\" -Force",
             "Copy-Item \"$dir\\bin\\R.exe\" \"$dir\\bin\\Rscript.exe\"",
-            "if (Test-Path (appdir 'rtools35' $global)) {",
+            "if (Test-Path (appdir 'rtools40' $global)) {",
             "   $renvloc = \"$dir\\etc\\Renviron.site\"",
-            "   $rtoolsloc = versiondir 'rtools35' (Select-CurrentVersion 'rtools35' $global) $global",
+            "   $rtoolsloc = versiondir 'rtools40' (Select-CurrentVersion 'rtools40' $global) $global",
             "   if (Test-Path $renvloc) {",
             "       $renv = Get-Content $renvloc -Encoding ASCII",
             "   } else {",
