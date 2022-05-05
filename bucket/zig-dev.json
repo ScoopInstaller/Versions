@@ -16,7 +16,7 @@
     "bin": "zig.exe",
     "checkver": {
         "url": "https://ziglang.org/download/index.json",
-        "jp": "$.master.version",
+        "jsonpath": "$.master.version",
         "regex": "(?<version>[\\w._-]+)\\+(?<commit>[0-9a-f]+)"
     },
     "autoupdate": {
@@ -28,7 +28,7 @@
         },
         "hash": {
             "url": "https://ziglang.org/download/index.json",
-            "jp": "$.master.x86_64-windows.shasum"
+            "jsonpath": "$.master.x86_64-windows.shasum"
         }
     }
 }
