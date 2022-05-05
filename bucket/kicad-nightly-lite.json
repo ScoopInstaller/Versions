@@ -1,16 +1,12 @@
 {
-    "version": "r20311.50e22de3ba",
+    "version": "r27499.f14dc9e305",
     "description": "Electronics Design Automation Suite, nightly build without libraries",
     "homepage": "https://kicad.org",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-r20311.50e22de3ba-x86_64-lite.exe#/dl.7z",
-            "hash": "c0d792adc59970b933c59d3867cf1157a419f5a84ac93f7a63f734754e5c6d11"
-        },
-        "32bit": {
-            "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-r20311.50e22de3ba-i686-lite.exe#/dl.7z",
-            "hash": "5f843da0825128e755b2835d66822b0e55f3e4165e3794003a77d42f6e504151"
+            "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-nightly-r27499.f14dc9e305-x86_64-lite.exe#/dl.7z",
+            "hash": "6ec3214d982c3a61259ce65a71a3846f74ca2e885ea722d8d0211f2aa9db0e3d"
         }
     },
     "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Recurse",
@@ -26,19 +22,16 @@
             "KiCad-nightly"
         ]
     ],
-    "notes": "configure environment paths KICAD6_3DMODEL_DIR, KICAD6_FOOTPRINT_DIR, KICAD6_SYMBOL_DIR, KICAD6_TEMPLATE_DIR, KICAD_USER_TEMPLATE_DIR, otherwise they'll default to SCOOP_DIR/apps/kicad-nightly-lite/current/share/kicad/",
+    "notes": "You should configure environment paths KICAD6_3DMODEL_DIR, KICAD6_FOOTPRINT_DIR, KICAD6_SYMBOL_DIR, KICAD6_TEMPLATE_DIR, KICAD_USER_TEMPLATE_DIR, otherwise they'll default to $dir\\share\\kicad",
     "checkver": {
         "url": "https://kicad-downloads.s3.cern.ch/?delimiter=/&prefix=windows/nightly/",
-        "regex": "<Key>windows/nightly/kicad-(r\\d+\\.[a-z0-9]+)-(?:x86_64|i686)-lite\\.exe</Key>",
-        "reverse" : true
+        "regex": "<Key>windows/nightly/kicad-nightly-(r\\d+\\.[a-z0-9]+)-x86_64-lite\\.exe</Key>",
+        "reverse": true
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-$version-x86_64-lite.exe#/dl.7z"
-            },
-            "32bit": {
-                "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-$version-i686-lite.exe#/dl.7z"
+                "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-nightly-$version-x86_64-lite.exe#/dl.7z"
             }
         }
     }
