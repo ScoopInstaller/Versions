@@ -20,7 +20,7 @@
     },
     "checkver": {
         "url": "https://www.stunnel.org/downloads.html",
-        "re": "beta/stunnel-(.+?)-win64"
+        "regex": "beta/stunnel-(.+?)-win64"
     },
     "autoupdate": {
         "architecture": {

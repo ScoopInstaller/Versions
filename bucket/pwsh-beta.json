@@ -23,7 +23,7 @@
     "persist": "profile.ps1",
     "checkver": {
         "url": "https://github.com/PowerShell/PowerShell/releases.atom",
-        "re": "\\/releases\\/tag\\/(?:v)?([\\d.]+-[a-z]+[\\d.]+)"
+        "regex": "\\/releases\\/tag\\/(?:v)?([\\d.]+-[a-z]+[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
