@@ -20,7 +20,7 @@
     ],
     "checkver": {
         "url": "https://www.7-zip.org/history.txt",
-        "regex": "\\n([\\d.]+) beta"
+        "regex": "\\n([\\d.]+)( beta)?"
     },
     "autoupdate": {
         "architecture": {
