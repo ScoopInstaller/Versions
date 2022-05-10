@@ -13,13 +13,13 @@
     "bin": [
         [
             "bin\\kicad.exe",
-            "kicad-nightly"
+            "kicad"
         ]
     ],
     "shortcuts": [
         [
             "bin\\kicad.exe",
-            "KiCad-nightly"
+            "KiCad Nightly"
         ]
     ],
     "notes": "You should configure environment paths KICAD6_3DMODEL_DIR, KICAD6_FOOTPRINT_DIR, KICAD6_SYMBOL_DIR, KICAD6_TEMPLATE_DIR, KICAD_USER_TEMPLATE_DIR, otherwise they'll default to $dir\\share\\kicad",
