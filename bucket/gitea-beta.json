@@ -27,7 +27,7 @@
     "notes": "Run 'gitea web -c \"$persist_dir\\custom\\conf\\app.ini\"' to start the webserver",
     "checkver": {
         "url": "https://github.com/go-gitea/gitea/releases",
-        "regex": ">v([\\d.]+-\\w+)<"
+        "regex": ">v([\\d.]+(-\\w+)?)<"
     },
     "autoupdate": {
         "architecture": {
