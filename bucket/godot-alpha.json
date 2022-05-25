@@ -20,5 +20,19 @@
             "godot.exe",
             "Godot Engine"
         ]
-    ]
+    ],    
+    "checkver": {
+        "url": "https://downloads.tuxfamily.org/godotengine/4.0/",
+        "regex": "alpha([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.tuxfamily.org/godotengine/4.0/alpha$version/Godot_v4.0-alpha$version_win64.exe.zip"
+            },
+            "32bit": {
+                "url": "https://downloads.tuxfamily.org/godotengine/4.0/alpha$version/Godot_v4.0-alpha$version_win32.exe.zip"
+            }
+        }
+    }
 }
