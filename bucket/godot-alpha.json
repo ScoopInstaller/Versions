@@ -1,5 +1,5 @@
 {
-    "version": "4.0.0-alpha8",
+    "version": "4.0-alpha8",
     "description": "A feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.",
     "homepage": "https://godotengine.org/",
     "license": "MIT",
@@ -22,16 +22,17 @@
         ]
     ],
     "checkver": {
-        "url": "https://downloads.tuxfamily.org/godotengine/4.0/",
-        "regex": "alpha([\\d.]+)"
+        "url": "https://godotengine.org/news",
+        "regex": "Dev snapshot: Godot (?<ver>[\\d.]+) alpha (?<alpha>[\\d.]+)",
+        "replace": "${1}-alpha${2}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.tuxfamily.org/godotengine/4.0/alpha$version/Godot_v4.0-alpha$version_win64.exe.zip"
+                "url": "https://downloads.tuxfamily.org/godotengine/$matchVer/alpha$matchAlpha/Godot_v$version_win64.exe.zip"
             },
             "32bit": {
-                "url": "https://downloads.tuxfamily.org/godotengine/4.0/alpha$version/Godot_v4.0-alpha$version_win32.exe.zip"
+                "url": "https://downloads.tuxfamily.org/godotengine/$matchVer/alpha$matchAlpha/Godot_v$version_win32.exe.zip"
             }
         }
     }
