@@ -42,9 +42,7 @@
     ],
     "post_install": "regsvr32 /s \"$dir\\pdfpreview.dll\"",
     "uninstaller": {
-        "script":[
-            "c:\\windows\\system32\\regsvr32.exe /u /s $dir\\pdfpreview.dll"
-        ]
+        "script": "regsvr32 /u /s \"$dir\\pdfpreview.dll\""
     },
     "checkver": {
         "url": "https://www.sumatrapdfreader.org/docs/Version-history",
