@@ -27,7 +27,7 @@
         "file": "SumatraPDF-installer.exe",
         "args": [
             "-x",
-            "-d $dir"
+            "-d \"$dir\""
         ]
     },
     "shortcuts": [
