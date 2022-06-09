@@ -16,10 +16,11 @@
         "Annoying, right?! You might want to check out Pshazz (scoop install pshazz)--this has a plugin to remove some crazy aliases from Powershell, as well as many other improvements."
     ],
     "url": "https://cran.rstudio.com/bin/windows/base/R-4.2.0patched-win.exe",
-    "hash": "md5:D2CFDC187C4F81E454628F5988A3E529",
+    "hash": "3E6C6046203A968985079A9256BCDD1AA7CF738C88F2AC3C4BE292BF80C7B43E",
     "innosetup": true,
     "architecture": {
         "64bit": {
+            "pre_install": "Rename-Item \"$dir\\bin\\R,2.exe\" 'R.exe'",
             "bin": [
                 "bin\\x64\\R.exe",
                 "bin\\x64\\Rcmd.exe",
@@ -30,7 +31,7 @@
             "shortcuts": [
                 [
                     "bin\\x64\\Rgui.exe",
-                    "R"
+                    "R 4.2.0-patched"
                 ]
             ]
         }
