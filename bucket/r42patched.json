@@ -59,8 +59,9 @@
         ]
     },
     "checkver": {
-        "url": "https://cloud.r-project.org/bin/windows/contrib/r-release/",
-        "regex": "R-([\\d.]+)"
+        "url": "https://cran.rstudio.com/bin/windows/base/rpatched.html",
+        "regex": "R-([\\d.]+)",
+        "replace": "${1}patched"
     },
     "autoupdate": {
         "url": "https://cloud.r-project.org/bin/windows/base/R-$version-win.exe",
