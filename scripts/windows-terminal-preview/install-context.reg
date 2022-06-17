@@ -2,12 +2,12 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\Windows Terminal Preview]
 @="Open in Windows &Terminal Preview"
-"Icon"="$wt"
+"Icon"="$wt\\WindowsTerminal.exe"
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\Windows Terminal Preview\command]
-@="\"$wt\" -d \"%V\""
+@="\"$wt\\wt.exe\" -d \"%V\""
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\Windows Terminal Preview]
 @="Open in Windows &Terminal Preview"
-"Icon"="$wt"
+"Icon"="$wt\\WindowsTerminal.exe"
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\Windows Terminal Preview\command]
-@="\"$wt\" -d \"%V\""
+@="\"$wt\\wt.exe\" -d \"%V\""
