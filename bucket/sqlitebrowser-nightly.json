@@ -1,16 +1,16 @@
 {
-    "version": "16-Jun-2022",
+    "version": "2022-06-18",
     "description": "DB Browser for SQLite (DB4S) project (nightly build)",
     "homepage": "https://github.com/sqlitebrowser/sqlitebrowser",
     "license": "MPL-2.0|GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://nightlies.sqlitebrowser.org/latest/DB.Browser.for.SQLite-win64.zip",
-            "hash": "4253b827d114262a5aaed3358dcc084f450550fac8340c64c52b8928bba148a4"
+            "url": "https://nightlies.sqlitebrowser.org/win64/DB.Browser.for.SQLite-2022-06-18-win64.zip",
+            "hash": "c29c001e0bcd0e320abdb46e8d9dbb99fdca853a900274b10c28d88c1c1e02a3"
         },
         "32bit": {
-            "url": "https://nightlies.sqlitebrowser.org/latest/DB.Browser.for.SQLite-win32.zip",
-            "hash": "9131cb293730e4ebdbcfbf0abc995840de9592b99acd9169c2843d0c9eef3efc"
+            "url": "https://nightlies.sqlitebrowser.org/win32/DB.Browser.for.SQLite-2022-06-18-win32.zip",
+            "hash": "edc4f1ded7b6cedacdd43a25cbd936ffc0ff4e2db54e4e49196fcc7609c2d0f0"
         }
     },
     "extract_dir": "DB Browser for SQLite",
@@ -31,16 +31,16 @@
     "persist": "Data",
     "checkver": {
         "url": "https://nightlies.sqlitebrowser.org/win64/",
-        "regex": "(\\d\\d-[A-Z][a-z][a-z]-\\d\\d\\d\\d)",
+        "regex": "SQLite-(\\d{4}-\\d{2}-\\d{2})-win64\\.",
         "reverse": true
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://nightlies.sqlitebrowser.org/latest/DB.Browser.for.SQLite-win64.zip"
+                "url": "https://nightlies.sqlitebrowser.org/win64/DB.Browser.for.SQLite-$version-win64.zip"
             },
             "32bit": {
-                "url": "https://nightlies.sqlitebrowser.org/latest/DB.Browser.for.SQLite-win32.zip"
+                "url": "https://nightlies.sqlitebrowser.org/win32/DB.Browser.for.SQLite-$version-win32.zip"
             }
         }
     }
