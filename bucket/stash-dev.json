@@ -11,7 +11,19 @@
     },
     "url": "https://github.com/stashapp/stash/releases/download/latest_develop/stash-win.exe",
     "hash": "ff4a1e74f190d957c7fb742ac920a8c4d95a01d9d713ea6f0c4aff5f13a4c7a6",
-    "bin": "stash-win.exe",
+    "bin": [
+        [
+            "stash-win.exe",
+            "stash-win",
+            "-c \"$dir\\config\\config.yml\""
+        ],
+        [
+            "stash-win.exe",
+            "stash",
+            "-c \"$dir\\config\\config.yml\""
+        ]
+    ],
+    "persist": "config"
     "checkver": {
         "github": "https://github.com/stashapp/stash/commits/develop"
     },
