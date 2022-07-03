@@ -1,6 +1,6 @@
 {
     "version": "0.15.0-28",
-    "description": "An organizer for your porn.",
+    "description": "An organizer for your porn. (Dev release channel)",
     "homepage": "https://stashapp.cc",
     "license": "AGPL-3.0-only",
     "suggest": {
@@ -23,9 +23,10 @@
             "-c \"$dir\\config\\config.yml\""
         ]
     ],
-    "persist": "config"
+    "persist": "config",
     "checkver": {
-        "github": "https://github.com/stashapp/stash/commits/develop"
+        "url": "https://github.com/stashapp/stash/releases/tag/latest_develop",
+        "regex": "Release v([\\w.-]+)"
     },
     "autoupdate": {
         "url": "https://github.com/stashapp/stash/releases/download/latest_develop/stash-win.exe"
