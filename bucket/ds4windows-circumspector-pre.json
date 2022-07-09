@@ -62,8 +62,8 @@
         "Profiles.xml"
     ],
     "checkver": {
-        "github": "https://github.com/CircumSpector/DS4Windows",
-        "regex": "/releases/tag/v([\\d.]+)"
+        "url": "https://github.com/CircumSpector/DS4Windows/releases",
+        "regex": "/tag/v([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
