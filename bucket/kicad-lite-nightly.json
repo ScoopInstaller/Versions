@@ -1,12 +1,12 @@
 {
-    "version": "r28208.f8b157a1fb.2022-07-21",
+    "version": "r28257.e10158ff10.2022-07-25",
     "description": "Electronics Design Automation Suite, nightly build without libraries",
     "homepage": "https://kicad.org",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-nightly-r28208.f8b157a1fb-x86_64-lite.exe#/dl.7z",
-            "hash": "e73deae6b1d6cc3bea28556e12a2333d9f3cd8ed0830029464797233dc7fd53e"
+            "url": "https://kicad-downloads.s3.cern.ch/windows/nightly/kicad-nightly-r28257.e10158ff10-x86_64-lite.exe#/dl.7z",
+            "hash": "b531fd803a025f77d8dc7ddc103a8a3dfd8454244d64859c5e5f5a892e47bca5"
         }
     },
     "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Recurse",
