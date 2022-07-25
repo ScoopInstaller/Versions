@@ -26,10 +26,9 @@
     ],
     "checkver": {
         "script": [
-            "$builds = 'x32', 'x64'",
             "$urls =  @()",
-            "foreach ($build in $builds) {",
-            "    $base_url = 'https://alpha.inkscape.org/snapshots/latest_master_'+ $build + '.html'",
+            "'x32', 'x64' | ForEach-Object {",
+            "    $base_url = 'https://alpha.inkscape.org/snapshots/latest_master_'+ $_ + '.html'",
             "    $dl_page = Invoke-WebRequest $base_url -UseBasicParsing",
             "    $dl = $dl_page.links | Where-Object href -match '\\.7z$' | Select-Object -first 1 -expand href",
             "    $urls += $dl",
