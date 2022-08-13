@@ -19,8 +19,8 @@
         "log"
     ],
     "checkver": {
-        "url": "https://github.com/portapps/discord-ptb-portable",
-        "regex": "/releases/tag/(?:v|V)?([\\d.-]+)"
+        "github": "https://github.com/portapps/discord-ptb-portable",
+        "regex": "tag/([\\d.-]+)"
     },
     "autoupdate": {
         "url": "https://github.com/portapps/discord-portable/releases/download/$version/discord-portable-win32-$version.7z",
