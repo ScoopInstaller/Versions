@@ -1,8 +1,8 @@
 {
     "version": "15234",
-    "description": "Free PDF, eBook, comic book reader for Windows(prerel)",
+    "description": "(SumatraPDF pre-release)Free PDF, eBook and comic book reader for Windows",
     "homepage": "https://www.sumatrapdfreader.org/prerelease",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0,BSD-2-Clause",
     "architecture": {
         "64bit": {
             "url": "https://www.sumatrapdfreader.org/dl/prerel/15234/SumatraPDF-prerel-64.exe",
@@ -12,10 +12,9 @@
     "pre_install": [
         "Get-Item \"$dir\\SumatraPDF*.exe\" | Rename-Item -NewName 'SumatraPDF-prerel.exe'",
         "$file = 'SumatraPDF-settings.txt'",
-        "if (-not (Test-Path \"$persist_dir\\$file\")) {",
+        "if (!(Test-Path \"$persist_dir\\$file\")) {",
         "    Write-Host 'File' $file 'does not exists. Creating.' -f Yellow",
-        "    $CONT = @('CheckForUpdates = false')",
-        "    Set-Content \"$dir\\$file\" ($CONT -join \"`r`n\") -Encoding Ascii",
+        "    Set-Content \"$dir\\$file\" 'CheckForUpdates = false' -Encoding Ascii",
         "}"
     ],
     "bin": "SumatraPDF-prerel.exe",
