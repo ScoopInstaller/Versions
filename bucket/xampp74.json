@@ -42,5 +42,16 @@
         "tomcat\\conf",
         "tomcat\\logs",
         "xampp-control.ini"
-    ]
+    ],
+    "checkver": {
+        "url": "https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.29/",
+        "regex": "xampp-windows-x64-(\\d+\\.\\d+\\.\\d+-\\d+)-VC15.7z"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.sourceforge.net/project/xampp/XAMPP%20Windows/$matchHead/xampp-windows-x64-$version-VC15.7z"
+            }
+        }
+    }
 }
