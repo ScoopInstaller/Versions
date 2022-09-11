@@ -9,8 +9,7 @@
         "par1j.exe",
         "par2j.exe",
         "par2j64.exe",
-        "sfv_md5.exe",
-        "tool\\par2_rename.exe"
+        "sfv_md5.exe"
     ],
     "shortcuts": [
         [
@@ -18,6 +17,7 @@
             "MultiPar"
         ]
     ],
+    "notes": "Some Python script files are provided in .\\tool folder.",
     "pre_install": "if (!(Test-Path \"$persist_dir\\MultiPar.ini\")) { New-Item \"$dir\\MultiPar.ini\" -ItemType File | Out-Null }",
     "persist": "MultiPar.ini",
     "checkver": {
