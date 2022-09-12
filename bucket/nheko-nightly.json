@@ -1,5 +1,5 @@
 {
-    "version": "20220830-57f505",
+    "version": "20220912-9c3ca9",
     "description": "Desktop client for Matrix using Qt and C++17.",
     "homepage": "https://nheko-reborn.github.io/",
     "license": "GPL-3.0-or-later",
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://matrix.neko.dev/_matrix/media/r0/download/neko.dev/ZfuWPfstZFKZmzLyiHHVySJs#/dl.zip",
-            "hash": "fa335276f96571090f437db6c83a02e428f65a7eecef54bbfd24434dbf4e5266"
+            "url": "https://matrix.org/_matrix/media/r0/download/neko.dev/rWoNnSGcYjBbhuPDyHiVXpPK#/dl.zip",
+            "hash": "5355a680dfb25d8c12a7a84faed329226887a1492dc4e06ad38f8057ad191ccc"
         }
     },
     "shortcuts": [
@@ -20,7 +20,7 @@
     ],
     "checkver": {
         "script": [
-            "$url = 'https://matrix-static.neko.dev/room/!TshDrgpBNBDmfDeEGN:neko.dev/'",
+            "$url = 'https://view.matrix.org/room/!TshDrgpBNBDmfDeEGN:neko.dev'",
             "$regex = '(?sm)download/neko\\.dev/([A-Za-z]+).*?nheko-master-([0-9a-f]+)-win64\\.zip.*?(\\d{1,2} [A-Za-z]{3} \\d{4})'",
             "",
             "$cont = (Invoke-WebRequest $url).Content",
@@ -38,7 +38,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://matrix.neko.dev/_matrix/media/r0/download/neko.dev/$matchFileurl#/dl.zip"
+                "url": "https://matrix.org/_matrix/media/r0/download/neko.dev/$matchFileurl#/dl.zip"
             }
         }
     }
