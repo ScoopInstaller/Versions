@@ -18,7 +18,7 @@
         ]
     ],
     "checkver": {
-        "github": "https://github.com/prusa3d/PrusaSlicer",
+        "url": "https://api.github.com/repos/prusa3d/PrusaSlicer/releases",
         "regex": "PrusaSlicer-([\\d.]+)-(\\w+)\\+win64-(?<timestamp64>\\d+)(?:_signed)?.zip"
     },
     "autoupdate": {
