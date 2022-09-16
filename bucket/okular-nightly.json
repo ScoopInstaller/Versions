@@ -23,7 +23,7 @@
     ],
     "checkver": {
         "url": "https://binary-factory.kde.org/job/Okular_Nightly_win64/",
-        "regex": "<a href=\"lastSuccessfulBuild/artifact/okular-master-([\\d.]+)-windows"
+        "regex": "Last stable build (#([\\d.]+)),"
     },
     "autoupdate": {
         "architecture": {
