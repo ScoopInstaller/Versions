@@ -15,7 +15,7 @@
     ],
     "persist": "data",
     "checkver": {
-        "url": "https://api.github.com/repos/erengy/taiga/releases",
+        "url": "https://api.github.com/repositories/14477437/releases",
         "jsonpath": "$.[0].tag_name",
         "regex": "v([\\w.-]+)"
     },
