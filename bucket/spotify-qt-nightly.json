@@ -21,7 +21,7 @@
     ],
     "bin": "spotify-qt.exe",
     "checkver": {
-        "url": "https://api.github.com/repos/kraxarn/spotify-qt-nightly/releases/latest",
+        "url": "https://api.github.com/repositories/458937795/releases/latest",
         "jsonpath": "$.assets[0].name",
         "regex": "spotify-qt-v([\\d.-]+)-win(?:64|32)\\.zip"
     },
