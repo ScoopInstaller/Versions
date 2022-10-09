@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/logseq/logseq/releases/download/nightly/Logseq-win-x64-0.8.8+nightly.20221007.exe#/dl.7z",
-            "hash": "4392d15c31cb8dd9f67227209fd1dd18d07dbcde1bc8d699202326bf01438fdd"
+            "hash": "5b4074b96ed5513f4e32bb46fc44633b05ca3afde9c801d5f90bc6ca331668ac"
         }
     },
     "pre_install": [
@@ -30,7 +30,7 @@
                 "url": "https://github.com/logseq/logseq/releases/download/nightly/Logseq-win-x64-$matchMain+nightly.$matchDate.exe#/dl.7z",
                 "hash": {
                     "url": "$baseurl/SHA256SUMS.txt",
-                    "regex": "$sha256\\s{2}Logseq-win-x64"
+                    "regex": "$sha256\\s{2}Logseq-win-x64-$matchMain\\+nightly\\.$matchDate\\.exe"
                 }
             }
         }
