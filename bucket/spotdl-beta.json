@@ -16,7 +16,7 @@
         "regex": "\\/releases\\/tag\\/(?:v|V)?([\\d.\\-a-zA-Z]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/spotDL/spotify-downloader/releases/download/v$version/spotdl-$version-win32.exe"
+        "url": "https://github.com/spotDL/spotify-downloader/releases/download/v$version/spotdl-$version-win32.exe",
         "bin": [
             [
                 "spotdl-$version-win32.exe",
