@@ -7,27 +7,23 @@
     "hash": "c704a821089eab2588f1deae775916219b1517febd1dd574ff29958dca873945",
     "extract_dir": "arduino-1.8.19",
     "bin": [
-        [
-            "arduino.exe",
-            "arduino-old"
-        ],
+        "arduino.exe",
         "arduino_debug.exe",
         "arduino-builder.exe"
     ],
     "shortcuts": [
         [
             "arduino.exe",
-            "Arduino"
+            "Arduino 1.8"
         ],
         [
             "arduino_debug.exe",
-            "Arduino Debug"
+            "Arduino Debug 1.8"
         ]
     ],
     "checkver": {
-        "url": "https://www.arduino.cc/en/software",
-        "regex": "Arduino IDE ([\\d.]+)",
-        "reverse": "true"
+        "url": "https://www.arduino.cc/wiki/page-data/en/software/page-data.json",
+        "regex": "arduino-(1.8.\\d+)"
     },
     "autoupdate": {
         "url": "https://downloads.arduino.cc/arduino-$version-windows.zip",
