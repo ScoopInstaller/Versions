@@ -1,0 +1,28 @@
+{
+    "version": "20221012161720-6583fb06a",
+    "description": "Snapshot releases of the video transcoder with extensive support for multiple formats. (CLI version)",
+    "homepage": "https://handbrake.fr",
+    "license": "GPL-2.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/HandBrake/HandBrake-snapshots/releases/download/win/HandBrakeCLI-20221012161720-6583fb06a-master-win-x86_64.zip",
+            "hash": "25c6138a25193a86472f7add4d0cf64e37e0d9d2c3a3361d22877a89dccc6492"
+        }
+    },
+    "bin": "HandBrakeCLI.exe",
+    "checkver": {
+        "url": "https://github.com/HandBrake/handbrake-snapshots/releases/tag/win",
+        "regex": "<td>HandBrakeCLI-([\\d]+-[\\w]+)-master-win-x86_64.zip</td>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/HandBrake/HandBrake-snapshots/releases/download/win/HandBrakeCLI-$version-master-win-x86_64.zip",
+                "hash": {
+                    "url": "https://github.com/HandBrake/handbrake-snapshots/releases/tag/win",
+                    "regex": "<td>$sha256</td>"
+                }
+            }
+        }
+    }
+}
