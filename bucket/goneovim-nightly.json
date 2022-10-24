@@ -1,5 +1,5 @@
 {
-    "version": "nightly-20221023",
+    "version": "20221023",
     "description": "Neovim GUI which uses a Golang Qt backend",
     "homepage": "https://github.com/akiyosi/goneovim",
     "license": "MIT",
@@ -22,9 +22,9 @@
     ],
     "checkver": {
         "url": "https://api.github.com/repos/akiyosi/goneovim/releases/tags/nightly",
-        "jsonpath": "$.assets[?(@.name=='goneovim-windows.zip')]",
-        "regex": "updated_at.*(?<year>\\d{4})\\D(?<month>\\d{2})\\D(?<day>\\d{2})",
-        "replace": "nightly-${year}${month}${day}"
+        "jsonpath": "$.assets[?(@.name=='goneovim-windows.zip')].updated_at",
+        "regex": ".*(?<year>\\d{4})\\D(?<month>\\d{2})\\D(?<day>\\d{2}).*",
+        "replace": "${year}${month}${day}"
     },
     "autoupdate": {
         "architecture": {
