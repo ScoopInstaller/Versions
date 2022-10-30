@@ -38,6 +38,7 @@
             ]
         }
     },
+    "persist": "site-library",
     "checkver": {
         "url": "https://cloud.r-project.org/bin/windows/base/rpatched.html",
         "regex": "(?s)R-([\\d.]+)(?<stage>[^-]+)-win.*\\((?<rev>r\\d+)\\)",
