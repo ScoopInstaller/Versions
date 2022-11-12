@@ -16,7 +16,7 @@
         }
     },
     "pre_install": [
-        "Get-ChildItem \"$dir\\Godot_*.exe\" | Rename-Item -NewName \"$dir\\godot-mono.exe\"",
+        "Get-ChildItem \"$dir\\Godot_*.exe\" | Rename-Item -NewName 'godot-mono.exe'",
         "Remove-Item \"$dir\\Godot_*.cmd\""
     ],
     "bin": "godot-mono.exe",
