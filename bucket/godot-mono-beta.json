@@ -15,11 +15,8 @@
             "extract_dir": "Godot_v4.0-beta5_mono_win32"
         }
     },
-    "pre_install": [
-        "Get-ChildItem \"$dir\\Godot_*.exe\" | Rename-Item -NewName 'godot-mono.exe'",
-        "Remove-Item \"$dir\\Godot_*.cmd\""
-    ],
-    "bin": "godot-mono.exe",
+    "pre_install": "Rename-Item \"$dir\\Godot_*_console.exe\" 'godot-mono-cli.exe'; Rename-Item \"$dir\\Godot_*.exe\" 'godot-mono.exe'",
+    "bin": "godot-mono-cli.exe",
     "shortcuts": [
         [
             "godot-mono.exe",
