@@ -13,8 +13,8 @@
             "hash": "4df1790c95ff2a2fcf547728b252cbfd8f67d47b6124c6b75b4526ed47c56d55"
         }
     },
-    "pre_install": "Rename-Item \"$dir\\Godot_*_console.cmd\" 'godot-cli.cmd'; Rename-Item \"$dir\\Godot_*.exe\" 'godot.exe'",
-    "bin": "godot-cli.cmd",
+    "pre_install": "Remove-Item \"$dir\\Godot_*_console.cmd\"; Rename-Item \"$dir\\Godot_*.exe\" 'godot.exe'",
+    "bin": "godot.exe",
     "shortcuts": [
         [
             "godot.exe",
