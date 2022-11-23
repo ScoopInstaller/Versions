@@ -40,27 +40,5 @@
         ]
     ],
     "env_add_path": "Scripts",
-    "persist": "envs",
-    "checkver": {
-        "url": "https://docs.anaconda.com/anaconda/install/hashes/win-3-64/",
-        "regex": "Anaconda3-([\\d.]+)-Windows"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://repo.anaconda.com/archive/Anaconda3-$version-Windows-x86_64.exe#/setup.exe",
-                "hash": {
-                    "url": "http://docs.anaconda.com/anaconda/install/hashes/Anaconda3-$version-Windows-x86_64.exe-hash/",
-                    "regex": "$sha256"
-                }
-            },
-            "32bit": {
-                "url": "https://repo.anaconda.com/archive/Anaconda3-$version-Windows-x86.exe#/setup.exe",
-                "hash": {
-                    "url": "http://docs.anaconda.com/anaconda/install/hashes/Anaconda3-$version-Windows-x86.exe-hash/",
-                    "regex": "$sha256"
-                }
-            }
-        }
-    }
+    "persist": "envs"
 }
