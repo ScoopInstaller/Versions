@@ -15,7 +15,7 @@
     },
     "pre_install": "if (Test-Path \"$persist_dir\\config.ini\") { Copy-Item \"$persist_dir\\config.ini\" \"$dir\\config.ini\" }",
     "persist": "history",
-    "pre_uninstall": "Copy-Item \"$dir\\config.ini\" \"$persist_dir\\config.ini\"",
+    "pre_uninstall": "if (Test-Path \"$dir\\config.ini\") { Copy-Item \"$dir\\config.ini\" \"$persist_dir\\config.ini\" }",
     "bin": "Snipaste.exe",
     "shortcuts": [
         [
