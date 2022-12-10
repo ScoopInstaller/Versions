@@ -16,8 +16,8 @@
         "bin\\ffprobe.exe"
     ],
     "checkver": {
-        "script": "Get-Date (Invoke-RestMethod https://api.github.com/repositories/292087234/releases/latest).published_at -UFormat %s",
-        "regex": "^(\\d+)$"
+        "script": "try { Get-Date (Invoke-RestMethod https://api.github.com/repositories/292087234/releases/latest).published_at -UFormat %s } catch { '' }",
+        "regex": "\\A(\\d+)\\Z"
     },
     "autoupdate": {
         "architecture": {

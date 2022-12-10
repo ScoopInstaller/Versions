@@ -6,8 +6,8 @@
     "url": "https://github.com/DavidMoore/ipfilter/releases/download/lists/ipfilter.zip",
     "hash": "0d8bf0d34482ba443b7736a1d64b2ccf93ba76816d0005261cbdfef66b387ca0",
     "checkver": {
-        "script": "Get-Date (Invoke-RestMethod https://api.github.com/repositories/487352/releases/tags/lists).assets[0].updated_at -UFormat %s",
-        "regex": "^(\\d+)$"
+        "script": "try { Get-Date (Invoke-RestMethod https://api.github.com/repositories/487352/releases/tags/lists).assets[0].updated_at -UFormat %s } catch { '' }",
+        "regex": "\\A(\\d+)\\Z"
     },
     "autoupdate": {
         "url": "https://github.com/DavidMoore/ipfilter/releases/download/lists/ipfilter.zip"
