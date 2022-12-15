@@ -1,5 +1,5 @@
 {
-    "version": "nightly",
+    "version": "1.75.0-insider",
     "description": "Visual Studio Code is a lightweight but powerful source code editor (Insiders, Portable Edition).",
     "homepage": "https://code.visualstudio.com/",
     "license": {
@@ -8,17 +8,19 @@
     },
     "notes": [
         "Visual Studio Code now supports Portable Mode! Please move the following directories:",
-        "From \"$env:USERPROFILE\\.vscode-insiders\\extensions\" to \"$env:SCOOP\\persist\\vscode-insiders-portable\\data\\extensions\"",
-        "From \"$env:APPDATA\\Code - Insiders\" to \"$env:SCOOP\\persist\\vscode-insiders-portable\\data\\user-data\"",
+        "From \"$env:USERPROFILE\\.vscode-insiders\\extensions\" to \"$env:SCOOP\\persist\\vscode-insiders\\data\\extensions\"",
+        "From \"$env:APPDATA\\Code - Insiders\" to \"$env:SCOOP\\persist\\vscode-insiders\\data\\user-data\"",
         "Add Visual Studio Code as a context menu option by running: '$dir\\install-context.reg'",
         "For file associations, run '$dir\\install-associations.reg'"
     ],
     "architecture": {
         "64bit": {
-            "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z"
+            "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z",
+            "hash": "817768e1651bd64fd064df0a1a9606f58e7d66432a2ecc5eb171bf4d0bd6d793"
         },
         "32bit": {
-            "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z"
+            "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z",
+            "hash": "e98b69636bed6a4bc0eb0156f350b130e361bbddab659ae8f1a7e179d57ec710"
         }
     },
     "post_install": [
@@ -44,5 +46,27 @@
             "Visual Studio Code - Insiders"
         ]
     ],
-    "persist": "data"
+    "persist": "data",
+    "checkver": {
+        "url": "https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest",
+        "jsonpath": "$.productVersion"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z",
+                "hash": {
+                    "url": "https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest",
+                    "jsonpath": "$.sha256hash"
+                }
+            },
+            "32bit": {
+                "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z",
+                "hash": {
+                    "url": "https://update.code.visualstudio.com/api/update/win32-archive/insider/latest",
+                    "jsonpath": "$.sha256hash"
+                }
+            }
+        }
+    }
 }
