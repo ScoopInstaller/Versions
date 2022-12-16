@@ -52,4 +52,5 @@
         "    Copy-Item \"$env:AppData\\VSCodium\" \"$dir\\data\\user-data\" -Recurse",
         "}"
     ]
+    "pre_uninstall": "reg import \"$dir\\uninstall-associations.reg\"; reg import \"$dir\\uninstall-context.reg\"",
 }
