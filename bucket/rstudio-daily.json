@@ -1,13 +1,13 @@
 {
-    "version": "2022.10.0-daily+9",
+    "version": "2022.12.0-354",
     "description": "An IDE for R with console, syntax-highlighting, editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.",
     "homepage": "https://www.rstudio.com/",
     "license": "AGPL-3.0-only",
     "depends": "r",
     "architecture": {
         "64bit": {
-            "url": "https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-2022.10.0-daily-9.exe#/dl.7z",
-            "hash": "f0f0672a85ed55f7d0d039eb27c45fa1a1022294b5c57abeede85cf850566639",
+            "url": "https://s3.amazonaws.com/rstudio-ide-build/electron/windows/RStudio-2022.12.0-354.exe#/dl.7z",
+            "hash": "5bc154a605640672f62a4fe770a5af20ef6fee5f82a4e64b9ae92fb75cd5aa66",
             "post_install": [
                 "Remove-Item \"$dir\\`$*\" -Recurse",
                 "if (!(Test-Path \"$env:Appdata\\RStudio\")) {",
@@ -20,28 +20,27 @@
             ]
         }
     },
-    "bin": "bin\\rstudio.exe",
+    "bin": "rstudio.exe",
     "shortcuts": [
         [
-            "bin\\rstudio.exe",
+            "rstudio.exe",
             "RStudio Daily"
         ]
     ],
     "checkver": {
-        "url": "https://dailies.rstudio.com/version/",
-        "regex": "([\\d.]+)-daily&#43;(\\d+)",
-        "replace": "${1}-daily+${2}"
+        "url": "https://dailies.rstudio.com/rstudio/latest/index.json",
+        "jsonpath": "$.products.electron.platforms.windows.filename",
+        "regex": "RStudio-([\\w.-]+).exe"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-$match1-daily-$match2.exe#/dl.7z",
+                "url": "https://s3.amazonaws.com/rstudio-ide-build/electron/windows/RStudio-$version.exe#/dl.7z",
                 "hash": {
-                    "url": "https://dailies.rstudio.com/rstudio/prairie-trillium/desktop/windows/$majorVersion-$minorVersion-$patchVersion-daily-$match2/",
-                    "regex": "$sha256"
+                    "url": "https://dailies.rstudio.com/rstudio/latest/index.json",
+                    "jsonpath": "$.products.electron.platforms.windows.sha256"
                 }
             }
         }
-    },
-    "##": "'autoupdate.architecture.64bit.hash.url' must be updated when RStudio daily builds' branch has been changed."
+    }
 }
