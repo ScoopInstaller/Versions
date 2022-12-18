@@ -4,12 +4,8 @@
     "homepage": "https://prismlauncher.org/",
     "license": "GPL-3.0-only",
     "notes": "To add Prism Launcher file association options for .ZIPs and .MRPACKS, run this: \"$dir\\install-associations.reg\"",
-    "architecture": {
-        "64bit": {
-            "url": "https://nightly.link/PrismLauncher/PrismLauncher/workflows/trigger_builds/develop/PrismLauncher-Windows-MSVC-Legacy-8da6667-Debug.zip",
-            "hash": "4177028ec4c92d8fce876e1d1e9924a74c6afa10566eedb65e338723247bc16c"
-        }
-    },
+    "url": "https://nightly.link/PrismLauncher/PrismLauncher/workflows/trigger_builds/develop/PrismLauncher-Windows-MSVC-Legacy-8da6667-Debug.zip",
+    "hash": "4177028ec4c92d8fce876e1d1e9924a74c6afa10566eedb65e338723247bc16c",
     "suggest": {
         "Microsoft Visual C++ Redistributables": "extras/vcredist2022"
     },
@@ -37,10 +33,6 @@
         "replace": "7.0-${sha}"
     },
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://nightly.link/PrismLauncher/PrismLauncher/workflows/trigger_builds/develop/PrismLauncher-Windows-MSVC-Legacy-$matchSha-Debug.zip"
-            }
-        }
+        "url": "https://nightly.link/PrismLauncher/PrismLauncher/workflows/trigger_builds/develop/PrismLauncher-Windows-MSVC-Legacy-$matchSha-Debug.zip"
     }
 }
