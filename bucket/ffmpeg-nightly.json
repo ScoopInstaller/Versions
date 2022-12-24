@@ -1,5 +1,5 @@
 {
-    "version": "3.12.0a3",
+    "version": "1671715260",
     "description": "A complete, cross-platform solution to record, convert and stream audio and video.",
     "homepage": "https://ffmpeg.org",
     "license": "GPL-3.0-or-later",
@@ -16,8 +16,8 @@
         "bin\\ffprobe.exe"
     ],
     "checkver": {
-        "script": "Get-Date (Invoke-RestMethod https://api.github.com/repositories/292087234/releases/latest).published_at -UFormat %s",
-        "regex": "^(\\d+)$"
+        "script": "try { Get-Date (Invoke-RestMethod https://api.github.com/repositories/292087234/releases/latest).published_at -UFormat %s } catch { '' }",
+        "regex": "\\A(\\d+)\\Z"
     },
     "autoupdate": {
         "architecture": {
