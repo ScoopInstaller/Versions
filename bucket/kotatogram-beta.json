@@ -29,7 +29,7 @@
         "New-Item 'HKCU:\\SOFTWARE\\Classes\\tg\\shell\\open\\command' -Value \"\"\"$dir\\Kotatogram.exe\"\"  -- \"\"%1\"\"\" -Force | Out-Null",
         "New-Item 'HKCU:\\SOFTWARE\\Classes\\tg\\DefaultIcon' -Value \"$dir\\Kotatogram.exe,1\" -Force | Out-Null",
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\tg' -Name 'URL Protocol' -Value '' -Force | Out-Null",
-        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\tg' -Value 'URL:Telegram Link' -Force | Out-Null",
+        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\tg' -Name '(Default)' -Value 'URL:Telegram Link' -Force | Out-Null",
         "New-Item 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop\\Capabilities\\UrlAssociations' -Name 'tg' -Value 'tdesktop.tg' -Force | Out-Null",
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop\\Capabilities' -Name 'ApplicationName' -Value 'Telegram Desktop' -Force | Out-Null",
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop\\Capabilities' -Name 'ApplicationDescription' -Value 'Telegram Desktop' -Force | Out-Null",
