@@ -9,11 +9,11 @@
     "architecture": {
         "64bit": {
             "url": "https://mirrors.kodi.tv/nightlies/windows/win64/master/KodiSetup-20221231-939c521a-master-x64.exe#/dl.7z",
-            "hash": "44040c803afb7c2f76201727ec563962522f551a6c90d2e55fe5ff76d4805a7a"
+            "hash": "d0be20447d5aceb5f2566f4d9166cacf1ab3d5769f9ae2029d87cad6f0c3f2bc"
         },
         "32bit": {
             "url": "https://mirrors.kodi.tv/nightlies/windows/win32/master/KodiSetup-20221231-939c521a-master-x86.exe#/dl.7z",
-            "hash": "8c206682efa38dfb717a579e3be2500a1655f3cfc8044db5073d46c2eb7db7c5"
+            "hash": "931d57ce819543533fabfbe8fa69843cf3363a444be0835f29302b5d9e888f4c"
         }
     },
     "post_install": "'$PLUGINSDIR', '$TEMP', 'AppxManifest.xml', 'Uninstall.exe' | ForEach-Object { Remove-Item \"$dir\\$_\" -Recurse -Force }",
