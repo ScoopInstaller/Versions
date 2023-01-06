@@ -1,0 +1,46 @@
+{
+    "version": "6.4",
+    "description": "A V2Ray client for Windows, support Xray core and v2fly core",
+    "homepage": "https://github.com/2dust/v2rayN",
+    "license": "GPL-3.0-only",
+    "depends": "xray",
+    "url": "https://github.com/2dust/v2rayN/releases/download/6.4/v2rayN.7z",
+    "hash": "532218814a8fc3f50219c35d48ea06317a9316343168f82ad2f90cd280c59752",
+    "extract_dir": "v2rayN",
+    "pre_install": [
+        "if (Test-Path \"$persist_dir\\guiNConfig.json\") {",
+        "    Copy-Item \"$persist_dir\\guiNConfig.json\" \"$dir\\\" | Out-Null",
+        "}",
+        "foreach ($form in @('*.exe')) {",
+        "    foreach ($_ in Get-ChildItem \"$(appdir xray $global)\\current\" -File) {",
+        "        $name = $_.Name",
+        "        if ($name -Like $form) {",
+        "            Write-Host \"Creating hardlink for $name\"",
+        "            New-Item -ItemType HardLink -Path \"$dir\" -Name $name -Target \"$(appdir xray $global)\\current\\$name\" | Out-Null",
+        "        }",
+        "    }",
+        "}"
+    ],
+    "uninstaller": {
+        "script": [
+            "if (Test-Path \"$dir\\guiNConfig.json\") {",
+            "    Copy-Item \"$dir\\guiNConfig.json\" \"$persist_dir\\\" | Out-Null",
+            "}"
+        ]
+    },
+    "bin": "v2rayN.exe",
+    "shortcuts": [
+        [
+            "v2rayN.exe",
+            "v2rayN"
+        ]
+    ],
+    "persist": "guiNConfig.json",
+    "checkver": {
+        "url": "https://api.github.com/repos/prusa3d/PrusaSlicer/releases",
+        "regex": "download/([\\d.]+)/"
+    },
+    "autoupdate": {
+        "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN.7z"
+    }
+}
