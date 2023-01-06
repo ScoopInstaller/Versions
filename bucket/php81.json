@@ -1,5 +1,5 @@
 {
-    "version": "8.1.9",
+    "version": "8.1.14",
     "description": "PHP, a popular general-purpose scripting language that is especially suited to web development. (version 8.1)",
     "homepage": "https://windows.php.net/",
     "license": "PHP-3.01",
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://windows.php.net/downloads/releases/php-8.1.9-Win32-vs16-x64.zip",
-            "hash": "bb68c62740565157acc86d57e2c94db9cbeb704a4444c1444014762324981f0f"
+            "url": "https://windows.php.net/downloads/releases/php-8.1.14-Win32-vs16-x64.zip",
+            "hash": "3fd1970c3b2112572e0249c5e4645910cad382884a755540f97d198ebe217b59"
         },
         "32bit": {
-            "url": "https://windows.php.net/downloads/releases/php-8.1.9-Win32-vs16-x86.zip",
-            "hash": "950112847abe1fb5862bdfa3e75e17330db89f1f57f1666a678ce6aefff7f6a1"
+            "url": "https://windows.php.net/downloads/releases/php-8.1.14-Win32-vs16-x86.zip",
+            "hash": "bb6d8f0ac16273c4188d966c685195207ab51e54652e43c86ea452d384765c8a"
         }
     },
     "pre_install": [

@@ -1,0 +1,31 @@
+{
+    "version": "3834056262",
+    "description": "Graphical process/system monitor",
+    "homepage": "https://github.com/ClementTsang/bottom",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ClementTsang/bottom/releases/download/nightly/bottom_x86_64-pc-windows-msvc.zip",
+            "hash": "5acbd34f7c3853db4d88021c73c7d228e404a40be9fa4391fa3d7dd00dfea516"
+        },
+        "32bit": {
+            "url": "https://github.com/ClementTsang/bottom/releases/download/nightly/bottom_i686-pc-windows-msvc.zip",
+            "hash": "cea72fbe351d23d2449086cf9e2db2d9ac5f73a1798ca6186318b24aa7c1ddad"
+        }
+    },
+    "bin": "btm.exe",
+    "checkver": {
+        "url": "https://api.github.com/repositories/205042455/actions/workflows/nightly.yml/runs?branch=master&status=success",
+        "jsonpath": "$.workflow_runs[0].id"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ClementTsang/bottom/releases/download/nightly/bottom_x86_64-pc-windows-msvc.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/ClementTsang/bottom/releases/download/nightly/bottom_i686-pc-windows-msvc.zip"
+            }
+        }
+    }
+}

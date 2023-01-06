@@ -1,19 +1,22 @@
 {
-    "version": "4.0-alpha14",
+    "version": "4.0-alpha17",
     "description": "A feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.",
     "homepage": "https://godotengine.org/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.tuxfamily.org/godotengine/4.0/alpha14/Godot_v4.0-alpha14_win64.exe.zip",
-            "hash": "b4313f5ad00d8b351fb6c40b0c35107aca9b586c4082ebe68678b77e5d61a4b4"
+            "url": "https://downloads.tuxfamily.org/godotengine/4.0/alpha17/Godot_v4.0-alpha17_win64.exe.zip",
+            "hash": "sha512:ebb1b9533c09b01caa03dcbb02485bf87115a543ddb50506679b80dbfe11fbd07ab03459a31b9a0943a37521e77d5aa020b4e111fb69eaf8dbe5e238a28aa7e2"
         },
         "32bit": {
-            "url": "https://downloads.tuxfamily.org/godotengine/4.0/alpha14/Godot_v4.0-alpha14_win32.exe.zip",
-            "hash": "fe9d3b6119d226d6155dca5a85dc1b9d867bbeea774d7d073c7585e12b9494a9"
+            "url": "https://downloads.tuxfamily.org/godotengine/4.0/alpha17/Godot_v4.0-alpha17_win32.exe.zip",
+            "hash": "sha512:f0bd28389368862363be2b67675f5c217dc3716aa09055a671426dfaf80148a26d42a10c1c196de044717f01f8502506c5ec08d21daec5747b538cad3176eb1f"
         }
     },
-    "pre_install": "Get-ChildItem \"$dir\\Godot_*.exe\" | Rename-Item -NewName \"$dir\\godot.exe\"",
+    "pre_install": [
+        "Remove-Item \"$dir\\Godot_*_console.*\"",
+        "Get-Item \"$dir\\Godot_*.exe\" | Rename-Item -NewName 'godot.exe'"
+    ],
     "bin": "godot.exe",
     "shortcuts": [
         [
@@ -34,6 +37,9 @@
             "32bit": {
                 "url": "https://downloads.tuxfamily.org/godotengine/$matchVer/alpha$matchAlpha/Godot_v$version_win32.exe.zip"
             }
+        },
+        "hash": {
+            "url": "$baseurl/SHA512-SUMS.txt"
         }
     }
 }

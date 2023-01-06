@@ -1,0 +1,25 @@
+{
+    "version": "8.0.14",
+    "homepage": "https://xtremedownloadmanager.com/",
+    "description": "Beta builds of Xtreme Download Manager.",
+    "license": "GPL-2.0-only",
+    "url": "https://github.com/subhra74/xdm-experimental-binaries/releases/download/8.0.14-beta/xdmsetup-8.0.14-x86.msi",
+    "hash": "4e374dfbafe92d9b526757753dc302f192151e617dc2cbeaddffa45985b0dff1",
+    "extract_dir": "XDM",
+    "bin": "xdm-app.exe",
+    "shortcuts": [
+        [
+            "xdm-app.exe",
+            "XTREME DOWNLOAD MANAGER",
+            "",
+            "xdm-logo.ico"
+        ]
+    ],
+    "checkver": {
+        "url": "https://github.com/subhra74/xdm-experimental-binaries/tags",
+        "regex": "([\\d.]+)-beta"
+    },
+    "autoupdate": {
+        "url": "https://github.com/subhra74/xdm-experimental-binaries/releases/download/$version-beta/xdmsetup-$version-x86.msi"
+    }
+}

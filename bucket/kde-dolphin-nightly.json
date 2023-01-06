@@ -1,0 +1,34 @@
+{
+    "homepage": "https://apps.kde.org/dolphin/",
+    "version": "859",
+    "description": "A file manager developed by KDE that lets you navigate and browse the contents of your hard drives, USB sticks, SD cards, and more.",
+    "license": "GPL-2.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://binary-factory.kde.org/job/Dolphin_Nightly_win64/lastSuccessfulBuild/artifact/dolphin-master-859-windows-cl-msvc2019-x86_64.7z",
+            "hash": "43df42ba466b95dd025beda207fe9bafc54076d2aa6d8154d3b0db0a613e13b7"
+        }
+    },
+    "bin": "bin\\dolphin.exe",
+    "shortcuts": [
+        [
+            "bin\\dolphin.exe",
+            "KDE Dolphin Nightly"
+        ]
+    ],
+    "pre_install": "Stop-Process -Name 'dbus-daemon' -Force -ErrorAction 'SilentlyContinue'",
+    "checkver": {
+        "url": "https://binary-factory.kde.org/job/Dolphin_Nightly_win64/",
+        "regex": "dolphin-master-([\\d]+)-windows-cl-msvc(?<Year>[\\d]+)-x86_64"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://binary-factory.kde.org/job/Dolphin_Nightly_win64/lastSuccessfulBuild/artifact/dolphin-master-$version-windows-cl-msvc$matchYear-x86_64.7z",
+                "hash": {
+                    "url": "$url.sha256"
+                }
+            }
+        }
+    }
+}
