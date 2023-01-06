@@ -4,6 +4,10 @@
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-only",
     "depends": "xray",
+    "suggest": {
+        ".NET 6.0 Desktop Runtime": "extras/windowsdesktop-runtime-lts",
+        "v2fly-core":"main/v2ray"
+    },
     "url": "https://github.com/2dust/v2rayN/releases/download/6.4/v2rayN.7z",
     "hash": "532218814a8fc3f50219c35d48ea06317a9316343168f82ad2f90cd280c59752",
     "extract_dir": "v2rayN",
