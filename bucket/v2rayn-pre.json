@@ -1,5 +1,5 @@
 {
-    "version": "6.4",
+    "version": "6.6",
     "description": "A V2Ray client for Windows, support Xray core and v2fly core",
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-only",
@@ -8,9 +8,18 @@
         ".NET 6.0 Desktop Runtime": "extras/windowsdesktop-runtime-lts",
         "v2fly-core":"main/v2ray"
     },
-    "url": "https://github.com/2dust/v2rayN/releases/download/6.4/v2rayN.7z",
-    "hash": "532218814a8fc3f50219c35d48ea06317a9316343168f82ad2f90cd280c59752",
+    "url": "https://github.com/2dust/v2rayN/releases/download/6.6/v2rayN.7z",
+    "hash": "c82dbccd84b56cd6137b518fe5295983d0c26f25d9f0c5870cf30daaa9a90bd4",
     "extract_dir": "v2rayN",
+    "_comment": [
+        "About the scripts: See https://github.com/2dust/v2rayN/releases/tag/6.0",
+        "4. now each Core has a separate folder, unified in the bin folder",
+        "5. guiConfigs folder: configuration file storage directory",
+        "Settings-import the old configuration file, select guiNConfig.json",
+        
+        "xray.exe should be  /bin/Xray/xray.exe",
+        "`guiNConfig.json` is now `guiConfigs` folder"
+    ],
     "pre_install": [
         "if (Test-Path \"$persist_dir\\guiNConfig.json\") {",
         "    Copy-Item \"$persist_dir\\guiNConfig.json\" \"$dir\\\" | Out-Null",
@@ -39,7 +48,7 @@
             "v2rayN"
         ]
     ],
-    "persist": "guiNConfig.json",
+    "persist": "guiConfigs",
     "checkver": {
         "url": "https://api.github.com/repos/2dust/v2rayN/releases",
         "regex": "download/([\\d.]+)/"
