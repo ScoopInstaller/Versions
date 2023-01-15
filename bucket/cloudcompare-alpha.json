@@ -20,7 +20,6 @@
     "checkver": {
         "url": "https://cloudcompare.org/release/",
         "regex": "Latest\\s+.*(alpha|beta).*\\s+release.+(?<version>[\\d.]+[a-z]+)"
-        
     },
     "autoupdate": {
         "url": "https://cloudcompare.org/release/CloudCompare_v$matchVersion_bin_x64.7z",
