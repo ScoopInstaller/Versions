@@ -16,12 +16,14 @@
             "CloudCompare"
         ]
     ],
+    "##": "Latest <span class="highlight">beta</span> release: 2.13.alpha (01/09/2023)",
     "checkver": {
         "url": "https://cloudcompare.org/release/",
-        "regex": "Latest (alpha|beta) release.+\\(?(\\d+\\.\\d+\\.[a-z]+) "
+        "regex": "Latest\\s+.*(alpha|beta).*\\s+release.+(?<version>[\\d.]+[a-z]+)"
+        
     },
     "autoupdate": {
-        "url": "https://cloudcompare.org/release/CloudCompare_v$version_bin_x64.7z",
+        "url": "https://cloudcompare.org/release/CloudCompare_v$matchVersion_bin_x64.7z",
         "extract_dir": "CloudCompare_v$version_bin_x64"
     }
 }
