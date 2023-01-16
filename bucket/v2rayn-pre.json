@@ -11,33 +11,25 @@
     "url": "https://github.com/2dust/v2rayN/releases/download/6.6/v2rayN.7z",
     "hash": "c82dbccd84b56cd6137b518fe5295983d0c26f25d9f0c5870cf30daaa9a90bd4",
     "extract_dir": "v2rayN",
-    "_comment": [
-        "About the scripts: See https://github.com/2dust/v2rayN/releases/tag/6.0",
-        "4. now each Core has a separate folder, unified in the bin folder",
-        "5. guiConfigs folder: configuration file storage directory",
-        "Settings-import the old configuration file, select guiNConfig.json",
-        
-        "xray.exe should be  /bin/Xray/xray.exe",
-        "`guiNConfig.json` is now `guiConfigs` folder"
-    ],
+
     "pre_install": [
-        "if (Test-Path \"$persist_dir\\guiNConfig.json\") {",
-        "    Copy-Item \"$persist_dir\\guiNConfig.json\" \"$dir\\\" | Out-Null",
+        "if (Test-Path \"$persist_dir\\guiConfigs\\config.json\") {",
+        "    Copy-Item \"$persist_dir\\guiConfigs\\config.json\" \"$dir\\guiConfigs\" | Out-Null",
         "}",
-        "foreach ($form in @('*.exe')) {",
+        "foreach ($form in @('*.exe', '*.dat')) {",
         "    foreach ($_ in Get-ChildItem \"$(appdir xray $global)\\current\" -File) {",
         "        $name = $_.Name",
         "        if ($name -Like $form) {",
         "            Write-Host \"Creating hardlink for $name\"",
-        "            New-Item -ItemType HardLink -Path \"$dir\" -Name $name -Target \"$(appdir xray $global)\\current\\$name\" | Out-Null",
+        "            New-Item -ItemType HardLink -Path \"$dir\\bin\\Xray\" -Name $name -Target \"$(appdir xray $global)\\current\\$name\" | Out-Null",
         "        }",
         "    }",
         "}"
     ],
     "uninstaller": {
         "script": [
-            "if (Test-Path \"$dir\\guiNConfig.json\") {",
-            "    Copy-Item \"$dir\\guiNConfig.json\" \"$persist_dir\\\" | Out-Null",
+            "if (Test-Path \"$dir\\guiConfigs\\config.json\") {",
+            "    Copy-Item \"$dir\\guiConfigs\\config.json\" \"$persist_dir\\guiConfigs\\config.json\" | Out-Null",
             "}"
         ]
     },
