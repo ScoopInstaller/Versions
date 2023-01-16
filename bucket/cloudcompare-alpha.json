@@ -19,7 +19,7 @@
     "##": "Latest <span class=\"highlight\">beta</span> release: 2.13.alpha (01/09/2023)",
     "checkver": {
         "url": "https://cloudcompare.org/release/",
-        "regex": "Latest\\s+.*(alpha|beta).*\\s+release.+(?<version>[\\d.]+[a-z]+)"
+        "regex": "Latest\\s+.*(?<ignore>alpha|beta).*\\s*release:\\s*([\\d.]+[a-z]+)"
     },
     "autoupdate": {
         "architecture": {
