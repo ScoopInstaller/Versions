@@ -4,6 +4,12 @@
     "homepage": "https://getcomposer.org/",
     "license": "MIT",
     "notes": "'composer selfupdate --1' is aliased to 'scoop update composer'",
+    "suggest": {
+        "PHP": [
+            "main/php",
+            "main/php-nts"
+        ]
+    },
     "url": "https://getcomposer.org/download/1.10.26/composer.phar",
     "hash": "cbfe1f85276c57abe464d934503d935aa213494ac286275c8dfabfa91e3dbdc4",
     "pre_install": [
@@ -16,6 +22,10 @@
         "    Move-Item \"$env:Appdata\\Composer\" \"$persist_dir\\home\" -Force",
         "}"
     ],
+    "env_add_path": "home\\vendor\\bin",
+    "env_set": {
+        "COMPOSER_HOME": "$persist_dir\\home"
+    },
     "bin": [
         "composer.ps1",
         [
@@ -23,17 +33,7 @@
             "composer1"
         ]
     ],
-    "env_set": {
-        "COMPOSER_HOME": "$persist_dir\\home"
-    },
-    "env_add_path": "home\\vendor\\bin",
     "persist": "home",
-    "suggest": {
-        "PHP": [
-            "php",
-            "php-nts"
-        ]
-    },
     "checkver": {
         "url": "https://github.com/composer/composer/releases",
         "regex": "tag/(1\\.[\\d.]+)[^-]"

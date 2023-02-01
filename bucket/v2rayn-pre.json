@@ -25,13 +25,6 @@
         "    }",
         "}"
     ],
-    "uninstaller": {
-        "script": [
-            "if (Test-Path \"$dir\\guiConfigs\\config.json\") {",
-            "    Copy-Item \"$dir\\guiConfigs\\config.json\" \"$persist_dir\\guiConfigs\\config.json\" | Out-Null",
-            "}"
-        ]
-    },
     "bin": "v2rayN.exe",
     "shortcuts": [
         [
@@ -40,6 +33,13 @@
         ]
     ],
     "persist": "guiConfigs",
+    "uninstaller": {
+        "script": [
+            "if (Test-Path \"$dir\\guiConfigs\\config.json\") {",
+            "    Copy-Item \"$dir\\guiConfigs\\config.json\" \"$persist_dir\\guiConfigs\\config.json\" | Out-Null",
+            "}"
+        ]
+    },
     "checkver": {
         "url": "https://api.github.com/repos/2dust/v2rayN/releases",
         "regex": "download/([\\d.]+)/"

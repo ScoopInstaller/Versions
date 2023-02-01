@@ -31,17 +31,14 @@
         "For help, see https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-docker/configure-docker-daemon"
     ],
     "suggest": {
-        "Linux container support on Windows": "lcow",
-        "Docker Compose": "docker-compose",
-        "Docker Machine": "docker-machine",
-        "Kubernetes Standalone": "minikube",
-        "Kubernetes Client": "kubectl",
-        "compose.yml to kubernetes.yml": "kompose"
+        "sudo": "gsudo",
+        "Docker Compose": "main/docker-compose",
+        "Docker Machine": "main/docker-machine",
+        "Kubernetes Client": "main/kubectl",
+        "Kubernetes Standalone": "main/minikube",
+        "Linux container support on Windows": "unknown/lcow",
+        "compose.yml to kubernetes.yml": "main/kompose"
     },
-    "depends": [
-        "sudo",
-        "lcow"
-    ],
     "url": "https://master.dockerproject.org/windows/x86_64/docker.zip",
     "extract_dir": "docker",
     "bin": [
