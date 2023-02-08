@@ -1,10 +1,10 @@
 {
-    "version": "3.0.5974",
+    "version": "3.0.5988",
     "description": "A powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
     "homepage": "https://systeminformer.sourceforge.io",
     "license": "MIT",
-    "url": "https://github.com/winsiderss/si-builds/releases/download/3.0.5974/systeminformer-3.0.5974-bin.zip",
-    "hash": "102ad669a0b46c2a783c60aa92102d59fc22fa7dcb8dc07c5a5db30ce08d27fc",
+    "url": "https://github.com/winsiderss/si-builds/releases/download/3.0.5988/systeminformer-3.0.5988-bin.zip",
+    "hash": "4253658e5d82113b4ccc122be78372231cdea1f4aea82e3c09ee2e65ad556482",
     "architecture": {
         "32bit": {
             "extract_dir": "i386"
@@ -18,7 +18,12 @@
     },
     "pre_install": [
         "ensure \"$persist_dir\" | Out-Null",
-        "'SystemInformer.exe.settings.xml', 'usernotesdb.xml' | ForEach-Object { Copy-Item \"$persist_dir\\$_\" \"$dir\\$_\" -ErrorAction 'SilentlyContinue' }"
+        "'SystemInformer.exe.settings.xml', 'usernotesdb.xml' | ForEach-Object { Copy-Item \"$persist_dir\\$_\" \"$dir\\$_\" -ErrorAction 'SilentlyContinue' }",
+        "$taskmgr = (Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -ErrorAction 'SilentlyContinue').Debugger",
+        "if (($cmd -eq 'update') -and ($taskmgr -match '\\\\*\\\\([\\d.]+)\\\\SystemInformer\\.exe')) {",
+        "   if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "   Set-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -Name 'Debugger' -Value \"\"$dir\\SystemInformer.exe\"\" -Force",
+        "}"
     ],
     "shortcuts": [
         [
@@ -37,14 +42,8 @@
     "pre_uninstall": [
         "'SystemInformer.exe.settings.xml', 'usernotesdb.xml' | ForEach-Object { Copy-Item \"$dir\\$_\" \"$persist_dir\\$_\" -ErrorAction 'SilentlyContinue' }",
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "$taskmgr = (Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -ErrorAction 'SilentlyContinue').Debugger",
         "if ($cmd -eq 'uninstall') {",
         "   Remove-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -Name 'Debugger' -Force",
-        "}",
-        "else {",
-        "   if ($taskmgr -match '\\\\*\\\\([\\d.]+)\\\\SystemInformer\\.exe') {",
-        "       Set-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -Name 'Debugger' -Value \"\"$dir\\SystemInformer.exe\"\"",
-        "   }",
         "}"
     ],
     "checkver": {
