@@ -26,13 +26,11 @@
     ],
     "checkver": {
         "script": [
-            "$WebResponseObj = Invoke-WebRequest -Uri 'https://downloads.tuxfamily.org/godotengine/4.0/'",
-            "$links = $WebResponseObj.Links | Select-Object -Skip 1",
+            "$WebResponse = Invoke-WebRequest('https://downloads.tuxfamily.org/godotengine/4.0/')",
+            "$links = $WebResponse.Links",
             "$versions = ($links | foreach {$_.innerText})",
-			"Write-Output $versions",
-            "$sortedVersions = $versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]}",
-            "Write-Output $sortedVersions",
-			"$sortedVersions[-1]"
+            "$sortedVersions = ($versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]})",
+			"Write-Output $sortedVersions[-1]"
         ],
         "regex": "(.+)$"
     },
