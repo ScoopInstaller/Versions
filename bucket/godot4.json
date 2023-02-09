@@ -30,9 +30,9 @@
             "$html = $WebResponseObj.content",
             "$links = $WebResponseObj.ParsedHtml.getElementsByTagName('a') | Select-Object -Skip 1",
             "$versions = ($links | foreach {$_.textContent})",
-            "($versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]})[-1]"
+            "$sortedVersions = $versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]}",
+			"$sortedVersions[-1]"
         ],
-        "reverse": true,
         "regex": "(.+)$"
     },
     "autoupdate": {

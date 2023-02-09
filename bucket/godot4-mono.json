@@ -32,20 +32,20 @@
             "$html = $WebResponseObj.content",
             "$links = $WebResponseObj.ParsedHtml.getElementsByTagName('a') | Select-Object -Skip 1",
             "$versions = ($links | foreach {$_.textContent})",
-            "($versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]})[-1]"
+            "$sortedVersions = $versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]}",
+			"$sortedVersions[-1]"
         ],
-        "reverse": true,
-        "regex": "(.+)$"
+        "regex": "(.+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/mono/Godot_v4.0-$version_mono_win64.zip",
-                "extract_dir": "Godot_v$version_mono_win64"
+                "extract_dir": "Godot_v4.0-$version_mono_win64"
             },
             "32bit": {
                 "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/mono/Godot_v4.0-$version_mono_win32.zip",
-                "extract_dir": "Godot_v$version_mono_win32"
+                "extract_dir": "Godot_v4.0-$version_mono_win32"
             }
         },
         "hash": {
