@@ -27,10 +27,10 @@
     "checkver": {
         "script": [
             "$WebResponse = Invoke-WebRequest('https://downloads.tuxfamily.org/godotengine/4.0/')",
-            "$links = $WebResponse.Links",
+            "$links = $WebResponse.Links | Select-Object -Skip 1",
             "$versions = ($links | foreach {$_.innerText})",
             "$sortedVersions = ($versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]})",
-			"Write-Output $sortedVersions[-1]"
+			"Write-Output ($sortedVersions | Select-Object -Last 1)"
         ],
         "regex": "(.+)$"
     },
