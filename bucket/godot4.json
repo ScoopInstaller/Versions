@@ -1,0 +1,51 @@
+{
+    "version": "rc1",
+    "description": "A feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.",
+    "homepage": "https://godotengine.org/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.tuxfamily.org/godotengine/4.0/rc1/Godot_v4.0-rc1_win64.exe.zip",
+            "hash": "sha512:d9c39b1935da397cab631733b6bd73deff579d65c345d0f74b1ce94a59187818cdbc6e64ea641783f8c71b89c4595c32869a54e6ffa1b8a02e07820ed9e69896"
+        },
+        "32bit": {
+            "url": "https://downloads.tuxfamily.org/godotengine/4.0/rc1/Godot_v4.0-rc1_win32.exe.zip",
+            "hash": "sha512:8b84eec27273059014ca26a2c145003c229573b3a451bd7b4e37b7c1de6b018eacedf80488f73b7ca723e4a565217503deec53db69f1cd3ed03e4243202e4a70"
+        }
+    },
+    "pre_install": [
+        "Remove-Item \"$dir\\Godot_*_console.*\"",
+        "Get-Item \"$dir\\Godot_*.exe\" | Rename-Item -NewName 'godot.exe'"
+    ],
+    "bin": "godot.exe",
+    "shortcuts": [
+        [
+            "godot.exe",
+            "Godot Engine"
+        ]
+    ],
+    "checkver": {
+        "script": [
+            "$WebResponseObj = Invoke-WebRequest -Uri 'https://downloads.tuxfamily.org/godotengine/4.0/'",
+            "$html = $WebResponseObj.content",
+            "$links = $WebResponseObj.ParsedHtml.getElementsByTagName('a') | Select-Object -Skip 1",
+            "$versions = ($links | foreach {$_.textContent})",
+            "($versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]})[-1]"
+        ],
+        "reverse": true,
+        "regex": "(.+)$"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/Godot_v4.0-$version_win64.exe.zip"
+            },
+            "32bit": {
+                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/Godot_v4.0-$version_win32.exe.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA512-SUMS.txt"
+        }
+    }
+}
