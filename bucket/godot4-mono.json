@@ -41,11 +41,11 @@
         "architecture": {
             "64bit": {
                 "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/mono/Godot_v4.0-$version_mono_win64.zip",
-                "extract_dir": "Godot_v4.0-$version_mono_win64"
+                "extract_dir": "Godot_v4.0-$preReleaseVersion_mono_win64"
             },
             "32bit": {
                 "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/mono/Godot_v4.0-$version_mono_win32.zip",
-                "extract_dir": "Godot_v4.0-$version_mono_win32"
+                "extract_dir": "Godot_v4.0-$preReleaseVersion_mono_win32"
             }
         },
         "hash": {
