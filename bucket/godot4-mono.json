@@ -29,7 +29,6 @@
     "checkver": {
         "script": [
             "$WebResponseObj = Invoke-WebRequest -Uri 'https://downloads.tuxfamily.org/godotengine/4.0/'",
-            "$html = $WebResponseObj.content",
             "$links = $WebResponseObj.ParsedHtml.getElementsByTagName('a') | Select-Object -Skip 1",
             "$versions = ($links | foreach {$_.textContent})",
             "$sortedVersions = $versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]}",
