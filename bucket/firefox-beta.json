@@ -1,5 +1,5 @@
 {
-    "version": "110.0b6",
+    "version": "110.0b9",
     "description": "Beta builds of Firefox: the popular open source web browser.",
     "homepage": "https://www.mozilla.org/en-US/firefox/beta/",
     "license": "MPL-2.0",
@@ -11,12 +11,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/110.0b6/win64/en-US/Firefox%20Setup%20110.0b6.exe#/dl.7z",
-            "hash": "sha512:e0d19fdd59a9d66533b3018a91d3683bc5974b19c099f37e7c586c234a5beb29e8e38c0791ad7826d68b185ab1dba24379fc04aa4a3837857da77e2b5b1d88a0"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/110.0b9/win64/en-US/Firefox%20Setup%20110.0b9.exe#/dl.7z",
+            "hash": "sha512:e1188fad25b07ff8033443ff5d164fe8ab2185faa54408fbe552fcceb6577bdf5e4e51566a76c72c06405812972c4752829842d181bcbca9828f45834ae84c4d"
         },
         "32bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/110.0b6/win32/en-US/Firefox%20Setup%20110.0b6.exe#/dl.7z",
-            "hash": "sha512:96f68f3e2cc2ed1cd8f39bb1b158bc3faba041af5fc8b4cea1b62f052ef24300210e5076bd0fad1a75671e3ac0d7f03741df849779f88bce566152953048662e"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/110.0b9/win32/en-US/Firefox%20Setup%20110.0b9.exe#/dl.7z",
+            "hash": "sha512:ae983c8cd51113c86262387b2f45d434b7e5ea18c2257c09d05fb12051fa43077bb9f08170c4a297e6b346a97a498bba9f230b43b36a13093a9ca9052d782b26"
         }
     },
     "extract_dir": "core",
