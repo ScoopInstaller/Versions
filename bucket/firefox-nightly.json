@@ -1,5 +1,5 @@
 {
-    "version": "111.0a1.20230210211019",
+    "version": "111.0a1.20230211094336",
     "description": "Nightly builds of Firefox: the popular open source web browser.",
     "homepage": "https://www.mozilla.org/en-US/firefox/nightly/",
     "license": "MPL-2.0",
@@ -11,12 +11,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/nightly/2023/02/2023-02-10-21-10-19-mozilla-central/firefox-111.0a1.en-US.win64.installer.exe#/dl.7z",
-            "hash": "sha512:c476c142fa65e29bb635472592f329327d196cb4812e0c2f6180ea8a15ab051bec56dab96580d4d25eba0175426e52457bcd86149f7c5f86e286bde5c332619f"
+            "url": "https://archive.mozilla.org/pub/firefox/nightly/2023/02/2023-02-11-09-43-36-mozilla-central/firefox-111.0a1.en-US.win64.installer.exe#/dl.7z",
+            "hash": "sha512:693d6dcc854e77d358a57cc6de13922bdc4e485a208a03f90734999cb757e3c67952aa73c9775bde3a1910df761009d73bbd15aca983cc3108282a06dd7e057c"
         },
         "32bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/nightly/2023/02/2023-02-10-21-10-19-mozilla-central/firefox-111.0a1.en-US.win32.installer.exe#/dl.7z",
-            "hash": "sha512:691b826fc4bcc4b2c169a5db277966f445a3ca16b85e0fdc54265f8ce37c3c703272cc40783d3e32778a4b72c527554a3f08eba5164d96d274d9167465ccf250"
+            "url": "https://archive.mozilla.org/pub/firefox/nightly/2023/02/2023-02-11-09-43-36-mozilla-central/firefox-111.0a1.en-US.win32.installer.exe#/dl.7z",
+            "hash": "sha512:eafc2dc8e400a0a43a95611dd74c0288d57d776dc49fc2f432d84fb1f3c67d2cfb0e5d876cba93f474e41a56c8b5f94d0fc217ed8aa0ba0cc2ad35e09cc0b3b3"
         }
     },
     "extract_dir": "core",
