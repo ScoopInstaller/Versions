@@ -30,17 +30,18 @@
             "$links = $WebResponse.Links | Select-Object -Skip 1",
             "$versions = $links | foreach {$_.innerText}",
             "$sortedVersions = $versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]}",
-            "$sortedVersions | Select-Object -Last 1"
+            "$ver = $sortedVersions | Select-Object -Last 1",
+			"Write-Output $ver"
         ],
-        "regex": "(.+)$"
+        "regex": "(\\S+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/Godot_v4.0-$version_win64.exe.zip"
+                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$version/Godot_v4.0-$version_win64.exe.zip"
             },
             "32bit": {
-                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/Godot_v4.0-$version_win32.exe.zip"
+                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$version/Godot_v4.0-$version_win32.exe.zip"
             }
         },
         "hash": {

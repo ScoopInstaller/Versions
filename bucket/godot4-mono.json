@@ -1,18 +1,18 @@
 {
-    "version": "rc1",
+    "version": "rc2",
     "description": "A feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.",
     "homepage": "https://godotengine.org/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.tuxfamily.org/godotengine/4.0/rc1/mono/Godot_v4.0-rc1_mono_win64.zip",
-            "hash": "sha512:757a347bfcf4a14a1d726a7fcf60a2efd5761831738c9f480b21f00b6065d2fb8e07031f1e82f8811d444092765da79066acd1a88b5edee156980a7c82f6e302",
-            "extract_dir": "Godot_v4.0-rc1_mono_win64"
+            "url": "https://downloads.tuxfamily.org/godotengine/4.0/rc2/mono/Godot_v4.0-rc2_mono_win64.zip",
+            "hash": "sha512:6ed6ccc65a693f579a80b3ad397eddb022fabb801f6e11935f86c55a213de00a5a588ad99355a5d461a5d7fcd7b3f10a35d8568768dc56e1f167c3b735cdd503",
+            "extract_dir": "Godot_v4.0-rc2_mono_win64"
         },
         "32bit": {
-            "url": "https://downloads.tuxfamily.org/godotengine/4.0/rc1/mono/Godot_v4.0-rc1_mono_win32.zip",
-            "hash": "sha512:b78d21802b0771a22ff56a1dea68e1bb70f5bd5363f93e534230425589895097546fa9b028d9c1897d4b94149ffae3f5329a984c2fadaa74f2d1991ad5f8d8f2",
-            "extract_dir": "Godot_v4.0-rc1_mono_win32"
+            "url": "https://downloads.tuxfamily.org/godotengine/4.0/rc2/mono/Godot_v4.0-rc2_mono_win32.zip",
+            "hash": "sha512:1735c65720b0859aaadc9cc176048f38d28eacb9397d64a7c74a2101df379e7161b68e4a845f6b14f0f4d00f82c72a7b02283bffa129e75ea186ac3026db003a",
+            "extract_dir": "Godot_v4.0-rc2_mono_win32"
         }
     },
     "pre_install": [
@@ -32,18 +32,19 @@
             "$links = $WebResponse.Links | Select-Object -Skip 1",
             "$versions = $links | foreach {$_.innerText}",
             "$sortedVersions = $versions | Sort-Object {$_ -NotMatch 'pre-'},{$_ -Replace '\\d',''},{($_ -Replace '\\D','') -as [int]}",
-            "$sortedVersions | Select-Object -Last 1"
+            "$ver = $sortedVersions | Select-Object -Last 1",
+            "Write-Output $ver"
         ],
-        "regex": "(.+)"
+        "regex": "(\\S+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/mono/Godot_v4.0-$version_mono_win64.zip",
+                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$version/mono/Godot_v4.0-$version_mono_win64.zip",
                 "extract_dir": "Godot_v4.0-$version_mono_win64"
             },
             "32bit": {
-                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$preReleaseVersion/mono/Godot_v4.0-$version_mono_win32.zip",
+                "url": "https://downloads.tuxfamily.org/godotengine/4.0/$version/mono/Godot_v4.0-$version_mono_win32.zip",
                 "extract_dir": "Godot_v4.0-$version_mono_win32"
             }
         },
