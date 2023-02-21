@@ -1,17 +1,17 @@
 {
-    "version": "1.18.4",
+    "version": "1.18.5",
     "description": "Git with a cup of tea, painless self-hosted git service. (beta channel)",
     "homepage": "https://gitea.io/",
     "license": "MIT",
     "notes": "Run 'gitea web -c \"$persist_dir\\custom\\conf\\app.ini\"' to start the webserver",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/go-gitea/gitea/releases/download/v1.18.4/gitea-1.18.4-windows-4.0-amd64.exe#/gitea.exe",
-            "hash": "983971cbc49ee2a26dabf41c00849b2a2325c5732d891c1762d4bf72e9863999"
+            "url": "https://github.com/go-gitea/gitea/releases/download/v1.18.5/gitea-1.18.5-windows-4.0-amd64.exe#/gitea.exe",
+            "hash": "89bf2411372e17f93f5f0eaf20eca62c77f312d37fb46c6d79b5fea2b3929ee0"
         },
         "32bit": {
-            "url": "https://github.com/go-gitea/gitea/releases/download/v1.18.4/gitea-1.18.4-windows-4.0-386.exe#/gitea.exe",
-            "hash": "f298984d76398c97546420c46e1d4c1a01cfa415970b2debca95dac26ae3d4fc"
+            "url": "https://github.com/go-gitea/gitea/releases/download/v1.18.5/gitea-1.18.5-windows-4.0-386.exe#/gitea.exe",
+            "hash": "00b635f18d2cdb4e96e2f08e71ddba7290cb4047c7c04007a06aa192a0e2c10b"
         }
     },
     "post_install": [
