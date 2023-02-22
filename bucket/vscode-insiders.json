@@ -49,7 +49,21 @@
     "persist": "data",
     "checkver": {
         "url": "https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest",
-        "jsonpath": "$.productVersion"
+        "jsonpath": "$['productVersion','timestamp']",
+        "script": [
+            "# Simulate scoop's JsonPath behavior to work around a bug in Newtonsoft.Json's",
+            "# support for JsonPath's multiple property union",
+            "Add-Type -Path \"$script:PSScriptRoot\\..\\supporting\\validator\\bin\\Newtonsoft.Json.dll\"",
+            "$obj = [Newtonsoft.Json.JsonConvert]::DeserializeObject($page)",
+            "# This is the only change: change errorWhenNoMatch argument from $true to $false",
+            "# to work around the bug",
+            "$result = $obj.SelectTokens($jsonpath, $false)",
+            "# remove $jsonpath variable from parent scope to prevent Scoop's logic from running",
+            "$script:jsonpath = $null",
+            "$([String]::Join('\\n', $result))"
+        ],
+        "regex": "^(?<productVersion>.+)\\\\n(?<timestamp>.*)$",
+        "replace": "${productVersion}+${timestamp}"
     },
     "autoupdate": {
         "architecture": {
