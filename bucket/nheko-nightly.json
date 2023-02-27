@@ -25,7 +25,7 @@
             "",
             "$cont = (Invoke-WebRequest $url).Content",
             "$matches = [regex]::Matches($cont, $regex)",
-            "if (!$matches) { error \"Could not match regex in $url\"; break }",
+            "if (!$matches) { error \"Could not match regex in $url\"; continue }",
             "$match = $matches[$matches.Count-1]",
             "",
             "$date = (Get-Date $match.Groups[4].Value).ToString('yyyyMMdd')",
