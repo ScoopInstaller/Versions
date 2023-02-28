@@ -42,23 +42,5 @@
         "scripts",
         "Library\\bin"
     ],
-    "persist": "envs",
-    "checkver": {
-        "url": "https://docs.conda.io/en/latest/miniconda.html",
-        "regex": "Miniconda3-py39_([\\d.]+)-Windows"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://repo.anaconda.com/miniconda/Miniconda3-py39_$version-Windows-x86_64.exe"
-            },
-            "32bit": {
-                "url": "https://repo.anaconda.com/miniconda/Miniconda3-py39_$version-Windows-x86.exe"
-            }
-        },
-        "hash": {
-            "url": "https://docs.conda.io/en/latest/miniconda.html",
-            "regex": "(?sm)$basename.*?>$sha256<"
-        }
-    }
+    "persist": "envs"
 }
