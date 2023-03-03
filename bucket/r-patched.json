@@ -37,7 +37,7 @@
             "bin\\x64\\Rgui.exe",
             "R Patched"
         ]
-    ]
+    ],
     "persist": "site-library",
     "post_install": [
         "New-Item \"HKCU:\\Software\\R-core\\R\\$version\" -Force | Out-Null",
