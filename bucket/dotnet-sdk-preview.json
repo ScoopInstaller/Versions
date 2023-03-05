@@ -9,22 +9,27 @@
     "architecture": {
         "64bit": {
             "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/8.0.100-preview.1.23115.2/dotnet-sdk-8.0.100-preview.1.23115.2-win-x64.zip",
-            "hash": "42919c316dbd4326450c8a8b88be8c40aec01b8ad98649b4ee62bcc8784c95d2"
+            "hash": "sha512:608aa5c3c5c83bb37d69177f15a666891ee329e3990301f8b8df1b244aa5581892c13269665d463bb13b0c0049ef69d75bda26a205f0b72d4c4862cf4dcd1d91"
         },
         "32bit": {
             "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/8.0.100-preview.1.23115.2/dotnet-sdk-8.0.100-preview.1.23115.2-win-x86.zip",
-            "hash": "f1cb5abb043295158ec9b4852f4881a3bf2012be1d55d4a73383691680b5f1e2"
+            "hash": "sha512:c4a7ceaf2f1998173f10c7b739ddb448a626dc179bc2acb0377dbe3885a3f0fa327f348824ce5a5dac6189668dd32182bc8c4aed5df22f7b582e783be7a9da32"
+        },
+        "arm64": {
+            "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/8.0.100-preview.1.23115.2/dotnet-sdk-8.0.100-preview.1.23115.2-win-arm64.zip",
+            "hash": "sha512:82535278542727a14b2b39dc7712feff69df50f201ce99e7db0805cbfe5d96d9072b6f9a59144c460061c5745eec82c12fb7121fdcc15b112a133e20f45a72a3"
         }
     },
-    "bin": "dotnet.exe",
     "env_add_path": ".",
     "env_set": {
         "DOTNET_ROOT": "$dir",
         "MSBuildSDKsPath": "$dir\\sdk\\$version\\Sdks"
     },
+    "pre_uninstall": "info 'If the uninstall fails with a message saying that access is denied, you may need to log out of your current account, log back in and try again.'",
     "checkver": {
         "url": "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json",
-        "jsonpath": "$..releases-index[?(@.support-phase == 'preview' || @.support-phase == 'rc')].latest-sdk"
+        "jp": "$.releases-index[?(@['support-phase']=='preview')]",
+        "regex": "latest-release\": \"(?<release>[\\d.]+-preview.\\d)[\\s\\S]+latest-sdk\": \"([\\d.]+-preview.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
@@ -33,7 +38,13 @@
             },
             "32bit": {
                 "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-win-x86.zip"
+            },
+            "arm64": {
+                "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-win-arm64.zip"
             }
+        },
+        "hash": {
+            "url": "https://dotnetcli.blob.core.windows.net/dotnet/checksums/$matchRelease-sha.txt"
         }
     }
 }
