@@ -1,5 +1,5 @@
 {
-    "version": "1.77.0-insider",
+    "version": "1.77.0-insider-1678080155875",
     "description": "Visual Studio Code is a lightweight but powerful source code editor (Insiders, Portable Edition).",
     "homepage": "https://code.visualstudio.com/",
     "license": {
@@ -16,11 +16,11 @@
     "architecture": {
         "64bit": {
             "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z",
-            "hash": "e32f8fe642ecb75b1a4c31e88f4f3d978cf0c5d159693e61996850d21f880301"
+            "hash": "27bed2bd326eed31e85767af5fe695738f7f254791052d34669d3b7cf44173d3"
         },
         "32bit": {
             "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z",
-            "hash": "69cd3ea030378488942900b09c764d2062b3cf51e4cb7a437d61f886dad4b025"
+            "hash": "0e3db2c9c780fe0f2c55ee3c22dae870e2da367f1890e0fc6dbaefe4c016ed29"
         }
     },
     "post_install": [
@@ -48,8 +48,11 @@
     ],
     "persist": "data",
     "checkver": {
-        "url": "https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest",
-        "jsonpath": "$.productVersion"
+        "script": [
+            "$releaseData = Invoke-WebRequest \"https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest\" | ConvertFrom-Json",
+            "\"$($releaseData.productVersion)-$($releaseData.timestamp)\""
+        ],
+        "regex": "(.+)"
     },
     "autoupdate": {
         "architecture": {
