@@ -1,5 +1,5 @@
 {
-    "version": "2022.1.1.15",
+    "version": "2022.2.1.15",
     "description": "The official IDE for Android development, which includes everything you need to build Android apps.",
     "homepage": "https://developer.android.com/studio/preview",
     "license": {
@@ -14,8 +14,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2022.1.1.15/android-studio-2022.1.1.15-windows.zip",
-            "hash": "be8d896163dbef0e4b8f14ccbbe04b45c2a809b083ba3868cd79a7f27021bacb",
+            "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2022.2.1.15/android-studio-2022.2.1.15-windows.zip",
+            "hash": "4216160e2dca5d1e49bd29b62bcccc0fd260950d2e1cac0d6da262b33a28bd62",
             "shortcuts": [
                 [
                     "bin\\studio64.exe",
@@ -26,7 +26,14 @@
     },
     "extract_dir": "android-studio",
     "checkver": {
-        "regex": "Android Studio [\\d.]+ Beta \\d+\\s+for\\s+Windows\\s+<\\/a>\\s+<p><em>android-studio-([\\d.]+)"
+        "script": [
+            "$pageContent = Invoke-WebRequest -Uri \"https://plugins.jetbrains.com/docs/intellij/android-studio-releases-list.html\"",
+            "$intermediateContent = $pageContent.Content.Substring($pageContent.Content.IndexOf(\"Beta-darkred\"))",
+            "$intermediateContent = $intermediateContent.Substring($intermediateContent.IndexOf(\"<span\"))",
+            "$finalContent = $intermediateContent.Substring($intermediateContent.IndexOf(\">\")+1)",
+            "Write-Output $finalContent"
+        ],
+        "regex": "([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
