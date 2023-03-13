@@ -10,10 +10,9 @@
     "hash": "2abd0e85d9767b83a08f47e93199b843dde25a710c7414b8a8e8b42ab8be292f",
     "installer": {},
     "uninstaller": {
-        "script": "Invoke-Expression \"$env:LOCALAPPDATA\\DiscordCanary\\Update.exe --uninstall\""
+        "script": "Start-Process -FilePath \"$env:LOCALAPPDATA\\DiscordCanary\\Update.exe\" -ArgumentList \"--uninstall\" -Wait"
     },
     "post_uninstall": [
-        "Start-Sleep -Seconds 20",
         "Remove-Item \"$env:LOCALAPPDATA\\DiscordCanary\" -Recurse"
     ],
     "checkver": {
