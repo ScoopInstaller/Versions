@@ -1,8 +1,11 @@
 {
     "version": "2.1.818",
-    "homepage": "https://www.microsoft.com/net/",
     "description": ".NET is a free, cross-platform, open source developer platform for building many different types of applications.",
+    "homepage": "https://www.microsoft.com/net/",
     "license": "MIT",
+    "suggest": {
+        "Visual C++ Redistributable": "extras/vcredist2022"
+    },
     "architecture": {
         "64bit": {
             "url": "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/2.1.818/dotnet-sdk-2.1.818-win-x64.zip",
@@ -13,9 +16,10 @@
             "hash": "sha512:23432b04c348af12e65ce2bd2abf4b2312a361279acb9fde9a21cc74a13f53bc71716ad940ef0a4c84ec68f72c78ed441e55ad8390b660b3efcbd8eb65446369"
         }
     },
-    "bin": "dotnet.exe",
+    "env_add_path": ".",
     "env_set": {
         "DOTNET_ROOT": "$dir",
         "MSBuildSDKsPath": "$dir\\sdk\\$version\\Sdks"
-    }
+    },
+    "pre_uninstall": "info 'If the uninstall fails with a message saying that access is denied, you may need to log out of your current account, log back in and try again.'"
 }
