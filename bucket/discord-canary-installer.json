@@ -1,20 +1,20 @@
 {
-    "version": "1.0.58",
+    "version": "1.0.59",
     "description": "Free Voice and Text Chat",
     "homepage": "https://discordapp.com/",
     "license": {
         "identifier": "Freeware",
         "url": "https://discordapp.com/terms"
     },
-    "url": "https://dl-canary.discordapp.net/distro/app/canary/win/x86/1.0.58/DiscordCanarySetup.exe",
-    "hash": "2abd0e85d9767b83a08f47e93199b843dde25a710c7414b8a8e8b42ab8be292f",
-    "installer": {},
+    "url": "https://dl-canary.discordapp.net/distro/app/canary/win/x86/1.0.59/DiscordCanarySetup.exe",
+    "hash": "e7e604101e3c3915c7b713b0ac9f6069148e7bf9bc55b39a534cb50f8ab561a5",
+    "installer": {
+        
+    },
     "uninstaller": {
         "script": "Start-Process -FilePath \"$env:LOCALAPPDATA\\DiscordCanary\\Update.exe\" -ArgumentList \"--uninstall\" -Wait"
     },
-    "post_uninstall": [
-        "Remove-Item \"$env:LOCALAPPDATA\\DiscordCanary\" -Recurse"
-    ],
+    "post_uninstall": "Remove-Item \"$env:LOCALAPPDATA\\DiscordCanary\" -Recurse",
     "checkver": {
         "script": "Write-Output $(Invoke-WebRequest -Uri \"https://discord.com/api/downloads/distributions/app/installers/latest?arch=x86&platform=win&channel=canary\" -Method Head).BaseResponse.RequestMessage.RequestUri.OriginalString",
         "regex": "/([\\d.]+)/"
