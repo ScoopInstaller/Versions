@@ -52,8 +52,8 @@
         "mysqld --install \"[Service Name(default:MySQL)]\""
     ],
     "checkver": {
-        "url": "https://downloads.mariadb.org/",
-        "regex": "Download (10\\.3\\.[\\d]+) Stable"
+        "url": "https://downloads.mariadb.org/rest-api/mariadb/10.3/latest/",
+        "jsonpath": "$.releases..release_id"
     },
     "autoupdate": {
         "architecture": {
