@@ -53,10 +53,11 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/microsoft/terminal/releases",
-        "regex": "/tree/v([\\d.]+)"
+        "url": "https://api.github.com/repos/microsoft/terminal/releases",
+        "jsonpath": "$.[?(@.prerelease == true)]",
+        "regex": "\"tag_name\": \"v([\\d.]+)\"[\\s\\S]+?Win10_(?<version>[\\d.]+)_8wekyb3d8bbwe"
     },
     "autoupdate": {
-        "url": "https://github.com/microsoft/terminal/releases/download/v$version/Microsoft.WindowsTerminalPreview_Win10_$version_8wekyb3d8bbwe.msixbundle#/dl.7z"
+        "url": "https://github.com/microsoft/terminal/releases/download/v$version/Microsoft.WindowsTerminalPreview_Win10_$matchVersion_8wekyb3d8bbwe.msixbundle#/dl.7z"
     }
 }
