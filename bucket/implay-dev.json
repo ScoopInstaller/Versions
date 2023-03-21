@@ -1,0 +1,30 @@
+{
+    "version": "1678711403",
+    "description": "A Cross-Platform Desktop Media Player",
+    "homepage": "https://github.com/tsl0922/ImPlay",
+    "license": "GPLv2",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/tsl0922/ImPlay/releases/download/continuous/ImPlay-dev-win64.msi",
+            "hash": "33eb0e5cfc93b48d0cb83a7cd8672d5209b45a0332c59b32e70c16b4af00527e"
+        }
+    },
+    "bin": "ImPlay/ImPlay.exe",
+    "shortcuts": [
+        [
+            "ImPlay/ImPlay.exe",
+            "ImPlay"
+        ]
+    ],
+    "checkver": {
+        "script": "try { Get-Date (Invoke-RestMethod https://api.github.com/repos/tsl0922/ImPlay/releases/tags/continuous).created_at -UFormat %s } catch { '' }",
+        "regex": "\\A(\\d+)\\Z"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/tsl0922/ImPlay/releases/download/continuous/ImPlay-dev-win64.msi"
+            }
+        }
+    }
+}
