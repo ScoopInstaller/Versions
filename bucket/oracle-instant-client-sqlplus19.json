@@ -1,6 +1,6 @@
 {
     "version": "19.18.0.0.0",
-    "description": "Additional header files and an example makefile for developing Oracle applications with Instant Client.",
+    "description": "The SQL*Plus command line tool for SQL and PL/SQL queries with Oracle Instant Client.",
     "homepage": "https://www.oracle.com/database/technologies/instant-client.html",
     "license": {
         "identifier": "Freeware",
@@ -9,12 +9,12 @@
     "depends": "oracle-instant-client19",
     "architecture": {
         "64bit": {
-            "url": "https://download.oracle.com/otn_software/nt/instantclient/1918000/instantclient-sdk-windows.x64-19.18.0.0.0dbru.zip",
-            "hash": "09369f90b113ef9c1e2ab261d39dd963c3c005f974fd097fe4dd8b5d02166c0b"
+            "url": "https://download.oracle.com/otn_software/nt/instantclient/1918000/instantclient-sqlplus-windows.x64-19.18.0.0.0dbru.zip",
+            "hash": "7655e382f2107f47426af4ff0502aa644051c922882aa2d02d5580df80edd6ee"
         },
         "32bit": {
-            "url": "https://download.oracle.com/otn_software/nt/instantclient/1918000/instantclient-sdk-nt-19.18.0.0.0dbru.zip",
-            "hash": "58c6d3208e8af6ea4156f34c9be4d15f665c64eadb1c12ba4a16485572ea9199"
+            "url": "https://download.oracle.com/otn_software/nt/instantclient/1918000/instantclient-sqlplus-nt-19.18.0.0.0dbru.zip",
+            "hash": "5bc0189af10fb0b4cc04b130a2770de2950ccdea09ba2b6acd7f286c78cd9e5b"
         }
     },
     "extract_dir": "instantclient_19_18",
@@ -36,10 +36,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://download.oracle.com/otn_software/nt/instantclient/$cleanVersion/instantclient-sdk-windows.x64-$versiondbru.zip"
+                "url": "https://download.oracle.com/otn_software/nt/instantclient/$cleanVersion/instantclient-sqlplus-windows.x64-$versiondbru.zip"
             },
             "32bit": {
-                "url": "https://download.oracle.com/otn_software/nt/instantclient/$cleanVersion/instantclient-sdk-nt-$versiondbru.zip"
+                "url": "https://download.oracle.com/otn_software/nt/instantclient/$cleanVersion/instantclient-sqlplus-nt-$versiondbru.zip"
             }
         },
         "extract_dir": "instantclient_$majorVersion_$minorVersion"

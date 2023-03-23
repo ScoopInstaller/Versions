@@ -1,18 +1,18 @@
 {
-    "version": "4.0-beta17",
+    "version": "4.0.1-rc2",
     "description": "A feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.",
     "homepage": "https://godotengine.org/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.tuxfamily.org/godotengine/4.0/beta17/mono/Godot_v4.0-beta17_mono_win64.zip",
-            "hash": "sha512:8c5dcb3cf0357ba81abc1b893772981bcc70ec06972148188c7a0e7125d0990eda13b032d94351fd96fdc6efe8a77c0b251052484355fc0c0f75a4bb191d15ce",
-            "extract_dir": "Godot_v4.0-beta17_mono_win64"
+            "url": "https://downloads.tuxfamily.org/godotengine/4.0.1/rc2/mono/Godot_v4.0.1-rc2_mono_win64.zip",
+            "hash": "sha512:61576b9d17794c165cd53e253827282c963d18503883582a8647493254f4f274e2124500b974a36b8e1072fae25e5944aaf1ee7189838d78c8a43b437b1ef884",
+            "extract_dir": "Godot_v4.0.1-rc2_mono_win64"
         },
         "32bit": {
-            "url": "https://downloads.tuxfamily.org/godotengine/4.0/beta17/mono/Godot_v4.0-beta17_mono_win32.zip",
-            "hash": "sha512:eef9850a5ae549182adcd86360379ff8074f24563fad51fab081be764377a5fa9aacd2b4553bd61f5aeedaa5e8566fe581c136b37a599f90915967f85a610b41",
-            "extract_dir": "Godot_v4.0-beta17_mono_win32"
+            "url": "https://downloads.tuxfamily.org/godotengine/4.0.1/rc2/mono/Godot_v4.0.1-rc2_mono_win32.zip",
+            "hash": "sha512:989e68910475c57d6f9dd2c922a2a3411f8cd58c0bb4229a806043b149046e0a55e03c75395016dddc763729a21b757fd1cb2cd560882bc47e5f1211b3ba88c4",
+            "extract_dir": "Godot_v4.0.1-rc2_mono_win32"
         }
     },
     "pre_install": [
@@ -28,8 +28,8 @@
     ],
     "checkver": {
         "url": "https://godotengine.org/blog/pre-release/",
-        "regex": "Dev snapshot: Godot (?<ver>[\\d.]+) beta (?<beta>[\\d.]+)",
-        "replace": "${1}-beta${2}"
+        "regex": "Release candidate: Godot (?<ver>[\\d.]+) RC (?<rc>[\\d.]+)",
+        "replace": "${1}-rc${2}"
     },
     "autoupdate": {
         "architecture": {
