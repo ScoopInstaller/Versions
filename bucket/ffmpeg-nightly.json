@@ -19,7 +19,7 @@
         "script": [
             "try {",
             "    $api = Invoke-RestMethod https://api.github.com/repositories/292087234/releases/latest",
-            "    foreach ($name in $api.assets.name) { if ($name -match 'win64-gpl\\.zip\\Z') { $asset = $name; break } }",
+            "    foreach ($name in $api.assets.name) { if ($name -clike '*-win64-gpl.zip') { $asset = $name; break } }",
             "    $api.tag_name, $asset -join ' '",
             "}",
             "catch {",
