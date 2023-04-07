@@ -1,6 +1,6 @@
 {
-    "version": "6.19",
-    "description": "A V2Ray client for Windows, support Xray core and v2fly core",
+    "version": "6.21",
+    "description": "A V2Ray client for Windows, support Xray & v2fly core",
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-only",
     "depends": "xray",
@@ -8,12 +8,10 @@
         ".NET 6.0 Desktop Runtime": "extras/windowsdesktop-runtime-lts",
         "v2fly-core": "main/v2ray"
     },
-    "url": "https://github.com/2dust/v2rayN/releases/download/6.19/v2rayN.7z",
-    "hash": "edd53e23cec7c0fb59e69bfd31daa0e54050df3d0b3fb2f34e5b07bf9d1fa1f1",
+    "url": "https://github.com/2dust/v2rayN/releases/download/6.21/v2rayN.7z",
+    "hash": "83970668714a1cdf98d3c1ead1e73b5bdf0082a907be4030e876f5a84159f8e6",
     "extract_dir": "v2rayN",
     "pre_install": [
-        "if (Test-Path \"$persist_dir\\guiConfigs\\config.json\") {",
-        "    Copy-Item \"$persist_dir\\guiConfigs\\config.json\" \"$dir\\guiConfigs\" | Out-Null",
         "}",
         "foreach ($form in @('*.exe', '*.dat')) {",
         "    foreach ($_ in Get-ChildItem \"$(appdir xray $global)\\current\" -File) {",
