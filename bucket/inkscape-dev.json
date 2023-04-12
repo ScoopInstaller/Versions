@@ -1,16 +1,16 @@
 {
-    "version": "1.3-dev_2023-03-28",
+    "version": "1.3-alpha_2023-04-12_4127b5831",
     "description": "Professional vector graphics editor",
     "homepage": "https://inkscape.org",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://gitlab.com/inkscape/inkscape/-/jobs/4012358327/artifacts/raw/build/inkscape-1.3-dev_2023-03-28_d93531fe2-x64.7z",
-            "hash": "56b1c9cfee5acdefbd50007a58f78524f5c9c393cb710dc801be6d93c086f307"
+            "url": "https://gitlab.com/inkscape/inkscape/-/jobs/4101998351/artifacts/raw/build/inkscape-1.3-alpha_2023-04-12_4127b5831-x64.7z",
+            "hash": "385761099c21480aab314ba07bd2c6dbc80ca649ad24ddf35c17256ff9d82523"
         },
         "32bit": {
-            "url": "https://gitlab.com/inkscape/inkscape/-/jobs/4002339722/artifacts/raw/build/inkscape-1.3-dev_2023-03-24_009e769f6-x86.7z",
-            "hash": "67a2b2e0b4c1d7b3ed82a79c38b4bf7d578375e72e1c135ba84c1d101c45f663"
+            "url": "https://gitlab.com/inkscape/inkscape/-/jobs/4083369664/artifacts/raw/build/inkscape-1.3-alpha_2023-04-08_e205916a9-x86.7z",
+            "hash": "1e8b719eff0ba48d4e8931866c717f378e6af58b99bea15f4e6e51b8dbb33e53"
         }
     },
     "extract_dir": "inkscape",
@@ -26,16 +26,13 @@
     ],
     "checkver": {
         "script": [
-            "$urls =  @()",
+            "$urls = @()",
             "'x32', 'x64' | ForEach-Object {",
-            "    $base_url = 'https://alpha.inkscape.org/snapshots/latest_master_'+ $_ + '.html'",
-            "    $dl_page = Invoke-WebRequest $base_url -UseBasicParsing",
-            "    $dl = $dl_page.links | Where-Object href -match '\\.7z$' | Select-Object -first 1 -expand href",
-            "    $urls += $dl",
+            "    $urls += (Invoke-WebRequest \"https://alpha.inkscape.org/snapshots/latest_master_$_.html\" -UseBasicParsing).links | Where-Object href -clike *7z | Select-Object -first 1 -expand href",
             "}",
-            "Write-Output ('urls:\"' + $urls + '\"')"
+            "$urls -join ' '"
         ],
-        "regex": "urls:\"(?<win32bit>.+inkscape-[\\d._\\-dev]+_\\w+-.+)\\s(?<win64bit>.+inkscape-(?<version>[\\d._\\-dev]+)_\\w+-.+)\""
+        "regex": "(?<win32bit>\\S+inkscape-[\\d.]+-[a-z]+_[\\d-]+_[a-f\\d]+-\\S+) (?<win64bit>.+inkscape-(?<version>[\\d.]+-[a-z]+_[\\d-]+_[a-f\\d]+)\\S+)"
     },
     "autoupdate": {
         "architecture": {
