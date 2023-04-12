@@ -25,13 +25,7 @@
         ]
     ],
     "checkver": {
-        "script": [
-            "$urls = @()",
-            "'x64', 'x32' | ForEach-Object {",
-            "    $urls += (Invoke-WebRequest \"https://alpha.inkscape.org/snapshots/latest_master_$_.html\" -UseBasicParsing).links | Where-Object href -clike *7z | Select-Object -first 1 -expand href",
-            "}",
-            "$urls -join ' '"
-        ],
+        "script": "('x64', 'x32' | ForEach-Object { (Invoke-WebRequest \"https://alpha.inkscape.org/snapshots/latest_master_$_.html\" -UseBasicParsing).links | Where-Object href -clike *.7z | Select-Object -first 1 -expand href }) -join ' '",
         "regex": "https://gitlab\\.com/inkscape/inkscape/-/jobs/(?<job64>\\d+)/artifacts/raw/build/inkscape-([\\d.]+-[a-z]+_[\\d-]+_[a-f\\d]+)-x64\\.7z https://gitlab\\.com/inkscape/inkscape/-/jobs/(?<job32>\\d+)/artifacts/raw/build/inkscape-(?<ver32>[\\d.]+-[a-z]+_[\\d-]+_[a-f\\d]+)-x86\\.7z"
     },
     "autoupdate": {
