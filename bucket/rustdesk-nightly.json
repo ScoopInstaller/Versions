@@ -1,16 +1,16 @@
 {
-    "version": "1681260107",
+    "version": "1681346877",
     "description": "An open-source remote desktop software, written in Rust.",
     "homepage": "https://github.com/rustdesk/rustdesk",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
             "url": "https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-1.2.0-x86_64.exe",
-            "hash": "2676c4a00544661d64be179496dfa46f8f1340e799b1ea97b1281b0fa6d4de8b"
+            "hash": "fa1ddc5564cd036bc231457bdca2a65e96bda7d332a7f50029d95aac5a84cfb4"
         },
         "32bit": {
             "url": "https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-1.2.0-x86-sciter.exe",
-            "hash": "b1d8ddbe7136cd23275592273b360546d88533e470c2ec2434d13a43d64d5cf5"
+            "hash": "6d45384d492c739e0b16882e57524470fe6f682f13a76d7e4c90079be32132e4"
         }
     },
     "shortcuts": [
