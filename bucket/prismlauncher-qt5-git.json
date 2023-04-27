@@ -7,7 +7,7 @@
     "url": "https://nightly.link/PrismLauncher/PrismLauncher/workflows/trigger_builds/develop/PrismLauncher-Windows-MSVC-Legacy-8dc3267-Debug.zip",
     "hash": "a98734e37ad495c7932d64b836698fd3493912703f48548d14cba2172f61908d",
     "suggest": {
-        "Microsoft Visual C++ Redistributables": "extras/vcredist2022"
+        "vcredist": "extras/vcredist2022"
     },
     "post_install": [
         "'install-associations', 'uninstall-associations' | ForEach-Object {",
