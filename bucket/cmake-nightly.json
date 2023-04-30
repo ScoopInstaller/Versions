@@ -13,6 +13,11 @@
             "url": "https://cmake.org/files/dev/cmake-3.26.20230430-g10e9a49-windows-i386.zip",
             "hash": "fb665afe73fdbdeb52f87a4be782486be33e12a12ac1feed7a731bfb1e65e0de",
             "extract_dir": "cmake-3.26.20230430-g10e9a49-windows-i386"
+        },
+        "arm64": {
+            "url": "https://cmake.org/files/dev/cmake-3.26.20230430-g10e9a49-windows-arm64.zip",
+            "hash": "0efec5a0c972686f07c1fa6284718f5e68a7d273a740f94c1ba2c6ef60730eaa",
+            "extract_dir": "cmake-3.26.20230430-g10e9a49-windows-arm64"
         }
     },
     "bin": [
@@ -41,6 +46,10 @@
             "32bit": {
                 "url": "https://cmake.org/files/dev/cmake-$version-g$matchTag-windows-i386.zip",
                 "extract_dir": "cmake-$version-g$matchTag-windows-i386"
+            },
+            "arm64": {
+                "url": "https://cmake.org/files/dev/cmake-$version-g$matchTag-windows-arm64.zip",
+                "extract_dir": "cmake-$version-g$matchTag-windows-arm64"
             }
         }
     }
