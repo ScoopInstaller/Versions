@@ -31,19 +31,26 @@
         "montage.exe",
         "stream.exe"
     ],
-    "checkver": "The current release is ImageMagick <a.*?>([0-9\\.p-]+)</a>",
+    "checkver": {
+        "url": "https://imagemagick.org/archive/binaries/digest.rdf",
+        "reverse": true,
+        "regex": "ImageMagick-([\\d.-]+)-portable-Q16-x64\\.zip"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://download.imagemagick.org/ImageMagick/download/binaries/ImageMagick-$matchHead-portable-Q16-x64.zip"
+                "url": "https://imagemagick.org/archive/binaries/ImageMagick-$version-portable-Q16-x64.zip"
             },
             "32bit": {
-                "url": "https://download.imagemagick.org/ImageMagick/download/binaries/ImageMagick-$matchHead-portable-Q16-x86.zip"
+                "url": "https://imagemagick.org/archive/binaries/ImageMagick-$version-portable-Q16-x86.zip"
+            },
+            "arm64": {
+                "url": "https://imagemagick.org/archive/binaries/ImageMagick-$version-portable-Q16-arm64.zip"
             }
         },
         "hash": {
             "mode": "rdf",
-            "url": "https://download.imagemagick.org/ImageMagick/download/binaries/digest.rdf"
+            "url": "https://imagemagick.org/archive/binaries/digest.rdf"
         }
     }
 }
