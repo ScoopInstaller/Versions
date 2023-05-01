@@ -1,0 +1,31 @@
+{
+    "version": "20230430",
+    "description": "Video player based on MPlayer/mplayer2 (builds by shinchiro)",
+    "homepage": "https://mpv.io",
+    "license": "LGPL-2.1-or-later,GPL-2.0-or-later",
+    "notes": [
+        "To set and unset file type associations and AutoPlay handlers, run '$dir\\installer\\mpv-install.bat' and '$dir\\installer\\mpv-uninstall.bat' as administrator, respectively.",
+        "You can use Icaros ('nonportable/icaros-np') to enable thumbnails for all media types."
+    ],
+    "suggest": {
+        "yt-dlp": "yt-dlp"
+    },
+    "url": "https://downloads.sourceforge.net/project/mpv-player-windows/64bit-v3/mpv-x86_64-v3-20230430-git-6d422b3.7z",
+    "hash": "a700d379d701cb82e217160c623ea0b870d2a7189f08c31bfb948e099ac1140c",
+    "pre_install": "Remove-Item \"$dir\\updater.bat\"",
+    "env_add_path": ".",
+    "shortcuts": [
+        [
+            "mpv.exe",
+            "mpv"
+        ]
+    ],
+    "persist": "portable_config",
+    "checkver": {
+        "sourceforge": "mpv-player-windows/64bit-v3",
+        "regex": "mpv-x86_64-v3-(\\d+)-git-(?<commit>[\\da-f]+)\\.7z"
+    },
+    "autoupdate": {
+        "url": "https://downloads.sourceforge.net/project/mpv-player-windows/64bit-v3/mpv-x86_64-v3-$version-git-$matchCommit.7z"
+    }
+}
