@@ -1,16 +1,16 @@
 {
-    "version": "4213171973",
+    "version": "4968823641",
     "description": "Practical and minimal image viewer",
     "homepage": "https://github.com/jurplel/qView",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_64-2023-02-18.1.zip",
-            "hash": "91d7275457320a80255256c8202b0bcab24968616e2ce4a120c79e4826b98a56"
+            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_64-2023-05-13.2.zip",
+            "hash": "7f96c2436507580bf94a80f87c73c9307a92f460dd55556f97d49b49d7e33906"
         },
         "32bit": {
-            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_32-2023-02-18.1.zip",
-            "hash": "8911923f615e4fdd73dd9a736a6fc9be5ffce7ef83ba0e06b3c671d7414fd0fd"
+            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_32-2023-05-13.2.zip",
+            "hash": "9f260c3f187e64da2d6cd82e77c7621b94cb333a94e66dc18463395c66fcd79c"
         }
     },
     "pre_install": [
@@ -35,19 +35,19 @@
         "script": [
             "try {",
             "    $api = (Invoke-RestMethod 'https://api.github.com/repositories/123522764/actions/workflows/build.yml/runs?branch=master&status=success').workflow_runs[0]",
-            "    ($api.id, $api.updated_at.ToString('yyyy-MM-dd')) -join ' '",
+            "    ($api.id, $api.updated_at.ToString('yyyy-MM-dd'), $api.run_attempt) -join ' '",
             "}",
             "catch { '' }"
         ],
-        "regex": "\\A(\\d+) (?<date>\\d{4}(?:-\\d{2}){2})\\Z"
+        "regex": "\\A(\\d+) (?<date>\\d{4}(?:-\\d{2}){2}) (?<attempt>\\d+)\\Z"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_64-$matchDate.1.zip"
+                "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_64-$matchDate.$matchAttempt.zip"
             },
             "32bit": {
-                "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_32-$matchDate.1.zip"
+                "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_32-$matchDate.$matchAttempt.zip"
             }
         }
     }
