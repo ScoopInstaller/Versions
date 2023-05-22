@@ -1,0 +1,30 @@
+{
+    "version": "1.4.6",
+    "description": "Manage multiple Rubies on Windows.",
+    "homepage": "https://github.com/ccmywish/rbenv-for-windows",
+    "license": "MIT",
+    "url": "https://github.com/ccmywish/rbenv-for-windows/raw/main/tools/install.ps1",
+    "hash": "b268832be192673416099ba2afd7b81f4ef66dbf95c2fdd307e0d94b03682659",
+    "installer": {
+        "script": [
+            "$env:RBENV_ROOT = \"$dir\\rbenv_root\"",
+            "Invoke-Expression -Command \"$dir\\install.ps1\""
+        ]
+    },
+    "post_install": [
+        "Add-Content -Path $PROFILE -Value \"\"",
+        "Add-Content -Path $PROFILE -Value \"# rbenv for Windows\"",
+        "Add-Content -Path $PROFILE -Value \"`$env:RBENV_ROOT = `\"$dir\\rbenv_root`\"\"",
+        "Add-Content -Path $PROFILE -Value \"& `\"`$env:RBENV_ROOT\\rbenv\\bin\\rbenv.ps1`\" init\""
+    ],
+    "uninstaller": {
+        "script": "Write-Host \"Please remove rbenv for Windows from Powershell profile\""
+    },
+    "checkver": {
+        "url": "https://github.com/ccmywish/rbenv-for-windows/tags",
+        "regex": "g/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/ccmywish/rbenv-for-windows/raw/main/tools/install.ps1"
+    }
+}
