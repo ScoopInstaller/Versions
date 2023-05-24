@@ -1,5 +1,5 @@
 {
-    "version": "6.24",
+    "version": "6.25",
     "description": "A V2Ray client for Windows, support Xray & v2fly core",
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-only",
@@ -8,8 +8,20 @@
         ".NET Desktop Runtime": "extras/windowsdesktop-runtime-lts",
         "v2fly-core": "main/v2ray"
     },
-    "url": "https://github.com/2dust/v2rayN/releases/download/6.24/v2rayN.zip",
-    "hash": "c09dbce547cf93ef6072a4097f51b9bbd6bda2e291f452228813f2bed37037ef",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/2dust/v2rayN/releases/download/6.25/v2rayN.zip",
+            "hash": "2ee309de6b3d4ada1e01c989ab59834e3e3a88a782f5b1bfaff0163f37818ea2"
+        },
+        "32bit": {
+            "url": "https://github.com/2dust/v2rayN/releases/download/6.25/v2rayN-32.zip",
+            "hash": "75b13b91ea9925213c67529eb387417b5e00e9e23ac4840c93f22b07058391fb"
+        },
+        "arm64": {
+            "url": "https://github.com/2dust/v2rayN/releases/download/6.25/v2rayN-arm64.zip",
+            "hash": "7bdfa7d232b215fd21b59c973dda8e270b17ec9552a1ca2c0459be5cc2b099c5"
+        }
+    },
     "extract_dir": "v2rayN",
     "pre_install": [
         "foreach ($form in @('*.exe', '*.dat')) {",
@@ -42,6 +54,16 @@
         "regex": "download/([\\d.]+)/"
     },
     "autoupdate": {
-        "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN.zip"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-32.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/2dust/v2rayN/releases/download/6.25/https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-arm64.zip"
+            }
+        }
     }
 }
