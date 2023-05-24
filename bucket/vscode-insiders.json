@@ -1,5 +1,5 @@
 {
-    "version": "1.79.0-insider+1684386982885",
+    "version": "1.79.0-insider+1684544866880",
     "description": "Visual Studio Code is a lightweight but powerful source code editor (Insiders, Portable Edition).",
     "homepage": "https://code.visualstudio.com/",
     "license": {
@@ -15,15 +15,15 @@
     "architecture": {
         "64bit": {
             "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z",
-            "hash": "5bd7d24fb6191fad52bdaaee87278a01e9892d1f2dd54eab2f1eb81a565c9a1e"
+            "hash": "a855553b70ba3b5e36128a1c3f7daa4c605a1bd407ae5729128f8f7ff40c18db"
         },
         "32bit": {
             "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z",
-            "hash": "bc9644f7666dc32b88888a02149c520b9895ccf151890ec80dde32677cf6f569"
+            "hash": "6827e1d4b4da63b6187fc8a1184819409364997d06b620679ecc0d146f0af7f1"
         },
         "arm64": {
             "url": "https://update.code.visualstudio.com/latest/win32-arm64-archive/insider#/dl.7z",
-            "hash": "6f5906e16478e4a0d0c0d7de76f248f4015bc5dac2b2d6447c36e7cec36d62f7"
+            "hash": "baa11a82521f53752ca2a0ed35767150a027af6dcacbc0cbefd39e827189cda7"
         }
     },
     "post_install": [
@@ -56,11 +56,16 @@
         "}"
     ],
     "env_add_path": "bin",
-    "shortcuts": [["Code - Insiders.exe", "Visual Studio Code - Insiders"]],
+    "shortcuts": [
+        [
+            "Code - Insiders.exe",
+            "Visual Studio Code - Insiders"
+        ]
+    ],
+    "persist": "data",
     "uninstaller": {
         "script": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-context.reg\" }"
     },
-    "persist": "data",
     "checkver": {
         "url": "https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest",
         "jsonpath": "$..['productVersion','timestamp']",
