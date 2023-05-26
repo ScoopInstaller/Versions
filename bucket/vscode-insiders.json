@@ -1,5 +1,5 @@
 {
-    "version": "1.79.0-insider+1685964412692",
+    "version": "1.79.0-insider-1685964412692",
     "description": "Visual Studio Code is a lightweight but powerful source code editor (Insiders, Portable Edition).",
     "homepage": "https://code.visualstudio.com/",
     "license": {
@@ -14,15 +14,15 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z",
+            "url": "https://az764295.vo.msecnd.net/insider/666396ddec7708df2b986dcc178863faaa67c14d/VSCode-win32-x64-1.79.0-insider.zip",
             "hash": "2789317d76b93705c255d3036eba97b139fcc9e86be99a211f717839f131d87c"
         },
         "32bit": {
-            "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z",
+            "url": "https://az764295.vo.msecnd.net/insider/666396ddec7708df2b986dcc178863faaa67c14d/VSCode-win32-ia32-1.79.0-insider.zip",
             "hash": "978fd753b502e96064f465bf8aeb2740a704e5e6bf776b1c5e059e4c38a38dda"
         },
         "arm64": {
-            "url": "https://update.code.visualstudio.com/latest/win32-arm64-archive/insider#/dl.7z",
+            "url": "https://az764295.vo.msecnd.net/insider/666396ddec7708df2b986dcc178863faaa67c14d/VSCode-win32-arm64-1.79.0-insider.zip",
             "hash": "fbf8211708faa72cc86dfba62f2cea8a285a05e7cc350016d87935de683ad6a1"
         }
     },
@@ -68,33 +68,25 @@
     },
     "checkver": {
         "url": "https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest",
-        "jsonpath": "$..['productVersion','timestamp']",
-        "regex": "^(?<productVersion>.+)\\\\n(?<timestamp>.*)$",
-        "replace": "${productVersion}+${timestamp}"
+        "jsonpath": "$..['version','productVersion','timestamp']",
+        "regex": "(?s)(?<commit>[a-fA-F0-9]{40}).*?(?<product>[\\d.]+-insider).*?(?<timestamp>[\\d]+)",
+        "replace": "${product}-${timestamp}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z",
-                "hash": {
-                    "url": "https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest",
-                    "jsonpath": "$.sha256hash"
-                }
+                "url": "https://az764295.vo.msecnd.net/insider/$matchCommit/VSCode-win32-x64-$matchProduct.zip"
             },
             "32bit": {
-                "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z",
-                "hash": {
-                    "url": "https://update.code.visualstudio.com/api/update/win32-archive/insider/latest",
-                    "jsonpath": "$.sha256hash"
-                }
+                "url": "https://az764295.vo.msecnd.net/insider/$matchCommit/VSCode-win32-ia32-$matchProduct.zip"
             },
             "arm64": {
-                "url": "https://update.code.visualstudio.com/latest/win32-arm64-archive/insider#/dl.7z",
-                "hash": {
-                    "url": "https://update.code.visualstudio.com/api/update/win32-arm64-archive/insider/latest",
-                    "jsonpath": "$.sha256hash"
-                }
+                "url": "https://az764295.vo.msecnd.net/insider/$matchCommit/VSCode-win32-arm64-$matchProduct.zip"
             }
+        },
+        "hash": {
+            "url": "https://code.visualstudio.com/sha?build=insider",
+            "regex": "$url.*?$sha256"
         }
     }
 }
