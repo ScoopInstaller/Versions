@@ -36,8 +36,7 @@
             }
         },
         "hash": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/tag/v$version/",
-            "find": "$basename\\s*<ul>\\s*<li>([A-Fa-f0-9]{64})"
+            "url": "$baseurl/hashes.sha256"
         }
     }
 }
