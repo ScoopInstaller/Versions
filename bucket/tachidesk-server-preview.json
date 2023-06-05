@@ -1,5 +1,5 @@
 {
-    "version": "0.7.0-r1283",
+    "version": "0.7.0-r1284",
     "description": "A manga reader compatible with Tachiyomi extensions and backups",
     "homepage": "https://github.com/Suwayomi/Tachidesk-Server",
     "license": {
@@ -8,14 +8,14 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Suwayomi/Tachidesk-Server-preview/releases/download/v0.7.0-r1283/Tachidesk-Server-v0.7.0-r1283-windows-x64.zip",
-            "hash": "ee2f69bd4d1f6c1672d52da5cdc9743446e51c8be9695108661bd3ea15677a13",
-            "extract_dir": "Tachidesk-Server-v0.7.0-r1283-windows-x64"
+            "url": "https://github.com/Suwayomi/Tachidesk-Server-preview/releases/download/v0.7.0-r1284/Tachidesk-Server-v0.7.0-r1284-windows-x64.zip",
+            "hash": "8bda4801d76df1b4b55037ac5be31ddaa03fc5bab415a3a97b33bbf51a1d1410",
+            "extract_dir": "Tachidesk-Server-v0.7.0-r1284-windows-x64"
         },
         "32bit": {
-            "url": "https://github.com/Suwayomi/Tachidesk-Server-preview/releases/download/v0.7.0-r1283/Tachidesk-Server-v0.7.0-r1283-windows-x86.zip",
-            "hash": "f4bd9546bc5b1a3e62109f6b965183813aacc05703fb8ebd0f0e6f71dde728c9",
-            "extract_dir": "Tachidesk-Server-v0.7.0-r1283-windows-x86"
+            "url": "https://github.com/Suwayomi/Tachidesk-Server-preview/releases/download/v0.7.0-r1284/Tachidesk-Server-v0.7.0-r1284-windows-x86.zip",
+            "hash": "b4f8790724f6ab6833b933d1ab159bfeed935d0cc96b0d1199212e5439464774",
+            "extract_dir": "Tachidesk-Server-v0.7.0-r1284-windows-x86"
         }
     },
     "pre_install": "Copy-Item \"$bucketsdir\\versions\\scripts\\tachidesk-server-preview\\tachidesk*.ps1\" -Destination \"$dir\"",
