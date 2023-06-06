@@ -1,6 +1,6 @@
 {
-    "version": "6.22",
-    "description": "A V2Ray client for Windows, support Xray core and v2fly core",
+    "version": "6.26",
+    "description": "A V2Ray client for Windows, support Xray & v2fly core",
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-only",
     "depends": "xray",
@@ -8,13 +8,22 @@
         ".NET Desktop Runtime": "extras/windowsdesktop-runtime-lts",
         "v2fly-core": "v2ray"
     },
-    "url": "https://github.com/2dust/v2rayN/releases/download/6.22/v2rayN.7z",
-    "hash": "e5c44768efe574de5d5c3a6341e690d7e988d3dd1b9639d4364ae85711d12747",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/2dust/v2rayN/releases/download/6.26/v2rayN.zip",
+            "hash": "4d2a7f7c70aff64f90605b50cbcfffb72bb9cf9a7df876c22d97f98d9c9242f1"
+        },
+        "32bit": {
+            "url": "https://github.com/2dust/v2rayN/releases/download/6.26/v2rayN-32.zip",
+            "hash": "22f73858050786480db033502a0e4a9250843735ec4dc2de7e9a0201f7e8f4a3"
+        },
+        "arm64": {
+            "url": "https://github.com/2dust/v2rayN/releases/download/6.26/v2rayN-arm64.zip",
+            "hash": "0407f8cd1db12928be4b0cbcd95405b9cbcc0e4c69082995699c4ab04d8b8ef1"
+        }
+    },
     "extract_dir": "v2rayN",
     "pre_install": [
-        "if (Test-Path \"$persist_dir\\guiConfigs\\config.json\") {",
-        "    Copy-Item \"$persist_dir\\guiConfigs\\config.json\" \"$dir\\guiConfigs\" | Out-Null",
-        "}",
         "foreach ($form in @('*.exe', '*.dat')) {",
         "    foreach ($_ in Get-ChildItem \"$(appdir xray $global)\\current\" -File) {",
         "        $name = $_.Name",
@@ -45,6 +54,16 @@
         "regex": "download/([\\d.]+)/"
     },
     "autoupdate": {
-        "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN.7z"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-32.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-arm64.zip"
+            }
+        }
     }
 }
