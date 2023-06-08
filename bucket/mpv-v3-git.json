@@ -1,5 +1,5 @@
 {
-    "version": "20230430",
+    "version": "20230604",
     "description": "Video player based on MPlayer/mplayer2 (builds by shinchiro)",
     "homepage": "https://mpv.io",
     "license": "LGPL-2.1-or-later,GPL-2.0-or-later",
@@ -10,8 +10,8 @@
     "suggest": {
         "yt-dlp": "yt-dlp"
     },
-    "url": "https://downloads.sourceforge.net/project/mpv-player-windows/64bit-v3/mpv-x86_64-v3-20230430-git-6d422b3.7z",
-    "hash": "a700d379d701cb82e217160c623ea0b870d2a7189f08c31bfb948e099ac1140c",
+    "url": "https://downloads.sourceforge.net/project/mpv-player-windows/64bit-v3/mpv-x86_64-v3-20230604-git-e18cf0b.7z",
+    "hash": "febe334d1e392b1c487abd347d029ae0e64954f26c454f51e30b6547c81c3591",
     "pre_install": "Remove-Item \"$dir\\updater.bat\"",
     "env_add_path": ".",
     "shortcuts": [
