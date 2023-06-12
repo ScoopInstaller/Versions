@@ -4,7 +4,7 @@
     "homepage": "https://neovim.io",
     "license": {
         "identifier": "Apache-2.0,Vim",
-        "url": "https://github.com/neovim/neovim/blob/master/LICENSE"
+        "url": "https://github.com/neovim/neovim/blob/master/LICENSE.txt"
     },
     "suggest": {
         "vcredist": "extras/vcredist2022"
@@ -16,9 +16,7 @@
         }
     },
     "extract_dir": "nvim-win64",
-    "bin": [
-        "bin\\nvim.exe"
-    ],
+    "bin": "bin\\nvim.exe",
     "checkver": {
         "url": "https://api.github.com/repos/neovim/neovim/releases",
         "regex": "NVIM v([\\w.-]+)\\+([\\w.-]+)",
