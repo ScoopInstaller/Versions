@@ -1,14 +1,39 @@
 {
-    "version": "7.0-05a8232",
+    "version": "8.0-f1ebec6",
     "description": "An open source Minecraft launcher with the ability to manage multiple instances, accounts and mods. Focused on user freedom and free redistributability. Qt 5 build that still supports legacy Windows like 8.1 and 7.",
     "homepage": "https://prismlauncher.org/",
     "license": "GPL-3.0-only",
-    "notes": "To add Prism Launcher file association options for .ZIPs and .MRPACKS, run this: \"$dir\\install-associations.reg\"",
-    "url": "https://nightly.link/PrismLauncher/PrismLauncher/workflows/trigger_builds/develop/PrismLauncher-Windows-MSVC-Legacy-05a8232-Debug.zip",
-    "hash": "6c1bbe46a71d0f7edfac9e5cc6639caaeeaed37bdf37520edea4c9247a23df00",
+    "notes": [
+        "To add Prism Launcher file association options for .ZIPs and .MRPACKS, run this: \"$dir\\install-associations.reg\"",
+        "",
+        "This package is now using the portable version of Prism Launcher, and data should have been migrated automatically.",
+        "If you are using a global install on a system with more than one user, you will need to copy a user's data from %appdata% to the new Scoop PrismLauncher persist directory"
+    ],
+    "url": "https://nightly.link/PrismLauncher/PrismLauncher/workflows/trigger_builds/develop/PrismLauncher-Windows-MSVC-Legacy-Portable-f1ebec6-Debug.zip",
+    "hash": "c3f14197863835f21f378589121debbc0dc03b530238bd66518d53c9ecf28365",
     "suggest": {
         "vcredist": "extras/vcredist2022"
     },
+    "pre_install": [
+        "$migration = $true",
+        "$visibleUserAccounts = Get-LocalUser | Where-Object { $_.Enabled -eq $true }",
+        "if ($global -and $visibleUserAccounts.Count -gt 1) { $migration = $false }",
+        "",
+        "$appdataPath = \"$HOME\\AppData\\Roaming\\PrismLauncher\"",
+        "if ((Test-Path -Path $appdataPath\\*) -and (!(Test-Path -Path $persist_dir\\*)) -and $migration) {",
+        "    Write-Warning \"Migrating data from $appdataPath to $persist_dir (this may take a while)\"",
+        "    New-Item -Type Directory -Path $persist_dir | Out-Null",
+        "    Copy-Item -Recurse -Force $appdataPath\\* $persist_dir\\",
+        "} elseif (!($migration)) {",
+        "    Write-Warning \"A global Scoop installation was detected with multiple user accounts. Please see the notes at the end of the install process.\"",
+        "}",
+        "",
+        "'accounts.json', 'metacache', 'prismlauncher.cfg' | ForEach-Object {",
+        "    if (!(Test-Path -Path $persist_dir\\$_)) {",
+        "        New-Item -Type File $dir/$_ | Out-Null",
+        "    }",
+        "}"
+    ],
     "post_install": [
         "'install-associations', 'uninstall-associations' | ForEach-Object {",
         "    if (Test-Path \"$bucketsdir\\versions\\scripts\\prismlauncher-qt5-git\\$_.reg\") {",
@@ -26,13 +51,28 @@
             "Prism Launcher"
         ]
     ],
+    "persist": [
+        "assets",
+        "cache",
+        "icons",
+        "instances",
+        "libraries",
+        "logs",
+        "meta",
+        "mods",
+        "themes",
+        "translations",
+        "accounts.json",
+        "metacache",
+        "prismlauncher.cfg"
+    ],
     "checkver": {
         "url": "https://api.github.com/repos/PrismLauncher/PrismLauncher/commits",
         "jsonpath": "$..sha",
         "regex": "(?<sha>^[a-fA-F0-9]{0,7})",
-        "replace": "7.0-${sha}"
+        "replace": "8.0-${sha}"
     },
     "autoupdate": {
-        "url": "https://nightly.link/PrismLauncher/PrismLauncher/workflows/trigger_builds/develop/PrismLauncher-Windows-MSVC-Legacy-$matchSha-Debug.zip"
+        "url": "https://nightly.link/PrismLauncher/PrismLauncher/workflows/trigger_builds/develop/PrismLauncher-Windows-MSVC-Legacy-Portable-$matchSha-Debug.zip"
     }
 }
