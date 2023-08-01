@@ -1,0 +1,37 @@
+{
+    "version": "13.2.0-11.0.0-r1",
+    "description": "GNU Compiler Collection (UCRT, WinLibs build)",
+    "homepage": "https://winlibs.com",
+    "license": "GPL-3.0-or-later,ZPL-2.1,BSD-2-Clause,...",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/13.2.0mcf-16.0.6-11.0.0-ucrt-r1/winlibs-x86_64-mcf-seh-gcc-13.2.0-mingw-w64ucrt-11.0.0-r1.7z",
+            "hash": "sha512:000591915e820c08e8f099e68eae430040b5cdc641ba1a831ccc8afd5fd77042b6f26097e4a214f010c3fcaa8cdb8a864396dc50ed80efabf6f40af9f901c05e",
+            "extract_dir": "mingw64"
+        },
+        "32bit": {
+            "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/13.2.0mcf-16.0.6-11.0.0-ucrt-r1/winlibs-i686-mcf-dwarf-gcc-13.2.0-mingw-w64ucrt-11.0.0-r1.7z",
+            "hash": "sha512:baa231cc806e128e191a95013bdbf64917773ca5a0742721e9881654384352f1f70350db56aedfc5d16398b265c681a1d8c99cb51a96da69beeb679c88defe80",
+            "extract_dir": "mingw32"
+        }
+    },
+    "post_install": "Copy-Item \"$dir\\bin\\mingw32-make.exe\" \"$dir\\bin\\make.exe\"",
+    "env_add_path": "bin",
+    "checkver": {
+        "regex": "GCC ([\\d.]+).*?MCF.*?LLVM.*?([\\d.]+).*?MinGW\\-w64 ([\\d.]+).*?UCRT.*?release ([\\d.]+).*?LATEST",
+        "replace": "${1}-${3}-r${4}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/$match1mcf-$match2-$match3-ucrt-r$match4/winlibs-x86_64-mcf-seh-gcc-$match1-mingw-w64ucrt-$match3-r$match4.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/$match1mcf-$match2-$match3-ucrt-r$match4/winlibs-i686-mcf-dwarf-gcc-$match1-mingw-w64ucrt-$match3-r$match4.7z"
+            }
+        },
+        "hash": {
+            "url": "$url.sha512"
+        }
+    }
+}
