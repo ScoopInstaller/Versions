@@ -1,5 +1,5 @@
 {
-    "version": "1.82.0-insider+1691127438986",
+    "version": "1.82.0-insider+1691386670750",
     "description": "Visual Studio Code is a lightweight but powerful source code editor (Insiders, Portable Edition).",
     "homepage": "https://code.visualstudio.com/",
     "license": {
@@ -15,15 +15,15 @@
     "architecture": {
         "64bit": {
             "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z",
-            "hash": "6ee83b1d0a49e40487b3665624f7e92a65ccb9a4b034ecc3860fef6de07f63bf"
+            "hash": "8a697aa67fdc5b657e464c056820a5e2568cd406ab043652a49ded93707f6384"
         },
         "32bit": {
             "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z",
-            "hash": "ca63db4a3870651debc5c9bbf193636336520cf7b0289d8c847205c77b654530"
+            "hash": "71bde0ff6162e511a714637e0fc05019080f46dd59ced308556b36ef7b39ed69"
         },
         "arm64": {
             "url": "https://update.code.visualstudio.com/latest/win32-arm64-archive/insider#/dl.7z",
-            "hash": "38ec942337dfdc154b56b9e73ca26ecc747091762798aa9799cce64c16b10a12"
+            "hash": "fd38f3e862385a42824d2a7dfc0f3ca99c3075f1f5f2456b23552f82f36ed7a5"
         }
     },
     "post_install": [
