@@ -1,12 +1,12 @@
 {
-    "version": "6.0.3.2",
+    "version": "6.0.4.0",
     "description": "A modern media player for Windows that works just like mpv",
     "homepage": "https://github.com/mpvnet-player/mpv.net/",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mpvnet-player/mpv.net/releases/download/v6.0.3.2-beta/mpv.net-6.0.3.2-beta.zip",
-            "hash": "81975f82de761320e06f11f59a6983348c64d110f89a8a1779ba8a4a80813176"
+            "url": "https://github.com/mpvnet-player/mpv.net/releases/download/v6.0.4.0-stable/mpv.net-v6.0.4.0-stable.zip",
+            "hash": "f5a64b9ee0768329b5eac98778d553fe6d069b151798108309d66f376bf1fb19"
         }
     },
     "bin": "mpvnet.com",
@@ -20,7 +20,7 @@
     "checkver": {
         "url": "https://api.github.com/repositories/101537172/releases",
         "jsonpath": "$.[0].assets[0].name",
-        "regex": "mpv.net-(?<stable>v)?([\\d.-]+)(?<beta>-beta)?.zip"
+        "regex": "mpv.net-(?<stable>v)?([\\d.]+)(?<beta>-beta|-stable)?.zip"
     },
     "autoupdate": {
         "architecture": {
