@@ -19,13 +19,12 @@
     "persist": "portable_config",
     "checkver": {
         "url": "https://api.github.com/repositories/101537172/releases",
-        "jsonpath": "$.[0].assets[0].name",
-        "regex": "mpv.net-(?<stable>v)?([\\d.-]+)(?<beta>-beta)?.zip"
+        "regex": "(?sm)browser_download_url.*?releases/download/v(?<tag>([\\d.]+)(?:-beta)?)/mpv.net-([\\d.]+)(?<channel>-beta)\\.zip"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/mpvnet-player/mpv.net/releases/download/v$version$matchBeta/mpv.net-$matchStable$version$matchBeta.zip"
+                "url": "https://github.com/mpvnet-player/mpv.net/releases/download/v$matchTag/mpv.net-$version$matchChannel.zip"
             }
         }
     }
