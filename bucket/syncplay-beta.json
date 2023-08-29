@@ -19,14 +19,14 @@
     "checkver": {
         "script": [
             "try {",
-            "    if (($ver = (Invoke-RestMethod https://api.github.com/repositories/4732425/releases)[0].tag_name)[0] -eq ($char = 'v')) { $ver = $ver.Substring(1) } else { $char = '' }",
-            "    $char, $ver, ($ver -replace '-', '_') -join ' '",
+            "    if (($ver = (Invoke-RestMethod https://api.github.com/repositories/4732425/releases)[0].tag_name)[0] -eq ($prefix = 'v')) { $ver = $ver.Substring(1) } else { $prefix = '' }",
+            "    $prefix, $ver, ($ver -replace '-', '_') -join ' '",
             "}",
             "catch { '' }"
         ],
-        "regex": "\\A(?<tag>v)? (\\S+) (?<underscore>\\S+)\\Z"
+        "regex": "\\A(?<prefix>v)? (\\S+) (?<underscore>\\S+)\\Z"
     },
     "autoupdate": {
-        "url": "https://github.com/Syncplay/syncplay/releases/download/$matchTag$version/Syncplay_$matchUnderscore_Portable.zip"
+        "url": "https://github.com/Syncplay/syncplay/releases/download/$matchPrefix$version/Syncplay_$matchUnderscore_Portable.zip"
     }
 }
