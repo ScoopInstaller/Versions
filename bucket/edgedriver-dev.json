@@ -1,5 +1,5 @@
 {
-    "version": "118.0.2069.0",
+    "version": "118.0.2048.1",
     "description": "Close the loop on your developer cycle by automating testing of your website in Microsoft Edge (Chromium).",
     "homepage": "https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver",
     "license": {
@@ -9,21 +9,21 @@
     "notes": "For legacy (EdgeHTML) version, see 'versions/edgedriver-legacy'.",
     "architecture": {
         "64bit": {
-            "url": "https://msedgedriver.azureedge.net/118.0.2069.0/edgedriver_win64.zip",
-            "hash": "c43fc368d8dccd249770a9621a416a840bd0e901970dc96ef52754fc472b4073"
+            "url": "https://msedgedriver.azureedge.net/118.0.2048.1/edgedriver_win64.zip",
+            "hash": "ee54b2db19ed7db309541bb4c6d4751b3a9ccefa4d9ce1935cc47b0d5b63a637"
         },
         "32bit": {
-            "url": "https://msedgedriver.azureedge.net/118.0.2069.0/edgedriver_win32.zip",
-            "hash": "3462fd48ad672b6f5053d5c38b358e170ee2ed3d95b6688ffb98eaabb30c9838"
+            "url": "https://msedgedriver.azureedge.net/118.0.2048.1/edgedriver_win32.zip",
+            "hash": "f8d39e8a540c8e0c0ca47808ee1b659700511f7f58d2eba99eb895a9aeba5df9"
         },
         "arm64": {
-            "url": "https://msedgedriver.azureedge.net/118.0.2069.0/edgedriver_arm64.zip",
-            "hash": "f4ff1587b5d2e45e9f65e3ff26d52a871eb43593d0dbf3569f4934000ccac510"
+            "url": "https://msedgedriver.azureedge.net/118.0.2048.1/edgedriver_arm64.zip",
+            "hash": "7c2a2ec210354dbdb40287d63f94d8ed88d97d8c6f7f28a2102478af6df7e615"
         }
     },
     "bin": "msedgedriver.exe",
     "checkver": {
-        "script": "Write-Output $([System.Text.Encoding]::Unicode.GetString((Invoke-WebRequest -URI https://msedgedriver.azureedge.net/LATEST_CANARY).Content))",
+        "script": "Write-Output $([System.Text.Encoding]::Unicode.GetString((Invoke-WebRequest -URI https://msedgedriver.azureedge.net/LATEST_DEV).Content))",
         "regex": "([\\d.]+)"
     },
     "autoupdate": {
