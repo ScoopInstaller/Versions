@@ -1,0 +1,34 @@
+{
+    "version": "1.7.2-dev",
+    "description": "A minimal Markdown editor and reader (Dev Editon)",
+    "homepage": "https://typora.io",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://support.typora.io/License-Agreement/"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://download.typora.io/windows/typora-setup-x64-1.7.2-dev.exe",
+            "hash": "ef7b5b5efbe30af167066fcc5cd9cb08c0d3463fb3e539e75d6d858d4b68310d"
+        }
+    },
+    "innosetup": true,
+    "bin": "Typora.exe",
+    "shortcuts": [
+        [
+            "Typora.exe",
+            "Typora"
+        ]
+    ],
+    "checkver": {
+        "url": "https://typora.io/releases/dev",
+        "regex": "<h2>([\\d.]+-dev)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.typora.io/windows/typora-setup-x64-$version.exe"
+            }
+        }
+    }
+}
