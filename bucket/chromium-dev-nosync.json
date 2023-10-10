@@ -1,20 +1,12 @@
 {
-    "version": "100.0.4863.0-r965290",
+    "version": "114.0.5716.0-r1130956",
     "description": "An open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
     "homepage": "https://www.chromium.org",
     "license": "BSD-3-Clause",
-    "notes": [
-        "These builds are no longer up to date as the owner discontinued the project on 20th February 2022.",
-        "64 bit and 32 bit releases have different versions."
-    ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/RobRich999/Chromium_Clang/releases/download/v100.0.4863.0-r965290-win64-sse3/chrome.zip",
-            "hash": "3ca3f3aa0837c4144b9ee9268e628dbf423aab14828e8963350894c4caa59254"
-        },
-        "32bit": {
-            "url": "https://github.com/RobRich999/Chromium_Clang/releases/download/v99.0.4844.0-r961558-win32-sse3/chrome.zip",
-            "hash": "9356f30d5e959265b5f94d1435f026811a8e639f5a9a3a848ca386bf62750881"
+            "url": "https://github.com/RobRich999/Chromium_Clang/releases/download/v114.0.5716.0-r1130956-win64-avx/chrome.zip",
+            "hash": "2c4d0cb9363c5aa600c4c8d59d881007a4f9d2ea3d90e896027fd8cb7fc19630"
         }
     },
     "extract_dir": "chrome-win32",
@@ -38,5 +30,17 @@
         "    Copy-Item \"$env:LocalAppData\\Chromium\\User Data\\*\" \"$dir\\User Data\" -Recurse",
         "}"
     ],
-    "persist": "User Data"
+    "persist": "User Data",
+    "checkver": {
+        "url": "https://api.github.com/repos/RobRich999/Chromium_Clang/releases",
+        "jsonpath": "$..['tag_name']",
+        "regex": "v([\\d.]+-r[\\d]+)-win64-avx(?!2)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/RobRich999/Chromium_Clang/releases/download/v$version-win64-avx/chrome.zip"
+            }
+        }
+    }
 }
