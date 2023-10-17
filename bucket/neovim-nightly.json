@@ -1,5 +1,5 @@
 {
-    "version": "0.10.0-dev-1055-gb7734c4ec",
+    "version": "0.10.0-dev-1f551e0",
     "description": "Vim fork focused on extensibility and usability",
     "homepage": "https://neovim.io",
     "license": {
@@ -19,8 +19,7 @@
     "bin": "bin\\nvim.exe",
     "checkver": {
         "url": "https://api.github.com/repos/neovim/neovim/releases",
-        "regex": "NVIM v([\\w.-]+)\\+([\\w.-]+)",
-        "replace": "${1}-${2}"
+        "regex": "NVIM v([\\w.-]+)"
     },
     "autoupdate": {
         "architecture": {
