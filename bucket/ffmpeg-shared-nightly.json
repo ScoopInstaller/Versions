@@ -1,13 +1,13 @@
 {
-    "version": "110330",
+    "version": "112467",
     "description": "A complete, cross-platform solution to record, convert and stream audio and video.",
     "homepage": "https://ffmpeg.org",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2023-04-20-12-43/ffmpeg-N-110330-gc17e33c058-win64-gpl-shared.zip",
-            "hash": "52ded6a27cf5d0b22bc5a771860427489c2625be6bb35e9e519a3913b9e68619",
-            "extract_dir": "ffmpeg-N-110330-gc17e33c058-win64-gpl-shared"
+            "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2023-10-16-13-01/ffmpeg-N-112467-g5ddab49d48-win64-gpl-shared.zip",
+            "hash": "8813e32ffaf72fb1157c2922867e9f633b1698cb30320ee514f8cc6472c2fa4e",
+            "extract_dir": "ffmpeg-N-112467-g5ddab49d48-win64-gpl-shared"
         }
     },
     "bin": [
@@ -16,8 +16,9 @@
         "bin\\ffprobe.exe"
     ],
     "checkver": {
-        "url": "https://github.com/BtbN/FFmpeg-Builds/releases",
-        "regex": "/autobuild-(?<time>[\\d-]+)/ffmpeg-N-(\\d+)-g(?<hash>[a-z\\d]+)-win64-gpl-shared\\.zip"
+        "url": "https://api.github.com/repos/BtbN/FFmpeg-Builds/releases",
+        "jsonpath": "$..browser_download_url",
+        "regex": "autobuild-(?<time>[\\d-]+)/ffmpeg-N-(\\d+)-g(?<hash>[a-z\\d]+)-win64-gpl-shared\\.zip"
     },
     "autoupdate": {
         "architecture": {

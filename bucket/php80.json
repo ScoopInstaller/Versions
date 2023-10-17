@@ -1,19 +1,19 @@
 {
-    "version": "8.0.28",
+    "version": "8.0.30",
     "description": "PHP, a popular general-purpose scripting language that is especially suited to web development. (version 8.0)",
     "homepage": "https://windows.php.net/",
     "license": "PHP-3.01",
     "suggest": {
-        "vcredist": "extras/vcredist2019"
+        "vcredist": "extras/vcredist2022"
     },
     "architecture": {
         "64bit": {
-            "url": "https://windows.php.net/downloads/releases/php-8.0.28-Win32-vs16-x64.zip",
-            "hash": "6489eb337cf15547c87113e699d8c8a9e43bee6bc536416d6ae881e95fdee3a8"
+            "url": "https://windows.php.net/downloads/releases/php-8.0.30-Win32-vs16-x64.zip",
+            "hash": "8697972b5f704885e3444422ede2b5c25d025f614ea96dc67de74dc582471562"
         },
         "32bit": {
-            "url": "https://windows.php.net/downloads/releases/php-8.0.28-Win32-vs16-x86.zip",
-            "hash": "5a14786dbc1d1bda2056056b3e8c55d369ed9baba4c977eb127b427155734d97"
+            "url": "https://windows.php.net/downloads/releases/php-8.0.30-Win32-vs16-x86.zip",
+            "hash": "8dec05f39e6618ee20e252b180d69f8cd0162a3dd2545321593d8f4f44f4af52"
         }
     },
     "pre_install": [

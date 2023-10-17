@@ -1,5 +1,5 @@
 {
-    "version": "1.78.0-insider",
+    "version": "1.84.0-insider+1697521068502",
     "description": "Visual Studio Code is a lightweight but powerful source code editor (Insiders, Portable Edition).",
     "homepage": "https://code.visualstudio.com/",
     "license": {
@@ -15,15 +15,15 @@
     "architecture": {
         "64bit": {
             "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z",
-            "hash": "c543902b83ea1e012e0b8219ac9893e136943c13d4aabdfdf5b3c877ff492552"
+            "hash": "3e43f1efee92948842999141fca940df9c1e670069dd6720238b4b6334dde471"
         },
         "32bit": {
             "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z",
-            "hash": "1c733ebafee90cf74ab4b9a111b3c72d3db41132fd78588bc8d21b2b8845e232"
+            "hash": "08878b83355b78174eb0d631af8e99b610a3c5661ff52d8e3ff1c76181d6eed8"
         },
         "arm64": {
             "url": "https://update.code.visualstudio.com/latest/win32-arm64-archive/insider#/dl.7z",
-            "hash": "2c68c64165eb6e9f755ceeb3b721c62326b036358e600093b5d01ead8f349ca4"
+            "hash": "985ed86881436caba3dd4fc79b16da7acfb8cd2e3d0c260bc43d6f0eae615aba"
         }
     },
     "post_install": [
@@ -62,13 +62,15 @@
             "Visual Studio Code - Insiders"
         ]
     ],
+    "persist": "data",
     "uninstaller": {
         "script": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-context.reg\" }"
     },
-    "persist": "data",
     "checkver": {
         "url": "https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest",
-        "jsonpath": "$.productVersion"
+        "jsonpath": "$..['productVersion','timestamp']",
+        "regex": "^(?<productVersion>.+)\\\\n(?<timestamp>.*)$",
+        "replace": "${productVersion}+${timestamp}"
     },
     "autoupdate": {
         "architecture": {

@@ -1,16 +1,16 @@
 {
     "homepage": "https://slproweb.com/products/Win32OpenSSL.html",
-    "version": "3.1.0",
+    "version": "3.1.3",
     "license": "Apache-2.0",
     "description": "TLS/SSL toolkit (Light)",
     "architecture": {
         "64bit": {
-            "url": "https://slproweb.com/download/Win64OpenSSL_Light-3_1_0.exe",
-            "hash": "e9c601bf486519b7f7185b505871814c5a65fe6deaddda02409fd73a66fe0995"
+            "url": "https://slproweb.com/download/Win64OpenSSL_Light-3_1_3.exe",
+            "hash": "d370366d9965883eaf297595938d32aaac8b2539b18c696ffefc2d50d7463acf"
         },
         "32bit": {
-            "url": "https://slproweb.com/download/Win32OpenSSL_Light-3_1_0.exe",
-            "hash": "8f7a66d4a1f80428f7cdf1873c979e3eef3fde38cf2ae18d84accc8889400009"
+            "url": "https://slproweb.com/download/Win32OpenSSL_Light-3_1_3.exe",
+            "hash": "43ab5686e0a3fefc928317c2fef37eb7ec357a492d2750dee9380c1a2edd6a4a"
         }
     },
     "depends": "innounp",
