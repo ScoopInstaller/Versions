@@ -63,7 +63,7 @@
             "if (!($cont.architecture.'32bit'.url -match $regex1)) { error \"Could not match '$regex1' on '$url1'\"; continue }",
             "$smplayer_ver = $matches[1]; $smplayer_qtver = $matches[2]",
             "",
-            "$url2 = 'https://api.github.com/repos/smplayer-dev/smtube/releases/latest'",
+            "$url2 = 'https://api.github.com/repositories/347901241/releases/latest'",
             "$regex2 = 'smtube-([\\d.]+)-win32-qt([\\d.]+)\\.exe'",
             "$cont = (Invoke-WebRequest $url2).Content",
             "if (!($cont -match $regex2)) { error \"Could not match '$regex2' on '$url2'\"; continue }",

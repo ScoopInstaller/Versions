@@ -31,7 +31,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/PrismLauncher/PrismLauncher/commits",
+        "url": "https://api.github.com/repositories/553135896/commits",
         "jsonpath": "$..sha",
         "regex": "(?<sha>^[a-fA-F0-9]{0,7})",
         "replace": "7.0-${sha}"
