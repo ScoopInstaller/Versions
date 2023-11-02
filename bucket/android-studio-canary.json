@@ -1,5 +1,5 @@
 {
-    "version": "2022.2.1.9",
+    "version": "2023.2.1.11",
     "description": "The official IDE for Android development, which includes everything you need to build Android apps.",
     "homepage": "https://developer.android.com/studio/preview",
     "license": {
@@ -11,8 +11,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2022.2.1.9/android-studio-2022.2.1.9-windows.zip",
-            "hash": "e14cbf904d5b9724dc22b7391ecb2c4a56f8c48436aca10ffe2b789ede831c92",
+            "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.11/android-studio-2023.2.1.11-windows.zip",
+            "hash": "23acc60327be7e32a062e739fdf91564f85b9bb494967e5156a75119af6ef3b5",
             "shortcuts": [
                 [
                     "bin\\studio64.exe",
@@ -23,7 +23,7 @@
     },
     "extract_dir": "android-studio",
     "checkver": {
-        "regex": "Android Studio ([\\d.]+) Canary (\\d+)",
+        "regex": "Android Studio \\w+ \\| ([\\d.]+) Canary (\\d+)",
         "replace": "${1}.${2}"
     },
     "autoupdate": {
