@@ -1,0 +1,41 @@
+{
+    "version": "1.0.8-canary.97+ab97bf0f1",
+    "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.",
+    "homepage": "https://bun.sh/",
+    "license": "MIT",
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/oven-sh/bun/releases/download/canary/bun-windows-x64.zip",
+            "hash": "36be6a198abb43b465265bac295500ad76868693476e772d4294992474a02589"
+        }
+    },
+    "extract_dir": "bun-windows-x64",
+    "bin": "bun.exe",
+    "checkver": {
+        "script": [
+            "$dl_url = 'https://github.com/oven-sh/bun/releases/download/canary/bun-windows-x64.zip'",
+            "$dl = cache_path 'bun-canary' 'unknown' $dl_url",
+            "$dl_dir = strip_ext $dl",
+            "Invoke-WebRequest $dl_url -OutFile $dl",
+            "Expand-Archive $dl $dl_dir",
+            "$ver = & \"$dl_dir\\bun-windows-x64\\bun.exe\" --revision",
+            "Move-Item -Force $dl (cache_path 'bun-canary' $ver $dl_url)",
+            "Remove-Item $dl_dir -Recurse",
+            "$ver"
+        ],
+        "regex": "(\\S+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/oven-sh/bun/releases/download/canary/bun-windows-x64.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHASUMS256.txt"
+        }
+    }
+}
