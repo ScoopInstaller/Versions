@@ -13,7 +13,14 @@
         }
     },
     "extract_dir": "bun-windows-x64",
-    "bin": "bun.exe",
+    "bin": [
+        "bun.exe",
+        [
+            "bun.exe",
+            "bunx",
+            "x"
+        ]
+    ],
     "checkver": {
         "script": [
             "$dl_url = 'https://github.com/oven-sh/bun/releases/download/canary/bun-windows-x64.zip'",
