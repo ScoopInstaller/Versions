@@ -1,5 +1,5 @@
 {
-    "version": "8.0.100-preview.5.23303.2",
+    "version": "8.0.100-preview.7.23376.3",
     "description": ".NET is a free, cross-platform, open source developer platform for building many different types of applications.",
     "homepage": "https://www.microsoft.com/net/",
     "license": "MIT",
@@ -8,16 +8,16 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/8.0.100-preview.5.23303.2/dotnet-sdk-8.0.100-preview.5.23303.2-win-x64.zip",
-            "hash": "sha512:5de8ac61d97425429f9c1d67acddd3ae157526610e0cef1a42399d0fa19be7665f77eb7a44586d2282385411a31466a711da12a7fdf484776364f792c0518746"
+            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/8.0.100-preview.7.23376.3/dotnet-sdk-8.0.100-preview.7.23376.3-win-x64.zip",
+            "hash": "sha512:7a1bdc73ec79748276a8a57ff608c57c39076ec352b47ba15f7a05bf6738d9d8601572e5ce28cdc4ee6435fb97c42914dab4c84b700ca907e75b3c571559b08b"
         },
         "32bit": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/8.0.100-preview.5.23303.2/dotnet-sdk-8.0.100-preview.5.23303.2-win-x86.zip",
-            "hash": "sha512:c9ffad27517ac279a621d0ee406db7a9b6012797f1cf6f5dc1585bc774e7d2a7719bf19dd072bfb49ac673c1d0618a7a82f8c56e26a3c3ad21395ea73c586cb7"
+            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/8.0.100-preview.7.23376.3/dotnet-sdk-8.0.100-preview.7.23376.3-win-x86.zip",
+            "hash": "sha512:5f896a4a47ea428d9a4c5dd7699941bc2c010560b6657028717a762b6d4e4baef05c1ef74beefabc516582c8a54c7924ce37d409d7e6074b8a0f3eb2263c77a6"
         },
         "arm64": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/8.0.100-preview.5.23303.2/dotnet-sdk-8.0.100-preview.5.23303.2-win-arm64.zip",
-            "hash": "sha512:e6d8856264eba3fe77edae5574e785b0308cba8561b5b580783e72f5234eb4706bd62ca1cb9c81ad345e69df747cac697a367f02374a28ae869ce9411a1bc716"
+            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/8.0.100-preview.7.23376.3/dotnet-sdk-8.0.100-preview.7.23376.3-win-arm64.zip",
+            "hash": "sha512:b6ee0c8ea795cc988902f2680d70b27b739fb1020df09c2adcc15bbc32dcb3f747827fff08bb5064e6cf570f88bc90333892819f836fcaba241a7ca1ccd6bb6c"
         }
     },
     "env_add_path": ".",

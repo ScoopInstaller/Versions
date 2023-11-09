@@ -1,12 +1,12 @@
 {
-    "version": "2.1.0",
+    "version": "2.2.1",
     "description": "Official Arduino IDE (Release Candidate)",
     "homepage": "https://www.arduino.cc/en/software",
     "license": "AGPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/arduino/arduino-ide/releases/download/2.1.0/arduino-ide_2.1.0_Windows_64bit.zip",
-            "hash": "0439d817713f3ed5db6b4f60ffbadbf0db6269b39d3d85029b576f7355405c31"
+            "url": "https://github.com/arduino/arduino-ide/releases/download/2.2.1/arduino-ide_2.2.1_Windows_64bit.zip",
+            "hash": "80fc8ae62a7fe0d20f61d13b46888c7360269e4c38b9e5081b8ccf81ce41ddae"
         }
     },
     "shortcuts": [
@@ -16,7 +16,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/arduino/arduino-ide/releases",
+        "url": "https://api.github.com/repositories/337042139/releases",
         "regex": "tag/([\\d.]+(-rc\\d+)?)"
     },
     "autoupdate": {
