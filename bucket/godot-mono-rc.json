@@ -1,18 +1,18 @@
 {
-    "version": "4.1.2-rc1",
+    "version": "4.2-rc2",
     "description": "A feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.",
     "homepage": "https://godotengine.org/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.tuxfamily.org/godotengine/4.1.2/rc1/mono/Godot_v4.1.2-rc1_mono_win64.zip",
-            "hash": "sha512:60e0c5bb4b7b0eb31ff96651f357dabda7db0099777d238267c07fcca9f946cdfc34d15d8401e738625d4887884cb800fe763c95a469c4489f9b0603e0e8f434",
-            "extract_dir": "Godot_v4.1.2-rc1_mono_win64"
+            "url": "https://downloads.tuxfamily.org/godotengine/4.2/rc2/mono/Godot_v4.2-rc2_mono_win64.zip",
+            "hash": "sha512:881ac5bebed998c9020ed05f2174591cbb57d47c90d1de58d585ea1ed0ae7a3654470a6b53724ac609cd059c5d848153874f495c8b78b7c0a6b6bc30d3ae5393",
+            "extract_dir": "Godot_v4.2-rc2_mono_win64"
         },
         "32bit": {
-            "url": "https://downloads.tuxfamily.org/godotengine/4.1.2/rc1/mono/Godot_v4.1.2-rc1_mono_win32.zip",
-            "hash": "sha512:2d516ac53ba09019b2db92ef9eab69c349212a51bcc9a73b2f797700a8ac3615dde632d617fa00c87cbb641f539caa5fbd8f1c3e1ea5e3c833a8472b0072220e",
-            "extract_dir": "Godot_v4.1.2-rc1_mono_win32"
+            "url": "https://downloads.tuxfamily.org/godotengine/4.2/rc2/mono/Godot_v4.2-rc2_mono_win32.zip",
+            "hash": "sha512:a9d3e97c9d81c39495a439c6084d1071822e0ad4404c346ae1879040271410f679b93343d506a6049f7f2932d3369ca03933040fae20a5466ae877307e5e75fa",
+            "extract_dir": "Godot_v4.2-rc2_mono_win32"
         }
     },
     "pre_install": [
