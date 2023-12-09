@@ -11,6 +11,10 @@
         "32bit": {
             "url": "https://slproweb.com/download/Win32OpenSSL_Light-3_2_0.exe",
             "hash": "e1928c8694b3c0a26fd1da92c078b84751757c916f88992b53420f6a02cb3f70"
+        },
+        "arm64": {
+            "url": "https://slproweb.com/download/Win64ARMOpenSSL_Light-3_2_0.exe",
+            "hash": "8b32ae5c3c34f71e37288b9cdbdd5b1489293e44a82543e4c36a9fea1b93378f"
         }
     },
     "depends": "innounp",
@@ -38,6 +42,9 @@
             },
             "32bit": {
                 "url": "https://slproweb.com/download/Win32OpenSSL_Light-$underscoreVersion.exe"
+            },
+            "arm64": {
+                "url": "https://slproweb.com/download/Win64ARMOpenSSL_Light-$underscoreVersion.exe"
             }
         },
         "hash": {
