@@ -1,0 +1,51 @@
+{
+    "version": "3.0.12",
+    "description": "TLS/SSL toolkit (3.0.X LTS)",
+    "homepage": "https://slproweb.com/products/Win32OpenSSL.html",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://slproweb.com/download/Win64OpenSSL-3_0_12.exe",
+            "hash": "ae5e9839730c419f57f756ed72998eea727ac87d8882e64e0d5b8071c86313c0"
+        },
+        "32bit": {
+            "url": "https://slproweb.com/download/Win32OpenSSL-3_0_12.exe",
+            "hash": "221f93961bd9cda45f99e3d6db40cd6855d8f2ce6ff3dd7e8ff2e184372095a0"
+        },
+        "arm64": {
+            "url": "https://slproweb.com/download/Win64ARMOpenSSL-3_0_12.exe",
+            "hash": "5646f146c7cf4061385544a96176268d21f35015ac5f7bdea2afb7ff4e44af97"
+        }
+    },
+    "innosetup": true,
+    "env_add_path": "bin",
+    "env_set": {
+        "OPENSSL_CONF": "$dir\\bin\\cnf\\openssl.cnf",
+        "OPENSSL_LIB_DIR": "$dir\\lib",
+        "OPENSSL_INCLUDE_DIR": "$dir\\include",
+        "OPENSSL_MODULES": "$dir\\bin"
+    },
+    "checkver": {
+        "url": "https://raw.githubusercontent.com/slproweb/opensslhashes/master/win32_openssl_hashes.json",
+        "jsonpath": "$.files..basever",
+        "regex": "(3\\.0\\.([\\d.]+))",
+        "reverse": true
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://slproweb.com/download/Win64OpenSSL-$underscoreVersion.exe"
+            },
+            "32bit": {
+                "url": "https://slproweb.com/download/Win32OpenSSL-$underscoreVersion.exe"
+            },
+            "arm64": {
+                "url": "https://slproweb.com/download/Win64ARMOpenSSL-$underscoreVersion.exe"
+            }
+        },
+        "hash": {
+            "url": "https://raw.githubusercontent.com/slproweb/opensslhashes/master/win32_openssl_hashes.json",
+            "jsonpath": "$.files.['$basename'].sha256"
+        }
+    }
+}
