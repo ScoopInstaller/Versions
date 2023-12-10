@@ -4,7 +4,7 @@
     "homepage": "https://www.ipfilter.app/",
     "license": "MIT",
     "url": "https://github.com/DavidMoore/ipfilter/releases/download/lists/ipfilter.zip",
-    "hash": "5e579ec2fa295640d0f11d156d6ddc106fac62aa4830a3acb7feb28069835e8a",
+    "hash": "903b8d95a4a341255c7705c5659ae0c4ddb639b35756454363fbe7b26e768734",
     "checkver": {
         "script": "try { Get-Date (Invoke-RestMethod https://api.github.com/repositories/487352/releases/tags/lists).assets[0].updated_at -UFormat %s } catch { '' }",
         "regex": "\\A(\\d+)\\Z"
