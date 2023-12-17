@@ -1,17 +1,21 @@
 {
-    "version": "3.11.6",
+    "version": "3.11.7",
     "description": "A programming language that lets you work quickly and integrate systems more effectively.",
     "homepage": "https://www.python.org/",
     "license": "Python-2.0",
     "notes": "Allow applications and third-party installers to find python by running: \"$dir\\install-pep-514.reg\"",
     "architecture": {
         "64bit": {
-            "url": "https://www.python.org/ftp/python/3.11.6/python-3.11.6-amd64.exe#/setup.exe",
-            "hash": "md5:4a501c073d0d688c033d43f85e22d77e"
+            "url": "https://www.python.org/ftp/python/3.11.7/python-3.11.7-amd64.exe#/setup.exe",
+            "hash": "md5:6ebd889155ac3261308202b29d39c5a4"
         },
         "32bit": {
-            "url": "https://www.python.org/ftp/python/3.11.6/python-3.11.6.exe#/setup.exe",
-            "hash": "md5:041b1030be54ef78fd4c3a01ccb26267"
+            "url": "https://www.python.org/ftp/python/3.11.7/python-3.11.7.exe#/setup.exe",
+            "hash": "md5:8a52f3859989f0b1313f4baaa6936410"
+        },
+        "arm64": {
+            "url": "https://www.python.org/ftp/python/3.11.7/python-3.11.7-arm64.exe#/setup.exe",
+            "hash": "md5:216803e75bf3944c183873adf135c459"
         }
     },
     "pre_install": [
@@ -60,14 +64,10 @@
         "python -E -s -m ensurepip -U --default-pip | Out-Null",
         "Write-Output \"$([char]0x1b)[0m\" # Reset ansi to prevent color leak from installer"
     ],
-    "uninstaller": {
-        "script": [
-            "if ($global) {",
-            "    $pathext = (env 'PATHEXT' $true) -replace ';.PYW?', ''",
-            "    env 'PATHEXT' $true \"$pathext\"",
-            "}"
-        ]
-    },
+    "env_add_path": [
+        "Scripts",
+        "."
+    ],
     "bin": [
         [
             "python.exe",
@@ -87,14 +87,18 @@
             "idle311"
         ]
     ],
-    "env_add_path": [
-        "Scripts",
-        "."
-    ],
     "persist": [
         "Scripts",
         "Lib\\site-packages"
     ],
+    "uninstaller": {
+        "script": [
+            "if ($global) {",
+            "    $pathext = (env 'PATHEXT' $true) -replace ';.PYW?', ''",
+            "    env 'PATHEXT' $true \"$pathext\"",
+            "}"
+        ]
+    },
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
         "regex": "python-(3\\.11\\.[\\d.]+)-"
@@ -106,6 +110,9 @@
             },
             "32bit": {
                 "url": "https://www.python.org/ftp/python/$version/python-$version.exe#/setup.exe"
+            },
+            "arm64": {
+                "url": "https://www.python.org/ftp/python/$version/python-$version-arm64.exe#/setup.exe"
             }
         },
         "hash": {

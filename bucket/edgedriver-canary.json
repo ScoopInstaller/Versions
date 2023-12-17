@@ -1,5 +1,5 @@
 {
-    "version": "121.0.2248.0",
+    "version": "122.0.2283.0",
     "description": "Close the loop on your developer cycle by automating testing of your website in Microsoft Edge (Chromium).",
     "homepage": "https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver",
     "license": {
@@ -9,16 +9,16 @@
     "notes": "For legacy (EdgeHTML) version, see 'versions/edgedriver-legacy'.",
     "architecture": {
         "64bit": {
-            "url": "https://msedgedriver.azureedge.net/121.0.2248.0/edgedriver_win64.zip",
-            "hash": "cf755f29f87c0d136d73858585ca73323c1bb60e3e83e2b393c74de2ce8f58ca"
+            "url": "https://msedgedriver.azureedge.net/122.0.2283.0/edgedriver_win64.zip",
+            "hash": "8aa15b13074e2aef41ddfbbd30d125ff717831639c79af06b935c01ab6906797"
         },
         "32bit": {
-            "url": "https://msedgedriver.azureedge.net/121.0.2248.0/edgedriver_win32.zip",
-            "hash": "9b4b4809aca8713471ae2f4ec3d2ea3902f822368545b4407896defcabaed3f3"
+            "url": "https://msedgedriver.azureedge.net/122.0.2283.0/edgedriver_win32.zip",
+            "hash": "e1f2e2e401632d3ff932143a075548a46882ac86ed47de11ba7e5f939827de9e"
         },
         "arm64": {
-            "url": "https://msedgedriver.azureedge.net/121.0.2248.0/edgedriver_arm64.zip",
-            "hash": "467b0afe244d03eca2d39f6c4bb10f62baef477e20c3f7074abfa03010e4f045"
+            "url": "https://msedgedriver.azureedge.net/122.0.2283.0/edgedriver_arm64.zip",
+            "hash": "bed69f5124fc968fdbe6a7e1e5f3e975710c9e4a00d8f025744dd0649272eee1"
         }
     },
     "bin": "msedgedriver.exe",
