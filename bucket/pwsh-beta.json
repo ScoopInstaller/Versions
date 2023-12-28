@@ -1,20 +1,20 @@
 {
-    "version": "7.4.0-preview.4",
+    "version": "7.4.0-rc.1",
     "description": "Cross-platform automation and configuration tool/framework, known as Powershell Core, that works well with existing tools and is optimized for dealing with structured data. (beta channel)",
     "homepage": "https://github.com/PowerShell/PowerShell",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-preview.4/PowerShell-7.4.0-preview.4-win-x64.zip",
-            "hash": "7e80cf74178427810d13a12e25cc0a2f9a717a92c482bc4e327345afb9e311ae"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-rc.1/PowerShell-7.4.0-rc.1-win-x64.zip",
+            "hash": "db0ba81fba4dd1c6fb67730c7f42f0af300aeb01d56bbdaec5014f3fd3ce7874"
         },
         "32bit": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-preview.4/PowerShell-7.4.0-preview.4-win-x86.zip",
-            "hash": "91d9bf0fe84f33a7d5f3246ec0e6ee7ef8bd0fa55a7c3203218f89e501f63f1c"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-rc.1/PowerShell-7.4.0-rc.1-win-x86.zip",
+            "hash": "1ce13f1729fac6f37737b39570d901f50cd151d4a8ac5e1583c0d5a2c5ec57c0"
         },
         "arm64": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-preview.4/PowerShell-7.4.0-preview.4-win-arm64.zip",
-            "hash": "6330032c98aad10c03ee8855b822166f7f120e07f0c2afe9bbe0f81cec0f1539"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-rc.1/PowerShell-7.4.0-rc.1-win-arm64.zip",
+            "hash": "c547fa58838d7750966a59c617124b9a78e86447059495153b2a7e8879741ae8"
         }
     },
     "bin": "pwsh.exe",
@@ -27,7 +27,7 @@
     "pre_install": "if(!(Test-Path \"$dir\\profile.ps1\")) { New-Item \"$dir\\profile.ps1\" -ItemType File }",
     "persist": "profile.ps1",
     "checkver": {
-        "url": "https://api.github.com/repos/PowerShell/PowerShell/releases",
+        "url": "https://api.github.com/repositories/49609581/releases",
         "jsonpath": "$[?(@.prerelease == true)].tag_name",
         "regex": "v([\\w.-]+)"
     },
