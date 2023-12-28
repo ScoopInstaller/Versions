@@ -1,15 +1,15 @@
 {
-    "version": "20230206-50f5fc",
+    "version": "20231222-9a87a0",
     "description": "Desktop client for Matrix using Qt and C++17.",
     "homepage": "https://nheko-reborn.github.io/",
     "license": "GPL-3.0-or-later",
     "suggest": {
-        "Visual C++ Redistributable 2015-2022": "extras/vcredist2022"
+        "vcredist": "extras/vcredist2022"
     },
     "architecture": {
         "64bit": {
-            "url": "https://matrix.org/_matrix/media/r0/download/neko.dev/EWkybkCkLfEOFHTEvdXyQdzK#/dl.zip",
-            "hash": "350ab5bce76e371b26a44f57dd9cfd817c263a4aea906a3119422fb0f3796d17"
+            "url": "https://matrix.org/_matrix/media/r0/download/neko.dev/WTgeLHOUFzBQjyHxoItqpvBP#/dl.zip",
+            "hash": "b1e78cb64f9f86e11fe5da0b11bc849693d42806973837308ab1dab39a3b5b8f"
         }
     },
     "shortcuts": [
@@ -25,7 +25,7 @@
             "",
             "$cont = (Invoke-WebRequest $url).Content",
             "$matches = [regex]::Matches($cont, $regex)",
-            "if (!$matches) { error \"Could not match regex in $url\"; break }",
+            "if (!$matches) { error \"Could not match regex in $url\"; continue }",
             "$match = $matches[$matches.Count-1]",
             "",
             "$date = (Get-Date $match.Groups[4].Value).ToString('yyyyMMdd')",

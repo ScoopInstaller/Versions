@@ -1,5 +1,5 @@
 {
-    "version": "19.17.0.0.0",
+    "version": "19.21.0.0.0",
     "description": "Additional header files and an example makefile for developing Oracle applications with Instant Client.",
     "homepage": "https://www.oracle.com/database/technologies/instant-client.html",
     "license": {
@@ -9,27 +9,27 @@
     "depends": "oracle-instant-client19",
     "architecture": {
         "64bit": {
-            "url": "https://download.oracle.com/otn_software/nt/instantclient/1917000/instantclient-sdk-windows.x64-19.17.0.0.0dbru.zip",
-            "hash": "79527768c030a12227766ef3572e9e6fd03f0e75230238250eb238f689e95bfe"
+            "url": "https://download.oracle.com/otn_software/nt/instantclient/1921000/instantclient-sdk-windows.x64-19.21.0.0.0dbru.zip",
+            "hash": "2880df1d59cc172ee8baf7ae491f1844b8f65bc19e11cb13e7ff16b7cea1f50f"
         },
         "32bit": {
-            "url": "https://download.oracle.com/otn_software/nt/instantclient/1917000/instantclient-sdk-nt-19.17.0.0.0dbru.zip",
-            "hash": "3a6ad0888bb2fc3c3f74eba0fd8811540a22172584c1d37d4673f01794573b97"
+            "url": "https://download.oracle.com/otn_software/nt/instantclient/1921000/instantclient-sdk-nt-19.21.0.0.0dbru.zip",
+            "hash": "e545ab203cc82df18bcba85471c3abc6008f4d9e3eda3a11f9909cff4006f7a5"
         }
     },
-    "extract_dir": "instantclient_19_17",
+    "extract_dir": "instantclient_19_21",
     "pre_install": [
-        "$instantclient = versiondir 'oracle-instant-client' 'current'",
+        "$instantclient = currentdir 'oracle-instant-client19'",
         "Copy-Item -Path \"$dir\\*\" -Destination \"$instantclient\" -Force -Recurse | Out-Null"
     ],
     "uninstaller": {
         "script": [
-            "$instantclient = versiondir 'oracle-instant-client' 'current'",
+            "$instantclient = currentdir 'oracle-instant-client19'",
             "Get-ChildItem -Path \"$dir\" -Exclude *.json | ForEach-Object { Remove-Item -LiteralPath \"$instantclient\\$($_.Name)\" -Recurse -Force -ErrorAction SilentlyContinue }"
         ]
     },
     "checkver": {
-        "url": "https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html",
+        "url": "https://www.oracle.com/database/technologies/instant-client/microsoft-windows-32-downloads.html",
         "regex": "Version (19[\\d.]+)",
         "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     },

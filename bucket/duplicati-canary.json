@@ -1,5 +1,5 @@
 {
-    "version": "2.0.6.104_canary_2022-06-15",
+    "version": "2.0.7.100_canary_2023-12-27",
     "homepage": "https://www.duplicati.com/",
     "description": "A free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. This is the Canary release.",
     "license": "LGPL-2.1",
@@ -10,8 +10,8 @@
         "To remove Duplicati from startup, run: (requires administrator privileges)",
         "start \"$dir\\Duplicati.WindowsService.exe\" -Verb 'RunAs' -ArgumentList 'uninstall'"
     ],
-    "url": "https://github.com/duplicati/duplicati/releases/download/v2.0.6.104-2.0.6.104_canary_2022-06-15/duplicati-2.0.6.104_canary_2022-06-15.zip",
-    "hash": "955c6d466a0bb86d9b8f56006ff3b64ed2acae2d5816ebecaa8fe0351145cc3d",
+    "url": "https://github.com/duplicati/duplicati/releases/download/v2.0.7.100-2.0.7.100_canary_2023-12-27/duplicati-2.0.7.100_canary_2023-12-27.zip",
+    "hash": "2cfa87204a489adc6e37afd7c2fb0d67189632c1bc7bf5498812f607d85bafe4",
     "bin": [
         "Duplicati.CommandLine.exe",
         [

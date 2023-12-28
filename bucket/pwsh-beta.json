@@ -1,16 +1,20 @@
 {
-    "version": "7.3.2",
+    "version": "7.4.0-rc.1",
     "description": "Cross-platform automation and configuration tool/framework, known as Powershell Core, that works well with existing tools and is optimized for dealing with structured data. (beta channel)",
     "homepage": "https://github.com/PowerShell/PowerShell",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.3.2/PowerShell-7.3.2-win-x64.zip",
-            "hash": "68491f4dc9cb813437b9f891fad4eb936ddfa829703968529e1836d08d652679"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-rc.1/PowerShell-7.4.0-rc.1-win-x64.zip",
+            "hash": "db0ba81fba4dd1c6fb67730c7f42f0af300aeb01d56bbdaec5014f3fd3ce7874"
         },
         "32bit": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.3.2/PowerShell-7.3.2-win-x86.zip",
-            "hash": "6a7c7567b8dab2d2fd918430d118011a0e7d7589e648bc2204c96ee120e3bd1a"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-rc.1/PowerShell-7.4.0-rc.1-win-x86.zip",
+            "hash": "1ce13f1729fac6f37737b39570d901f50cd151d4a8ac5e1583c0d5a2c5ec57c0"
+        },
+        "arm64": {
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-rc.1/PowerShell-7.4.0-rc.1-win-arm64.zip",
+            "hash": "c547fa58838d7750966a59c617124b9a78e86447059495153b2a7e8879741ae8"
         }
     },
     "bin": "pwsh.exe",
@@ -23,8 +27,9 @@
     "pre_install": "if(!(Test-Path \"$dir\\profile.ps1\")) { New-Item \"$dir\\profile.ps1\" -ItemType File }",
     "persist": "profile.ps1",
     "checkver": {
-        "url": "https://github.com/PowerShell/PowerShell/releases.atom",
-        "regex": "/releases/tag/(?:v)?([\\d.]+(-[a-z]+[\\d.]+)?)"
+        "url": "https://api.github.com/repositories/49609581/releases",
+        "jsonpath": "$[?(@.prerelease == true)].tag_name",
+        "regex": "v([\\w.-]+)"
     },
     "autoupdate": {
         "architecture": {
@@ -33,11 +38,13 @@
             },
             "32bit": {
                 "url": "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-x86.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-arm64.zip"
             }
         },
         "hash": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/tag/v$version/",
-            "find": "$basename\\s*<ul>\\s*<li>([A-Fa-f0-9]{64})"
+            "url": "$baseurl/hashes.sha256"
         }
     }
 }

@@ -1,13 +1,13 @@
 {
-    "version": "2023-02-04",
+    "version": "2023-12-23",
     "description": "A complete, cross-platform solution to record, convert and stream audio and video.",
     "homepage": "https://ffmpeg.org",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-2023-02-04-git-bdc76f467f-full_build.7z",
-            "hash": "0edd572cc69e7698a847ad8c80e15ad5d989adb5e3e9e0250cf85a9bca182a53",
-            "extract_dir": "ffmpeg-2023-02-04-git-bdc76f467f-full_build"
+            "url": "https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-2023-12-23-git-f5f414d9c4-full_build.7z",
+            "hash": "7fde8a29bd258b483e762d418fbb7ce7b41056225187e77210129f0873e2837b",
+            "extract_dir": "ffmpeg-2023-12-23-git-f5f414d9c4-full_build"
         }
     },
     "post_install": [
