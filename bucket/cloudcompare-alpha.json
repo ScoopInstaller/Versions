@@ -6,27 +6,34 @@
     "architecture": {
         "64bit": {
             "url": "https://cloudcompare.org/release/CloudCompare_v2.13.beta_bin_x64.7z",
-            "hash": "e440b6d9056097c88a444142a1cebb073ce70e1e18cd56d70fe4a1331ce7b4b1"
+            "hash": "d075baf8d893c1b28d2de45e73bb865241a865ff74651491f8500077c94ee1f0"
         }
     },
-    "extract_dir": "CloudCompare_v2.13.alpha_bin_x64",
+    "extract_dir": "CloudCompare_v2.13.beta_bin_x64",
     "shortcuts": [
         [
             "CloudCompare.exe",
-            "CloudCompare"
+            "CloudCompare beta"
         ]
     ],
-    "##": "Latest <span class=\"highlight\">beta</span> release: 2.13.alpha (01/09/2023)",
+    "##": "Latest <span class=\"highlight\">beta</span> release: 2.13.beta (17 Dec 2023)",
     "checkver": {
         "url": "https://cloudcompare.org/release/",
-        "regex": "Latest\\s+.*(?<ignore>alpha|beta).*\\s*release:\\s*([\\d.]+[a-z]+)"
+        "regex": "Latest\\s+.*(?<stage>alpha|beta).*\\s*release:\\s*(?<version>[\\d.]+[a-z]+)\\s\\((?<build>[^\\)]+)\\)",
+        "replace": "${version} (${build})"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": "https://cloudcompare.org/release/CloudCompare_v$version_bin_x64.7z",
                 "extract_dir": "CloudCompare_v$version_bin_x64"
-            }
-        }
+                }
+            },
+        "shortcuts": [
+            [
+                "CloudCompare.exe",
+                "CloudCompare $stage"
+            ]
+        ]
     }
 }
