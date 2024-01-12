@@ -36,8 +36,8 @@
     ],
     "pre_uninstall": "'SystemInformer.exe.settings.xml', 'usernotesdb.xml' | ForEach-Object { Copy-Item \"$dir\\$_\" \"$persist_dir\\$_\" -ErrorAction 'SilentlyContinue' }",
     "checkver": {
-        "url": "https://github.com/winsiderss/si-builds/releases",
-        "regex": "/tag/([\\d.]+)"
+        "url": "https://api.github.com/repositories/550621342/releases",
+        "jsonpath": "$[0].tag_name"
     },
     "autoupdate": {
         "url": "https://github.com/winsiderss/si-builds/releases/download/$version/systeminformer-$version-bin.zip"
