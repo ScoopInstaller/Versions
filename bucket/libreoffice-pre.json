@@ -1,0 +1,91 @@
+{
+    "version": "24.2.0.2",
+    "description": "Powerful and free office suite, a successor to OpenOffice(.org).",
+    "homepage": "https://libreoffice.org/",
+    "license": "MPL-2.0",
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "notes": "If you are upgrading from portable version, you can migrate settings by copying \"$persist_dir\\Data\" to \"%AppData%\\LibreOffice\"",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/24.2.0.2/win/x86_64/LibreOffice_24.2.0.2_Win_x86-64.msi#/dl.msi_",
+            "hash": "f1a4d72414d2f05698165a86ecc0bb310e54b192016ce62c791587fc0fe31851"
+        },
+        "32bit": {
+            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/24.2.0.2/win/x86/LibreOffice_24.2.0.2_Win_x86.msi#/dl.msi_",
+            "hash": "b522511f6e5811e969a200acfb020cafba8669170876d4655541a475ff9f3af4"
+        },
+        "arm64": {
+            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/24.2.0.2/win/aarch64/LibreOffice_24.2.0.2_Win_aarch64.msi#/dl.msi_",
+            "hash": "68d395ca55c2ec391bfb9270edbc1a755bc4410ee0f6ac578511c70933220250"
+        }
+    },
+    "pre_install": [
+        "# keeping files in 'LibreOffice' directory so that bundled font can work properly",
+        "$null = ensure \"$dir/LibreOffice/share/fonts\"",
+        "# usage: get_config ($name, $default). $default ==> set to what value if the value is empty (not being set before)",
+        "if (get_config USE_LESSMSI $false) {",
+        "    # if 'use_lessmsi' is true",
+        "    $null = Expand-MsiArchive \"$dir\\dl.msi_\" \"$dir\"",
+        "    Move-Item \"$dir/Fonts\" \"$dir/LibreOffice/share/fonts/truetype\" -Force",
+        "    Remove-Item \"$dir/System*\" -Recurse -Force",
+        "} else {",
+        "    # if 'use_lessmsi' is false or not set",
+        "    $null = Expand-MsiArchive \"$dir\\dl.msi_\" \"$dir\\LibreOffice\"",
+        "    $null = Expand-MsiArchive \"$dir\\dl.msi_\" \"$dir\\LibreOffice\\share\\fonts\\truetype\" -ExtractDir 'Fonts'",
+        "    Remove-Item \"$dir/LibreOffice/Fonts\", \"$dir/LibreOffice/System*\" -Recurse -Force",
+        "}",
+        "Remove-Item \"$dir/dl.msi_\""
+    ],
+    "shortcuts": [
+        [
+            "LibreOffice/program/soffice.exe",
+            "LibreOffice/LibreOffice"
+        ],
+        [
+            "LibreOffice/program/sbase.exe",
+            "LibreOffice/LibreOffice Base"
+        ],
+        [
+            "LibreOffice/program/scalc.exe",
+            "LibreOffice/LibreOffice Calc"
+        ],
+        [
+            "LibreOffice/program/sdraw.exe",
+            "LibreOffice/LibreOffice Draw"
+        ],
+        [
+            "LibreOffice/program/simpress.exe",
+            "LibreOffice/LibreOffice Impress"
+        ],
+        [
+            "LibreOffice/program/smath.exe",
+            "LibreOffice/LibreOffice Math"
+        ],
+        [
+            "LibreOffice/program/swriter.exe",
+            "LibreOffice/LibreOffice Writer"
+        ]
+    ],
+    "checkver": {
+        "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/latest/win/x86_64/",
+        "regex": "LibreOffice_([\\d.]+)_Win_x86-64.msi"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/$version/win/x86_64/LibreOffice_$version_Win_x86-64.msi#/dl.msi_"
+            },
+            "32bit": {
+                "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/$version/win/x86/LibreOffice_$version_Win_x86.msi#/dl.msi_"
+            },
+            "arm64": {
+                "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/$version/win/aarch64/LibreOffice_$version_Win_aarch64.msi#/dl.msi_"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
