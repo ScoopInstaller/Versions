@@ -1,20 +1,20 @@
 {
-    "version": "20240116",
+    "version": "20240129",
     "description": "A free and open source multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.",
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://artifacts.videolan.org/vlc/nightly-win64/20240116-0425/vlc-4.0.0-dev-win64-bdbc9ce1.7z",
-            "hash": "sha512:e9cc037ffe966051b169320e9ebc9056c4520d6d17ce7b8b9ef050cb223433c9647ad94bdf13234a2fd15cc30f3bb291ed4e3f937bda26f0db85b7a697fc14c6"
+            "url": "https://artifacts.videolan.org/vlc/nightly-win64/20240129-0708/vlc-4.0.0-dev-win64-de03f1e0.7z",
+            "hash": "sha512:7e4b655ecf7bd2c7a706e7eddb3a5e89cb1db9ba7b4d9bb0138bf8b64fdf2519db547a598fc28aadd1af55032a40e77c739b6bf129fde9469c58a9cc7c88f198"
         },
         "32bit": {
-            "url": "https://artifacts.videolan.org/vlc/nightly-win32/20240116-0422/vlc-4.0.0-dev-win32-bdbc9ce1.7z",
-            "hash": "sha512:9c7d0697841bf353f4a42952687c05ef9b07f64f60ed72618c2c96a7c8a2a60a9f27c9cf8a0f6bd6386fa8eaa4261bc519e4ad0984da8314413c732a62d09af9"
+            "url": "https://artifacts.videolan.org/vlc/nightly-win32/20240129-0423/vlc-4.0.0-dev-win32-de03f1e0.7z",
+            "hash": "sha512:6e4c9c063e1b638941ab16feca8612cdd244e6ea2af654b314a74558c578cdb120453823efb066920c4faa3b4f552867aed300de5c2f562316bb80a5b4f42074"
         },
         "arm64": {
-            "url": "https://artifacts.videolan.org/vlc/nightly-win64-arm-llvm/20240116-0438/vlc-4.0.0-dev-win64-bdbc9ce1.7z",
-            "hash": "sha512:a262723e8a09af7ef3069861b0ca73c4cf32385fcf70586fe0c88ac5e431dd015817d99a5155651be58c7c462064096e98307faf8cd7ba81b24928d372fa4aac"
+            "url": "https://artifacts.videolan.org/vlc/nightly-win64-arm-llvm/20240129-0438/vlc-4.0.0-dev-win64-de03f1e0.7z",
+            "hash": "sha512:fc50d27b935d31b5c4c1c91eecc199a000be2260927a605aff1834e624571b6680445e1c591e76afea2fa9216c624ff2a88c34298df0d2af9886c984c59fcee8"
         }
     },
     "extract_dir": "vlc-4.0.0-dev",
