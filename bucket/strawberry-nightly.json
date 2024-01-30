@@ -1,10 +1,18 @@
 {
-    "version": "5846752525",
+    "version": "7679892861",
     "description": "A music player and music collection organizer",
     "homepage": "https://www.strawbs.org/",
     "license": "GPL-3.0-only",
-    "url": "https://nightly.link/strawberrymusicplayer/strawberry/workflows/build/master/windows-msvc.zip",
-    "hash": "cf920612b32c69fddddec026e383c917ff719428c97866a116f323ded37ddf57",
+    "architecture": {
+        "64bit": {
+            "url": "https://nightly.link/strawberrymusicplayer/strawberry/workflows/build/master/windows-msvc-x86_64-release.zip",
+            "hash": "ed352a0ba58934b3f23ba82207c222435d9b8557902e60f4d5da954bcaa836e5"
+        },
+        "32bit": {
+            "url": "https://nightly.link/strawberrymusicplayer/strawberry/workflows/build/master/windows-msvc-x86-release.zip",
+            "hash": "8dc01328932dcadb590a59802bbbb0313ae475cebab7442ba72acb3c228b39b3"
+        }
+    },
     "pre_install": [
         "Remove-Item \"$dir\\*-Debug-*.exe\"",
         "Expand-7zipArchive \"$dir\\StrawberrySetup-*-msvc-x$($architecture.Substring(0, 2)).exe\" \"$dir\"",
@@ -23,6 +31,13 @@
         "jsonpath": "$.workflow_runs[0].id"
     },
     "autoupdate": {
-        "url": "https://nightly.link/strawberrymusicplayer/strawberry/workflows/build/master/windows-msvc.zip"
+        "architecture": {
+            "64bit": {
+                "url": "https://nightly.link/strawberrymusicplayer/strawberry/workflows/build/master/windows-msvc-x86_64-release.zip"
+            },
+            "32bit": {
+                "url": "https://nightly.link/strawberrymusicplayer/strawberry/workflows/build/master/windows-msvc-x86-release.zip"
+            }
+        }
     }
 }
