@@ -11,6 +11,10 @@
         "32bit": {
             "url": "https://artifacts.videolan.org/vlc/nightly-win32/20240129-0423/vlc-4.0.0-dev-win32-de03f1e0.7z",
             "hash": "sha512:6e4c9c063e1b638941ab16feca8612cdd244e6ea2af654b314a74558c578cdb120453823efb066920c4faa3b4f552867aed300de5c2f562316bb80a5b4f42074"
+        },
+        "arm64": {
+            "url": "https://artifacts.videolan.org/vlc/nightly-win64-arm-llvm/20240129-0438/vlc-4.0.0-dev-win64-de03f1e0.7z",
+            "hash": "sha512:fc50d27b935d31b5c4c1c91eecc199a000be2260927a605aff1834e624571b6680445e1c591e76afea2fa9216c624ff2a88c34298df0d2af9886c984c59fcee8"
         }
     },
     "extract_dir": "vlc-4.0.0-dev",
@@ -32,7 +36,7 @@
     "persist": "portable",
     "checkver": {
         "script": [
-            "$builds = 'win32', 'win64'",
+            "$builds = 'win32', 'win64', 'win64-arm-llvm'",
             "$scriptver = ''",
             "$urls =  @()",
             "foreach ($build in $builds) {",
@@ -46,7 +50,7 @@
             "}",
             "Write-Output ('version:\"' + $scriptver + '\"') ('urls:\"' + $urls + '\"')"
         ],
-        "regex": "version:\"(?<version>\\d+)\"\\surls:\"(?<win32bitver>.+\\/)(?<win32bitfile>(?<folderversion>vlc-[\\d.]+-dev).+)\\s(?<win64bitver>.+\\/)(?<win64bitfile>.+)\""
+        "regex": "version:\"(?<version>\\d+)\"\\surls:\"(?<win32bitver>.+\\/)(?<win32bitfile>(?<folderversion>vlc-[\\d.]+-dev).+)\\s(?<win64bitver>.+\\/)(?<win64bitfile>.+)\\s(?<winarm64ver>.+\\/)(?<winarm64file>.+)\""
     },
     "autoupdate": {
         "architecture": {
@@ -60,6 +64,12 @@
                 "url": "https://artifacts.videolan.org/vlc/nightly-win32/$matchWin32bitver$matchWin32bitfile",
                 "hash": {
                     "url": "https://artifacts.videolan.org/vlc/nightly-win32/$matchWin32bitverSHA512SUM"
+                }
+            },
+            "arm64": {
+                "url": "https://artifacts.videolan.org/vlc/nightly-win64-arm-llvm/$matchWinarm64ver$matchWinarm64file",
+                "hash": {
+                    "url": "https://artifacts.videolan.org/vlc/nightly-win64-arm-llvm/$matchWinarm64verSHA512SUM"
                 }
             }
         },
