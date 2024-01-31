@@ -1,16 +1,16 @@
 {
-    "version": "24.00",
+    "version": "24.01",
     "description": "Multi-format compression/decompression tool (beta version)",
     "homepage": "https://www.7-zip.org/",
     "license": "LGPL-2.1-or-later,BSD-3-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://www.7-zip.org/a/7z2400-x64.msi",
-            "hash": "653e7c92879730cd5b7efe4c4dbf223c9afca2bb8547a22829669c0ac8422470"
+            "url": "https://www.7-zip.org/a/7z2401-x64.msi",
+            "hash": "646954cd0eb1eda1da31e0806efc903c652c9d19f8359fb466f6fd1d59bc0507"
         },
         "32bit": {
-            "url": "https://www.7-zip.org/a/7z2400.msi",
-            "hash": "37a67776667e21cca1e888ac281f479434c100a23fe5ae4c7ffee3b10f43704d"
+            "url": "https://www.7-zip.org/a/7z2401.msi",
+            "hash": "1c3c3560906974161f25f5f81de4620787b55ca76002ac3c4fc846d57a06df99"
         }
     },
     "extract_dir": "Files/7-Zip",
