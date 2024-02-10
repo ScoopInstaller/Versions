@@ -1,5 +1,5 @@
 {
-    "version": "0.12.0-dev.2665",
+    "version": "0.12.0-dev.2668",
     "description": "General-purpose programming language designed for robustness, optimality, and maintainability.",
     "homepage": "https://ziglang.org/",
     "license": "MIT",
@@ -8,19 +8,19 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://ziglang.org/builds/zig-windows-x86_64-0.12.0-dev.2665+919a3bae1.zip",
-            "hash": "34dce5976d0f752ff0e42c75a9c50b918ec0d08ce9e1110a268d232f5dc0d24f",
-            "extract_dir": "zig-windows-x86_64-0.12.0-dev.2665+919a3bae1"
+            "url": "https://ziglang.org/builds/zig-windows-x86_64-0.12.0-dev.2668+ddcea2cad.zip",
+            "hash": "68d4b74af73c157d4e5ca7709b2d8a797903e3439c0bb6e21ca2d137aac3bb73",
+            "extract_dir": "zig-windows-x86_64-0.12.0-dev.2668+ddcea2cad"
         },
         "32bit": {
-            "url": "https://ziglang.org/builds/zig-windows-x86-0.12.0-dev.2665+919a3bae1.zip",
-            "hash": "a8f69ac398a4a782e1da4d53221ca6492b70de90176b080a652d6a4e3cf6bb22",
-            "extract_dir": "zig-windows-x86-0.12.0-dev.2665+919a3bae1"
+            "url": "https://ziglang.org/builds/zig-windows-x86-0.12.0-dev.2668+ddcea2cad.zip",
+            "hash": "22b39209e6138aa5cb45d8ddac8b477eb9d634cdc94f6f4295bea4982c71b728",
+            "extract_dir": "zig-windows-x86-0.12.0-dev.2668+ddcea2cad"
         },
         "arm64": {
-            "url": "https://ziglang.org/builds/zig-windows-aarch64-0.12.0-dev.2665+919a3bae1.zip",
-            "hash": "13acc43bd6f6cd510d938c0986b6475b98f6e521c14fe6ba12baf93780d178fa",
-            "extract_dir": "zig-windows-aarch64-0.12.0-dev.2665+919a3bae1"
+            "url": "https://ziglang.org/builds/zig-windows-aarch64-0.12.0-dev.2668+ddcea2cad.zip",
+            "hash": "247ebcd46aba7c40c39b41a29d2a0c85828f6fd1753c034952976c0d3f01e6b5",
+            "extract_dir": "zig-windows-aarch64-0.12.0-dev.2668+ddcea2cad"
         }
     },
     "bin": "zig.exe",
