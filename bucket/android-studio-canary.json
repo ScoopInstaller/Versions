@@ -23,7 +23,7 @@
     },
     "extract_dir": "android-studio",
     "checkver": {
-        "regex": "Android Studio ([\\d.]+) Canary (\\d+)",
+        "regex": "Android Studio .+ ([\\d.]+) Canary (\\d+)",
         "replace": "${1}.${2}"
     },
     "autoupdate": {
