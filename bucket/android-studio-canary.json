@@ -21,6 +21,9 @@
             ]
         }
     },
+    "pre_install": [
+        "'uninstall.exe' | ForEach-Object { Remove-Item \"$dir/$_\" -Recurse }"
+    ],
     "extract_dir": "android-studio",
     "checkver": {
         "regex": "Android Studio .+ ([\\d.]+) Canary (\\d+)",
