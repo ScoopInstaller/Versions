@@ -1,5 +1,5 @@
 {
-    "version": "0.12.0-dev.3303",
+    "version": "0.12.0-dev.3304",
     "description": "General-purpose programming language designed for robustness, optimality, and maintainability.",
     "homepage": "https://ziglang.org/",
     "license": "MIT",
@@ -8,19 +8,19 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://ziglang.org/builds/zig-windows-x86_64-0.12.0-dev.3303+0103c4bf7.zip",
-            "hash": "57d1193d36ac5ca43b928d75616c8c43563165193c828227b6d48e16419fe9bd",
-            "extract_dir": "zig-windows-x86_64-0.12.0-dev.3303+0103c4bf7"
+            "url": "https://ziglang.org/builds/zig-windows-x86_64-0.12.0-dev.3304+bc5b09469.zip",
+            "hash": "057b74c8f23d899b5c9663321d7f712bdabd2816c39ca83be9cab62378d3706e",
+            "extract_dir": "zig-windows-x86_64-0.12.0-dev.3304+bc5b09469"
         },
         "32bit": {
-            "url": "https://ziglang.org/builds/zig-windows-x86-0.12.0-dev.3303+0103c4bf7.zip",
-            "hash": "6478a4344c376736b63d6406d1d47bf6ff84869c079378a4a0a4cc190807a2ac",
-            "extract_dir": "zig-windows-x86-0.12.0-dev.3303+0103c4bf7"
+            "url": "https://ziglang.org/builds/zig-windows-x86-0.12.0-dev.3304+bc5b09469.zip",
+            "hash": "d98ee65d9292b651ca2db286843c2fbf760df9ab6c235e9fdac845d19a41299a",
+            "extract_dir": "zig-windows-x86-0.12.0-dev.3304+bc5b09469"
         },
         "arm64": {
-            "url": "https://ziglang.org/builds/zig-windows-aarch64-0.12.0-dev.3303+0103c4bf7.zip",
-            "hash": "bd3d9645ac56027f98d7046d5b40b327fae79499fa220647529f32557b25cf71",
-            "extract_dir": "zig-windows-aarch64-0.12.0-dev.3303+0103c4bf7"
+            "url": "https://ziglang.org/builds/zig-windows-aarch64-0.12.0-dev.3304+bc5b09469.zip",
+            "hash": "139c23349e8bb70cc4a8445efa2e80879526500507f60fb51c6478fd7f6b9995",
+            "extract_dir": "zig-windows-aarch64-0.12.0-dev.3304+bc5b09469"
         }
     },
     "bin": "zig.exe",
