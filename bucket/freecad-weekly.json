@@ -1,15 +1,15 @@
 {
-    "version": "29085",
+    "version": "35759",
     "description": "A free and open-source multi-platform parametric 3D modeler.",
     "homepage": "https://www.freecadweb.org",
     "license": "LGPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-29085-Win-Conda-x86_64.7z",
-            "hash": "c05924e52b1349afeb3fd3ce46a9629ace189ba20326f59d44078caf64a18a1b"
+            "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-35759-2024-01-29-conda-Windows-x86_64-py310.7z",
+            "hash": "b54472223540a09fd447507e6ce15ecd1e419c0125a24dd11140460d7d42eaf0"
         }
     },
-    "extract_dir": "FreeCAD_weekly-builds-29085-Win-Conda-x86_64",
+    "extract_dir": "FreeCAD_weekly-builds-35759-2024-01-29-conda-Windows-x86_64-py310",
     "bin": "bin\\FreeCADCmd.exe",
     "shortcuts": [
         [
@@ -18,19 +18,20 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/tag/weekly-builds",
-        "regex": "FreeCAD_weekly-builds-([\\d]+)-Win-Conda"
+        "url": "https://api.github.com/repos/FreeCAD/FreeCAD-Bundle/releases",
+        "jsonpath": "$..[?(@.tag_name == 'weekly-builds')].assets..name",
+        "regex": "FreeCAD_weekly-builds-(?<version>[\\d]+)-(?<builddate>[\\d]{4}-[\\d]{2}-[\\d]{2})-conda-Windows-x86_64-(?<pythonversion>py[\\d]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-$version-Win-Conda-x86_64.7z"
+                "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-$matchVersion-$matchBuilddate-conda-Windows-x86_64-$matchPythonversion.7z"
             }
         },
         "hash": {
             "url": "$url-SHA256.txt",
             "regex": "(?sm):\\s+([a-fA-F\\d\\s]+)CertUtil"
         },
-        "extract_dir": "FreeCAD_weekly-builds-$version-Win-Conda-x86_64"
+        "extract_dir": "FreeCAD_weekly-builds-$matchVersion-$matchBuilddate-conda-Windows-x86_64-$matchPythonversion"
     }
 }
