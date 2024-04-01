@@ -9,10 +9,10 @@
     "architecture": {
         "64bit": {
             "url": "https://nightly.link/oven-sh/bun/suites/8506344388/artifacts/1374029880#/dl.zip",
-            "hash": "1e07c1e0bd8ffe4880dad29d9174419edf2f0070eb1ef1f0529f1a9121c41c82"
+            "hash": "1e07c1e0bd8ffe4880dad29d9174419edf2f0070eb1ef1f0529f1a9121c41c82",
+            "pre_install": "Expand-7zipArchive \"$dir\\bun-windows-x64.zip\" -ExtractDir 'bun-windows-x64' -Removal"
         }
     },
-    "extract_dir": "bun-windows-x64",
     "bin": [
         "bun.exe",
         [
