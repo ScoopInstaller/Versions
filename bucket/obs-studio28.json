@@ -26,7 +26,7 @@
     ],
     "checkver": {
         "url": "https://github.com/obsproject/obs-studio/tags?after=29.0.0-beta1",
-        "regex": "/obsproject/obs-studio/releases/tag/(28(\\.[\\d]+)+)"
+        "regex": "/obsproject/obs-studio/releases/tag/(28[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
