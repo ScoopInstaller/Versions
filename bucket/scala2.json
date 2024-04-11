@@ -20,8 +20,8 @@
         "SCALA_HOME": "$dir"
     },
     "checkver": {
-        "url": "https://www.scala-lang.org/download",
-        "regex": "/download/(2\\.[\\d.]+)\\.html"
+        "url": "https://www.scala-lang.org/download/all.html",
+        "regex": "/download/(2[\\d.]+)\\.html"
     },
     "autoupdate": {
         "url": "https://downloads.typesafe.com/scala/$version/scala-$version.zip",
