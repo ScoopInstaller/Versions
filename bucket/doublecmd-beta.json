@@ -5,15 +5,15 @@
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2064%20bit/Double%20Commander%201.1.11%20beta/doublecmd-1.1.11.x86_64-win64.msi",
-            "hash": "sha1:7a4241f4d46b0e600fa85da4b5129476d41b552a"
+            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2064%20bit/Double%20Commander%201.1.11%20beta/doublecmd-1.1.11.x86_64-win64.zip",
+            "hash": "sha1:455f7d00ff1013ada9ef1db3f77068f87d6f5012"
         },
         "32bit": {
-            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2032%20bit/Double%20Commander%201.1.11%20beta/doublecmd-1.1.11.i386-win32.msi",
-            "hash": "sha1:310d769f18810a69715754375286ac64517bd80d"
+            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2032%20bit/Double%20Commander%201.1.11%20beta/doublecmd-1.1.11.i386-win32.zip",
+            "hash": "sha1:0ccce5d3a6070bde439da457d08ec35215b3afab"
         }
     },
-    "extract_dir": "Double Commander",
+    "extract_dir": "doublecmd",
     "bin": "doublecmd.exe",
     "shortcuts": [
         [
@@ -21,6 +21,7 @@
             "Double Commander"
         ]
     ],
+    "persist": "settings",
     "checkver": {
         "sourceforge": "doublecmd/DC for Windows 64 bit",
         "regex": "Double Commander ([\\d.]+) beta"
@@ -28,10 +29,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2064%20bit/Double%20Commander%20$version%20beta/doublecmd-$version.x86_64-win64.msi"
+                "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2064%20bit/Double%20Commander%20$version%20beta/doublecmd-$version.x86_64-win64.zip"
             },
             "32bit": {
-                "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2032%20bit/Double%20Commander%20$version%20beta/doublecmd-$version.i386-win32.msi"
+                "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2032%20bit/Double%20Commander%20$version%20beta/doublecmd-$version.i386-win32.zip"
             }
         }
     }
