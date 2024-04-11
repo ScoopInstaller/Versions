@@ -16,15 +16,13 @@
     "persist": "conf",
     "checkver": {
         "url": "https://archive.apache.org/dist/spark/",
-        "regex": "spark-3.3.([\\d])",
-        "reverse": true,
-        "replace": "3.3.${1}"
+        "regex": "spark-(3.3.\\d)",
+        "reverse": true
     },
     "autoupdate": {
         "url": "https://archive.apache.org/dist/spark/spark-$version/spark-$version-bin-hadoop3.tgz",
         "hash": {
-            "url": "$url.sha512",
-            "regex": "$basename: ([A-F0-9\\s]+)$"
+            "url": "$url.sha512"
         },
         "extract_dir": "spark-$version-bin-hadoop3"
     }
