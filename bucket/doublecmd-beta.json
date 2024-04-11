@@ -1,16 +1,16 @@
 {
-    "version": "1.1.10",
+    "version": "1.1.11",
     "description": "Two pane file manager inspired by Total Commander",
     "homepage": "https://doublecmd.sourceforge.io/",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2064%20bit/Double%20Commander%201.1.10%20beta/doublecmd-1.1.10.x86_64-win64.msi",
-            "hash": "sha1:b9015742aa61d59d45ecc2add65e6dbfb73e3817"
+            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2064%20bit/Double%20Commander%201.1.11%20beta/doublecmd-1.1.11.x86_64-win64.msi",
+            "hash": "sha1:7a4241f4d46b0e600fa85da4b5129476d41b552a"
         },
         "32bit": {
-            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2032%20bit/Double%20Commander%201.1.10%20beta/doublecmd-1.1.10.i386-win32.msi",
-            "hash": "sha1:29fdaf4077e29e2617a96fdf715b2e45fe444f28"
+            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2032%20bit/Double%20Commander%201.1.11%20beta/doublecmd-1.1.11.i386-win32.msi",
+            "hash": "sha1:310d769f18810a69715754375286ac64517bd80d"
         }
     },
     "extract_dir": "Double Commander",
@@ -22,8 +22,8 @@
         ]
     ],
     "checkver": {
-        "url": "https://sourceforge.net/p/doublecmd/wiki/Download-Beta/",
-        "regex": "doublecmd-([\\d.]+)\\.i386-win32\\.zip"
+        "sourceforge": "doublecmd/DC for Windows 64 bit",
+        "regex": "Double Commander ([\\d.]+) beta"
     },
     "autoupdate": {
         "architecture": {
