@@ -1,5 +1,5 @@
 {
-    "version": "2023.3.1.12",
+    "version": "2024.1.1.4",
     "description": "The official IDE for Android development, which includes everything you need to build Android apps.",
     "homepage": "https://developer.android.com/studio/preview",
     "license": {
@@ -11,8 +11,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.3.1.12/android-studio-2023.3.1.12-windows-exe.zip",
-            "hash": "0c3cdb7516c5c4443d55480f1ecce2598c0972b713e8d59764087e2a04ca9191",
+            "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.1.1.4/android-studio-2024.1.1.4-windows.zip",
+            "hash": "3B00C61B79FDF4401ACFD5E80E7357B661EF4D8992CB6C4F2A2A93521A431C2C",
             "shortcuts": [
                 [
                     "bin\\studio64.exe",
@@ -26,13 +26,13 @@
     ],
     "extract_dir": "android-studio",
     "checkver": {
-        "regex": "Android Studio .+ ([\\d.]+) Canary (\\d+)",
-        "replace": "${1}.${2}"
+        "regex": "agree_canary_win_bundle_download(?:.|\n)+?android-studio-([\\d.]+)-windows\\.exe",
+        "replace": "${1}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$version/android-studio-$version-windows-exe.zip"
+                "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$version/android-studio-$version-windows.zip"
             }
         }
     }
