@@ -22,13 +22,13 @@
     ],
     "checkver": {
         "url": "https://api.github.com/repositories/13233158/releases",
-        "jsonpath": "$.[0].assets.browser_download_url",
-        "regex": "/([^/]+)/OBS-Studio-(?<trunced>[\\d.]+(?:-(?:rc|beta)\\d+)?)\\.zip"
+        "jsonpath": "$..assets[0].browser_download_url",
+        "regex": "/([\\d.]+-(?:rc|beta)\\d+)/"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/obsproject/obs-studio/releases/download/$version/OBS-Studio-$matchTrunced.zip"
+                "url": "https://github.com/obsproject/obs-studio/releases/download/$version/OBS-Studio-$majorVersion.$minorVersion-$preReleaseVersion.zip"
             }
         }
     }
