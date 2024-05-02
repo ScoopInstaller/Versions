@@ -1,0 +1,27 @@
+{
+    "version": "3.3.5",
+    "description": "Windows binaries for Hadoop versions.",
+    "homepage": "https://github.com/cdarlint/winutils/",
+    "license": "Apache-2.0",
+    "suggest": {
+        "JDK": "java/openjdk"
+    },
+    "url": "https://codeload.github.com/cdarlint/winutils/zip/refs/heads/master#hadoop.zip",
+    "hash": "0116950bfb5bb03bfe9bd6fb842515a1c88fe197eeb4b7005a0a7db102f07688",
+    "extract_dir": "winutils-master/hadoop-3.3.5",
+    "env_add_path": "bin",
+    "bin": "bin\\winutils.exe",
+    "env_set": {
+        "HADOOP_HOME": "$dir"
+    },
+    "persist": "conf",
+    "checkver": {
+        "url": "https://github.com/cdarlint/winutils/",
+        "regex": "hadoop-(3.3.\\d)",
+        "reverse": true
+    },
+    "autoupdate": {
+        "url": "https://codeload.github.com/cdarlint/winutils/zip/refs/heads/master#hadoop.zip",
+        "extract_dir": "winutils-master/hadoop-$version"
+    }
+}
