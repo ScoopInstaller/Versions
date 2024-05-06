@@ -27,7 +27,7 @@
         "replace": "${1}.${2}.${3}.${4}"
     },
     "autoupdate": {
-        "url": "https://download.geogebra.org/installers/$majorVersion.$minorVersion/GeoGebra-Windows-Portable-$dashVersion.zip",
+        "url": "https://download.geogebra.org/installers/5.2/GeoGebra-Windows-Portable-$dashVersion.zip",
         "extract_dir": "GeoGebra $version"
     }
 }
