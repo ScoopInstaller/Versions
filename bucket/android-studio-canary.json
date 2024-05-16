@@ -26,8 +26,7 @@
     ],
     "extract_dir": "android-studio",
     "checkver": {
-        "regex": "agree_canary_win_bundle_download(?:.|\n)+?android-studio-([\\d.]+)-windows\\.exe",
-        "replace": "${1}"
+        "regex": "agree_canary_win_bundle_download(?:.|\n)+?android-studio-([\\d.]+)-windows\\.exe"
     },
     "autoupdate": {
         "architecture": {
