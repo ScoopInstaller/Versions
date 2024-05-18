@@ -42,7 +42,7 @@
                 "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v$version/chrome.nosync.7z",
                 "hash": {
                     "url": "https://github.com/Hibbiki/chromium-win64/releases/latest",
-                    "regex": "$sha1 \\.\\./out/x64/chrome.nosync.7z"
+                    "regex": "$sha1  ../out/x64/chrome.nosync.7z"
                 }
             }
         }
