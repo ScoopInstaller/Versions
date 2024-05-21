@@ -4,8 +4,12 @@
     "description": "Browser aiming for safer, faster, and more stable way for all users to experience the web.",
     "homepage": "https://www.chromium.org",
     "license": "BSD-3-Clause",
-    "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v125.0.6422.61-r1287751/chrome.nosync.7z",
-    "hash": "sha1:c878d23d4744ff55b1238940385a6d424a7f621f",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v125.0.6422.61-r1287751/chrome.nosync.7z",
+            "hash": "sha1:c878d23d4744ff55b1238940385a6d424a7f621f"
+        }
+    },
     "extract_dir": "Chrome-bin",
     "bin": [
         [
@@ -33,10 +37,14 @@
         "regex": ">v([.*-r]+)</h1>"
     },
     "autoupdate": {
-        "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v$version/chrome.nosync.7z",
-        "hash": {
-            "url": "https://github.com/Hibbiki/chromium-win64/releases/latest",
-            "regex": "$sha1  ../out/x64/chrome.nosync.7z"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v$version/chrome.nosync.7z",
+                "hash": {
+                    "url": "https://github.com/Hibbiki/chromium-win64/releases/latest",
+                    "regex": "$sha1  ../out/x64/chrome.nosync.7z"
+                }
+            }
         }
     }
 }
