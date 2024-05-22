@@ -34,7 +34,7 @@
     "persist": "User Data",
     "checkver": {
         "url": "https://github.com/Hibbiki/chromium-win64/releases/latest",
-        "regex": ">v([.*-r]+)</h1>"
+        "regex": ">v([\\d.]+-r\\d+)</h1>"
     },
     "autoupdate": {
         "architecture": {
