@@ -1,14 +1,14 @@
 {
-    "version": "4.0.0-alpha-13",
+    "version": "4.0.0-beta-3",
     "description": "Software project management and comprehension tool",
     "homepage": "https://maven.apache.org/",
     "license": "Apache-2.0",
     "suggest": {
         "JDK": "java/openjdk"
     },
-    "url": "https://archive.apache.org/dist/maven/maven-4/4.0.0-alpha-13/binaries/apache-maven-4.0.0-alpha-13-bin.zip",
-    "hash": "sha512:a8dca1efc49f79ffedfc7a283d121b488b44e9b5e3334381a378fe8fa8c1769b31dc34e8b763966f67e8be4a95853380892177de096f30970b1b525f5f2e6caa",
-    "extract_dir": "apache-maven-4.0.0-alpha-13",
+    "url": "https://archive.apache.org/dist/maven/maven-4/4.0.0-beta-3/binaries/apache-maven-4.0.0-beta-3-bin.zip",
+    "hash": "sha512:49d656042813ead127613da3c85e063c41ef5a25b54ec783d90b51fbc1ad7401f0c0d4c860536d6baea180ab533c84d52c8e38b0c6ab52cc699105ead0418ab4",
+    "extract_dir": "apache-maven-4.0.0-beta-3",
     "env_add_path": "bin",
     "persist": [
         "conf",
@@ -16,7 +16,7 @@
     ],
     "checkver": {
         "url": "https://maven.apache.org/docs/history.html",
-        "regex": "<b>([\\d.]+-alpha-\\d.)</b>"
+        "regex": "<b>(4[\\w.-]+)</b>"
     },
     "bin": [
         "bin\\mvn.cmd",
