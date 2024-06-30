@@ -1,0 +1,45 @@
+{
+    "version": "4.3-dev6",
+    "description": "A feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.",
+    "homepage": "https://godotengine.org/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.3-dev6/Godot_v4.3-dev6_win64.exe.zip",
+            "hash": "sha512:c99ae8f7dbc03639e413e7392d7e0d1bcec15a248a68fe36fffcada1d9d2e5cba9abd6fdeb6a1cf7b513e7efb97a9570c1c24ca0c93e88a69bf976cffa6ef7d1"
+        },
+        "32bit": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.3-dev6/Godot_v4.3-dev6_win32.exe.zip",
+            "hash": "sha512:3a45cbc84742438eeacdf8d0d09b829b3ca23c38404678d8f77cbcb8673715af9fa008d11e4e53036d88b465bd1b667f39287291445ff387c39de847d5249481"
+        }
+    },
+    "pre_install": [
+        "Remove-Item \"$dir\\Godot_*_console.*\"",
+        "Get-Item \"$dir\\Godot_*.exe\" | Rename-Item -NewName 'godot-dev.exe'"
+    ],
+    "bin": "godot-dev.exe",
+    "shortcuts": [
+        [
+            "godot-dev.exe",
+            "Godot Engine Dev"
+        ]
+    ],
+    "checkver": {
+        "url": "https://godotengine.org/blog/pre-release/",
+        "regex": "Dev snapshot: Godot (?<ver>[\\d.]+) dev (?<dev>[\\d.]+)",
+        "replace": "${1}-dev${2}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/godotengine/godot-builds/releases/download/$version/Godot_v$version_win64.exe.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/godotengine/godot-builds/releases/download/$version/Godot_v$version_win32.exe.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA512-SUMS.txt"
+        }
+    }
+}
