@@ -1,5 +1,5 @@
 {
-    "version": "20240611",
+    "version": "20240715",
     "description": "Open source home theater/media center software and entertainment hub for digital media",
     "homepage": "https://kodi.tv/",
     "license": "GPL-2.0-or-later",
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://mirrors.kodi.tv/nightlies/windows/win64/master/KodiSetup-20240611-8b0389d1-master-x64.exe#/dl.7z",
-            "hash": "823f946c6affa554d1185608fac1d1f37fe8a6918d6b5cfdbf03dd376470700b"
+            "url": "https://mirrors.kodi.tv/nightlies/windows/win64/master/KodiSetup-20240715-a1d942b9-master-x64.exe#/dl.7z",
+            "hash": "97c959f093c6b9b99a632a36b3f12b93e9977198e9fb5462672cbdb022511bef"
         },
         "32bit": {
-            "url": "https://mirrors.kodi.tv/nightlies/windows/win32/master/KodiSetup-20240611-8b0389d1-master-x86.exe#/dl.7z",
-            "hash": "b95bf34622524c8f8ba2b61de2466d09cd755775ea57a9de4849a048c713c5cf"
+            "url": "https://mirrors.kodi.tv/nightlies/windows/win32/master/KodiSetup-20240715-a1d942b9-master-x86.exe#/dl.7z",
+            "hash": "29f32b5998c58316235c700bed2fcc01fd08696e845b42d270b77338cf423102"
         }
     },
     "post_install": "'$PLUGINSDIR', '$TEMP', 'AppxManifest.xml', 'Uninstall.exe' | ForEach-Object { Remove-Item \"$dir\\$_\" -Recurse -Force }",

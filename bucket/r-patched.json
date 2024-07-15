@@ -1,5 +1,5 @@
 {
-    "version": "4.4.1-r86726",
+    "version": "4.4.1-r86899",
     "description": "A free software environment for statistical computing and graphics.",
     "homepage": "https://www.r-project.org",
     "license": "GPL-2.0-or-later",
@@ -21,8 +21,8 @@
     "innosetup": true,
     "architecture": {
         "64bit": {
-            "url": "https://cloud.r-project.org/bin/windows/base/R-4.4.1rc-win.exe",
-            "hash": "md5:ce1f51f133ac324094a60466270814a5",
+            "url": "https://cloud.r-project.org/bin/windows/base/R-4.4.1patched-win.exe",
+            "hash": "md5:a7c12e7129e934ba08a6d046d46612e3",
             "bin": [
                 "bin\\x64\\R.exe",
                 "bin\\x64\\Rcmd.exe",
