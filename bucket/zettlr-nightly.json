@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://nightly.zettlr.com/Zettlr-3.2.0-nightly-x64.exe#/dl.7z",
-            "hash": "d387171d8d1668c53ef123bf07d25b46f0ef629d8e938bbc1b074247330be72e",
+            "hash": "f337fb9c695dfd224d953a8734df94947af8230fdeaa9bce83c6993ae50ac1b9",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
                 "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
