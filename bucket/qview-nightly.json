@@ -1,20 +1,20 @@
 {
-    "version": "9726265499",
+    "version": "9929965521",
     "description": "Practical and minimal image viewer",
     "homepage": "https://github.com/jurplel/qView",
     "license": "GPL-3.0-only",
     "architecture": {
         "arm64": {
-            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_arm64-2024-06-29.1.zip",
-            "hash": "8dad4423f6534b21ac6d55cd053f0ad3d9922d4b77bb12fdb9a0562bf68693e0"
+            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_arm64-2024-07-14.1.zip",
+            "hash": "e680c978f07bfd450954bff17803d2f44fd9ac5210e584da6427a9da4c20d073"
         },
         "64bit": {
-            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_64-2024-06-29.1.zip",
-            "hash": "da38b953688ce124c32c1a9525423643a358fd3d42150c1da7b8197a0942a3d2"
+            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_64-2024-07-14.1.zip",
+            "hash": "d5052590251651749549b0b62ad10379f3331ab7dff4f3be8ab8efa6d2e0b785"
         },
         "32bit": {
-            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_32-2024-06-29.1.zip",
-            "hash": "07303c761dd9364d91202e84ab0f15189bf20dfce6ace87d31f1b9eb1912f5ba"
+            "url": "https://nightly.link/jurplel/qView/workflows/build/master/qView-nightly-Windows_32-2024-07-14.1.zip",
+            "hash": "f1942fb9c02b955f70a147f606d1c707f562c2a173032705e731a7fe51ef176b"
         }
     },
     "pre_install": [
@@ -32,7 +32,7 @@
         "script": [
             "try {",
             "    $api = (Invoke-RestMethod 'https://api.github.com/repositories/123522764/actions/workflows/build.yml/runs?branch=master&status=success').workflow_runs[0]",
-            "    ($api.id, Get-Date $api.updated_at -Format 'yyyy-MM-dd', $api.run_attempt) -join ' '",
+            "    ($api.id, (Get-Date $api.updated_at -Format 'yyyy-MM-dd'), $api.run_attempt) -join ' '",
             "}",
             "catch { '' }"
         ],
