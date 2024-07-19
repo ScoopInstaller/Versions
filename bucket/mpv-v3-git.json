@@ -4,6 +4,8 @@
     "homepage": "https://mpv.io",
     "license": "LGPL-2.1-or-later,GPL-2.0-or-later",
     "notes": [
+        "CPUs without 'avx avx2 bmi bmi2 fma lzcnt movbe sse3 sse4 sse4.1 sse4.2 ssse3 xsave sahf mwait crc32 cx16 popcnt f16c' instructions will fail to launch the x86_64-v3 build",
+        "Instead, scoop install extras/mpv-git",
         "To set and unset file type associations and AutoPlay handlers, run '$dir\\installer\\mpv-install.bat' and '$dir\\installer\\mpv-uninstall.bat' as administrator, respectively.",
         "You can use Icaros ('nonportable/icaros-np') to enable thumbnails for all media types."
     ],
