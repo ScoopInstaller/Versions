@@ -78,24 +78,21 @@
                 "url": "https://update.code.visualstudio.com/latest/win32-x64-archive/insider#/dl.7z",
                 "hash": {
                     "url": "https://update.code.visualstudio.com/api/update/win32-x64-archive/insider/latest",
-                    "jsonpath": "$.sha256hash",
-                    "regex": "[a-fA-F0-9]{64}"
+                    "find": "sha256hash.*?([a-fA-F0-9]{64})"
                 }
             },
             "32bit": {
                 "url": "https://update.code.visualstudio.com/latest/win32-archive/insider#/dl.7z",
                 "hash": {
                     "url": "https://update.code.visualstudio.com/api/update/win32-archive/insider/latest",
-                    "jsonpath": "$.sha256hash",
-                    "regex": "[a-fA-F0-9]{64}"
+                    "find": "sha256hash.*?([a-fA-F0-9]{64})"
                 }
             },
             "arm64": {
                 "url": "https://update.code.visualstudio.com/latest/win32-arm64-archive/insider#/dl.7z",
                 "hash": {
                     "url": "https://update.code.visualstudio.com/api/update/win32-arm64-archive/insider/latest",
-                    "jsonpath": "$.sha256hash",
-                    "regex": "[a-fA-F0-9]{64}"
+                    "find": "sha256hash.*?([a-fA-F0-9]{64})"
                 }
             }
         }
