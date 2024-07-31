@@ -1,7 +1,7 @@
 {
     "version":  "0.6.1",
     "description": "An open-source software communication technology, intended to provide secure and resilient peer-to-peer communications with no centralized servers and minimal reliance on external infrastructure.",
-    "homepage": "https://code.briarproject.org/briar/briar-desktop",
+    "homepage": "https://briarproject.org/",
     "license": {
         "identifier": "AGPL-3.0",
         "url": "https://code.briarproject.org/briar/briar-desktop/-/blob/main/LICENSE.md"
@@ -15,7 +15,11 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://desktop.briarproject.org/msis/$version-beta/Briar-Desktop-$version-beta.msi"
+                "url": "https://desktop.briarproject.org/msis/$version-beta/Briar-Desktop-$version-beta.msi",
+                "hash": {
+                    "url": "https://briarproject.org/download-briar-desktop/",
+                    "find": "(?<=Briar-Desktop-0\\.6\\.1-beta\\.msi: )\b[a-fA-F0-9]{64}\b"
+                }
             }
         }
     },
