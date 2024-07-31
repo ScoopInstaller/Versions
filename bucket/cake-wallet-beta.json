@@ -1,5 +1,5 @@
 {
-    "version":  "4.19.1",
+    "version": "4.19.1",
     "description": "An open source, non-custodial, and private multi-currency crypto wallet for Android, iOS, macOS, and Linux.",
     "homepage": "https://cakewallet.com/",
     "license": {
@@ -8,17 +8,21 @@
     },
     "url": "https://github.com/cake-tech/cake_wallet/releases/download/v4.19.1/Cake_Wallet_v4.19.1_Windows_beta.exe",
     "hash": "242956c760f6ba66590a10ceab4bdc411631092f70b3b3b04f028d3491bc01de",
-    "autoupdate": {
-        "url": "https://github.com/cake-tech/cake_wallet/releases/download/v$version/Cake_Wallet_v$version_Windows_beta.exe"
-    },
-    "checkver": {
-        "github": "https://github.com/cake-tech/cake_wallet"
-    },
     "innosetup": true,
     "shortcuts": [
         [
             "CakeWallet.exe",
             "Cake Wallet"
         ]
-    ]
+    ],
+    "autoupdate": {
+        "url": "https://github.com/cake-tech/cake_wallet/releases/download/v$version/Cake_Wallet_v$version_Windows_beta.exe",
+        "hash": {
+            "url": "https://github.com/cake-tech/cake_wallet/releases/tag/v$version",
+            "find": "<p><strong>Cake_Wallet_v$version_Windows_beta\\.exe:<\\/strong><br>\\s*([a-f0-9]{64})</p>"
+        }
+    },
+    "checkver": {
+        "github": "https://github.com/cake-tech/cake_wallet"
+    }
 }
