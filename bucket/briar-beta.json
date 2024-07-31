@@ -1,5 +1,5 @@
 {
-    "version":  "0.6.1",
+    "version": "0.6.1",
     "description": "An open-source software communication technology, intended to provide secure and resilient peer-to-peer communications with no centralized servers and minimal reliance on external infrastructure.",
     "homepage": "https://briarproject.org/",
     "license": {
@@ -12,22 +12,26 @@
             "hash": "cf17e9508eae208adf5a63e0cf497d4212323475cffd42d4e33bd1b9f7cb9302"
         }
     },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://desktop.briarproject.org/msis/$version-beta/Briar-Desktop-$version-beta.msi"
-            }
-        }
-    },
-    "checkver": {
-        "url": "https://briarproject.org/download-briar-desktop/",
-        "regex": "Briar-Desktop-([\\d.]+)-beta\\.msi"
-    },
     "extract_dir": "Briar",
     "shortcuts": [
         [
             "Briar.exe",
             "Briar"
         ]
-    ]
+    ],
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://desktop.briarproject.org/msis/$version-beta/Briar-Desktop-$version-beta.msi",
+                "hash": {
+                    "url": "https://briarproject.org/download-briar-desktop/",
+                    "find": "<li><strong>Briar-Desktop-$version-beta\\.msi:<\\/strong>\\s*([a-f0-9]{64})<\\/li>"
+                }
+            }
+        }
+    },
+    "checkver": {
+        "url": "https://briarproject.org/download-briar-desktop/",
+        "regex": "Briar-Desktop-([\\d.]+)-beta\\.msi"
+    }
 }
