@@ -15,11 +15,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://desktop.briarproject.org/msis/$version-beta/Briar-Desktop-$version-beta.msi",
-                "hash": {
-                    "url": "https://briarproject.org/download-briar-desktop/",
-                    "find": "(?<=Briar-Desktop-0\\.6\\.1-beta\\.msi: )\b[a-fA-F0-9]{64}\b"
-                }
+                "url": "https://desktop.briarproject.org/msis/$version-beta/Briar-Desktop-$version-beta.msi"
             }
         }
     },
