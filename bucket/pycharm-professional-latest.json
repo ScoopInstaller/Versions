@@ -1,0 +1,76 @@
+{
+    "version": "231.8109.140",
+    "description": "Cross-Platform IDE for Python by JetBrains (Latest).",
+    "homepage": "https://www.jetbrains.com/pycharm/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.jetbrains.com/store/license.html"
+    },
+    "url": "https://download.jetbrains.com/python/pycharm-professional-231.8109.140.exe#/dl.7z",
+    "hash": "60a01c3097cec136ed77036553fc93cd84773a316bb30963c9a729fee7db2018",
+    "extract_to": "IDE",
+    "installer": {
+        "script": [
+            "& \"$bucketsdir\\extras\\scripts\\jetbrains\\portable.ps1\" $dir $persist_dir",
+            "Remove-Item \"$dir\\IDE\\`$*\" -Force -Recurse"
+        ]
+    },
+    "architecture": {
+        "64bit": {
+            "bin": [
+                [
+                    "IDE\\bin\\pycharm64.exe",
+                    "pycharm"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "IDE\\bin\\pycharm64.exe",
+                    "JetBrains\\PyCharm Professional (Latest)"
+                ]
+            ]
+        },
+        "32bit": {
+            "bin": "IDE\\bin\\pycharm.exe",
+            "shortcuts": [
+                [
+                    "IDE\\bin\\pycharm.exe",
+                    "JetBrains\\PyCharm Professional (Latest)"
+                ]
+            ]
+        }
+    },
+    "persist": [
+        "IDE\\bin\\idea.properties",
+        "IDE\\bin\\pycharm.exe.vmoptions",
+        "IDE\\bin\\pycharm64.exe.vmoptions",
+        "profile"
+    ],
+    "checkver": {
+        "script": [
+            "$latestRelease = Invoke-RestMethod -Uri \"https://data.services.jetbrains.com/products/releases?code=PCP&latest=true&platform=zip&type=release\"",
+            "$latestRc = Invoke-RestMethod -Uri \"https://data.services.jetbrains.com/products/releases?code=PCP&latest=true&platform=zip&type=rc\"",
+            "$latestEap = Invoke-RestMethod -Uri \"https://data.services.jetbrains.com/products/releases?code=PCP&latest=true&platform=zip&type=eap\"",
+            "if (([System.Version]$latestRelease.PCP.build -gt [System.Version]$latestRc.PCP.build) -and ([System.Version]$latestRelease.PCP.build -gt [System.Version]$latestEap.PCP.build)) {",
+            "$latestBuildNumber = $latestRelease.PCP.build",
+            "$latestRelease = $latestRelease.PCP.version",
+            "}",
+            "elseif (([System.Version]$latestRc.PCP.build -gt [System.Version]$latestRelease.PCP.build) -and ([System.Version]$latestRc.PCP.build -gt [System.Version]$latestEap.PCP.build)) {",
+            "$latestRelease = $latestRc.PCP.build",
+            "$latestBuildNumber = $latestRelease",
+            "}",
+            "else {",
+            "$latestRelease = $latestEap.PCP.build",
+            "$latestBuildNumber = $latestRelease",
+            "}",
+            "Write-Output \"$latestBuildNumber $latestRelease\""
+        ],
+        "regex": "(?<version>[\\d.]+) (?<release>[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://download.jetbrains.com/python/pycharm-professional-$matchRelease.exe#/dl.7z",
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
