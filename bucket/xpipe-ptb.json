@@ -7,7 +7,7 @@
         "64bit": {
             "url": "https://github.com/xpipe-io/xpipe-ptb/releases/download/11.0-12/xpipe-portable-windows-x86_64.zip",
             "hash": "d8ffd4b85959ff5b1841936589f71fcffd953903324f77a5bcd74c264f200496",
-            "extract_dir": "xpipe-ptb-11.0-12"
+            "extract_dir": "xpipe-11.0-12"
         }
     },
     "bin": "cli\\bin\\xpipe.exe",
@@ -18,13 +18,18 @@
         ]
     ],
     "checkver": {
-        "github": "https://github.com/xpipe-io/xpipe-ptb"
+        "script": [
+            "$Response = [PSCustomObject[]](Invoke-RestMethod -Method 'Get' -Uri 'https://api.github.com/repos/xpipe-io/xpipe-ptb/releases')",
+            "[string]($Response | Sort-Object -Property published_at -Descending)[0].tag_name"
+        ],
+        "regex": "(?<version>.+)",
+        "replace": "${version}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": "https://github.com/xpipe-io/xpipe-ptb/releases/download/$version/xpipe-portable-windows-x86_64.zip",
-                "extract_dir": "xpipe-ptb-$version"
+                "extract_dir": "xpipe-$version"
             }
         },
         "hash": {
