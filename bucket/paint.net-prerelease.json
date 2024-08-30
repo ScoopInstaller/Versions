@@ -1,0 +1,54 @@
+{
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
+    "version": "5.100.8986.33792",
+    "description": "Image and photo editor",
+    "homepage": "https://www.getpaint.net",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.getpaint.net/license.html"
+    },
+    "notes": "Windows 7 SP1 and Windows 8.1 are no longer supported.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/paintdotnet/release/releases/download/v5.1-beta.5.100.8986.33792/paint.net.5.100.8986.33792.portable.x64.zip",
+            "hash": "74a6c01f5da0c687e3004067aa966313a3a565a5318a94276f8bedbeda317105"
+        },
+        "arm64": {
+            "url": "https://github.com/paintdotnet/release/releases/download/v5.1-beta.5.100.8986.33792/paint.net.5.100.8986.33792.portable.arm64.zip",
+            "hash": "a1f32f1fd315efcc26446b4089253d80c2ce7f72b26c9c27401593746dc47c3d"
+        }
+    },
+    "pre_install": "if(!(Test-Path \"$persist_dir\\PaintDotNet.AppSettings.json\")) {New-Item \"$dir\\PaintDotNet.AppSettings.json\" -ItemType File | Out-Null}",
+    "bin": "paintdotnet.exe",
+    "shortcuts": [
+        [
+            "PaintDotNet.exe",
+            "paint.net prerelease"
+        ]
+    ],
+    "persist": [
+        "Effects",
+        "FileTypes",
+        "Shapes",
+        "PaintDotNet.AppSettings.json"
+    ],
+    "checkver": {
+        "script": [
+            "$Response = [PSCustomObject[]](Invoke-RestMethod -Method 'Get' -Uri 'https://api.github.com/repos/paintdotnet/release/releases')",
+            "$TagName  = [string]($Response.Where{$_.'prerelease'}[0].'tag_name'.TrimStart('v'))",
+            "[string]($TagName + '..' + ($TagName.Split('.')[-4 .. -1] -join '.'))"
+        ],
+        "regex": "(?<version>.+)(\\.{2})(?<buildnumber>.+)",
+        "replace": "${buildnumber}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/paintdotnet/release/releases/download/v$matchVersion/paint.net.$matchBuildnumber.portable.x64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/paintdotnet/release/releases/download/v$matchVersion/paint.net.$matchBuildnumber.portable.arm64.zip"
+            }
+        }
+    }
+}
