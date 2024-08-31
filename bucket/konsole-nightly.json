@@ -1,0 +1,33 @@
+{
+    "version": "3560",
+    "description": "Konsole - KDE's Terminal Emulator.",
+    "homepage": "https://apps.kde.org/konsole/",
+    "license": "GPL-2.0+",
+    "architecture": {
+        "64bit": {
+            "url": "https://cdn.kde.org/ci-builds/utilities/konsole/master/windows/konsole-master-3560-windows-cl-msvc2022-x86_64.7z",
+            "hash": "79a083238616b728fe3179077149c1143f48f2db7635b0441ac61f267a03779c"
+        }
+    },
+    "bin": "bin\\konsole.exe",
+    "shortcuts": [
+        [
+            "bin\\konsole.exe",
+            "Konsole Nightly"
+        ]
+    ],
+    "checkver": {
+        "url": "https://cdn.kde.org/ci-builds/utilities/konsole/master/windows/",
+        "regex": "konsole-master-([\\d]+)-windows-cl-msvc(?<Year>[\\d]+)-x86_64"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://cdn.kde.org/ci-builds/utilities/konsole/master/windows/konsole-master-$version-windows-cl-msvc$matchYear-x86_64.7z",
+                "hash": {
+                    "url": "$url.sha256"
+                }
+            }
+        }
+    }
+}
