@@ -40,7 +40,8 @@
             "$version = \"$majorVersion.$minorVersion-$fullSha\"",
             "$version"
         ],
-        "regex": "([\\d.]+\\-[a-f0-9]{7,7})"
+        "regex": "(?<version>[\\d.]+)-(?<sha>[a-f0-9]{7,7})",
+        "replace": "${version}-${sha}"
     },
     "autoupdate": {
         "architecture": {
