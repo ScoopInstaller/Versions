@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-    "version": "5.100.8986.33792",
+    "version": "5.100.9064.37466",
     "description": "Image and photo editor",
     "homepage": "https://www.getpaint.net",
     "license": {
@@ -10,12 +10,12 @@
     "notes": "Windows 7 SP1 and Windows 8.1 are no longer supported.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/paintdotnet/release/releases/download/v5.1-beta.5.100.8986.33792/paint.net.5.100.8986.33792.portable.x64.zip",
-            "hash": "74a6c01f5da0c687e3004067aa966313a3a565a5318a94276f8bedbeda317105"
+            "url": "https://github.com/paintdotnet/release/releases/download/v5.1-beta.5.100.9064.37466/paint.net.5.100.9064.37466.portable.x64.zip",
+            "hash": "700a1e2978a6bfd2f1f8137bbf503dbe0ea3dbad841c7c15319a95d9ce9611a6"
         },
         "arm64": {
-            "url": "https://github.com/paintdotnet/release/releases/download/v5.1-beta.5.100.8986.33792/paint.net.5.100.8986.33792.portable.arm64.zip",
-            "hash": "a1f32f1fd315efcc26446b4089253d80c2ce7f72b26c9c27401593746dc47c3d"
+            "url": "https://github.com/paintdotnet/release/releases/download/v5.1-beta.5.100.9064.37466/paint.net.5.100.9064.37466.portable.arm64.zip",
+            "hash": "522b6a3e18ed96b088e1f3fa52f1fb17cd3332ece432370ef30c2bb8bfc2bc6f"
         }
     },
     "pre_install": "if(!(Test-Path \"$persist_dir\\PaintDotNet.AppSettings.json\")) {New-Item \"$dir\\PaintDotNet.AppSettings.json\" -ItemType File | Out-Null}",
