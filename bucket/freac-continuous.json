@@ -1,17 +1,17 @@
 {
-    "version": "11096776949",
+    "version": "11620534798",
     "description": "Audio converter and CD ripper with support for various popular formats and encoders",
     "homepage": "https://www.freac.org",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
             "url": "https://github.com/enzo1982/freac/releases/download/continuous/freac-continuous-windows-x64.zip",
-            "hash": "3f3463c3126dab1b247628bcfc712713759aedc9e8f5b28d4d38d1f73df28f30",
+            "hash": "f819b800bd081f13617069634a6d13921b7946cbe82c62a2dac76182e031ffd4",
             "extract_dir": "freac-continuous-windows-x64"
         },
         "32bit": {
             "url": "https://github.com/enzo1982/freac/releases/download/continuous/freac-continuous-windows.zip",
-            "hash": "5627e6c2be5eb47339b3a3b8a45e66b89d3a0db34710a5090615c39541bca8a2",
+            "hash": "88f4c175de019494589433562f227b121a9ef5b48681842087f90a49e444ee30",
             "extract_dir": "freac-continuous-windows"
         }
     },

@@ -1,20 +1,20 @@
 {
-    "version": "1.14.0-beta.4",
+    "version": "1.15.0-beta.2",
     "description": "Stupid Fast Scoop Utilities. Incredibly fast replacements for commonly used Scoop commands, written in Rust.",
     "homepage": "https://github.com/jewlexx/sfsu",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/jewlexx/sfsu/releases/download/v1.14.0-beta.4/sfsu-x86_64.exe#/sfsu.exe",
-            "hash": "236be360f28edb41c36e38341a1115ae3a4667b6ffe1be0fc3084ca1e1d6b089"
+            "url": "https://github.com/jewlexx/sfsu/releases/download/v1.15.0-beta.2/sfsu-x86_64.exe#/sfsu.exe",
+            "hash": "daebc6cfb76a36f86c2343712cc4862b92bba5e59b2128f59fb679fca3e4ba50"
         },
         "32bit": {
-            "url": "https://github.com/jewlexx/sfsu/releases/download/v1.14.0-beta.4/sfsu-i686.exe#/sfsu.exe",
-            "hash": "42150b03239210daafbbcbcfe9e02696b96b7eb5f4e539664ccc9d25c2a46d2d"
+            "url": "https://github.com/jewlexx/sfsu/releases/download/v1.15.0-beta.2/sfsu-i686.exe#/sfsu.exe",
+            "hash": "d0bf06ec59f3f09e0e203f644f2b2cbc7720e9672ea502a947de0be77be99802"
         },
         "arm64": {
-            "url": "https://github.com/jewlexx/sfsu/releases/download/v1.14.0-beta.4/sfsu-aarch64.exe#/sfsu.exe",
-            "hash": "a8fbd5c47c253cb449de32a62388e5dda9c7744703cdb34907c2ae963271910f"
+            "url": "https://github.com/jewlexx/sfsu/releases/download/v1.15.0-beta.2/sfsu-aarch64.exe#/sfsu.exe",
+            "hash": "dc3a7e46ca0060afa65e6986c4d95f5090b8569d3f8557d2ebf1cfe91d1b2fa6"
         }
     },
     "notes": "In order to replace scoop commands use `Invoke-Expression (&sfsu hook)` in your Powershell profile.",
