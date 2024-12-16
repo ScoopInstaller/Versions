@@ -1,16 +1,16 @@
 {
-    "version": "10821798556",
+    "version": "12343658034",
     "description": "Graphical process/system monitor",
     "homepage": "https://github.com/ClementTsang/bottom",
     "license": "MIT",
     "architecture": {
         "64bit": {
             "url": "https://github.com/ClementTsang/bottom/releases/download/nightly/bottom_x86_64-pc-windows-msvc.zip",
-            "hash": "70121f59295189358c247fe3e17dbf328d6d1875287015f1c4dbe3a6311204b0"
+            "hash": "c9f8d63b4417bff407c31b993a4ed7695151713ea9e23fda095f44d88aa23e43"
         },
         "32bit": {
             "url": "https://github.com/ClementTsang/bottom/releases/download/nightly/bottom_i686-pc-windows-msvc.zip",
-            "hash": "79c128e8ced72bd2fb887dfa428c70ef9fb6ad380ce643f7b07d972e3142b5bf"
+            "hash": "4b198208b076903576b3cea72da2b09e51a5dd8e7972dca868c55e20fe49720d"
         }
     },
     "bin": "btm.exe",
