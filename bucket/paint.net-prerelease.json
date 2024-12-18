@@ -1,6 +1,7 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-    "version": "5.100.9064.37466",
+    "##": "Author removes the prerelease GitHub releases and artifacts when next stable is released.",
+    "version": "5.102.9118.148",
     "description": "Image and photo editor",
     "homepage": "https://www.getpaint.net",
     "license": {
@@ -10,12 +11,12 @@
     "notes": "Windows 7 SP1 and Windows 8.1 are no longer supported.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/paintdotnet/release/releases/download/v5.1-beta.5.100.9064.37466/paint.net.5.100.9064.37466.portable.x64.zip",
-            "hash": "700a1e2978a6bfd2f1f8137bbf503dbe0ea3dbad841c7c15319a95d9ce9611a6"
+            "url": "https://github.com/paintdotnet/release/releases/download/v5.1.2-beta.5.102.9118.148/paint.net.5.102.9118.148.portable.x64.zip",
+            "hash": "0e5688da314381fe646ac609675c0786643616755ae85a681a29c848b6e4e1d0"
         },
         "arm64": {
-            "url": "https://github.com/paintdotnet/release/releases/download/v5.1-beta.5.100.9064.37466/paint.net.5.100.9064.37466.portable.arm64.zip",
-            "hash": "522b6a3e18ed96b088e1f3fa52f1fb17cd3332ece432370ef30c2bb8bfc2bc6f"
+            "url": "https://github.com/paintdotnet/release/releases/download/v5.1.2-beta.5.102.9118.148/paint.net.5.102.9118.148.portable.arm64.zip",
+            "hash": "71bd26a493dede063f0f0df831c4aac2e37ba990d7e5447f7ab8fe3fdd067479"
         }
     },
     "pre_install": "if(!(Test-Path \"$persist_dir\\PaintDotNet.AppSettings.json\")) {New-Item \"$dir\\PaintDotNet.AppSettings.json\" -ItemType File | Out-Null}",
@@ -34,8 +35,8 @@
     ],
     "checkver": {
         "script": [
-            "$Response = [PSCustomObject[]](Invoke-RestMethod -Method 'Get' -Uri 'https://api.github.com/repos/paintdotnet/release/releases')",
-            "$TagName  = [string]($Response.Where{$_.'prerelease'}[0].'tag_name'.TrimStart('v'))",
+            "$Response = [PSCustomObject[]](Invoke-RestMethod -Method 'Get' -Uri 'https://api.github.com/repos/paintdotnet/release/tags')",
+            "$TagName  = [string]($Response.Where{$_.'name'.Contains('-')}[0].'name'.TrimStart('v'))",
             "[string]($TagName + '..' + ($TagName.Split('.')[-4 .. -1] -join '.'))"
         ],
         "regex": "(?<version>.+)(\\.{2})(?<buildnumber>.+)",
