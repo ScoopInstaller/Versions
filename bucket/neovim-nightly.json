@@ -20,7 +20,7 @@
     "checkver": {
         "url": "https://api.github.com/repositories/16408992/releases/tags/nightly",
         "jsonpath": "$.body",
-        "regex": "NVIM v([\\d\\.]+\\d+)-dev-([a-f\\d]+)",
+        "regex": "NVIM v([\\d+\\.]+\\d+)-dev-([a-f\\d]+)",
         "replace": "${1}-${2}"
     },
     "autoupdate": {
