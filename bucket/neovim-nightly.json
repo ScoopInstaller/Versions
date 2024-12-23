@@ -1,5 +1,5 @@
 {
-    "version": "0.11.0-1397",
+    "version": "0.11.0-1401",
     "description": "Vim fork focused on extensibility and usability",
     "homepage": "https://neovim.io",
     "license": {
@@ -20,7 +20,7 @@
     "checkver": {
         "url": "https://api.github.com/repositories/16408992/releases/tags/nightly",
         "jsonpath": "$.body",
-        "regex": "NVIM v([\\d.]+)-dev-([a-f\\d]+)",
+        "regex": "NVIM v([\\d\\.]+\\d+)-dev-([a-f\\d]+)",
         "replace": "${1}-${2}"
     },
     "autoupdate": {
