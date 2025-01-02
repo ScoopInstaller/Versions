@@ -63,10 +63,10 @@
     ],
     "checkver": {
         "url": "https://testing.gimp.org/downloads/devel/",
-        "regex": "The current development release of GIMP is \\<b\\>([\\d.]+)"
+        "regex": "The current development release of GIMP is \\<b\\>([\\w.-]+)"
     },
     "autoupdate": {
-        "url": "https://download.gimp.org/mirror/pub/gimp/v$majorVersion.$minorVersion/windows/gimp-$matchHead-setup$matchTail.exe",
+        "url": "https://download.gimp.org/mirror/pub/gimp/v$majorVersion.$minorVersion/windows/gimp-$matchHead$matchTail-setup.exe",
         "hash": {
             "url": "$baseurl/SHA256SUMS"
         },
