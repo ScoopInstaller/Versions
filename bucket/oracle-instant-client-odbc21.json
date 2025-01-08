@@ -1,36 +1,36 @@
 {
-    "version": "19.25.0.0.0",
+    "version": "21.15.0.0.0",
     "description": "Additional libraries for enabling ODBC applications with Oracle Instant Client.",
     "homepage": "https://www.oracle.com/database/technologies/instant-client.html",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.oracle.com/downloads/licenses/instant-client-lic.html"
     },
-    "depends": "oracle-instant-client19",
+    "depends": "oracle-instant-client21",
     "architecture": {
         "64bit": {
-            "url": "https://download.oracle.com/otn_software/nt/instantclient/1925000/instantclient-odbc-windows.x64-19.25.0.0.0dbru.zip",
-            "hash": "a6b6c7a8214c6cb7fa730dd3f240f108da4af92cff51d3cab74a9e4fd379368c"
+            "url": "https://download.oracle.com/otn_software/nt/instantclient/2115000/instantclient-odbc-windows.x64-21.15.0.0.0dbru.zip",
+            "hash": "7bdc4b06d75364487a729c84a0ea591fdb77654d975124b1028fbb0cf8de0849"
         },
         "32bit": {
-            "url": "https://download.oracle.com/otn_software/nt/instantclient/1925000/instantclient-odbc-nt-19.25.0.0.0dbru.zip",
-            "hash": "dc87f6ec0af6dec23351155c12f73d58337d9f535bf83f723ce7be7e0bd13594"
+            "url": "https://download.oracle.com/otn_software/nt/instantclient/2115000/instantclient-odbc-nt-21.15.0.0.0dbru.zip",
+            "hash": "157170fca3f6130134a04a28235ad55685fb1071790602f4b47133cb107f2258"
         }
     },
-    "extract_dir": "instantclient_19_25",
+    "extract_dir": "instantclient_21_15",
     "pre_install": [
-        "$instantclient = currentdir 'oracle-instant-client19'",
+        "$instantclient = currentdir 'oracle-instant-client21'",
         "Copy-Item -Path \"$dir\\*\" -Destination \"$instantclient\" -Force -Recurse | Out-Null"
     ],
     "uninstaller": {
         "script": [
-            "$instantclient = currentdir 'oracle-instant-client19'",
+            "$instantclient = currentdir 'oracle-instant-client21'",
             "Get-ChildItem -Path \"$dir\" -Exclude *.json | ForEach-Object { Remove-Item -LiteralPath \"$instantclient\\$($_.Name)\" -Recurse -Force -ErrorAction SilentlyContinue }"
         ]
     },
     "checkver": {
         "url": "https://www.oracle.com/database/technologies/instant-client/microsoft-windows-32-downloads.html",
-        "regex": "Version (19[\\d.]+)",
+        "regex": "Version (21[\\d.]+)",
         "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     },
     "autoupdate": {
