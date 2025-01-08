@@ -6,6 +6,9 @@
         "identifier": "Freeware",
         "url": "https://www.oracle.com/downloads/licenses/instant-client-lic.html"
     },
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
     "architecture": {
         "64bit": {
             "url": "https://download.oracle.com/otn_software/nt/instantclient/2115000/instantclient-basic-windows.x64-21.15.0.0.0dbru.zip",
@@ -23,9 +26,6 @@
                 "TNS_ADMIN": "$dir\\network\\admin"
             }
         }
-    },
-    "suggest": {
-        "vcredist": "extras/vcredist2022"
     },
     "extract_dir": "instantclient_21_15",
     "env_add_path": ".",
