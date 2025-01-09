@@ -1,0 +1,29 @@
+{
+    "version": "nightly",
+    "description": "A tiling window manager for Windows (nightly builds)",
+    "homepage": "https://github.com/LGUG2Z/komorebi",
+    "license": {
+        "identifier": "Komorebi",
+        "url": "https://github.com/LGUG2Z/komorebi/blob/master/LICENSE.md"
+    },
+    "notes": "Check out the quickstart guide on https://lgug2z.github.io/komorebi",
+    "suggest": {
+        "whkd": "extras/whkd",
+        "autohotkey": "extras/autohotkey"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/LGUG2Z/komorebi/releases/download/nightly/komorebi-nightly-x86_64-pc-windows-msvc.zip"
+        },
+        "arm64": {
+            "url": "https://github.com/LGUG2Z/komorebi/releases/download/nightly/komorebi-nightly-aarch64-pc-windows-msvc.zip"
+        }
+    },
+    "bin": [
+        "komorebi.exe",
+        "komorebic.exe",
+        "komorebic-no-console.exe",
+        "komorebi-gui.exe",
+        "komorebi-bar.exe"
+    ]
+}
