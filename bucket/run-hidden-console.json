@@ -4,28 +4,20 @@
   "notes": "This is a simple utility to hide the console window for windows programs. It is useful for running programs in the background without the console window showing up.",
   "homepage": "https://github.com/rise-worlds/RunHiddenConsole",
   "license": "MIT",
+  "suggest": {
+      "vcredist": "extras/vcredist2022"
+  },
   "architecture": {
       "64bit": {
-          "url": [
-              "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0/RunHiddenConsole-x64-v1.0.zip"
-          ],
-          "hash": [
-              "9e8f50fb6de48600b30bead92cbd048e8df5496dea242e3856e5ec442deb1dbe"
-          ]
+          "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0/RunHiddenConsole-x64-v1.0.zip",
+          "hash": "9e8f50fb6de48600b30bead92cbd048e8df5496dea242e3856e5ec442deb1dbe"
       },
       "32bit": {
-          "url": [
-              "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0/RunHiddenConsole-x86-v1.0.zip"
-          ],
-          "hash": [
-              "7de627baf15043e64fd91ca7aa4b8bb221089edbe153d0019eda56e1ab68a43b"
-          ]
+          "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0/RunHiddenConsole-x86-v1.0.zip",
+          "hash": "7de627baf15043e64fd91ca7aa4b8bb221089edbe153d0019eda56e1ab68a43b"
       }
   },
   "bin": [
-      [
-          "RunHiddenConsole.exe",
-          "RunHiddenConsole"
-      ]
+      "RunHiddenConsole.exe"
   ]
 }
