@@ -10,17 +10,21 @@
   "architecture": {
       "64bit": {
           "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0.2/RunHiddenConsole-x64-v1.0.2.zip",
-          "hash": "e865ff311abeb5e933a52a7265dcbc9baa8aede295494b4297fdaaa3ec7d3bd3"
+          "hash": "23e76d8d64af132bc239e778f30b0f12af7aae31e9f51a4c6338ede6175ceb95"
       },
       "32bit": {
           "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0.2/RunHiddenConsole-x86-v1.0.2.zip",
-          "hash": "697617948b1c82efada09df6a77b73be4bd3c8052c6e6cf2fc8281cb180feff9"
+          "hash": "b1ccd9345c3d182e2277ae4b3f6826bd624884e0d41e0b8acc8fd8b1c6741c9d"
       }
   },
   "bin": [
       "RunHiddenConsole.exe"
   ],
   "checkver": "github",
+  "checkver": {
+    "url": "https://github.com/rise-worlds/RunHiddenConsole/releases",
+    "regex": "assets/v([\\d\\.\\-]+)"
+  },
   "autoupdate": {
     "architecture": {
       "64bit": {
@@ -31,12 +35,7 @@
       }
     },
     "hash": {
-      "64bit": {
-        "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v$version/RunHiddenConsole-x64-$version.hashes.txt"
-      },
-      "32bit": {
-        "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v$version/RunHiddenConsole-x86-v$version.hashes.txt"
-      }
+      "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v$version/hashes.txt"
     }
   }
 }
