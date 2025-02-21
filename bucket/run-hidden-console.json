@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "v1.0.2",
   "description": "Hide console window for windows programs",
   "notes": "This is a simple utility to hide the console window for windows programs. It is useful for running programs in the background without the console window showing up.",
   "homepage": "https://github.com/rise-worlds/RunHiddenConsole",
@@ -9,16 +9,28 @@
   },
   "architecture": {
       "64bit": {
-          "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0/RunHiddenConsole-x64-v1.0.zip",
-          "hash": "9e8f50fb6de48600b30bead92cbd048e8df5496dea242e3856e5ec442deb1dbe"
+          "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0.1/RunHiddenConsole-x64-v1.0.2.zip",
+          "hash": "e865ff311abeb5e933a52a7265dcbc9baa8aede295494b4297fdaaa3ec7d3bd3"
       },
       "32bit": {
-          "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0/RunHiddenConsole-x86-v1.0.zip",
-          "hash": "7de627baf15043e64fd91ca7aa4b8bb221089edbe153d0019eda56e1ab68a43b"
+          "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/v1.0.1/RunHiddenConsole-x86-v1.0.2.zip",
+          "hash": "697617948b1c82efada09df6a77b73be4bd3c8052c6e6cf2fc8281cb180feff9"
       }
   },
   "bin": [
       "RunHiddenConsole.exe"
   ],
-  "checkver": "github"
+  "checkver": "github",
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/$version/RunHiddenConsole-x64-$version.zip",
+        "hash": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/$version/RunHiddenConsole-x64-$version.hashes.txt"
+      },
+      "32bit": {
+        "url": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/$version/RunHiddenConsole-x86-$version.zip",
+        "hash": "https://github.com/rise-worlds/RunHiddenConsole/releases/download/$version/RunHiddenConsole-x86-$version.hashes.txt"
+      }
+    }
+  }
 }
