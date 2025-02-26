@@ -11,6 +11,7 @@
     },
     "extract_dir": "dist",
     "bin": "odin.exe",
+    "bin": "dist/odin.exe",
     "checkver": {
         "url": "https://odinbinaries.thisdrunkdane.io/file/odin-binaries/nightly.json",
         "regex": "nightly%2B([\\d\\-]+).zip",
