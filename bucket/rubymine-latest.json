@@ -1,0 +1,76 @@
+{
+    "version": "232.6095.8",
+    "description": "Cross-Platform IDE for Ruby on Rails by JetBrains. (Early Access Program)",
+    "homepage": "https://www.jetbrains.com/ruby/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.jetbrains.com/store/license.html"
+    },
+    "url": "https://download.jetbrains.com/ruby/RubyMine-232.6095.8.exe#/dl.7z",
+    "hash": "1c6bec9859d225bc5d43c3d627fe14a06dc4e2e3708e20c1103f9d78c6823d2f",
+    "extract_to": "IDE",
+    "installer": {
+        "script": [
+            "& \"$bucketsdir\\extras\\scripts\\jetbrains\\portable.ps1\" $dir $persist_dir",
+            "Remove-Item \"$dir\\IDE\\`$*\" -Force -Recurse"
+        ]
+    },
+    "architecture": {
+        "64bit": {
+            "bin": [
+                [
+                    "IDE\\bin\\rubymine64.exe",
+                    "rubymine"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "IDE\\bin\\rubymine64.exe",
+                    "JetBrains\\RubyMine (Latest)"
+                ]
+            ]
+        },
+        "32bit": {
+            "bin": "IDE\\bin\\rubymine.exe",
+            "shortcuts": [
+                [
+                    "IDE\\bin\\rubymine.exe",
+                    "JetBrains\\RubyMine (Early Access Program)"
+                ]
+            ]
+        }
+    },
+    "persist": [
+        "IDE\\bin\\idea.properties",
+        "IDE\\bin\\rubymine.exe.vmoptions",
+        "IDE\\bin\\rubymine64.exe.vmoptions",
+        "profile"
+    ],
+    "checkver": {
+        "script": [
+            "$latestRelease = Invoke-RestMethod -Uri \"https://data.services.jetbrains.com/products/releases?code=RM&latest=true&platform=zip&type=release\"",
+            "$latestRc = Invoke-RestMethod -Uri \"https://data.services.jetbrains.com/products/releases?code=RM&latest=true&platform=zip&type=rc\"",
+            "$latestEap = Invoke-RestMethod -Uri \"https://data.services.jetbrains.com/products/releases?code=RM&latest=true&platform=zip&type=eap\"",
+            "if (([System.Version]$latestRelease.RM.build -gt [System.Version]$latestRc.RM.build) -and ([System.Version]$latestRelease.RM.build -gt [System.Version]$latestEap.RM.build)) {",
+            "$latestBuildNumber = $latestRelease.RM.build",
+            "$latestRelease = $latestRelease.RM.version",
+            "}",
+            "elseif (([System.Version]$latestRc.RM.build -gt [System.Version]$latestRelease.RM.build) -and ([System.Version]$latestRc.RM.build -gt [System.Version]$latestEap.RM.build)) {",
+            "$latestRelease = $latestRc.RM.build",
+            "$latestBuildNumber = $latestRelease",
+            "}",
+            "else {",
+            "$latestRelease = $latestEap.RM.build",
+            "$latestBuildNumber = $latestRelease",
+            "}",
+            "Write-Output \"$latestBuildNumber $latestRelease\""
+        ],
+        "regex": "(?<version>[\\d.]+) (?<release>[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://download.jetbrains.com/ruby/RubyMine-$matchRelease.exe#/dl.7z",
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
