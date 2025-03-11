@@ -9,10 +9,15 @@
             "hash": "bfea9bcce7b6479bd884416223868a7a016f6e478327e8a1eaebbfb7c404a9a6"
         }
     },
-    "bin": "zed.exe",
+    "bin": [
+        [
+            "zed-opengl.exe",
+            "zed"
+        ]
+    ],
     "shortcuts": [
         [
-            "zed.exe",
+            "zed-opengl.exe",
             "Zed"
         ]
     ],
