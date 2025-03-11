@@ -13,7 +13,7 @@
             "hash": "sha512:6ebcb19359eaddd77ac38a0c2203bced4eed8905299eacefb77fe245f9d334b970c146e745ffd40076bec428387cfd7b968c59af9a892603bb8bbd3bcff80012"
         }
     },
-    "extract_dir": "$matchFolderversion",
+    "extract_dir": "vlc-4.0.0-dev",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\portable\") -and (Test-Path \"$env:APPDATA\\vlc\")) {",
         "    info \"Copying old '$env:APPDATA\\vlc' to '$persist_dir\\portable'\"",
