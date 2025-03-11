@@ -25,5 +25,27 @@
         "komorebic-no-console.exe",
         "komorebi-gui.exe",
         "komorebi-bar.exe"
-    ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repositories/390873100/releases/tags/nightly",
+        "jsonpath": "$.body",
+        "regex": "nightly \\((\\d{4}-\\d{2}-\\d{2})\\)",
+        "replace": "${1}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/LGUG2Z/komorebi/releases/download/nightly/komorebi-nightly-x86_64-pc-windows-msvc.zip",
+                "hash": {
+                    "url": "$url.sha256sum"
+                }
+            },
+            "arm64": {
+                "url": "https://github.com/LGUG2Z/komorebi/releases/download/nightly/komorebi-nightly-aarch64-pc-windows-msvc.zip",
+                "hash": {
+                    "url": "$url.sha256sum"
+                }
+            }
+        }
+    }
 }
