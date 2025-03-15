@@ -1,16 +1,16 @@
 {
-    "version": "20250311",
+    "version": "20250315",
     "description": "A free and open source multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.",
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://artifacts.videolan.org/vlc/nightly-win64/20250311-0423/vlc-4.0.0-dev-win64-d01eace0.7z",
-            "hash": "sha512:72cdfe4d138f8605bd7fadef5370bcd6d0cc71ab1b4225638e9ce8ecd3adc78757402f230afa4d000ef3061e90d9f9922490a6701bcb160597de5ab2684edef3"
+            "url": "https://artifacts.videolan.org/vlc/nightly-win64/20250315-0427/vlc-4.0.0-dev-win64-c30670ce.7z",
+            "hash": "sha512:424c9649fa2a9302c5fea264480295186a4396a6ec87536322298326840424b50687b20b614ac6443d932cd08bfe417809b4741ba64fa16d7cf6cd03bbb4391c"
         },
         "arm64": {
-            "url": "https://artifacts.videolan.org/vlc/nightly-win64-arm-llvm/20250311-0429/vlc-4.0.0-dev-win64-d01eace0.7z",
-            "hash": "sha512:9d1c74459098ebdc149af05ab72a2465edd3a1c72d0bc1d258e93fa923ca6b9a42e4cb271989c7626f37268ebce1b134805e92e3590a36a2be4444f76401763f"
+            "url": "https://artifacts.videolan.org/vlc/nightly-win64-arm-llvm/20250315-0429/vlc-4.0.0-dev-win64-c30670ce.7z",
+            "hash": "sha512:c71297a781a39bf614316bfb358f8c0107c23d69ed10d07d5b0100faed17b744df86b744fbca65449a28f056b6a96cf0d02da7e2b37c27f7228037593e15cac0"
         }
     },
     "extract_dir": "vlc-4.0.0-dev",
@@ -46,7 +46,7 @@
             "}",
             "Write-Output ('version:\"' + $scriptver + '\"') ('urls:\"' + $urls + '\"')"
         ],
-        "regex": "version:\"(?<version>\\d+)\"\\surls:\"(?<win64bitver>.+\\/)(?<win64bitfile>.+)\\s(?<winarm64ver>.+\\/)(?<winarm64file>.+)\""
+        "regex": "version:\"(?<version>\\d+)\"\\surls:\"(?<win64bitver>.+\\/)(?<win64bitfile>(?<folderversion>vlc-[\\d.]+-dev).+)\\s(?<winarm64ver>.+\\/)(?<winarm64file>.+)\""
     },
     "autoupdate": {
         "architecture": {
