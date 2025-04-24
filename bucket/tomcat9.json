@@ -1,5 +1,5 @@
 {
-    "version": "9.0.97",
+    "version": "9.0.104",
     "description": "Tomcat, an open source implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies. (version 9)",
     "homepage": "https://tomcat.apache.org/",
     "license": "Apache-2.0",
@@ -8,15 +8,15 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.97/bin/apache-tomcat-9.0.97-windows-x64.zip",
-            "hash": "sha512:de129801c162dd8608fc61d185342e66b81e591a6e18d75b3a56e4583aa8c74fe88cd5b6e5936dcfe3b6d196fbff130238646644a4e2868dcaa86ca50d9130c7"
+            "url": "https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.104/bin/apache-tomcat-9.0.104-windows-x64.zip",
+            "hash": "sha512:9844bf04447f41e521a6dcd84801167abcfdabc6dd608823895dd2b89e3dbba7bf48ce0c7b0c7b627ea9f9b2302c5f5ac3f96133aeeb4e6d5739f52674d2d6b7"
         },
         "32bit": {
-            "url": "https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.97/bin/apache-tomcat-9.0.97-windows-x86.zip",
-            "hash": "sha512:f16985fb598362a978a2c5040bd7cef95f3516bfaabfcf78de44e49b4b0083f5424b98ade91427ba90fbe078ef028959801c72fcfc32fd5856635fd72b2f738a"
+            "url": "https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.104/bin/apache-tomcat-9.0.104-windows-x86.zip",
+            "hash": "sha512:1ea0d164f6a9e7bf4ce8ad0120e353a04a139270dbfef631cced64483e804dc2e5dfeccc64bbb59b2b67f05c0023fb049f10d6d6c388d0cacd7590647d3da941"
         }
     },
-    "extract_dir": "apache-tomcat-9.0.97",
+    "extract_dir": "apache-tomcat-9.0.104",
     "env_set": {
         "CATALINA_BASE": "$dir",
         "CATALINA_HOME": "$dir"

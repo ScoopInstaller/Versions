@@ -1,26 +1,27 @@
 {
-    "version": "2024.11.12.233022",
+    "version": "2025.04.23.143136",
     "description": "yt-dlp (official) master builds",
     "homepage": "https://github.com/yt-dlp/yt-dlp-master-builds",
     "license": "Freeware",
     "suggest": {
-        "ffmpeg": "ffmpeg-nightly"
+        "ffmpeg": "versions/ffmpeg-yt-dlp"
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/yt-dlp/yt-dlp-master-builds/releases/download/2024.11.12.233022/yt-dlp.exe",
-            "hash": "sha512:df7d9ad95ff1e29b61ba06fe38dab49a7e357d0520f95ec904a2b587eeeb07e4bd0158c6c2d212e215db547b4c55954942a44d67b020103f214ba531ffbca371"
+            "url": "https://github.com/yt-dlp/yt-dlp-master-builds/releases/download/2025.04.23.143136/yt-dlp.exe",
+            "hash": "sha512:6ed46f434898e2d100d8858bb24f2ed76f25a2de2d7fc4a2bb5ab277cbcc810c123f9fe891b65c79e955a91f2eea3e8f3829c7d4efc92cee5018e0da3d59a328"
         },
         "32bit": {
-            "url": "https://github.com/yt-dlp/yt-dlp-master-builds/releases/download/2024.11.12.233022/yt-dlp_x86.exe#/yt-dlp.exe",
-            "hash": "sha512:9c0c4b4d0aed7bb9586c85ef3c302b95894ddce6f793776cd31234e247c553772d1cee775e61a0ca514d7b8fc752bfd1a406f1046653bb1480a23e8cc31b2c9f"
+            "url": "https://github.com/yt-dlp/yt-dlp-master-builds/releases/download/2025.04.23.143136/yt-dlp_x86.exe#/yt-dlp.exe",
+            "hash": "sha512:7163126badd3f6c10fb42381e4bbad6d170dc98ec9561fea46fe7281aa6b653f17ba9088f039970fc49328617a6a842f07140bdf95389f0d0deb19c640fff5e2"
         }
     },
     "bin": "yt-dlp.exe",
     "pre_install": "$null = if (!(Test-Path \"$persist_dir/yt-dlp.conf\")) { New-Item \"$dir/yt-dlp.conf\" }",
     "persist": [
         "yt-dlp.conf",
-        "ytdlp_plugins"
+        "ytdlp_plugins",
+        "yt-dlp-plugins"
     ],
     "checkver": "github",
     "autoupdate": {
