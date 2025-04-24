@@ -1,21 +1,21 @@
 {
-    "version": "3.11.7",
+    "version": "3.11.9",
     "description": "A programming language that lets you work quickly and integrate systems more effectively.",
     "homepage": "https://www.python.org/",
     "license": "Python-2.0",
     "notes": "Allow applications and third-party installers to find python by running: \"$dir\\install-pep-514.reg\"",
     "architecture": {
         "64bit": {
-            "url": "https://www.python.org/ftp/python/3.11.7/python-3.11.7-amd64.exe#/setup.exe",
-            "hash": "md5:6ebd889155ac3261308202b29d39c5a4"
+            "url": "https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe#/setup.exe",
+            "hash": "5ee42c4eee1e6b4464bb23722f90b45303f79442df63083f05322f1785f5fdde"
         },
         "32bit": {
-            "url": "https://www.python.org/ftp/python/3.11.7/python-3.11.7.exe#/setup.exe",
-            "hash": "md5:8a52f3859989f0b1313f4baaa6936410"
+            "url": "https://www.python.org/ftp/python/3.11.9/python-3.11.9.exe#/setup.exe",
+            "hash": "af19e5e2f03e715a822181f2cb7d4efef4eda13fa4a2db6da12e998e46f5cbf9"
         },
         "arm64": {
-            "url": "https://www.python.org/ftp/python/3.11.7/python-3.11.7-arm64.exe#/setup.exe",
-            "hash": "md5:216803e75bf3944c183873adf135c459"
+            "url": "https://www.python.org/ftp/python/3.11.9/python-3.11.9-arm64.exe#/setup.exe",
+            "hash": "58f3a4e91b63d5a680ecc77c1db4565a1e3966e8656d4c8b89200d58c1f5c4f3"
         }
     },
     "pre_install": [
@@ -55,8 +55,8 @@
             "}",
             "Remove-Item \"$dir\\_tmp\", \"$dir\\setup.exe\" -Force -Recurse",
             "if ($global) {",
-            "    $pathext = (env 'PATHEXT' $true) -replace ';.PYW?', ''",
-            "    env 'PATHEXT' $true \"$pathext;.PY;.PYW\"",
+            "    $pathext = (Get-EnvVar -Name PATHEXT -Global) -replace ';.PYW?', ''",
+            "    Set-EnvVar -Name PATHEXT -Value \"$pathext;.PY;.PYW\" -Global",
             "}"
         ]
     },
@@ -94,8 +94,8 @@
     "uninstaller": {
         "script": [
             "if ($global) {",
-            "    $pathext = (env 'PATHEXT' $true) -replace ';.PYW?', ''",
-            "    env 'PATHEXT' $true \"$pathext\"",
+            "    $pathext = (Get-EnvVar -Name PATHEXT -Global) -replace ';.PYW?', ''",
+            "    Set-EnvVar -Name PATHEXT -Value \"$pathext\" -Global",
             "}"
         ]
     },

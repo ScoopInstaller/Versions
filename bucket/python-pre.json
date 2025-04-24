@@ -1,5 +1,5 @@
 {
-    "version": "3.13.0a2",
+    "version": "3.14.0a7",
     "description": "A programming language that lets you work quickly and integrate systems more effectively.",
     "homepage": "https://www.python.org/",
     "license": "Python-2.0",
@@ -7,24 +7,24 @@
     "architecture": {
         "64bit": {
             "url": [
-                "https://www.python.org/ftp/python/3.13.0/python-3.13.0a2-amd64.exe#/setup.exe",
+                "https://www.python.org/ftp/python/3.14.0/python-3.14.0a7-amd64.exe#/setup.exe",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/python/install-pep-514.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/python/uninstall-pep-514.reg"
             ],
             "hash": [
-                "md5:4004c8f6cd2e627210dabcafdfc3d5cf",
+                "md5:ef0c61d172f5391e5e7cf646e27c21dd",
                 "27c2d7e74442f356d54d29000379afd55078fb4ede00455fc012f81745e4bcac",
                 "65a46d5a9fec455b6fbc5d75f8a57cd5ee958d31873ef438766866a53759e9f6"
             ]
         },
         "32bit": {
             "url": [
-                "https://www.python.org/ftp/python/3.13.0/python-3.13.0a2.exe#/setup.exe",
+                "https://www.python.org/ftp/python/3.14.0/python-3.14.0a7.exe#/setup.exe",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/python/install-pep-514.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/python/uninstall-pep-514.reg"
             ],
             "hash": [
-                "md5:c2fad10ca6e56e4d4d1e48ca1b615d48",
+                "md5:37c3778b3df93daa3ab88493081260b8",
                 "27c2d7e74442f356d54d29000379afd55078fb4ede00455fc012f81745e4bcac",
                 "65a46d5a9fec455b6fbc5d75f8a57cd5ee958d31873ef438766866a53759e9f6"
             ]
@@ -61,8 +61,8 @@
             "}",
             "Remove-Item \"$dir\\_tmp\", \"$dir\\setup.exe\" -Force -Recurse",
             "if ($global) {",
-            "    $pathext = (env 'PATHEXT' $true) -replace ';.PYW?', ''",
-            "    env 'PATHEXT' $true \"$pathext;.PY;.PYW\"",
+            "    $pathext = (Get-EnvVar -Name PATHEXT -Global) -replace ';.PYW?', ''",
+            "    Set-EnvVar -Name PATHEXT -Value \"$pathext;.PY;.PYW\" -Global",
             "}"
         ]
     },
@@ -73,8 +73,8 @@
     "uninstaller": {
         "script": [
             "if ($global) {",
-            "    $pathext = (env 'PATHEXT' $true) -replace ';.PYW?', ''",
-            "    env 'PATHEXT' $true \"$pathext\"",
+            "    $pathext = (Get-EnvVar -Name PATHEXT -Global) -replace ';.PYW?', ''",
+            "    Set-EnvVar -Name PATHEXT -Value \"$pathext\" -Global",
             "}"
         ]
     },

@@ -1,10 +1,10 @@
 {
-    "version": "3.0.7422",
+    "version": "3.2.25073.1647",
     "description": "A powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
     "homepage": "https://systeminformer.sourceforge.io",
     "license": "MIT",
-    "url": "https://github.com/winsiderss/si-builds/releases/download/3.0.7422/systeminformer-3.0.7422-bin.zip",
-    "hash": "f6a8c347847c97294a3141a0115ca1e883109e639663c6f716dc90f03e2dc78d",
+    "url": "https://github.com/winsiderss/si-builds/releases/download/3.2.25073.1647/systeminformer-3.2.25073.1647-canary-bin.zip",
+    "hash": "aadf27295cf5c85ceb4d61d1e0467dffb69f5d82087d1bf031a8e157548fe9c8",
     "architecture": {
         "32bit": {
             "extract_dir": "i386"
@@ -36,10 +36,14 @@
     ],
     "pre_uninstall": "'SystemInformer.exe.settings.xml', 'usernotesdb.xml' | ForEach-Object { Copy-Item \"$dir\\$_\" \"$persist_dir\\$_\" -ErrorAction 'SilentlyContinue' }",
     "checkver": {
-        "url": "https://github.com/winsiderss/si-builds/releases",
-        "regex": "/tag/([\\d.]+)"
+        "url": "https://systeminformer.sourceforge.io/canary",
+        "regex": "systeminformer-([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/winsiderss/si-builds/releases/download/$version/systeminformer-$version-bin.zip"
+        "url": "https://github.com/winsiderss/si-builds/releases/download/$version/systeminformer-$version-canary-bin.zip",
+        "hash": {
+            "url": "https://systeminformer.sourceforge.io/canary",
+            "regex": "(?s)Hashes.*?Binaries.*?SHA2.*?$sha256"
+        }
     }
 }

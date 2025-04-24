@@ -1,5 +1,5 @@
 {
-    "version": "1.0.18-canary.33+61f92d9e5",
+    "version": "1.1.22-canary.1+dbd320ccf",
     "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.",
     "homepage": "https://bun.sh/",
     "license": "MIT",
@@ -8,11 +8,11 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/oven-sh/bun/releases/download/canary/bun-windows-x64.zip",
-            "hash": "38f5919c2dbbb003c6bed2d92ed3e1da3850433ce147c37a98f29f47a4d6bce9"
+            "url": "https://nightly.link/oven-sh/bun/suites/10149528008/artifacts/1752223277#/dl.zip",
+            "hash": "dc444df8d0fb88572dc742f4faefcc52de0d6be84b769ad12576cd2ee4a0e617",
+            "pre_install": "Expand-7zipArchive \"$dir\\bun-windows-x64.zip\" -ExtractDir 'bun-windows-x64' -Removal"
         }
     },
-    "extract_dir": "bun-windows-x64",
     "bin": [
         "bun.exe",
         [
@@ -23,22 +23,28 @@
     ],
     "checkver": {
         "script": [
-            "$dl_url = 'https://github.com/oven-sh/bun/releases/download/canary/bun-windows-x64.zip'",
-            "$dl = cache_path 'bun-canary' 'unknown' $dl_url",
+            "$runs = (irm 'https://api.github.com/repos/oven-sh/bun/actions/workflows/ci.yml/runs?status=success&per_page=1')",
+            "$buildId = $runs.workflow_runs[0].id",
+            "$artifacts = (irm \"https://api.github.com/repos/oven-sh/bun/actions/runs/$buildId/artifacts\")",
+            "$artifactId = $artifacts.artifacts | Where-Object { $_.name -eq 'bun-windows-x64' } | Select-Object -ExpandProperty 'id'",
+            "$dl_url = \"https://nightly.link/oven-sh/bun/suites/$buildId/artifacts/$artifactId\"",
+            "$dl = cache_path 'bun-canary' 'unknown' \"$dl_url#/dl.zip\"",
             "$dl_dir = strip_ext $dl",
-            "Invoke-WebRequest $dl_url -OutFile $dl",
-            "Expand-Archive $dl $dl_dir",
+            "Invoke-RestMethod $dl_url -OutFile $dl",
+            "Expand-Archive $dl $dl_dir -Force",
+            "Expand-Archive \"$dl_dir\\bun-windows-x64.zip\" $dl_dir -Force",
             "$ver = & \"$dl_dir\\bun-windows-x64\\bun.exe\" --revision",
-            "Move-Item -Force $dl (cache_path 'bun-canary' $ver $dl_url)",
-            "Remove-Item $dl_dir -Recurse",
-            "$ver"
+            "Rename-Item $dl $($dl -replace 'unknown', $ver) -Force",
+            "Remove-Item $dl_dir -Recurse -Force",
+            "$ret = \"$ver#$buildId#$artifactId\"",
+            "$ret"
         ],
-        "regex": "(\\S+)"
+        "regex": "(?<version>\\S+)#(?<buildid>\\d+)#(?<artifactid>\\d+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/oven-sh/bun/releases/download/canary/bun-windows-x64.zip"
+                "url": "https://nightly.link/oven-sh/bun/suites/$matchBuildid/artifacts/$matchArtifactid#/dl.zip"
             }
         }
     }
