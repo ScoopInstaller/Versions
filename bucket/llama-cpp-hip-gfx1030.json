@@ -1,0 +1,64 @@
+{
+    "version": "b5298",
+    "description": "Inference of LLaMA model in pure C/C++ (HIP version for AMD gfx1030)",
+    "homepage": "https://github.com/ggml-org/llama.cpp",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b5298/llama-b5298-bin-win-hip-x64-gfx1030.zip",
+            "hash": "6d9f8a3d9e7e15b6bd40721a0b277e86e899af88830f2a705e6772bf4a24bf26"
+        }
+    },
+    "bin": [
+        "llama-batched-bench.exe",
+        "llama-batched.exe",
+        "llama-bench.exe",
+        "llama-cli.exe",
+        "llama-embedding.exe",
+        "llama-eval-callback.exe",
+        "llama-gemma3-cli.exe",
+        "llama-gen-docs.exe",
+        "llama-gguf-hash.exe",
+        "llama-gguf-split.exe",
+        "llama-gguf.exe",
+        "llama-gritlm.exe",
+        "llama-imatrix.exe",
+        "llama-infill.exe",
+        "llama-llava-cli.exe",
+        "llama-llava-clip-quantize-cli.exe",
+        "llama-lookahead.exe",
+        "llama-lookup-create.exe",
+        "llama-lookup-merge.exe",
+        "llama-lookup-stats.exe",
+        "llama-lookup.exe",
+        "llama-minicpmv-cli.exe",
+        "llama-mtmd-cli.exe",
+        "llama-parallel.exe",
+        "llama-passkey.exe",
+        "llama-perplexity.exe",
+        "llama-quantize.exe",
+        "llama-qwen2vl-cli.exe",
+        "llama-retrieval.exe",
+        "llama-run.exe",
+        "llama-save-load-state.exe",
+        "llama-server.exe",
+        "llama-simple-chat.exe",
+        "llama-simple.exe",
+        "llama-speculative-simple.exe",
+        "llama-speculative.exe",
+        "llama-tokenize.exe",
+        "llama-tts.exe"
+    ],
+    "persist": "models",
+    "checkver": {
+        "github": "https://github.com/ggml-org/llama.cpp",
+        "regex": "/releases/tag/(b[\\d]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ggml-org/llama.cpp/releases/download/$version/llama-$version-bin-win-hip-x64-gfx1030.zip"
+            }
+        }
+    }
+}
