@@ -36,6 +36,9 @@
             "Clipboard Compare"
         ]
     ],
+    "persist": [
+        "BC4Key.txt"
+    ],
     "post_install": [
         "$dir_escaped = \"$dir\".Replace('\\', '\\\\')",
         "\"install-context-$architecture\", \"uninstall-context\" | ForEach-Object {",
