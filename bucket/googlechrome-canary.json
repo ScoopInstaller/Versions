@@ -8,17 +8,15 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/release2/chrome/adtwmfpdpxlxi7njdgpccefagfwa_140.0.7266.0/140.0.7266.0_chrome_installer.exe#/dl.7z",
+            "url": "https://dl.google.com/release2/chrome/adtwmfpdpxlxi7njdgpccefagfwa_140.0.7266.0/140.0.7266.0_chrome_installer_uncompressed.exe#/dl.7z",
             "hash": "146c8e6e0f3713df403d395dc5275b35adbc83f19d044dc779cf2349abdff3ba"
         },
         "32bit": {
-            "url": "https://dl.google.com/release2/chrome/acxvjda53phjv4recmknegmzkiia_140.0.7266.0/140.0.7266.0_chrome_installer.exe#/dl.7z",
+            "url": "https://dl.google.com/release2/chrome/acxvjda53phjv4recmknegmzkiia_140.0.7266.0/140.0.7266.0_chrome_installer_uncompressed.exe#/dl.7z",
             "hash": "42dc4c5fe0e9f6da3f9f78f798a786c2c34b190c3a283ffc8e171c4f9bcd7b27"
         }
     },
-    "installer": {
-        "script": "Expand-7zipArchive \"$dir\\chrome.7z\" -ExtractDir 'Chrome-bin' -Removal"
-    },
+   "extract_dir": "Chrome-bin",
     "bin": [
         [
             "chrome.exe",
@@ -38,14 +36,14 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://dl.google.com/release2/chrome/$match64_$version/$version_chrome_installer.exe#/dl.7z",
+                "url": "https://dl.google.com/release2/chrome/$match64_$version/$version_chrome_installer_uncompressed.exe#/dl.7z",
                 "hash": {
                     "url": "https://scoopinstaller.github.io/UpdateTracker/googlechrome/chrome.min.xml",
                     "xpath": "/chromechecker/canary64[version='$version']/sha256"
                 }
             },
             "32bit": {
-                "url": "https://dl.google.com/release2/chrome/$match32_$version/$version_chrome_installer.exe#/dl.7z",
+                "url": "https://dl.google.com/release2/chrome/$match32_$version/$version_chrome_installer_uncompressed.exe#/dl.7z",
                 "hash": {
                     "url": "https://scoopinstaller.github.io/UpdateTracker/googlechrome/chrome.min.xml",
                     "xpath": "/chromechecker/canary32[version='$version']/sha256"
