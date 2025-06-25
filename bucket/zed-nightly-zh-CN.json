@@ -13,7 +13,7 @@
   "shortcuts": [["zed-release/zed.exe", "Zed"]],
   "checkver": {
     "url": "https://api.github.com/repos/TC999/zed-loc/releases",
-    "regex": "\"tag_name\": \"(?<version>\\d{8})\"",
+    "regex": "\"tag_name\":\\s*\"(?<version>\\d{8})\"",
     "replace": "${version}"
   },
   "autoupdate": {
