@@ -1,0 +1,37 @@
+{
+    "version": "2.3.1",
+    "description": "G-code generator for 3D printers (Bambu, Prusa, Voron, VzBot, RatRig, Creality, etc.)",
+    "homepage": "https://github.com/SoftFever/OrcaSlicer",
+    "license": "AGPL-3.0-or-later",
+    "extract_dir": "OrcaSlicer",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/SoftFever/OrcaSlicer/releases/download/nightly-builds/OrcaSlicer_Windows_V2.3.1-dev_portable.zip",
+            "hash": "227d3ac6333f3bae00fc95b8c3c45b04435e92e14b9385467cc5f6c2fceae11c"
+        },
+        "64bit": {
+            "url": "https://github.com/SoftFever/OrcaSlicer/releases/download/nightly-builds/OrcaSlicer_Windows_V2.3.1-dev_portable.zip",
+            "hash": "227d3ac6333f3bae00fc95b8c3c45b04435e92e14b9385467cc5f6c2fceae11c"
+        }
+    },
+    "shortcuts": [
+        [
+            "orca-slicer.exe",
+            "OrcaSlicer Nightly"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/tags/nightly-builds",
+        "regex": "(?<file>OrcaSlicer_Windows_V(?<version>[\\d.]+)-dev_portable.zip)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/SoftFever/OrcaSlicer/releases/download/nightly-builds/$matchFile"
+            },
+            "64bit": {
+                "url": "https://github.com/SoftFever/OrcaSlicer/releases/download/nightly-builds/$matchFile"
+            }
+        }
+    }
+}
