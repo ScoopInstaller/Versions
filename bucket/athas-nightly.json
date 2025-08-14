@@ -1,0 +1,27 @@
+{
+  "version": "2025-08-14",
+  "description": "Athas application",
+  "homepage": "https://athas.dev/",
+  "license": "GNU AGPL",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/r4ultv/athas-builds/releases/download/08-14-2025/athas-code.exe",
+      "hash": "37966823a7a324d1a1dbdbb5e2ef8f97e034f0631cc3dae2aa39df416fa692b6"
+    }
+  },
+  "bin": "athas-code.exe",
+  "shortcuts": [["athas-code.exe", "athas"]],
+  "checkver": {
+    "url": "https://api.github.com/repos/r4ultv/athas-builds/releases",
+    "regex": "(?<version>(?<month>\\d{2})-(?<day>\\d{2})-(?<year>\\d{4}))",
+    "replace": "${year}-${month}-${day}"
+  },
+  "autoupdate": {
+    "url": "https://github.com/r4ultv/athas-builds/releases/download/$matchVersion/athas-code.exe",
+    "hash": {
+      "url": "https://api.github.com/repos/r4ultv/athas-builds/releases/tags/$matchVersion",
+      "jsonpath": "$.assets[?(@.name == 'athas-code.exe')].digest",
+      "regex": "sha256:([a-fA-F0-9]{64})"
+    }
+  }
+}
