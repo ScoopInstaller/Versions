@@ -1,0 +1,26 @@
+{
+    "version": "8.15.0_5",
+    "description": "Command line tool and library for transferring data with URLs",
+    "homepage": "https://curl.se/",
+    "license": "MIT",
+    "architecture": {
+        "32bit": {
+            "url": "https://curl.se/windows/dl-8.15.0_5/curl-8.15.0_5-win32-mingw.tar.xz",
+            "hash": "30799b6ec93c416d068581533e523d86968f75b73a8c2f82d5cd55f62e028e0d",
+            "extract_dir": "curl-8.15.0_5-win32-mingw"
+        }
+    },
+    "bin": "bin\\curl.exe",
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://curl.se/windows/dl-$version/curl-$version-win32-mingw.tar.xz",
+                "extract_dir": "curl-$version-win32-mingw",
+                "hash": {
+                    "url": "$baseurl/hashes.txt",
+                    "regex": "SHA2-256\\($basename\\)=\\s+$sha256"
+                }
+            }
+        }
+    }
+}
