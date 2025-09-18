@@ -1,18 +1,20 @@
 {
-    "version": "1.2.7-20250716",
+    "version": "1.2.8-20250909",
     "description": "A handwriting notetaking software with PDF annotation support",
     "homepage": "https://github.com/xournalpp/xournalpp",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.7+dev-nightly-20250716-windows-portable-x86_64.zip",
-            "hash": "a6a7534a86971740d6c4d3f115af5a33331bc9493356e92df6c2904b539cdeb1"
+            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8+dev-nightly-20250909-windows-portable-AMD64.zip",
+            "hash": "e2733460c02615a8aad6898bf3ea970e564d4e2c060b2f7eda94e5d231feaea6",
+            "extract_dir": "xournalpp-1.2.8+dev-nightly-20250909-windows-portable-AMD64"
+        },
+        "arm64": {
+            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8+dev-nightly-20250909-windows-portable-ARM64.zip",
+            "hash": "198f433f1dfa82c0a9d2c0f604458e5a24d54c9dd1772559472c18ad775b7986",
+            "extract_dir": "xournalpp-1.2.8+dev-nightly-20250909-windows-portable-ARM64"
         }
     },
-    "pre_install": [
-        "Get-ChildItem \"$dir\\*.exe\" | ForEach-Object -Process { Expand-7zipArchive $_ -Removal }",
-        "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Recurse"
-    ],
     "bin": "bin\\xournalpp.exe",
     "shortcuts": [
         [
@@ -28,7 +30,12 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-$matchMain+dev-nightly-$matchDate-windows-portable-x86_64.zip"
+                "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-$matchMain+dev-nightly-$matchDate-windows-portable-AMD64.zip",
+                "extract_dir": "xournalpp-$matchMain+dev-nightly-$matchDate-windows-portable-AMD64"
+            },
+            "arm64": {
+                "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-$matchMain+dev-nightly-$matchDate-windows-portable-ARM64.zip",
+                "extract_dir": "xournalpp-$matchMain+dev-nightly-$matchDate-windows-portable-ARM64"
             }
         }
     }
