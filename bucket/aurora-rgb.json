@@ -4,10 +4,6 @@
     "homepage": "https://github.com/Aurora-RGB/Aurora",
     "license": "MIT",
     "architecture": {
-        "32bit": {
-            "url": "https://github.com/Aurora-RGB/Aurora/releases/download/v325/Aurora-v325.zip",
-            "hash": "0940176de40746727670c4733684c6a83e1c4516f749150815927723937e0756"
-        },
         "64bit": {
             "url": "https://github.com/Aurora-RGB/Aurora/releases/download/v325/Aurora-v325.zip",
             "hash": "0940176de40746727670c4733684c6a83e1c4516f749150815927723937e0756"
@@ -22,9 +18,6 @@
     "checkver": "github",
     "autoupdate": {
         "architecture": {
-            "32bit": {
-                "url": "https://github.com/Aurora-RGB/Aurora/releases/download/v$version/Aurora-v$version.zip"
-            },
             "64bit": {
                 "url": "https://github.com/Aurora-RGB/Aurora/releases/download/v$version/Aurora-v$version.zip"
             }
