@@ -27,10 +27,6 @@
                 "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-$version/FreeCAD_weekly-$version-Windows-x86_64-py311.7z"
             }
         },
-        "hash": {
-            "url": "$url-SHA256.txt",
-            "regex": "(?sm):\\s+([a-fA-F\\d\\s]+)CertUtil"
-        },
         "extract_dir": "FreeCAD_weekly-$version-Windows-x86_64-py311"
     }
 }
