@@ -5,12 +5,12 @@
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8+dev-nightly-20250926-windows-portable-AMD64.zip",
+            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8%2Bdev-nightly-20250926-windows-portable-AMD64.zip",
             "hash": "4951df9e4ec30803d10da5c565a53d1ca6165518741a8d7f11f952ee1f293bc7",
             "extract_dir": "xournalpp-1.2.8+dev-nightly-20250926-windows-portable-AMD64"
         },
         "arm64": {
-            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8+dev-nightly-20250926-windows-portable-ARM64.zip",
+            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8%2Bdev-nightly-20250926-windows-portable-ARM64.zip",
             "hash": "88a6474bb8f0f191de6d2f8b8964dd6ea42fb481a46270f5bac1dee488cf2548",
             "extract_dir": "xournalpp-1.2.8+dev-nightly-20250926-windows-portable-ARM64"
         }
@@ -30,11 +30,11 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-$matchMain+dev-nightly-$matchDate-windows-portable-AMD64.zip",
+                "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-$matchMain%2Bdev-nightly-$matchDate-windows-portable-AMD64.zip",
                 "extract_dir": "xournalpp-$matchMain+dev-nightly-$matchDate-windows-portable-AMD64"
             },
             "arm64": {
-                "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-$matchMain+dev-nightly-$matchDate-windows-portable-ARM64.zip",
+                "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-$matchMain%2Bdev-nightly-$matchDate-windows-portable-ARM64.zip",
                 "extract_dir": "xournalpp-$matchMain+dev-nightly-$matchDate-windows-portable-ARM64"
             }
         }
