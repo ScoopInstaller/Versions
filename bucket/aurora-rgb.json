@@ -1,12 +1,12 @@
 {
-    "version": "325",
+    "version": "350",
     "description": "Unified lighting effects across multiple brands and various games.",
-    "homepage": "https://github.com/Aurora-RGB/Aurora",
+    "homepage": "https://www.project-aurora.com/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Aurora-RGB/Aurora/releases/download/v325/Aurora-v325.zip",
-            "hash": "0940176de40746727670c4733684c6a83e1c4516f749150815927723937e0756"
+            "url": "https://github.com/Aurora-RGB/Aurora/releases/download/v350/Aurora-v350.zip",
+            "hash": "6c8d7f5d562652cfd81ec8464253043628bd24c664771cbea8a446f362280cb8"
         }
     },
     "shortcuts": [
@@ -15,7 +15,9 @@
             "Aurora"
         ]
     ],
-    "checkver": "github",
+    "checkver": {
+        "github": "https://github.com/Aurora-RGB/Aurora"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
