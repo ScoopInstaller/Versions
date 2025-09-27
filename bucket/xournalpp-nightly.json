@@ -1,18 +1,18 @@
 {
-    "version": "1.2.8-20250924",
+    "version": "1.2.8-20250926",
     "description": "A handwriting notetaking software with PDF annotation support",
     "homepage": "https://github.com/xournalpp/xournalpp",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8+dev-nightly-20250924-windows-portable-AMD64.zip",
-            "hash": "cc0d63322dbe57027686a3d57817a4244ca8c430dcad13f19da22eff9519ebc8",
-            "extract_dir": "xournalpp-1.2.8+dev-nightly-20250924-windows-portable-AMD64"
+            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8+dev-nightly-20250926-windows-portable-AMD64.zip",
+            "hash": "4951df9e4ec30803d10da5c565a53d1ca6165518741a8d7f11f952ee1f293bc7",
+            "extract_dir": "xournalpp-1.2.8+dev-nightly-20250926-windows-portable-AMD64"
         },
         "arm64": {
-            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8+dev-nightly-20250924-windows-portable-ARM64.zip",
-            "hash": "a4ddab6d4d8f2869a4e117e98be9a58091086ace577725539b3b5a64c8614911",
-            "extract_dir": "xournalpp-1.2.8+dev-nightly-20250924-windows-portable-ARM64"
+            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8+dev-nightly-20250926-windows-portable-ARM64.zip",
+            "hash": "88a6474bb8f0f191de6d2f8b8964dd6ea42fb481a46270f5bac1dee488cf2548",
+            "extract_dir": "xournalpp-1.2.8+dev-nightly-20250926-windows-portable-ARM64"
         }
     },
     "bin": "bin\\xournalpp.exe",
