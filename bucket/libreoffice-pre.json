@@ -1,5 +1,5 @@
 {
-    "version": "24.2.0.3",
+    "version": "25.8.2.2",
     "description": "Powerful and free office suite, a successor to OpenOffice(.org).",
     "homepage": "https://libreoffice.org/",
     "license": "MPL-2.0",
@@ -9,63 +9,63 @@
     "notes": "If you are upgrading from portable version, you can migrate settings by copying \"$persist_dir\\Data\" to \"%AppData%\\LibreOffice\"",
     "architecture": {
         "64bit": {
-            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/24.2.0.3/win/x86_64/LibreOffice_24.2.0.3_Win_x86-64.msi#/dl.msi_",
-            "hash": "58dcf13d87ef1279f7229b69949b836b73ce5f039ddb54cdf091f8fea28cc9f2"
+            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/25.8.2.2/win/x86_64/LibreOffice_25.8.2.2_Win_x86-64.msi#/dl.msi_",
+            "hash": "5e8cfdcacffaa779c14362897579385d4722f1d582d9c5bc1bbf473a21628403"
         },
         "32bit": {
-            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/24.2.0.3/win/x86/LibreOffice_24.2.0.3_Win_x86.msi#/dl.msi_",
-            "hash": "2d5f64647bb67bbe0393f774c29f83eff65241c4f89719057075097f30ff76ce"
+            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/25.8.2.2/win/x86/LibreOffice_25.8.2.2_Win_x86.msi#/dl.msi_",
+            "hash": "65e5f998eff55e8a82c143fee2fadf6abb2b5210fd8c33b0b406cd814af27805"
         },
         "arm64": {
-            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/24.2.0.3/win/aarch64/LibreOffice_24.2.0.3_Win_aarch64.msi#/dl.msi_",
-            "hash": "0eb0cfa8183db4003fe361075d707c246ccb1e1d9ea0b5302deabd3df26e27b4"
+            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/25.8.2.2/win/aarch64/LibreOffice_25.8.2.2_Win_aarch64.msi#/dl.msi_",
+            "hash": "77c92b0272399778fca25a294b300de7d41548c60101f403130a223905bda11d"
         }
     },
     "pre_install": [
         "# keeping files in 'LibreOffice' directory so that bundled font can work properly",
-        "$null = ensure \"$dir/LibreOffice/share/fonts\"",
+        "ensure \"$dir\\LibreOffice\\share\\fonts\" | Out-Null",
         "# usage: get_config ($name, $default). $default ==> set to what value if the value is empty (not being set before)",
         "if (get_config USE_LESSMSI $false) {",
         "    # if 'use_lessmsi' is true",
-        "    $null = Expand-MsiArchive \"$dir\\dl.msi_\" \"$dir\"",
-        "    Move-Item \"$dir/Fonts\" \"$dir/LibreOffice/share/fonts/truetype\" -Force",
-        "    Remove-Item \"$dir/System*\" -Recurse -Force",
+        "    Expand-MsiArchive \"$dir\\dl.msi_\" \"$dir\" | Out-Null",
+        "    Move-Item \"$dir\\Fonts\" \"$dir\\LibreOffice\\share\\fonts\\truetype\" -Force",
+        "    Remove-Item \"$dir\\System*\" -Recurse -Force",
         "} else {",
         "    # if 'use_lessmsi' is false or not set",
-        "    $null = Expand-MsiArchive \"$dir\\dl.msi_\" \"$dir\\LibreOffice\"",
-        "    $null = Expand-MsiArchive \"$dir\\dl.msi_\" \"$dir\\LibreOffice\\share\\fonts\\truetype\" -ExtractDir 'Fonts'",
-        "    Remove-Item \"$dir/LibreOffice/Fonts\", \"$dir/LibreOffice/System*\" -Recurse -Force",
+        "    Expand-MsiArchive \"$dir\\dl.msi_\" \"$dir\\LibreOffice\" | Out-Null",
+        "    Expand-MsiArchive \"$dir\\dl.msi_\" \"$dir\\LibreOffice\\share\\fonts\\truetype\" -ExtractDir 'Fonts' | Out-Null",
+        "    Remove-Item \"$dir\\LibreOffice\\Fonts\", \"$dir\\LibreOffice\\System*\" -Recurse -Force",
         "}",
-        "Remove-Item \"$dir/dl.msi_\""
+        "Remove-Item \"$dir\\dl.msi_\""
     ],
     "shortcuts": [
         [
-            "LibreOffice/program/soffice.exe",
-            "LibreOffice/LibreOffice"
+            "LibreOffice\\program\\soffice.exe",
+            "LibreOffice\\LibreOffice"
         ],
         [
-            "LibreOffice/program/sbase.exe",
-            "LibreOffice/LibreOffice Base"
+            "LibreOffice\\program\\sbase.exe",
+            "LibreOffice\\LibreOffice Base"
         ],
         [
-            "LibreOffice/program/scalc.exe",
-            "LibreOffice/LibreOffice Calc"
+            "LibreOffice\\program\\scalc.exe",
+            "LibreOffice\\LibreOffice Calc"
         ],
         [
-            "LibreOffice/program/sdraw.exe",
-            "LibreOffice/LibreOffice Draw"
+            "LibreOffice\\program\\sdraw.exe",
+            "LibreOffice\\LibreOffice Draw"
         ],
         [
-            "LibreOffice/program/simpress.exe",
-            "LibreOffice/LibreOffice Impress"
+            "LibreOffice\\program\\simpress.exe",
+            "LibreOffice\\LibreOffice Impress"
         ],
         [
-            "LibreOffice/program/smath.exe",
-            "LibreOffice/LibreOffice Math"
+            "LibreOffice\\program\\smath.exe",
+            "LibreOffice\\LibreOffice Math"
         ],
         [
-            "LibreOffice/program/swriter.exe",
-            "LibreOffice/LibreOffice Writer"
+            "LibreOffice\\program\\swriter.exe",
+            "LibreOffice\\LibreOffice Writer"
         ]
     ],
     "checkver": {
