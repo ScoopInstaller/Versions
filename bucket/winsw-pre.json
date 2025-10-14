@@ -1,6 +1,6 @@
 {
     "version": "3.0.0-alpha.11",
-    "description": "A wrapper executable that can be used to host any executable as a Windows service (Preview version)",
+    "description": "A wrapper executable that can be used to host any executable as a Windows service (Pre-release version).",
     "homepage": "https://github.com/winsw/winsw",
     "license": "MIT",
     "architecture": {
@@ -15,9 +15,9 @@
     },
     "bin": "WinSW.exe",
     "checkver": {
-        "url": "https://api.github.com/repos/winsw/winsw/tags",
-        "jsonpath": "$[?(@.name =~ /^v[\\d.]+-(?:alpha|beta|rc)[\\d.]+$/)].name",
-        "regex": "v([\\d.-]+(?:alpha|beta|rc)[\\d.]+)"
+        "url": "https://api.github.com/repos/winsw/winsw/releases",
+        "jsonpath": "$[?(@.prerelease == true)].tag_name",
+        "regex": "v(?<version>[\\w-.]+)"
     },
     "autoupdate": {
         "architecture": {
