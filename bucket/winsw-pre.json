@@ -16,7 +16,7 @@
     "bin": "WinSW.exe",
     "checkver": {
         "url": "https://api.github.com/repos/winsw/winsw/tags",
-        "jsonpath": "$[?(@.name =~ /^v[\\d.]+-(?:alpha|beta|rc).\\d+$/)].name",
+        "jsonpath": "$[?(@.name =~ /^v[\\d.]+-(?:alpha|beta|rc)[\\d.]+$/)].name",
         "regex": "v([\\d.-]+(?:alpha|beta|rc)[\\d.]+)"
     },
     "autoupdate": {
