@@ -1,8 +1,8 @@
 {
     "version": "0.5.8.1",
-    "description": "Private, fast, and honest web browser based on Chromium",
+    "description": "Private, fast, and honest web browser based on Chromium (Pre-release).",
     "homepage": "https://helium.computer",
-    "license": "BSD-3-Clause, GPL-3.0",
+    "license": "BSD-3-Clause|GPL-3.0-or-later",
     "architecture": {
         "64bit": {
             "url": "https://github.com/imputnet/helium-windows/releases/download/0.5.8.1/helium_0.5.8.1_x64-windows.zip",
@@ -25,7 +25,7 @@
     "shortcuts": [
         [
             "chrome.exe",
-            "Helium Preview",
+            "Helium (Pre-release)",
             "--user-data-dir=\"$persist_dir\\User Data\""
         ]
     ],
