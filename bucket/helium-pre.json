@@ -30,6 +30,28 @@
         ]
     ],
     "persist": "User Data",
+    "post_install": [
+        "$appdata = \"$env:LOCALAPPDATA\\imput\\Helium\\User Data\"",
+        "$persistData = \"$persist_dir\\User Data\"",
+        "if (!(Test-Path $persistData)) { New-Item -ItemType Directory -Path $persistData | Out-Null }",
+        "if (Test-Path $appdata) {",
+        "    Write-Host 'Migrating existing data from AppData to persist directory...'",
+        "    Get-ChildItem -Path $appdata | ForEach-Object {",
+        "        Move-Item -Path $_.FullName -Destination $persistData -Force",
+        "    }",
+        "    if ((Get-ChildItem -Path $appdata -Recurse | Measure-Object).Count -eq 0) {",
+        "        Remove-Item $appdata -Recurse -Force",
+        "    }",
+        "}",
+        "if (!(Test-Path $appdata)) {",
+        "    New-Item -ItemType Junction -Path $appdata -Target $persistData | Out-Null",
+        "}"
+    ],
+    "post_uninstall": [
+        "if ((Get-Item \"$env:LOCALAPPDATA\\imput\\Helium\\User Data\" -ErrorAction SilentlyContinue)?.LinkType -eq 'Junction') {",
+        "    Remove-Item \"$env:LOCALAPPDATA\\imput\\Helium\\User Data\" -Force",
+        "}"
+    ],
     "checkver": {
         "url": "https://api.github.com/repos/imputnet/helium-windows/releases",
         "jsonpath": "$.[0].tag_name"
