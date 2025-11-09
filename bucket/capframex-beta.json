@@ -1,0 +1,19 @@
+{
+    "version": "1.7.6-beta",
+    "description": "Frametimes capture and analysis tool",
+    "homepage": "https://github.com/CXWorld/CapFrameX",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/CXWorld/CapFrameX/releases/download/v1.7.6_beta/beta_1.7.6_portable.zip",
+            "hash": "a0a3cec31d32c286a1f29d4d648f14bcf2139fb209b39f968338b8d6b7265ce2"
+        }
+    },
+    "bin": "CapFrameX.exe",
+    "shortcuts": [
+        [
+            "CapFrameX.exe",
+            "CapFrameX"
+        ]
+    ]
+}
