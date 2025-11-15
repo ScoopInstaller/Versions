@@ -21,12 +21,14 @@
     "checkver": {
         "url": "https://api.github.com/repos/pragtical/pragtical/actions/workflows/rolling.yml/runs?branch=master&status=success",
         "script": [
-            "$sha = json_path $page $.workflow_runs[0].head_sha",
-            "$runId = json_path $page $.workflow_runs[0].run_number",
-            "$date = json_path $page $.workflow_runs[0].created_at",
-            "Write-Output \"$runId $date $sha\""
+            "$content = ConvertFrom-Json $page",
+            "if ((-not $content) -or (-not $content.workflow_runs) -or ($content.workflow_runs.Count -eq 0)) {",
+            "    return $null",
+            "}",
+            "$release = $content.workflow_runs[0]",
+            "Write-Output \"$($release.run_number) $($release.created_at | Get-Date -Format 'yyyy-MM-dd') $($release.head_sha)\""
         ],
-        "regex": "^(?<runId>[^ ]+) (?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})[^ ]+ (?<hash>.{7})(?<rest>.*)$",
+        "regex": "^(?<runId>\\d+) (?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2}) (?<hash>.{7})(?<rest>.*)$",
         "replace": "${year}${month}${day}-${hash}-${runId}"
     },
     "autoupdate": {
