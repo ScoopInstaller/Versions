@@ -1,22 +1,22 @@
 {
-    "version": "1.7.0-beta.6",
+    "version": "1.7.0-rc.1",
     "description": "A desktop client that supports for multiple LLM providers (Pre-release).",
     "homepage": "https://cherry-ai.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v1.7.0-beta.6/Cherry-Studio-1.7.0-beta.6-x64-portable.exe#/Cherry-Studio.exe",
-            "hash": "bb38111d48d353f7634c77c62fb2748690c553862f9fa9254cfca0475f3d2156"
+            "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v1.7.0-rc.1/Cherry-Studio-1.7.0-rc.1-x64-portable.exe#/Cherry-Studio.exe",
+            "hash": "4fece2600993c275493db236edb1c6856948d7f535de96e59acb067559bd143e"
         },
         "arm64": {
-            "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v1.7.0-beta.6/Cherry-Studio-1.7.0-beta.6-arm64-portable.exe#/Cherry-Studio.exe",
-            "hash": "693057693f4961521e68a18e65bfc48b64de681686f102c278c7afc094524117"
+            "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v1.7.0-rc.1/Cherry-Studio-1.7.0-rc.1-arm64-portable.exe#/Cherry-Studio.exe",
+            "hash": "ab9ee5d6cbb48487cb795316aa5e155c2bc66a29fcf0be25affac8c00689f487"
         }
     },
     "shortcuts": [
         [
             "Cherry-Studio.exe",
-            "Cherry Studio Preview"
+            "Cherry Studio (Preview)"
         ]
     ],
     "persist": "data",
@@ -28,18 +28,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v$version/Cherry-Studio-$version-x64-portable.exe#/Cherry-Studio.exe",
-                "hash": {
-                    "url": "$baseurl/beta.yml",
-                    "regex": "url: Cherry-Studio-$version-x64-portable\\.exe\\s+sha512: $base64"
-                }
+                "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v$version/Cherry-Studio-$version-x64-portable.exe#/Cherry-Studio.exe"
             },
             "arm64": {
-                "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v$version/Cherry-Studio-$version-arm64-portable.exe#/Cherry-Studio.exe",
-                "hash": {
-                    "url": "$baseurl/beta.yml",
-                    "regex": "url: Cherry-Studio-$version-arm64-portable\\.exe\\s+sha512: $base64"
-                }
+                "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v$version/Cherry-Studio-$version-arm64-portable.exe#/Cherry-Studio.exe"
             }
         }
     }
