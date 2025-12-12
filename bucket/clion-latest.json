@@ -1,0 +1,67 @@
+{
+    "version": "231.8770.66",
+    "description": "Cross-Platform IDE for C and C++ by JetBrains. (Latest)",
+    "homepage": "https://www.jetbrains.com/clion/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.jetbrains.com/store/license.html"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://download.jetbrains.com/cpp/CLion-2023.1.2.win.zip",
+            "hash": "120994991363653e2a636c70c7e911abeb4fb9a0626c15989127d3bcd1ccdac4",
+            "bin": [
+                [
+                    "IDE\\bin\\clion64.exe",
+                    "clion"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "IDE\\bin\\clion64.exe",
+                    "JetBrains\\CLion (Latest)"
+                ]
+            ]
+        }
+    },
+    "extract_to": "IDE",
+    "installer": {
+        "script": "& \"$bucketsdir\\versions\\scripts\\jetbrains\\portable.ps1\" $dir $persist_dir"
+    },
+    "persist": [
+        "IDE\\bin\\idea.properties",
+        "IDE\\bin\\clion64.exe.vmoptions",
+        "profile"
+    ],
+    "checkver": {
+        "script": [
+            "$latestRelease = Invoke-RestMethod -Uri \"https://data.services.jetbrains.com/products/releases?code=CL&latest=true&platform=zip&type=release\"",
+            "$latestRc = Invoke-RestMethod -Uri \"https://data.services.jetbrains.com/products/releases?code=CL&latest=true&platform=zip&type=rc\"",
+            "$latestEap = Invoke-RestMethod -Uri \"https://data.services.jetbrains.com/products/releases?code=CL&latest=true&platform=zip&type=eap\"",
+            "if (([System.Version]$latestRelease.CL.build -gt [System.Version]$latestRc.CL.build) -and ([System.Version]$latestRelease.CL.build -gt [System.Version]$latestEap.CL.build)) {",
+            "$latestBuildNumber = $latestRelease.CL.build",
+            "$latestRelease = $latestRelease.CL.version",
+            "}",
+            "elseif (([System.Version]$latestRc.CL.build -gt [System.Version]$latestRelease.CL.build) -and ([System.Version]$latestRc.CL.build -gt [System.Version]$latestEap.CL.build)) {",
+            "$latestRelease = $latestRc.CL.build",
+            "$latestBuildNumber = $latestRelease",
+            "}",
+            "else {",
+            "$latestRelease = $latestEap.CL.build",
+            "$latestBuildNumber = $latestRelease",
+            "}",
+            "Write-Output \"$latestBuildNumber $latestRelease\""
+        ],
+        "regex": "(?<version>[\\d.]+) (?<release>[\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.jetbrains.com/cpp/CLion-$matchRelease.win.zip",
+                "hash": {
+                    "url": "$url.sha256"
+                }
+            }
+        }
+    }
+}
