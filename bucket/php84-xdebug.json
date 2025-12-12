@@ -12,11 +12,13 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://xdebug.org/files/php_xdebug-3.5.0-8.4-ts-vs17-x86_64.dll#/php_xdebug.dll",
-            "hash": "040a36ba4ab35c2a182bdf6897f5bb066a3a5c3bfcb364768ac93038cf42d8da"
+            "url": "https://github.com/xdebug/xdebug/releases/download/3.5.0/php_xdebug-3.5.0-8.4-ts-vs17-x86_64.zip",
+            "hash": "d0cfa372aa92cea7c7dd19639e5137c364fe5593701655c62fba7c873bc956b5"
         }
     },
     "post_install": [
+        "Rename-Item -Path \"$dir\\php_xdebug-3.5.0-8.4-ts-vs17-x86_64.dll\" -NewName \"php_xdebug.dll\" -Force",
+        "Remove-Item \"$dir\\*\" -Exclude *.dll -Recurse -Force",
         "$phpconfd = \"$persist_dir\\..\\php84\\cli\\conf.d\"",
         "$ini = \"zend_extension=$dir\\php_xdebug.dll`n[xdebug]`nxdebug.mode=develop,debug`nxdebug.client_port=9003`nxdebug.start_with_request=trigger   # If you always want to use debug, set the value to 'yes'\"",
         "if(!(test-path $phpconfd\\xdebug.ini)) {",
@@ -28,17 +30,17 @@
         "}"
     ],
     "checkver": {
-        "url": "https://xdebug.org/download/historical",
-        "regex": "php_xdebug-([\\d.]+-8\\.4)-ts-vs17-x86_64\\.dll"
+        "url": "https://github.com/xdebug/xdebug/releases",
+        "regex": "php_xdebug-([\\d.]+-8\\.4)-ts-vs17-x86_64\\.zip"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://xdebug.org/files/php_xdebug-$version-ts-vs17-x86_64.dll#/php_xdebug.dll"
+                "url": "https://github.com/xdebug/xdebug/releases/download/$version/php_xdebug-$version-ts-vs17-x86_64.zip"
             }
         },
         "hash": {
-            "url": "https://xdebug.org/download/historical",
+            "url": "https://github.com/xdebug/xdebug/releases",
             "regex": "([a-fA-F0-9]{64}).+?$basename"
         }
     }
