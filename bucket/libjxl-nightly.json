@@ -1,0 +1,72 @@
+{
+    "version": "2023.01.12.195812",
+    "description": "JPEG XL image format (.jxl) encode/decode tools (reference implementation)",
+    "homepage": "https://github.com/libjxl/libjxl",
+    "license": "BSD-3-Clause",
+    "notes": "If the shim for brotli.exe was overwritten by this app's version and you'd like to point it back to brotli's version, run `scoop reset brotli`.",
+    "architecture": {
+        "64bit": {
+            "url": "https://api.github.com/repos/libjxl/libjxl/actions/artifacts/509267728/zip/jxl-x64-windows-static.zip",
+            "hash": "2042e42edacfcbd644ab350c6f9fb4e80c82effb088dd94d8730e5e50854c951"
+        },
+        "32bit": {
+            "url": "https://api.github.com/repos/libjxl/libjxl/actions/artifacts/509267729/zip/jxl-x86-windows-static.zip",
+            "hash": "49951a01e6f0259c5b6c6275049bd6c4618a457fb0542918c5adc7e4dbc04e23"
+        }
+    },
+    "bin": [
+        "benchmark_xl.exe",
+        "brotli.exe",
+        "cjpeg_hdr.exe",
+        "cjxl.exe",
+        "djxl.exe",
+        "jxlinfo.exe"
+    ],
+    "checkver": {
+        "script": [
+            "#",
+            "$url_repo       = 'https://api.github.com/repos/libjxl/libjxl'",
+            "$artifact32name = 'jxl-x86-windows-static'",
+            "$artifact64name = 'jxl-x64-windows-static'",
+            "$artifact32file = $artifact32name + '.zip'",
+            "$artifact64file = $artifact64name + '.zip'",
+            "#",
+            "#",
+            "$url_job   = 'actions/workflows/release.yaml'",
+            "$query_job = 'runs?per_page=1&branch=main&event=push&status=success'",
+            "$full_url  = $url_repo +'/'+ $url_job +'/'+ $query_job # last successful workflow run",
+            "#",
+            "$workflow_id = (Invoke-RestMethod -Uri $full_url).workflow_runs.id",
+            "#",
+            "$url_job   = 'actions/runs' +'/'+ $workflow_id",
+            "$query_job = 'artifacts?per_page=100'",
+            "$full_url  = $url_repo +'/'+ $url_job +'/'+ $query_job # last successful workflow's artifacts",
+            "#",
+            "$artifacts      = (Invoke-RestMethod -Uri $full_url).artifacts",
+            "$artifact32     = $artifacts | where { $_.name -eq $artifact32name}",
+            "$artifact64     = $artifacts | where { $_.name -eq $artifact64name}",
+            "$artifact32id   =(($artifact32).id).ToString()",
+            "$artifact64id   =(($artifact64).id).ToString()",
+            "$url_download32 = ($artifact32).archive_download_url",
+            "$url_download64 = ($artifact64).archive_download_url",
+            "$artifact32date = (Get-Date -Date ($artifact32).created_at).ToUniversalTime()",
+            "$artifact64date = (Get-Date -Date ($artifact64).created_at).ToUniversalTime()",
+            "$version32      =  Get-Date -Date $artifact64date  -Format 'yyyy.MM.dd.HHmmss'",
+            "$version64      =  Get-Date -Date $artifact64date  -Format 'yyyy.MM.dd.HHmmss'",
+            "# (date) 2023-01-02T10:15:20Z → 2023.01.02.101520 (version)",
+            "###",
+            "       $artifact32id     +'¦'+$artifact64id     +'¦'+$artifact32file     +'¦'+$artifact64file     +'¦'+$version64"
+        ],
+        "regex": "(?<artifact32id>[^¦]+)¦(?<artifact64id>[^¦]+)¦(?<artifact32file>[^¦]+)¦(?<artifact64file>[^¦]+)¦(?<version>[^¦]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://api.github.com/repos/libjxl/libjxl/actions/artifacts/$matchArtifact64id/zip/$matchArtifact64file"
+            },
+            "32bit": {
+                "url": "https://api.github.com/repos/libjxl/libjxl/actions/artifacts/$matchArtifact32id/zip/$matchArtifact32file"
+            }
+        }
+    }
+}
