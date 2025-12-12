@@ -48,8 +48,8 @@
             "    $url = $_ -f $productCode",
             "    $response = Invoke-RestMethod -Uri $url -UseBasicParsing",
             "    [PSCustomObject]@{",
-            "        version = $response.$productCode.majorVersion",
-            "        build = $response.$productCode.build",
+            "        version = ($response.$productCode)[0].majorVersion",
+            "        build = ($response.$productCode)[0].build",
             "    }",
             "} | Sort-Object {[version]$_.build} -Descending | Select-Object -First 1",
             "Write-Output \"$($latestRelease.version)-$($latestRelease.build)\""
