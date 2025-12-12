@@ -4,7 +4,7 @@
     "homepage": "https://www.jetbrains.com/phpstorm/",
     "license": {
         "identifier": "Proprietary",
-        "url": "https://www.jetbrains.com/store/license.html"
+        "url": "https://www.jetbrains.com/legal/docs/toolbox/license/"
     },
     "architecture": {
         "64bit": {
@@ -52,7 +52,6 @@
             "        build = $response.$productCode.build",
             "    }",
             "} | Sort-Object {[version]$_.build} -Descending | Select-Object -First 1",
-            "Write-Host \"$($latestRelease.version)-$($latestRelease.build)\"",
             "Write-Output \"$($latestRelease.version)-$($latestRelease.build)\""
         ],
         "regex": "(?<ver>[\\d.]+)-(?<build>[\\d.]+)",
