@@ -17,7 +17,7 @@
         }
     },
     "post_install": [
-        "Rename-Item -Path \"$dir\\php_xdebug-3.5.0-8.4-ts-vs17-x86_64.dll\" -NewName \"php_xdebug.dll\" -Force",
+        "Rename-Item -Path (Get-ChildItem -Path $dir -Filter 'php_xdebug-*-ts-vs17-x86_64.dll' | Select-Object -First 1).FullName -NewName 'php_xdebug.dll' -Force",
         "Remove-Item \"$dir\\*\" -Exclude *.dll -Recurse -Force",
         "$phpconfd = \"$persist_dir\\..\\php84\\cli\\conf.d\"",
         "$ini = \"zend_extension=$dir\\php_xdebug.dll`n[xdebug]`nxdebug.mode=develop,debug`nxdebug.client_port=9003`nxdebug.start_with_request=trigger   # If you always want to use debug, set the value to 'yes'\"",
