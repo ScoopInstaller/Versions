@@ -31,7 +31,7 @@
     ],
     "checkver": {
         "url": "https://github.com/xdebug/xdebug/releases",
-        "regex": "php_xdebug-([\\d.]+-8\\.4)-ts-vs17-x86_64\\.zip"
+        "regex": "php_xdebug-([\\d.]+)-8\\.4-ts-vs17-x86_64\\.zip"
     },
     "autoupdate": {
         "architecture": {
@@ -41,7 +41,7 @@
         },
         "hash": {
             "url": "https://github.com/xdebug/xdebug/releases",
-            "regex": "([a-fA-F0-9]{64}).+?$basename"
+            "regex": "sha256:([a-fA-F0-9]{64}).+?$basename"
         }
     }
 }
