@@ -1,13 +1,18 @@
 {
     "##": "Check chromium.woolyss.com for different versions of Chromium releases.",
-    "version": "127.0.6533.73-r1313161",
+    "version": "138.0.7204.184-r1465706",
     "description": "Browser aiming for safer, faster, and more stable way for all users to experience the web.",
     "homepage": "https://www.chromium.org",
     "license": "BSD-3-Clause",
+    "notes": [
+        "This build will no longer receive updates. See:",
+        "https://github.com/Hibbiki/chromium-win64/commit/09101f3",
+        "Consider alternatives such as 'extras/chromium' or 'extras/ungoogled-chromium'."
+    ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v127.0.6533.73-r1313161/chrome.nosync.7z",
-            "hash": "sha1:1fe532086697a7951b95feac414c2c811abbc6af"
+            "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v138.0.7204.184-r1465706/chrome.nosync.7z",
+            "hash": "sha1:e42c6d8d9a34017b0258abd248cb12adbb6a48cb"
         }
     },
     "extract_dir": "Chrome-bin",
@@ -32,10 +37,6 @@
         "}"
     ],
     "persist": "User Data",
-    "checkver": {
-        "url": "https://github.com/Hibbiki/chromium-win64/releases/latest",
-        "regex": ">v([\\d.]+-r\\d+)</h1>"
-    },
     "autoupdate": {
         "architecture": {
             "64bit": {

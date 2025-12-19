@@ -1,7 +1,7 @@
 {
-    "version": "129.0b9",
+    "version": "147.0b6",
     "description": "Beta builds of Firefox: the popular open source web browser.",
-    "homepage": "https://www.mozilla.org/en-US/firefox/beta/",
+    "homepage": "https://www.firefox.com/en-US/channel/desktop/#beta",
     "license": "MPL-2.0",
     "notes": [
         "To set profile 'Scoop-Beta' as *DEFAULT*, or profiles/settings was lost after update:",
@@ -11,12 +11,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/129.0b9/win64/en-US/Firefox%20Setup%20129.0b9.exe#/dl.7z",
-            "hash": "sha512:f468284c7bf4f4e5cb56f900427c3f630ee14f423ba4df96517cbdaaa399d97e58b46f28009fd751201351cd3f7d3e01a46f9ac884e3a0d99c0f9d63272c5040"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/147.0b6/win64/en-US/Firefox%20Setup%20147.0b6.exe#/dl.7z",
+            "hash": "sha512:2c9eafae9788e744a0a6ff4b1ee4907c2de978e0c9b261f14b1f13a4d4217b3922d8a3b6bbe1eac38387236ddb1a61c49293bb4119505b06951673c0dd9c0126"
         },
         "32bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/129.0b9/win32/en-US/Firefox%20Setup%20129.0b9.exe#/dl.7z",
-            "hash": "sha512:a8adff9a252d209a254da756418aaded3144e39fabcc953ecfddb65b40e6fd40efb362839931872cf0db17d813935ea5bb00ad50a7fce0cc0f05f7e1128eae05"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/147.0b6/win32/en-US/Firefox%20Setup%20147.0b6.exe#/dl.7z",
+            "hash": "sha512:8fb5dae7f11d1f8b662eb4f6376647aeec41275cfdd991b06e02e764f8411351fae7621a37d795836d86b60ab5209db9f183e5b857b0d8e52e510a6636f23fbf"
         }
     },
     "extract_dir": "core",
@@ -50,9 +50,8 @@
         "profile"
     ],
     "checkver": {
-        "url": "https://aus5.mozilla.org/update/6/Firefox/93.0/_/WINNT_x86_64-msvc-x64/en-US/beta/_/_/_/_/update.xml",
-        "xpath": "/updates/update/patch/@URL",
-        "regex": "firefox-([\\db.]+)-"
+        "url": "https://product-details.mozilla.org/1.0/firefox_versions.json",
+        "jsonpath": "$.LATEST_FIREFOX_RELEASED_DEVEL_VERSION"
     },
     "autoupdate": {
         "architecture": {

@@ -1,17 +1,17 @@
 {
-    "version": "2.46.0.windows.1",
+    "version": "2.50.1.windows.1",
     "description": "Distributed version control system",
     "homepage": "https://gitforwindows.org",
     "license": "GPL-2.0-only",
     "notes": "Set Git Credential Manager Core by running: \"git config --global credential.helper manager-core\"",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/git-for-windows/git/releases/download/v2.46.0.windows.1/PortableGit-2.46.0-64-bit.7z.exe#/dl.7z",
-            "hash": "dedae83f4d0851bcbf473c516701e2da6a5d7c574d694d5eceec46d1307132ea"
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.50.1.windows.1/PortableGit-2.50.1-64-bit.7z.exe#/dl.7z",
+            "hash": "c45a7dfa2bde34059f6dbd85f49a95d73d5aea29305f51b79595e56e4f323a3d"
         },
         "32bit": {
-            "url": "https://github.com/git-for-windows/git/releases/download/v2.46.0.windows.1/PortableGit-2.46.0-32-bit.7z.exe#/dl.7z",
-            "hash": "5a5b07eabc2737f1fa2e00cdf19559f385859d42b717afbf5d19bad371182d86"
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.50.1.windows.1/PortableGit-2.50.1-32-bit.7z.exe#/dl.7z",
+            "hash": "7692d9af16b08150e28dae6c63106a46995fb44e5f4c85182ac7eb1b840543c5"
         }
     },
     "post_install": "'scp', 'sftp', 'ssh*' | ForEach-Object { Remove-Item $original_dir\\usr\\bin\\$_.exe }",

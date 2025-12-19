@@ -1,0 +1,57 @@
+{
+    "version": "0.16.0-dev.64+433eea2c",
+    "description": "Zig language LSP server",
+    "homepage": "https://github.com/zigtools/zls",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://builds.zigtools.org/zls-x86_64-windows-0.16.0-dev.64+433eea2c.zip",
+            "hash": "1881197fb4db22c06b937d751c1bb4c2b60549d3bf3ad5beb6a15c0f8e125f54"
+        },
+        "32bit": {
+            "url": "https://builds.zigtools.org/zls-x86-windows-0.16.0-dev.64+433eea2c.zip",
+            "hash": "ea172dab3cebeae353aff0990b1a3320cbf6f14e4c6924aad58f5549e501dba5"
+        },
+        "arm64": {
+            "url": "https://builds.zigtools.org/zls-aarch64-windows-0.16.0-dev.64+433eea2c.zip",
+            "hash": "4ac659d1865cc5fa8e64175726debf8e5e81909b4fd9bf71a99c204d8a76332f"
+        }
+    },
+    "bin": "zls.exe",
+    "checkver": {
+        "script": [
+            "$zig_version_api = 'https://ziglang.org/download/index.json'",
+            "$zig_version_api_response = Invoke-RestMethod -Uri $zig_version_api",
+            "$zig_version = $zig_version_api_response.master.version.replace('+','%2B')",
+            "$zls_version_api = \"https://releases.zigtools.org/v1/zls/select-version?zig_version=$zig_version&compatibility=only-runtime\"",
+            "$zls_version_api_response = Invoke-RestMethod -Uri $zls_version_api",
+            "$zls_version_api_response.version + ',' + $zig_version"
+        ],
+        "regex": "^(?<version>.*),(?<zig>.*)$"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://builds.zigtools.org/zls-x86_64-windows-$version.zip",
+                "hash": {
+                    "url": "https://releases.zigtools.org/v1/zls/select-version?zig_version=$matchZig&compatibility=only-runtime",
+                    "jsonpath": "$.x86_64-windows.shasum"
+                }
+            },
+            "32bit": {
+                "url": "https://builds.zigtools.org/zls-x86-windows-$version.zip",
+                "hash": {
+                    "url": "https://releases.zigtools.org/v1/zls/select-version?zig_version=$matchZig&compatibility=only-runtime",
+                    "jsonpath": "$.x86-windows.shasum"
+                }
+            },
+            "arm64": {
+                "url": "https://builds.zigtools.org/zls-aarch64-windows-$version.zip",
+                "hash": {
+                    "url": "https://releases.zigtools.org/v1/zls/select-version?zig_version=$matchZig&compatibility=only-runtime",
+                    "jsonpath": "$.aarch64-windows.shasum"
+                }
+            }
+        }
+    }
+}

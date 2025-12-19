@@ -1,5 +1,5 @@
 {
-    "version": "9.0.100-preview.6.24328.19",
+    "version": "10.0.100-rc.2.25502.107",
     "description": ".NET is a free, cross-platform, open source developer platform for building many different types of applications.",
     "homepage": "https://www.microsoft.com/net/",
     "license": "MIT",
@@ -8,16 +8,16 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/9.0.100-preview.6.24328.19/dotnet-sdk-9.0.100-preview.6.24328.19-win-x64.zip",
-            "hash": "sha512:cc4a5ecb76cbb5efbe229f8154451d6866e2157f4124fedf7588706b8a356babb0c1f1007317336803bf9674a988f2f6ac7e359d6390521ce4bd355fcb6831c0"
+            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/10.0.100-rc.2.25502.107/dotnet-sdk-10.0.100-rc.2.25502.107-win-x64.zip",
+            "hash": "sha512:fdc92db4f386e5704145636f57f76b35d66ae65234e5fd05ca3ed2c4573c4764e632887f22f0a03a8e81eda61fb980a052a9d0f56d662826d53f10db520d4999"
         },
         "32bit": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/9.0.100-preview.6.24328.19/dotnet-sdk-9.0.100-preview.6.24328.19-win-x86.zip",
-            "hash": "sha512:50587f8d0f40cbebc6a56eb5045a458e4f78f26a76c9a98313832ac6aa623120e72eb3028b39babeb635efc9518716bbe246f08339a5c75ff8b2453a32e22b7a"
+            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/10.0.100-rc.2.25502.107/dotnet-sdk-10.0.100-rc.2.25502.107-win-x86.zip",
+            "hash": "sha512:14af29bf0c9789c092e619f0e32b2a25d87c960cc884acdb7a7245cd0d0372d2427e6c0a192a5cdc011b9b134cb814b429b60b801cabc8e79995e126609dc8d0"
         },
         "arm64": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/9.0.100-preview.6.24328.19/dotnet-sdk-9.0.100-preview.6.24328.19-win-arm64.zip",
-            "hash": "sha512:d67792819626d5292fce195e57a541078e604f012d706f71b0eb3414249d32c8ab8e85ee46065c5503fc3d31601705d30543883876c862e95c2c31c032474eac"
+            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/10.0.100-rc.2.25502.107/dotnet-sdk-10.0.100-rc.2.25502.107-win-arm64.zip",
+            "hash": "sha512:bfc3dacfbf8bd481452f1eb9fa34cffa4ecacefb8d325018bed97090e27cf580446527d4382fbce8470138ed50d8820e776feea87dfb2ac75b5540564f21bcbc"
         }
     },
     "env_add_path": ".",
@@ -28,7 +28,7 @@
     "pre_uninstall": "info 'If the uninstall fails with a message saying that access is denied, you may need to log out of your current account, log back in and try again.'",
     "checkver": {
         "url": "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json",
-        "jsonpath": "$..releases-index[?(@.support-phase == 'preview' || @.support-phase == 'rc')].latest-sdk"
+        "jsonpath": "$..releases-index[?(@.support-phase == 'preview' || @.support-phase == 'rc' || @.support-phase == 'go-live')].latest-sdk"
     },
     "autoupdate": {
         "architecture": {
