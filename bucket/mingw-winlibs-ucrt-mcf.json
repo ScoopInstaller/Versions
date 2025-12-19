@@ -1,17 +1,17 @@
 {
-    "version": "14.1.0-11.0.1-r1",
-    "description": "GNU Compiler Collection (UCRT, WinLibs build)",
+    "version": "15.1.0-12.0.0-r1",
+    "description": "GNU Compiler Collection (UCRT, MCF threads, WinLibs build)",
     "homepage": "https://winlibs.com",
     "license": "GPL-3.0-or-later,ZPL-2.1,BSD-2-Clause,...",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/14.1.0mcf-11.0.1-ucrt-r1/winlibs-x86_64-mcf-seh-gcc-14.1.0-mingw-w64ucrt-11.0.1-r1.7z",
-            "hash": "60c2cceaa6f329d7c6ce0c815cbcb9cce3632c082ea4088f31de19fead3b8c23",
+            "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/15.1.0mcf-12.0.0-ucrt-r1/winlibs-x86_64-mcf-seh-gcc-15.1.0-mingw-w64ucrt-12.0.0-r1.7z",
+            "hash": "091bd9c11ea0cc3afe3df29d000aa5385a1e576bb1a202165a00a5e1e5518076",
             "extract_dir": "mingw64"
         },
         "32bit": {
-            "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/14.1.0mcf-11.0.1-ucrt-r1/winlibs-i686-mcf-dwarf-gcc-14.1.0-mingw-w64ucrt-11.0.1-r1.7z",
-            "hash": "c550d0781d25c276f173bb13183fea3094600c2ee87ef041b9f80b1995735951",
+            "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/15.1.0mcf-12.0.0-ucrt-r1/winlibs-i686-mcf-dwarf-gcc-15.1.0-mingw-w64ucrt-12.0.0-r1.7z",
+            "hash": "7723024d6bf120bf1dffcfd2acb3571fc31d7fd5e7a909b7a6501035f57b9957",
             "extract_dir": "mingw32"
         }
     },

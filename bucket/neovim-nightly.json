@@ -1,5 +1,5 @@
 {
-    "version": "0.11.0-512",
+    "version": "0.12.0-1858",
     "description": "Vim fork focused on extensibility and usability",
     "homepage": "https://neovim.io",
     "license": {
@@ -12,10 +12,15 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip",
-            "hash": "6bb4aa68123960ce995ca006a9c98b93c2ccaca25a22c765b3cc5fae8962608b"
+            "hash": "6c9468a0cd17e81a0df9a1c199860dfecfd1b84dc46dfd23d41e4bf95b4874d8",
+            "extract_dir": "nvim-win64"
+        },
+        "arm64": {
+            "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win-arm64.zip",
+            "hash": "37dc4854a2c9751f7735e43523fdd09109026024bb3b97f80adb322478309ce9",
+            "extract_dir": "nvim-win-arm64"
         }
     },
-    "extract_dir": "nvim-win64",
     "bin": "bin\\nvim.exe",
     "checkver": {
         "url": "https://api.github.com/repositories/16408992/releases/tags/nightly",
@@ -26,10 +31,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip",
-                "hash": {
-                    "url": "$url.sha256sum"
-                }
+                "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win-arm64.zip"
             }
         }
     }

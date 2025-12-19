@@ -1,5 +1,5 @@
 {
-    "version": "13.15",
+    "version": "13.23",
     "description": "Object-relational database management system based on POSTGRES. (version 13)",
     "homepage": "https://www.postgresql.org",
     "license": "PostgreSQL",
@@ -10,8 +10,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://get.enterprisedb.com/postgresql/postgresql-13.15-1-windows-x64-binaries.zip",
-            "hash": "2b2cb6dce7bd2e645b654d5f0dbb30650c622906aa5d8b3796321d560c307636"
+            "url": "https://get.enterprisedb.com/postgresql/postgresql-13.23-1-windows-x64-binaries.zip",
+            "hash": "b669f3e67ae20ea25d79b708e63e9237140775daceff092fc58a73206f63c3a7"
         }
     },
     "extract_dir": "pgsql",

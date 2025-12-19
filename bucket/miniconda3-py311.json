@@ -1,5 +1,5 @@
 {
-    "version": "24.5.0-0",
+    "version": "25.11.1-1",
     "description": "A cross-platform, Python-agnostic binary package manager",
     "homepage": "https://conda.io/miniconda.html",
     "license": "BSD-3-Clause",
@@ -11,8 +11,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://repo.anaconda.com/miniconda/Miniconda3-py311_24.5.0-0-Windows-x86_64.exe#/setup.exe",
-            "hash": "b0cc3e41f42e6cf491fd63ea9e87dccd7160e5328d542602873c69217179bc3b"
+            "url": "https://repo.anaconda.com/miniconda/Miniconda3-py311_25.11.1-1-Windows-x86_64.exe#/setup.exe",
+            "hash": "3ae7c49e0bd40dbbcfa4b672bb51815652d60c3053a36e652348d419f0f8d3c5"
         }
     },
     "pre_install": "if ($dir -match ' ') { error 'The installation directory cannot include a space'; break}",
