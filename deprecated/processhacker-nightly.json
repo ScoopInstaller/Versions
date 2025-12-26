@@ -1,8 +1,10 @@
 {
+    "##": "The manifest was deprecated after 2026-01-01.",
     "version": "3.0.4953",
     "description": "A powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
     "homepage": "https://processhacker.sourceforge.io/nightly.php",
     "license": "GPL-3.0-only",
+    "notes": "The program renamed to System Informer, please install 'versions/systeminformer-nightly' instead, this manifest was deprecated after 2026-01-01.",
     "architecture": {
         "64bit": {
             "url": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/releases/download/3.0.4953/processhacker-3.0.4953-bin.zip",
