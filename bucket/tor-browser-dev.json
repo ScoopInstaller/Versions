@@ -37,7 +37,7 @@
     ],
     "checkver": {
         "url": "https://www.torproject.org/download/alpha/",
-        "regex": "tor-browser-windows-x86_64-portable-(.+)\\.exe"
+        "regex": "tor-browser-windows-x86_64-portable-([\\w.]+)\\.exe"
     },
     "autoupdate": {
         "architecture": {
