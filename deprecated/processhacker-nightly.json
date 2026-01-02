@@ -37,12 +37,5 @@
     "persist": [
         "ProcessHacker.exe.settings.xml",
         "usernotesdb.xml"
-    ],
-    "checkver": {
-        "url": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/releases",
-        "regex": "/tag/([\\d.]+)"
-    },
-    "autoupdate": {
-        "url": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/releases/download/$version/processhacker-$version-bin.zip"
-    }
+    ]
 }
