@@ -1,5 +1,5 @@
 {
-    "version": "1.8.0",
+    "version": "1.8.0_2025-12-17",
     "description": "An IDE for Leslie Lamport's TLA+ (Temporal Logic of Actions) language and its tools",
     "homepage": "https://lamport.azurewebsites.net/tla/toolbox.html",
     "license": "MIT",
@@ -72,13 +72,13 @@
     "persist": "configuration",
     "checkver": {
         "url": "https://api.github.com/repositories/50906927/releases",
-        "jsonpath": "$[0].tag_name",
-        "regex": "v([\\d.]+)"
+        "regex": "\"tag_name\":\\s*\"v(?<tag>[\\d.]+)\".*?\"updated_at\":\\s*\"(?<timestamp>[\\d-]+)T",
+        "replace": "$1_$2"
     },
     "autoupdate": {
-        "url": "https://github.com/tlaplus/tlaplus/releases/download/v$version/TLAToolbox-$version-win32.win32.x86_64.zip",
+        "url": "https://github.com/tlaplus/tlaplus/releases/download/v$matchTag/TLAToolbox-$matchTag-win32.win32.x86_64.zip",
         "hash": {
-            "url": "https://api.github.com/repos/tlaplus/tlaplus/releases/tags/v$version",
+            "url": "https://api.github.com/repos/tlaplus/tlaplus/releases/tags/v$matchTag",
             "regex": "$sha1\\|$basename"
         }
     },
