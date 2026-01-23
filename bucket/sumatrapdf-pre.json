@@ -1,0 +1,41 @@
+{
+    "version": "15252",
+    "description": "(SumatraPDF pre-release)Free PDF, eBook and comic book reader for Windows",
+    "homepage": "https://www.sumatrapdfreader.org/prerelease",
+    "license": "GPL-3.0,BSD-2-Clause",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.sumatrapdfreader.org/dl/prerel/15252/SumatraPDF-prerel-64.exe",
+            "hash": "a4a6eca6b47c61bdf6bf1b50baf138e359e8a2f8a85f233b356c970bdfa2781a"
+        }
+    },
+    "pre_install": [
+        "$file = 'SumatraPDF-settings.txt'",
+        "if (!(Test-Path \"$persist_dir\\$file\")) {",
+        "    Write-Host 'File' $file 'does not exists. Creating.' -f Yellow",
+        "    Set-Content \"$dir\\$file\" 'CheckForUpdates = false' -Encoding Ascii",
+        "}"
+    ],
+    "bin": "SumatraPDF-prerel-64.exe",
+    "shortcuts": [
+        [
+            "SumatraPDF-prerel-64.exe",
+            "SumatraPDF"
+        ]
+    ],
+    "persist": [
+        "SumatraPDF-settings.txt",
+        "sumatrapdfcache"
+    ],
+    "checkver": {
+        "url": "https://kjkpubsf.sfo2.digitaloceanspaces.com/software/sumatrapdf/sumatralatest.js",
+        "regex": "var sumLatestVer = (?<version>[\\d\\.]+);"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.sumatrapdfreader.org/dl/prerel/$version/SumatraPDF-prerel-64.exe"
+            }
+        }
+    }
+}
