@@ -16,9 +16,12 @@
     },
     "pre_install": [
         "ensure \"$persist_dir\" | Out-Null",
+        "ensure \"$persist_dir\\plugins\" | Out-Null",
+        "ensure \"$dir\\plugins\" | Out-Null",
         "if (Test-Path \"$dir\\Everything64.exe\") { Rename-Item \"$dir\\Everything64.exe\" 'Everything.exe' }",
         "if (!(Test-Path \"$persist_dir\\Everything*.ini\")) { Invoke-ExternalCommand \"$dir\\Everything.exe\" -Args @('-install-config', 'null') | Out-Null }",
-        "Get-ChildItem \"$persist_dir\\*\" -Include 'Bookmarks*.csv', 'Everything.lng', 'Everything*.db', 'Everything*.ini', 'Filters*.csv', 'Plugins*.ini', 'Run History*.csv', 'Search History*.csv' | Copy-Item -Destination \"$dir\" -ErrorAction SilentlyContinue",
+        "Get-ChildItem \"$persist_dir\\*\" -Include '*.csv', '*.lng', '*.db', '*.ini', 'Session*.json' | Copy-Item -Destination \"$dir\" -ErrorAction SilentlyContinue",
+        "Get-ChildItem \"$persist_dir\\plugins\\*\" | Copy-Item -Destination \"$dir\\plugins\" -ErrorAction SilentlyContinue -Force",
         "Copy-Item \"$bucketsdir\\versions\\scripts\\everything\\uninstall-context.reg\" \"$dir\\\""
     ],
     "post_install": [
@@ -28,6 +31,8 @@
         "Set-Content \"$dir\\install-context.reg\" $reg_content -Encoding ASCII"
     ],
     "pre_uninstall": [
+        "ensure \"$persist_dir\\plugins\" | Out-Null",
+        "ensure \"$dir\\plugins\" | Out-Null",
         "Stop-Process -Name 'everything' -Force -ErrorAction SilentlyContinue",
         "if ($(Get-Service -Name Everything -ErrorAction SilentlyContinue).Status -ne 'Stopped') {",
         "    if (!(is_admin)) { error 'Admin rights are required to stop Everything service'; break }",
@@ -38,7 +43,8 @@
         "    sc.exe delete 'Everything'",
         "}",
         "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-context.reg\" }",
-        "Get-ChildItem \"$dir\\*\" -Include 'Bookmarks*.csv', 'Everything.lng', 'Everything*.db', 'Everything*.ini', 'Filters*.csv', 'Plugins*.ini', 'Run History*.csv', 'Search History*.csv' | Copy-Item -Destination \"$persist_dir\" -ErrorAction SilentlyContinue -Force"
+        "Get-ChildItem \"$dir\\plugins\\*\" | Copy-Item -Destination \"$persist_dir\\plugins\" -ErrorAction SilentlyContinue -Force",
+        "Get-ChildItem \"$dir\\*\" -Include '*.csv', '*.lng', '*.db', '*.ini', 'Session*.json' | Copy-Item -Destination \"$persist_dir\" -ErrorAction SilentlyContinue -Force"
     ],
     "bin": "Everything.exe",
     "shortcuts": [
