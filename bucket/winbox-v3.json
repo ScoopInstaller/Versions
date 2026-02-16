@@ -34,7 +34,7 @@
     },
     "checkver": {
         "url": "https://mikrotik.com/download",
-        "regex": "WinBox ([\\d.]+)<"
+        "regex": "v(3[\\d.]+)<"
     },
     "autoupdate": {
         "architecture": {
