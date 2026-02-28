@@ -1,0 +1,30 @@
+{
+    "version": "2023-11-02",
+    "description": "Nightly version of JPEG XL image format (.jxl) encode/decode tools",
+    "homepage": "https://jpeg.org/jpegxl",
+    "license": "BSD-3-Clause",
+    "notes": "If the shim for brotli.exe was overwritten by this app's version and you'd like to point it back to brotli's version, run `scoop reset brotli`.",
+    "architecture": {
+        "64bit": {
+            "url": "https://artifacts.lucaversari.it/libjxl/libjxl/latest/jxl-x64-windows-static.zip",
+            "hash": "c70d7b01dfa6d55bbefbb580d36a93f3af60abc989ac4ae25dccbaae4e2e5376"
+        },
+        "32bit": {
+            "url": "https://artifacts.lucaversari.it/libjxl/libjxl/latest/jxl-x86-windows-static.zip",
+            "hash": "626a072a81e302319820c8d652c102cffa1bcaa6909053318a5bea49b19ffbfd"
+        }
+    },
+    "bin": [
+        "benchmark_xl.exe",
+        "brotli.exe",
+        "cjpegli.exe",
+		"djpegli.exe",
+        "cjxl.exe",
+        "djxl.exe",
+        "jxlinfo.exe"
+    ],
+    "checkver": {
+		"script": "[regex]::Match((Invoke-RestMethod https://artifacts.lucaversari.it/libjxl/libjxl/latest/), '64-windows.+?\\s(?<date>[\\d\\w-]+)').Groups['date'].Value | Get-Date -UFormat '%Y-%m-%d'",
+		"regex": "([\\d-]+)"
+    }
+}
