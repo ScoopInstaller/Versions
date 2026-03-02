@@ -1,20 +1,20 @@
 {
-    "version": "4.5.1-rc2",
+    "version": "4.6.1-rc1",
     "description": "A feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.",
     "homepage": "https://godotengine.org/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/godotengine/godot-builds/releases/download/4.5.1-rc2/Godot_v4.5.1-rc2_win64.exe.zip",
-            "hash": "sha512:08e94db62258284cfd968a2625a2e8974ff1dcfb12893a6d3156bde046633ca396ff35c03e7f2ccbb0f2ea3b00d906c3976dfbcbc74d7f51f4d0a0377cee3e50"
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.1-rc1/Godot_v4.6.1-rc1_win64.exe.zip",
+            "hash": "sha512:5a40a30485738bdb5552b652a56b0cb0aa8b7bc894a82f70237867df87ae871dcebf995eda620f85fa94500d6a301bf515568e7d1517fa028b65a25eda882bb0"
         },
         "32bit": {
-            "url": "https://github.com/godotengine/godot-builds/releases/download/4.5.1-rc2/Godot_v4.5.1-rc2_win32.exe.zip",
-            "hash": "sha512:c3497f0b86568c9de2f2618bdb3a75f1005f847096c8028cdc368155aaf7e8dc21be70428cd3bb170a2cc75c1af9fac08d84be0566a6a75d0abde95b09d548cc"
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.1-rc1/Godot_v4.6.1-rc1_win32.exe.zip",
+            "hash": "sha512:58a95e4f0bf909bf6dc3241819a34e990100ecbbfe280bf124b4fb69f02ca65077a4276041d91403edbf22497948d5653003de05084375ea351415bf0187d047"
         },
         "arm64": {
-            "url": "https://github.com/godotengine/godot-builds/releases/download/4.5.1-rc2/Godot_v4.5.1-rc2_windows_arm64.exe.zip",
-            "hash": "sha512:10acf2202e0dd41bdde300c9681fb61f4490d4a5ee20ad554bc979dc8111e28d000fb680313279b52796833917d3dbdeaafe2baa2520bbefa27893b24c50376a"
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.1-rc1/Godot_v4.6.1-rc1_windows_arm64.exe.zip",
+            "hash": "sha512:26dba5dfa1e8448acc0819e97207ae7f68971fb42526507db1b727a68e91cea465b6dbb1ef9d9e7c01c4ce382f2d10b4309036c5518a9757544e0a60f80e0af4"
         }
     },
     "pre_install": [

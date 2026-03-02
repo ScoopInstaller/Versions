@@ -1,5 +1,5 @@
 {
-    "version": "10.0.101",
+    "version": "10.0.103",
     "description": ".NET is a free, cross-platform, open source developer platform for building many different types of applications.",
     "homepage": "https://www.microsoft.com/net/",
     "license": "MIT",
@@ -8,16 +8,16 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/10.0.101/dotnet-sdk-10.0.101-win-x64.zip",
-            "hash": "sha512:efcb2bfde6ae691cee94abaabd902562d4463b26c2ae58c3db4291719220843bbc89e32ff16bf95d54efd145423207255464d16616d760a3bf0e6b5ba48214a3"
+            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/10.0.103/dotnet-sdk-10.0.103-win-x64.zip",
+            "hash": "sha512:519a011b2a41d50ff9a7ec6cdbe3927f19990c25efebb42860837c49953be904adac5bc1ff073ed80854a98ef9dbe54c00e2c9db84d84ba2dccd09f8e2261bf6"
         },
         "32bit": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/10.0.101/dotnet-sdk-10.0.101-win-x86.zip",
-            "hash": "sha512:cda31705fa47872319a346bf998d4c53cb39a9eb9dd21be2b3744d8e203050277b02fe5245864342f3f54423393ccf2d037e9fcedd141aa0d02eb151889526c0"
+            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/10.0.103/dotnet-sdk-10.0.103-win-x86.zip",
+            "hash": "sha512:00524b9c1a82724942886d4408b12374a518fd514216298a8e59e546bd47e3943681aecdafb6bf4cd837587ddbf00391126ca9caa13398e618efe262a1409d42"
         },
         "arm64": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/10.0.101/dotnet-sdk-10.0.101-win-arm64.zip",
-            "hash": "sha512:290661da894c6fd6d7b9389cdc0a753d1be0443119ac46f59688f63f344fcc8757f19c4bcffa851c54a772eecb408a8dd3f201f776e43726860eb7a649ce7577"
+            "url": "https://dotnetcli.azureedge.net/dotnet/Sdk/10.0.103/dotnet-sdk-10.0.103-win-arm64.zip",
+            "hash": "sha512:d0c14d87fd3c3a48807e97634e585dd80e7e46be681dfde29bdb3971d1ca1b114b0c49e26807df1ac0370906e9356749150e396bacd6abe121ac6db4a8c67ab4"
         }
     },
     "env_add_path": ".",

@@ -1,14 +1,26 @@
 {
-    "version": "5.2.909.9",
+    "version": "5.4.916.2",
     "description": "A dynamic mathematics software for education that brings together geometry, algebra, spreadsheets, graphing, statistics and calculus.",
-    "homepage": "https://www.geogebra.org/",
+    "homepage": "https://www.geogebra.org",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.geogebra.org/license"
     },
-    "url": "https://download.geogebra.org/installers/5.2/GeoGebra-Windows-Portable-5-2-909-9.zip",
-    "hash": "a3a6b6738e7343edc771501fd38bc3a6816a93fd15760e859317c0dd5d65730d",
-    "extract_dir": "GeoGebra 5.2.909.9",
+    "notes": [
+        "To register file associations, please execute the following command:",
+        "reg import \"$dir\\install-associations.reg\""
+    ],
+    "url": "https://download.geogebra.org/installers/5.4/GeoGebra-Windows-Portable-5-4-916-2.zip",
+    "hash": "c3c88aa6024b31178eea73b8e07fe4bcd927d82d2082c458352e048d2a4cbdac",
+    "extract_dir": "GeoGebra 5.4.916.2",
+    "post_install": [
+        "$geogebra_path = $dir -replace '\\\\', '\\\\'",
+        "Get-ChildItem -Path \"$bucketsdir\\$bucket\\scripts\\$app\" -Filter '*.reg' -File | ForEach-Object {",
+        "    $content = Get-Content -Path $_.FullName -Encoding ascii",
+        "    if ($global) { $content = $content -replace 'HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE' }",
+        "    $content -replace '{{geogebra_dir}}', $geogebra_path | Set-Content -Path \"$dir\\$($_.Name)\" -Encoding unicode",
+        "}"
+    ],
     "bin": [
         [
             "GeoGebra.exe",
@@ -21,13 +33,21 @@
             "GeoGebra 5"
         ]
     ],
+    "uninstaller": {
+        "script": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-associations.reg\" *> $null }"
+    },
     "checkver": {
-        "url": "https://download.geogebra.org/installers/5.2/version.txt",
-        "regex": "(\\d+)-(\\d+)-(\\d+)-(\\d+)",
-        "replace": "${1}.${2}.${3}.${4}"
+        "script": [
+            "$url = 'https://download.geogebra.org/package/win-port'",
+            "$request = [System.Net.HttpWebRequest]::Create($url)",
+            "$response = $request.GetResponse()",
+            "$response.ResponseUri.AbsoluteUri -match 'Portable-(?<dashVersion>[\\d-]+)\\.zip'",
+            "Write-Output ($Matches['dashVersion'] -replace '-', '.')"
+        ],
+        "regex": "(5\\.[\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://download.geogebra.org/installers/5.2/GeoGebra-Windows-Portable-$dashVersion.zip",
+        "url": "https://download.geogebra.org/installers/$majorVersion.$minorVersion/GeoGebra-Windows-Portable-$dashVersion.zip",
         "extract_dir": "GeoGebra $version"
     }
 }

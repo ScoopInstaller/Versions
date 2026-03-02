@@ -1,18 +1,20 @@
 {
-    "version": "b7482",
+    "version": "b8184",
     "description": "Inference of LLaMA model in pure C/C++ (Vulkan version)",
     "homepage": "https://github.com/ggml-org/llama.cpp",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b7482/llama-b7482-bin-win-vulkan-x64.zip",
-            "hash": "364a66df9784a6b103725dd850a0c068eafb972f9701663729f9fe70937fd4e9"
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b8184/llama-b8184-bin-win-vulkan-x64.zip",
+            "hash": "2d60828f4b90bdd1e93698837c163b54f40e7d682e8018dc40f52eb444c3cceb"
         }
     },
     "bin": [
         "llama-batched-bench.exe",
         "llama-bench.exe",
         "llama-cli.exe",
+        "llama-completion.exe",
+        "llama-fit-params.exe",
         "llama-gemma3-cli.exe",
         "llama-gguf-split.exe",
         "llama-imatrix.exe",
@@ -22,7 +24,6 @@
         "llama-perplexity.exe",
         "llama-quantize.exe",
         "llama-qwen2vl-cli.exe",
-        "llama-run.exe",
         "llama-server.exe",
         "llama-tokenize.exe",
         "llama-tts.exe"
