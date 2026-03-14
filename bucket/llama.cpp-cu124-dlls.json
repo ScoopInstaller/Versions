@@ -1,0 +1,24 @@
+{
+    "version": "12.4",
+    "description": "CUDA DLLs for llama.cpp (version 12.4)",
+    "homepage": "https://github.com/ggml-org/llama.cpp",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b8340/cudart-llama-bin-win-cuda-12.4-x64.zip",
+            "hash": "md5:6463c73b52a1edaab0f21ccd48a898e5"
+        }
+    },
+    "env_add_path": ".",
+    "checkver": {
+        "github": "https://github.com/ggml-org/llama.cpp",
+        "regex": "/releases/tag/(b[\\d]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ggml-org/llama.cpp/releases/download/$version/cudart-llama-bin-win-cuda-12.4-x64.zip"
+            }
+        }
+    }
+}
