@@ -9,9 +9,6 @@
             "hash": "798ce8c9afcbe9bfef35f42aa1434a231447ac48101504d9969e5d10b2c23e75"
         }
     },
-    "env_set": {
-        "LLAMA_CACHE": "$persist_dir\\models"
-    },
     "bin": [
         "llama-batched-bench.exe",
         "llama-bench.exe",
