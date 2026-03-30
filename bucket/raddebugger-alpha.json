@@ -14,10 +14,16 @@
         "raddbg.exe",
         "radlink.exe"
     ],
+    "shortcuts": [
+        [
+            "raddbg.exe",
+            "RAD Debugger"
+        ]
+    ],
     "checkver": {
-        "url": "https://api.github.com/repos/EpicGamesExt/raddebugger/releases/latest",
-        "jsonpath": "$.tag_name",
-        "regex": "v(.+)"
+        "url": "https://api.github.com/repos/EpicGamesExt/raddebugger/releases",
+        "jsonpath": "$.[?(@.tag_name =~ /v[\\d.]+-alpha/)].tag_name",
+        "regex": "v([\\d.]+-alpha)"
     },
     "autoupdate": {
         "architecture": {
