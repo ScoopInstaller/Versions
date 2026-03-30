@@ -37,9 +37,10 @@
             "pre_install": [
                 "$7zr = Join-Path $env:TMP '7zr.exe'",
                 "Invoke-WebRequest https://www.7-zip.org/a/7zr.exe -OutFile $7zr",
-                "Invoke-ExternalCommand $7zr @('x', \"$dir\\7z2600-arm64.exe\", \"-o$dir\", '-y') | Out-Null",
+                "$arm_exe = (Get-ChildItem \"$dir\\*-arm64.exe\").FullName",
+                "Invoke-ExternalCommand $7zr @('x', $arm_exe, \"-o$dir\", '-y') | Out-Null",
                 "Invoke-ExternalCommand \"$dir\\7z.exe\" @('x', \"$dir\\patch.dl\", \"-o$dir\", '-y') | Out-Null",
-                "Remove-Item \"$dir\\Uninstall.exe\", \"$dir\\7z2600-arm64.exe\", \"$dir\\patch.dl\", $7zr -Force"
+                "Remove-Item \"$dir\\Uninstall.exe\", $arm_exe, \"$dir\\patch.dl\", $7zr -Force"
             ]
         }
     },
@@ -71,20 +72,21 @@
     ],
     "checkver": {
         "github": "https://github.com/ozone10/7zip-Dark7zip",
-        "regex": "v([\\d.]+)-(v[\\d.]+)"
+        "regex": "v(?<version>[\\d.]+)-(?<patch>v[\\d.]+)",
+        "replace": "${version}-${patch}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": [
                     "https://www.7-zip.org/a/7z$major$minor-x64.msi",
-                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z$major.$minor-$match2-x64.zip#/patch.dl"
+                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z$major.$minor-$matchPatch-x64.zip#/patch.dl"
                 ]
             },
             "arm64": {
                 "url": [
                     "https://www.7-zip.org/a/7z$major$minor-arm64.exe",
-                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z$major.$minor-$match2-arm64.zip#/patch.dl"
+                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z$major.$minor-$matchPatch-arm64.zip#/patch.dl"
                 ]
             }
         }
