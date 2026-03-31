@@ -72,21 +72,21 @@
     ],
     "checkver": {
         "github": "https://github.com/ozone10/7zip-Dark7zip",
-        "regex": "v(?<version>[\\d.]+)-(?<patch>v[\\d.]+)",
-        "replace": "${version}-${patch}"
+        "regex": "v(?<major>\\d+)\\.(?<minor>\\d+)-(?<patch>v[\\d.]+)",
+        "replace": "${major}.${minor}-${patch}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": [
-                    "https://www.7-zip.org/a/7z$major$minor-x64.msi",
-                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z$major.$minor-$matchPatch-x64.zip#/patch.dl"
+                    "https://www.7-zip.org/a/7z${matchMajor}${matchMinor}-x64.msi",
+                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z${matchMajor}.${matchMinor}-${matchPatch}-x64.zip#/patch.dl"
                 ]
             },
             "arm64": {
                 "url": [
-                    "https://www.7-zip.org/a/7z$major$minor-arm64.exe",
-                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z$major.$minor-$matchPatch-arm64.zip#/patch.dl"
+                    "https://www.7-zip.org/a/7z${matchMajor}${matchMinor}-arm64.exe",
+                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z${matchMajor}.${matchMinor}-${matchPatch}-arm64.zip#/patch.dl"
                 ]
             }
         }
