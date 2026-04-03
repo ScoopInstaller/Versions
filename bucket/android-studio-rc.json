@@ -1,35 +1,33 @@
 {
-    "version": "2025.2.3.8",
+    "version": "2025.3.2.5",
     "description": "The official IDE for Android development, which includes everything you need to build Android apps.",
     "homepage": "https://developer.android.com/studio/preview",
     "license": {
         "identifier": "Freeware",
-        "url": "https://developer.android.com/studio/terms.html"
+        "url": "https://developer.android.com/studio/terms"
     },
     "suggest": {
         "Android SDK": "android-clt"
     },
     "architecture": {
         "64bit": {
-            "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2025.2.3.8/android-studio-2025.2.3.8-windows.zip",
-            "hash": "cf56f6067bacf805bfa79f799439312c6c8f120b10ab7c1b524090c11bacb361",
+            "url": "https://edgedl.me.gvt1.com/android/studio/ide-zips/2025.3.2.5/android-studio-panda2-rc1-windows.zip",
+            "hash": "f23bdbf1d220ec26c8bd79836fad75b4df28eb853470b333012226e244a07937",
             "shortcuts": [
                 [
                     "bin\\studio64.exe",
-                    "Android Studio Beta"
+                    "Android Studio RC"
                 ]
             ]
         }
     },
     "pre_install": "'uninstall.exe' | ForEach-Object { Remove-Item \"$dir/$_\" -Recurse }",
     "extract_dir": "android-studio",
-    "checkver": {
-        "regex": "agree_beta_win_bundle_download[\\s\\S]+?android-studio-([\\d.]+)-windows\\.exe"
-    },
+    "checkver": "/install/(?<version>[\\d.]+)/(?<filename>android-studio.*-rc\\d+-windows)\\.exe",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$version/android-studio-$version-windows.zip"
+                "url": "https://edgedl.me.gvt1.com/android/studio/ide-zips/$version/$matchFilename.zip"
             }
         }
     }
