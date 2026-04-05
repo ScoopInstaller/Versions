@@ -1,5 +1,5 @@
 {
-    "version": "nightly",
+    "version": "20260405-c53ca64",
     "description": "GPU-accelerated terminal emulator (nightly builds)",
     "homepage": "https://github.com/wez/wezterm",
     "license": "Apache-2.0",
@@ -9,7 +9,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/wez/wezterm/releases/download/nightly/WezTerm-windows-nightly.zip"
+            "url": "https://github.com/wez/wezterm/releases/download/nightly/WezTerm-windows-nightly.zip",
+            "hash": "d79ff14e89677251b7dee18b9d1cd0c230565bde1c4d589590ad35f3ecda811c"
         }
     },
     "installer": {
@@ -40,6 +41,28 @@
             "WezTerm"
         ]
     ],
+    "checkver": {
+        "url": "https://api.github.com/repositories/120568143/releases/tags/nightly",
+        "script": [
+            "try {",
+            "    $release = $page | ConvertFrom-Json",
+            "    $date = Get-Date $release.updated_at -Format 'yyyyMMdd'",
+            "    $commit = $release.target_commitish",
+            "    return \"$date-$commit\"",
+            "",
+            "}catch {",
+            "    return ''",
+            "}"
+        ],
+        "regex": "(?<version>^\\d{8}-[0-9a-f]{7})"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/wez/wezterm/releases/download/nightly/WezTerm-windows-nightly.zip"
+            }
+        }
+    },
     "uninstaller": {
         "script": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-context.reg\" *> $null }"
     }
