@@ -1,16 +1,16 @@
 {
-    "version": "3.24.3-dev0-48978e421",
+    "version": "3.24.3-dev0-1961.5bac12b73",
     "description": "A free implementation of the Remote Desktop Protocol (RDP).",
     "homepage": "https://www.freerdp.com/",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://ci.freerdp.com/job/freerdp-nightly-windows/1960/arch=win64,label=vs2017/artifact/*zip*/archive.zip",
-            "hash": "5ba116204200851f793a4aafbeeed9ddc8178db99768d6cebb7e17bb91bdd997"
+            "url": "https://ci.freerdp.com/job/freerdp-nightly-windows/1961/arch=win64,label=vs2017/artifact/*zip*/archive.zip",
+            "hash": "0effabf5583bf483423c482da76d21d2f6df5ad005c88a29435b6a4dc817ee0f"
         },
         "32bit": {
-            "url": "https://ci.freerdp.com/job/freerdp-nightly-windows/1960/arch=win32,label=vs2017/artifact/*zip*/archive.zip",
-            "hash": "5433dce1944b524f82e74df0f2b46ec578a8dfdf40bfa19c7b1b24b3159eb9bc"
+            "url": "https://ci.freerdp.com/job/freerdp-nightly-windows/1961/arch=win32,label=vs2017/artifact/*zip*/archive.zip",
+            "hash": "3947f4194745fb9f2185cf3ef9b5c6a41bffa61bb8c6f4a11d62fbf242c71bc6"
         }
     },
     "extract_dir": "archive\\install\\bin",
@@ -31,7 +31,7 @@
             "$cmake = Invoke-RestMethod \"https://raw.githubusercontent.com/FreeRDP/FreeRDP/$sha/cmake/GetProjectVersion.cmake\"",
             "$versionMatch = [regex]::Match($cmake, 'set\\(RAW_VERSION_STRING\\s+\"(?<baseVersion>[^\"]+)\"\\s*\\)')",
             "if (-not $versionMatch.Success) { error 'Unable to determine the FreeRDP version from GetProjectVersion.cmake.'; break }",
-            "\"$($versionMatch.Groups['baseVersion'].Value)-$($sha.Substring(0, 9))#$($build.number)\""
+            "\"$($versionMatch.Groups['baseVersion'].Value)-$($build.number).$($sha.Substring(0, 9))#$($build.number)\""
         ],
         "regex": "(?<version>[^#]+)#(?<build>\\d+)"
     },
