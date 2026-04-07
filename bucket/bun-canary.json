@@ -13,13 +13,13 @@
                 "https://github.com/oven-sh/bun/releases/download/canary/bun-windows-x64-baseline.zip"
             ],
             "hash": [
-                "f01193f83f7215988392fb4a4088ea46a0f7a50cb0355db7394ba24114041fdd",
-                "4c38617659c087394ef20a28136f25e0b55d16d2a87b28cf004881de20fd8616"
+                "eae99c1c1744c9bdb4176d5a907b985b82bc7fbf1490894c939579165f98cbba",
+                "905eba784398f49d3722a6f130c2f7921200978e3c4d85b0d724f5bbbc8c43e8"
             ]
         },
         "arm64": {
             "url": "https://github.com/oven-sh/bun/releases/download/canary/bun-windows-aarch64.zip",
-            "hash": "1322feea8f8ef2f309594d5ef00a8ff12a9f1269b9e5295a041c69d5832e0781"
+            "hash": "fb5215b01a1a35e3b31269207dcea2470772a807bf2c02389ba561fe95a3900b"
         }
     },
     "pre_install": [
@@ -97,7 +97,8 @@
             }
         },
         "hash": {
-            "url": "$baseurl/SHASUMS256.txt"
+            "url": "https://api.github.com/repos/oven-sh/bun/releases/tags/canary",
+            "jsonpath": "$..assets[?(@.name == '$basename')].digest"
         }
     }
 }
