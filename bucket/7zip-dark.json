@@ -1,0 +1,94 @@
+{
+    "version": "26.00-v0.48.0",
+    "description": "A multi-format file archiver with high compression ratios (Dark Mode patched by ozone10)",
+    "homepage": "https://github.com/ozone10/7zip-Dark7zip",
+    "license": "LGPL-2.1-or-later",
+    "notes": [
+        "Add 7-Zip as a context menu option by running:",
+        "reg import \"$dir\\install-context.reg\"",
+        "This version includes the Dark Mode patch by ozone10 (x64 and arm64 only)."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": [
+                "https://www.7-zip.org/a/7z2600-x64.msi",
+                "https://github.com/ozone10/7zip-Dark7zip/releases/download/v26.00-v0.48.0/7z26.00-v0.48.0-x64.zip#/patch.dl"
+            ],
+            "hash": [
+                "c388d0444871ca11b21237001af158cfddad7e137851795e5b65cee69b518495",
+                "89f8583d60168e099284f14940a2c301ef1b8e037416c8bed8c14c081c6d0da6"
+            ],
+            "pre_install": [
+                "Move-Item \"$dir\\Files\\7-Zip\\*\" \"$dir\" -Force",
+                "Remove-Item \"$dir\\Files\" -Recurse -Force",
+                "Invoke-ExternalCommand \"$dir\\7z.exe\" @('x', \"$dir\\patch.dl\", \"-o$dir\", '-y') | Out-Null",
+                "Remove-Item \"$dir\\patch.dl\" -Force"
+            ]
+        },
+        "arm64": {
+            "url": [
+                "https://www.7-zip.org/a/7z2600-arm64.exe",
+                "https://github.com/ozone10/7zip-Dark7zip/releases/download/v26.00-v0.48.0/7z26.00-v0.48.0-arm64.zip#/patch.dl"
+            ],
+            "hash": [
+                "92fac666911336f3bbf3d99fdc48ec36fe20ac7a4200556936e61a8076ae6493",
+                "99db92902d7be8cfaec9e67fb072fbef33f624d14864519dda388c5da309ba37"
+            ],
+            "pre_install": [
+                "$7zr = Join-Path $env:TMP '7zr.exe'",
+                "Invoke-WebRequest https://www.7-zip.org/a/7zr.exe -OutFile $7zr",
+                "$arm_exe = (Get-ChildItem \"$dir\\*-arm64.exe\").FullName",
+                "Invoke-ExternalCommand $7zr @('x', $arm_exe, \"-o$dir\", '-y') | Out-Null",
+                "Invoke-ExternalCommand \"$dir\\7z.exe\" @('x', \"$dir\\patch.dl\", \"-o$dir\", '-y') | Out-Null",
+                "Remove-Item \"$dir\\Uninstall.exe\", $arm_exe, \"$dir\\patch.dl\", $7zr -Force"
+            ]
+        }
+    },
+    "post_install": [
+        "$7zip_root = \"$dir\".Replace('\\', '\\\\')",
+        "'install-context.reg', 'uninstall-context.reg' | ForEach-Object {",
+        "    $content = Get-Content \"$bucketsdir\\main\\scripts\\7-zip\\$_\"",
+        "    $content = $content.Replace('$7zip_root', $7zip_root)",
+        "    if ($global) {",
+        "       $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE')",
+        "    }",
+        "    Set-Content \"$dir\\$_\" $content -Encoding Ascii",
+        "}"
+    ],
+    "bin": [
+        "7z.exe",
+        "7zFM.exe",
+        "7zG.exe"
+    ],
+    "shortcuts": [
+        [
+            "7zFM.exe",
+            "7-Zip"
+        ]
+    ],
+    "persist": [
+        "Codecs",
+        "Formats"
+    ],
+    "checkver": {
+        "github": "https://github.com/ozone10/7zip-Dark7zip",
+        "regex": "v(?<major>\\d+)\\.(?<minor>\\d+)-(?<patch>v[\\d.]+)",
+        "replace": "${major}.${minor}-${patch}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": [
+                    "https://www.7-zip.org/a/7z${matchMajor}${matchMinor}-x64.msi",
+                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z${matchMajor}.${matchMinor}-${matchPatch}-x64.zip#/patch.dl"
+                ]
+            },
+            "arm64": {
+                "url": [
+                    "https://www.7-zip.org/a/7z${matchMajor}${matchMinor}-arm64.exe",
+                    "https://github.com/ozone10/7zip-Dark7zip/releases/download/v$version/7z${matchMajor}.${matchMinor}-${matchPatch}-arm64.zip#/patch.dl"
+                ]
+            }
+        }
+    }
+}
