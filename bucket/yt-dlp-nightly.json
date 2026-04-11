@@ -1,19 +1,26 @@
 {
-    "version": "2025.10.28.232931",
+    "version": "2026.04.10.235301",
     "description": "yt-dlp (official) nightly builds",
     "homepage": "https://github.com/yt-dlp/yt-dlp-nightly-builds",
     "license": "Freeware",
     "suggest": {
-        "ffmpeg": "versions/ffmpeg-yt-dlp"
+        "ffmpeg": [
+            "versions/ffmpeg-yt-dlp-nightly",
+            "versions/ffmpeg-shared-yt-dlp-nightly"
+        ]
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/2025.10.28.232931/yt-dlp.exe",
-            "hash": "sha512:db128253c3c60bfe2151b29da67fe5390bb3ff7113690744370d53b5f9bc47c4acd5614d1556260f747fb6b7188663c7fc6ef6376c2f6b4b153ea2fc1c83dc36"
+            "url": "https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/2026.04.10.235301/yt-dlp.exe",
+            "hash": "sha512:ecc26645a3ed846bd2b9e405ca0622152206a183dfb193f54d7b350f46bc92ca135258ff4100dc8de01d37bdcdc2f16bbaaf6f20d4139c369860678eaa44c2f6"
         },
         "32bit": {
-            "url": "https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/2025.10.28.232931/yt-dlp_x86.exe#/yt-dlp.exe",
-            "hash": "sha512:3ca05b3b489314d136a801e8eb45fcae40dbe809b84bcd2552d6a50a153215ea9193adbbe44daaa74878fb431f7ea723223a03a19ec6f71e8ad43b63bd82c363"
+            "url": "https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/2026.04.10.235301/yt-dlp_x86.exe#/yt-dlp.exe",
+            "hash": "sha512:c03888a826e3b34a8abf8d017b331c8f26dc46791892a40900ee9b023647ade03cdf3c110998a36b3ad1df731825db8353f9772b465f3bb6d136ae03fd9c153d"
+        },
+        "arm64": {
+            "url": "https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/2026.04.10.235301/yt-dlp_arm64.exe#/yt-dlp.exe",
+            "hash": "sha512:9dc6027f8f470b9ced369de8096e3519d69bacca074f07b3fd36ffe944016c73dcce8f22a13c0ba01f44c6062ee905a4a90b78609d9978aab81ad6a72a456518"
         }
     },
     "bin": "yt-dlp.exe",
@@ -31,6 +38,9 @@
             },
             "32bit": {
                 "url": "https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/$version/yt-dlp_x86.exe#/yt-dlp.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/$version/yt-dlp_arm64.exe#/yt-dlp.exe"
             }
         },
         "hash": {

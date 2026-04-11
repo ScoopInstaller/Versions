@@ -1,22 +1,22 @@
 {
-    "version": "nightly-2025-10-31",
+    "version": "nightly-2026-04-11",
     "description": "A terminal-based text editor that aims to be easy to use and intuitive, while also taking advantage of the full capabilities of modern terminals.",
     "homepage": "https://micro-editor.github.io/",
     "license": "MIT",
     "architecture": {
         "64bit": {
             "url": "https://github.com/zyedidia/micro/releases/download/nightly/micro-nightly-win64.zip",
-            "hash": "aef6621b66af372b614d029cb0cd824aa278c8d850ec4f9f434c2acf07837741"
+            "hash": "5594416d9fbeab164bba441f44530b8c1238b99d4a4901ef1ee3077b428bc2e8"
         },
         "32bit": {
             "url": "https://github.com/zyedidia/micro/releases/download/nightly/micro-nightly-win64.zip",
-            "hash": "aef6621b66af372b614d029cb0cd824aa278c8d850ec4f9f434c2acf07837741"
+            "hash": "5594416d9fbeab164bba441f44530b8c1238b99d4a4901ef1ee3077b428bc2e8"
         }
     },
     "extract_dir": "micro-nightly",
     "bin": "micro.exe",
     "checkver": {
-        "url": "https://api.github.com/repositories/53632140/releases/tags/nightly",
+        "url": "https://api.github.com/repos/micro-editor/micro/releases/tags/nightly",
         "regex": "updated_at.+\"([\\d\\-]+)T.*micro-(?<micro>.+)-win",
         "replace": "${2}-${1}"
     },

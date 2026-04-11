@@ -1,15 +1,16 @@
 {
-    "version": "2025-10-31",
+    "version": "2026-04-08",
     "description": "Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter. It's also open source.",
     "homepage": "https://zed.dev/",
     "license": "AGPL-3.0, Apache-2.0, GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/deevus/zed-windows-builds/releases/download/10-31-2025/zed.zip",
-            "hash": "a16eb6463f0bc120fe1336c1310b915839481525a7b4b2f3e5a97609b97a5e16"
+            "url": "https://github.com/deevus/zed-windows-builds/releases/download/2026-04-08/zed.zip",
+            "hash": "71234504654b75139b5956ee033e0243fd57b713be709933094d0880fe941626"
         }
     },
-    "bin": "zed.exe",
+    "extract_dir": "zed",
+    "bin": "bin\\zed.exe",
     "shortcuts": [
         [
             "zed.exe",
@@ -18,13 +19,13 @@
     ],
     "checkver": {
         "url": "https://api.github.com/repos/deevus/zed-windows-builds/releases",
-        "regex": "(?<version>(?<month>\\d{2})-(?<day>\\d{2})-(?<year>\\d{4}))",
-        "replace": "${year}-${month}-${day}"
+        "jp": "$[*].tag_name",
+        "regex": "(\\d{4}-\\d{2}-\\d{2})"
     },
     "autoupdate": {
-        "url": "https://github.com/deevus/zed-windows-builds/releases/download/$matchVersion/zed.zip",
+        "url": "https://github.com/deevus/zed-windows-builds/releases/download/$version/zed.zip",
         "hash": {
-            "url": "https://github.com/deevus/zed-windows-builds/releases/download/$matchVersion/sha256sums.txt"
+            "url": "https://github.com/deevus/zed-windows-builds/releases/download/$version/sha256sums.txt"
         }
     }
 }

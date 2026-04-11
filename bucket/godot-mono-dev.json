@@ -1,23 +1,23 @@
 {
-    "version": "4.6-dev2",
+    "version": "4.7-dev4",
     "description": "A feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.",
     "homepage": "https://godotengine.org/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6-dev2/Godot_v4.6-dev2_mono_win64.zip",
-            "hash": "sha512:419d4a9af8b158222d59da1440bcd0d5e03aed8dc731ba4a7b298e2d37fc960020a9451d86dee35c2a059f751bda5e64e778d81de343d2d062939185f313a675",
-            "extract_dir": "Godot_v4.6-dev2_mono_win64"
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-dev4/Godot_v4.7-dev4_mono_win64.zip",
+            "hash": "sha512:bdcc418105b48f3d701cf09b781d75e6185db89c4705e9d9d317c242d9d68eedf0918a1b949e1a28b4bdd40f6e31f42d129d54f113ca5f1e13280dc7792d344e",
+            "extract_dir": "Godot_v4.7-dev4_mono_win64"
         },
         "32bit": {
-            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6-dev2/Godot_v4.6-dev2_mono_win32.zip",
-            "hash": "sha512:48bd0f87bde301182f5da2ae8a75ac731d4b4f0bdfcb638f405290e89da848cd0380dacdb7b08347204ee3eb92fa75b0f307686bda66863ed2503e0c1f8676f7",
-            "extract_dir": "Godot_v4.6-dev2_mono_win32"
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-dev4/Godot_v4.7-dev4_mono_win32.zip",
+            "hash": "sha512:46f72cb0641b4764f422b3daaba90c44a2b390a7292523065358eb14824c31577048dda2b9eb1d22b49e2b3c658814831fa1c77bf1cfe3099b23de4fc4d37b75",
+            "extract_dir": "Godot_v4.7-dev4_mono_win32"
         },
         "arm64": {
-            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6-dev2/Godot_v4.6-dev2_mono_windows_arm64.zip",
-            "hash": "sha512:362f0629a380dbb581a88ee2b3a2e1e50984fc3334c314b00b4f35f428b818d3632c31389bd6fa83d96b0b1c26bce8001db71322c768d5918564f952f4b1e507",
-            "extract_dir": "Godot_v4.6-dev2_mono_windows_arm64"
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-dev4/Godot_v4.7-dev4_mono_windows_arm64.zip",
+            "hash": "sha512:faf9ff578a64e523af50cb3586650a71741338c6f7ce6a9d1d7a42d95a0e860d99e585b85a1597da0b3ead80c760310322e2c74f2c578d06a85e5e89ac9edc58",
+            "extract_dir": "Godot_v4.7-dev4_mono_windows_arm64"
         }
     },
     "pre_install": [

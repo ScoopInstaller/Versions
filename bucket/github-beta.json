@@ -1,16 +1,16 @@
 {
-    "version": "3.5.4-beta1",
+    "version": "3.5.7-beta3",
     "description": "Extend your GitHub workflow beyond your browser.",
     "homepage": "https://desktop.github.com/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/desktop/desktop/releases/download/release-3.5.4-beta1/GitHubDesktop-3.5.4-beta1-x64-full.nupkg",
-            "hash": "c3b3fe2dbaf467f8f7df3731fc607c5ea8b3268041f3d4c278111ca589d343b6"
+            "url": "https://github.com/desktop/desktop/releases/download/release-3.5.7-beta3/GitHubDesktop-3.5.7-beta3-x64-full.nupkg",
+            "hash": "cbce655e013670cf6693b72ab1b57714e1f0fc15bef6f1253f6b216509c081ea"
         },
         "arm64": {
-            "url": "https://github.com/desktop/desktop/releases/download/release-3.5.4-beta1/GitHubDesktop-3.5.4-beta1-arm64-full.nupkg",
-            "hash": "eef8baa5b90eab67e5490fe0672d05be48923e9b1573636808e86a2e72822621"
+            "url": "https://github.com/desktop/desktop/releases/download/release-3.5.7-beta3/GitHubDesktop-3.5.7-beta3-arm64-full.nupkg",
+            "hash": "5eff4ea1a668b40f908a42c7d583a734016158690d4c3e7bb4aa224081347110"
         }
     },
     "extract_dir": "lib\\net45",
@@ -22,7 +22,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repositories/58559694/tags",
+        "url": "https://api.github.com/repos/desktop/desktop/tags",
         "regex": "tags/release-([\\d.]+-beta\\d+)\""
     },
     "autoupdate": {

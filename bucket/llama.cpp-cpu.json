@@ -1,22 +1,24 @@
 {
-    "version": "b6898",
+    "version": "b8759",
     "description": "Inference of LLaMA model in pure C/C++ (CPU version)",
     "homepage": "https://github.com/ggml-org/llama.cpp",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b6898/llama-b6898-bin-win-cpu-x64.zip",
-            "hash": "e3b1162aa05474fa4b4186bbe976ff2f7548610c4bae87cf6152b209eed2acc0"
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b8759/llama-b8759-bin-win-cpu-x64.zip",
+            "hash": "17bfec092755b54f6b3feb4199b70be7b389f7359913fa0ea37afc879bcaeb8b"
         },
         "arm64": {
-            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b6898/llama-b6898-bin-win-cpu-arm64.zip",
-            "hash": "6e9b6baaae7ca8620538cd43527d13d0935df033e981ad0d6125d3920e847f7c"
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b8759/llama-b8759-bin-win-cpu-arm64.zip",
+            "hash": "867932f303ed0366c9d8dd5ce146fb8b767b3000d8715aa0a38463fbfa76f3eb"
         }
     },
     "bin": [
         "llama-batched-bench.exe",
         "llama-bench.exe",
         "llama-cli.exe",
+        "llama-completion.exe",
+        "llama-fit-params.exe",
         "llama-gemma3-cli.exe",
         "llama-gguf-split.exe",
         "llama-imatrix.exe",
@@ -26,7 +28,6 @@
         "llama-perplexity.exe",
         "llama-quantize.exe",
         "llama-qwen2vl-cli.exe",
-        "llama-run.exe",
         "llama-server.exe",
         "llama-tokenize.exe",
         "llama-tts.exe"

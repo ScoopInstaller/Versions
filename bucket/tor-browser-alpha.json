@@ -1,0 +1,55 @@
+{
+    "##": "Multiple components under various open source licenses. Included HTTPS Everywhere extension is the strictest.",
+    "version": "16.0a5",
+    "description": "Web browser that connects to the internet via the Tor anonymity network (Alpha Build Variant).",
+    "homepage": "https://www.torproject.org/",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://dist.torproject.org/torbrowser/16.0a5/tor-browser-windows-x86_64-portable-16.0a5.exe#/dl.7z",
+            "hash": "158224e18cfafb534280bdfff738dce22b2b7ccb69df6a959fbe4e0dc78c1c3e"
+        },
+        "32bit": {
+            "url": "https://dist.torproject.org/torbrowser/16.0a5/tor-browser-windows-i686-portable-16.0a5.exe#/dl.7z",
+            "hash": "17bf3c419f9948ca33d31c6e9dcdb133ff6bc87ff565968fadf491dde8893813"
+        }
+    },
+    "extract_dir": "Browser",
+    "pre_install": [
+        "# Update extensions in persisted profile",
+        "movedir \"$dir\\TorBrowser\\Data\\Browser\\profile.default\" \"$persist_dir\\TorBrowser\\Data\\Browser\\profile.default\" | Out-Null"
+    ],
+    "persist": [
+        "TorBrowser\\Data\\Browser\\profile.default",
+        "TorBrowser\\Data\\Tor"
+    ],
+    "bin": [
+        [
+            "firefox.exe",
+            "tor-browser"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "firefox.exe",
+            "Tor Browser (Alpha)"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.torproject.org/download/alpha/",
+        "regex": "tor-browser-windows-x86_64-portable-([\\w.]+)\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dist.torproject.org/torbrowser/$version/tor-browser-windows-x86_64-portable-$version.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://dist.torproject.org/torbrowser/$version/tor-browser-windows-i686-portable-$version.exe#/dl.7z"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/sha256sums-signed-build.txt"
+        }
+    }
+}

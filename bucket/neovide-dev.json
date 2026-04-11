@@ -1,5 +1,5 @@
 {
-    "version": "0.15.2",
+    "version": "0.16.1",
     "description": "A simple GUI for Neovim (prerelease version)",
     "homepage": "https://github.com/Kethku/neovide",
     "license": "MIT",
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/neovide/neovide/releases/download/0.15.2/neovide.exe.zip",
-            "hash": "8ad43abbb2d012aa9d89585349f589723cf01dc65607d417059923c623afd922"
+            "url": "https://github.com/neovide/neovide/releases/download/0.16.1/neovide.exe.zip",
+            "hash": "e43a0d4c3865147fe397e64c8032e3d4b5e2ce0321c41648aab8a273913fffe3"
         }
     },
     "bin": "neovide.exe",
@@ -20,7 +20,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repositories/226408450/releases",
+        "url": "https://api.github.com/repos/neovide/neovide/releases",
         "jsonpath": "$[0].tag_name"
     },
     "autoupdate": {

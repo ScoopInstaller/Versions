@@ -1,18 +1,18 @@
 {
-    "version": "1.2.8-20251030",
+    "version": "1.3.4-20260405",
     "description": "A handwriting notetaking software with PDF annotation support",
     "homepage": "https://github.com/xournalpp/xournalpp",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8%2Bdev-nightly-20251030-windows-portable-AMD64.zip",
-            "hash": "110f9f53ed10f85ccc1a68a830cea8b4b0aeb9ffbb6e1aecf3f2b73e848c580e",
-            "extract_dir": "xournalpp-1.2.8+dev-nightly-20251030-windows-portable-AMD64"
+            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.3.4%2Bdev-nightly-20260405-windows-portable-AMD64.zip",
+            "hash": "09de6db2ed36534e2e7eda816a62d66de1740dd6b656eda22bd20908728bb820",
+            "extract_dir": "xournalpp-1.3.4+dev-nightly-20260405-windows-portable-AMD64"
         },
         "arm64": {
-            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.2.8%2Bdev-nightly-20251030-windows-portable-ARM64.zip",
-            "hash": "23a139b8b93fab7f7471eb646484e9d13a913632aeeff8b7ba081c3b2f369db6",
-            "extract_dir": "xournalpp-1.2.8+dev-nightly-20251030-windows-portable-ARM64"
+            "url": "https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.3.4%2Bdev-nightly-20260405-windows-portable-ARM64.zip",
+            "hash": "22d590bed374ba59823a50a38bd5d47b6fbbaae453a5acff9f12431160bb43c9",
+            "extract_dir": "xournalpp-1.3.4+dev-nightly-20260405-windows-portable-ARM64"
         }
     },
     "bin": "bin\\xournalpp.exe",
@@ -23,7 +23,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repositories/11986447/releases/tags/nightly",
+        "url": "https://api.github.com/repos/xournalpp/xournalpp/releases/tags/nightly",
         "regex": "xournalpp-(?<main>[\\d.]+)\\+dev-nightly-(?<date>\\d{8})",
         "replace": "${main}-${date}"
     },

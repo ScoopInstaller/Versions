@@ -1,21 +1,24 @@
 {
-    "version": "7.15.5",
-    "description": "v2rayN (WPF-based pre-release version, requires .NET 8) is a GUI client for V2Ray, with support for Xray, sing-box, and other compatible cores.",
+    "version": "7.20.2",
+    "description": "v2rayN (WPF-based pre-release version) is a GUI client for V2Ray, with support for Xray, sing-box, and other compatible cores.",
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-only",
+    "notes": [
+        "Since v7.17.0, v2rayN is self-contained and no longer requires the .NET 8.0 Desktop Runtime.",
+        "For more information, see: https://github.com/2dust/v2rayN/releases/tag/7.17.0"
+    ],
     "suggest": {
-        ".NET Desktop Runtime": "extras/windowsdesktop-runtime-lts",
         "v2fly-core": "v2ray"
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/2dust/v2rayN/releases/download/7.15.5/v2rayN-windows-64.zip",
-            "hash": "06d0747835ccd063ee78592611bac2a9c504d7dc834fe4319eb7da40f58a8877",
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.20.2/v2rayN-windows-64.zip",
+            "hash": "11c2f56b726777a58bc099d24934430409457349cd34eb01adb890afd15b97ea",
             "extract_dir": "v2rayN-windows-64"
         },
         "arm64": {
-            "url": "https://github.com/2dust/v2rayN/releases/download/7.15.5/v2rayN-windows-arm64.zip",
-            "hash": "5095a901d0ab16b46b67031f9eeddde1996e2cf45eec1a24d213da3408ee80dd",
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.20.2/v2rayN-windows-arm64.zip",
+            "hash": "75c45a8481919be6b0100a199f53c45c1b27b29d82f9185a872e68fefb33c01a",
             "extract_dir": "v2rayN-windows-arm64"
         }
     },
@@ -27,8 +30,8 @@
     ],
     "persist": "guiConfigs",
     "checkver": {
-        "url": "https://api.github.com/repositories/199570071/releases",
-        "jsonpath": "$[?(@.prerelease == true)].tag_name",
+        "url": "https://api.github.com/repos/2dust/v2rayN/releases",
+        "jsonpath": "$[0].tag_name",
         "regex": "(?:v|V)?([\\d.]+)"
     },
     "autoupdate": {
