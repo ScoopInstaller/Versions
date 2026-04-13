@@ -1,8 +1,15 @@
 {
     "version": "0.5.1-beta",
-    "description": "A modern and powerful stream downloader for MPD/M3U8/ISM. Successor to main/n-m3u8dl-cli.",
-    "homepage": "https://github.com/nilaoda/N_m3u8DL-RE/blob/main/README.en.md",
+    "description": "Continuation of N_m3u8DL-CLI -- A modern and powerful stream downloader for MPD/M3U8/ISM.",
+    "homepage": "https://github.com/nilaoda/N_m3u8DL-RE",
     "license": "MIT",
+    "suggest": {
+        "FFmpeg": [
+            "main/ffmpeg",
+            "main/ffmpeg-essentials",
+            "main/ffmpeg-shared"
+        ]
+    },
     "architecture": {
         "64bit": {
             "url": "https://github.com/nilaoda/N_m3u8DL-RE/releases/download/v0.5.1-beta/N_m3u8DL-RE_v0.5.1-beta_win-x64_20251029.zip",
@@ -25,8 +32,8 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/nilaoda/N_m3u8DL-RE/releases/latest",
-        "regex": "N_m3u8DL-RE_v(.+?)_win-x64_(?<date>\\d+).zip"
+        "github": "https://github.com/nilaoda/N_m3u8DL-RE",
+        "regex": "N_m3u8DL-RE_v(?<version>[\\d.]+-beta)_win-x64_(?<date>\\d+)\\.zip"
     },
     "autoupdate": {
         "architecture": {
