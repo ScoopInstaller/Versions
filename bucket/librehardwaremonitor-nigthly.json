@@ -1,42 +1,35 @@
 {
-    "version": "24682305963",
-    "description": "Libre Hardware Monitor is free software that can monitor the temperature sensors, fan speeds, voltages, load and clock speeds of your computer.",
+    "version": "24963003480",
+    "description": "Libre Hardware Monitor is free software that can monitor the temperature sensors, fan speeds, voltages, load and clock speeds of your computer (nightly version).",
     "homepage": "https://github.com/LibreHardwareMonitor/LibreHardwareMonitor",
-    "notes": "Do not install with librehardwaremonitor-nightly-dotnet10, as they will override shims and shortcuts each other.",
     "license": "MPL-2.0",
-    "url": "https://nightly.link/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/24682305963/LibreHardwareMonitor.zip",
-    "hash": "74d2ffbeec3ec0dbbff21d3d7c536dd6f061b7cd0c3f1fe84f45079df980fe90",
+    "architecture": {
+        "64bit": {
+            "url": "https://nightly.link/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/24963003480/LibreHardwareMonitor.zip",
+            "hash": "02ad6c842a8196eeb7b2a7baa3f2d5db913697e05460445d5eafb93a534455a2"
+        }
+    },
     "pre_install": [
         "# Hardlinks cannot work properly here, as this app would create a new file instead of writing directly.",
-        "# Please keep the file list the same in both pre_install and pre_uninstall scripts.",
         "'LibreHardwareMonitor.config', 'LibreHardwareMonitorLog*.csv' | ForEach-Object {",
-        "   if (!(Test-Path \"$persist_dir\\\")) {",
-        "       New-Item -Type Directory -Path \"$persist_dir\\\" -ErrorAction Ignore | Out-Null",
-        "   }",
-        "   if (Test-Path \"$persist_dir\\$_\") {",
-        "       Copy-Item -Path \"$persist_dir\\$_\" -Destination \"$dir\\\" -Force",
-        "   }",
+        "    if (Test-Path -Path \"$persist_dir\\$_\" -PathType Leaf) {",
+        "        Copy-Item -Path \"$persist_dir\\$_\" -Destination $dir -Force",
+        "    }",
         "}"
-    ],
-    "bin": [
-        [
-            "LibreHardwareMonitor.exe",
-            "lhm"
-        ]
     ],
     "shortcuts": [
         [
             "LibreHardwareMonitor.exe",
-            "Libre Hardware Monitor"
+            "Libre Hardware Monitor (Nightly)"
         ]
     ],
     "pre_uninstall": [
         "# Hardlinks cannot work properly here, as this app would create a new file instead of writing directly.",
-        "# Please keep the file list the same in both pre_install and pre_uninstall scripts.",
         "'LibreHardwareMonitor.config', 'LibreHardwareMonitorLog*.csv' | ForEach-Object {",
-        "   if (Test-Path -Path \"$dir\\$_\") {",
-        "       Copy-Item -Path \"$dir\\$_\" -Destination \"$persist_dir\\\" -Force",
-        "   }",
+        "    if (Test-Path -Path \"$dir\\$_\" -PathType Leaf) {",
+        "        ensure $persist_dir | Out-Null",
+        "        Copy-Item -Path \"$dir\\$_\" -Destination $persist_dir -Force",
+        "    }",
         "}"
     ],
     "checkver": {
@@ -44,11 +37,15 @@
         "jsonpath": "$.workflow_runs[0].id"
     },
     "autoupdate": {
-        "url": "https://nightly.link/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/$version/LibreHardwareMonitor.zip",
-        "hash": {
-            "url": "https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/$version/artifacts",
-            "mode": "json",
-            "jsonpath": "$.artifacts[?(@.name== 'LibreHardwareMonitor')].digest"
+        "architecture": {
+            "64bit": {
+                "url": "https://nightly.link/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/$version/LibreHardwareMonitor.zip",
+                "hash": {
+                    "url": "https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/$version/artifacts",
+                    "mode": "json",
+                    "jsonpath": "$.artifacts[?(@.name== 'LibreHardwareMonitor')].digest"
+                }
+            }
         }
     }
 }
