@@ -1,6 +1,6 @@
 {
     "version": "10.3-2021.10",
-    "description": "Pre-built GNU Toolchain for the Arm Architecture",
+    "description": "Pre-built GNU Toolchain for the Arm Architecture (version 10.3).",
     "homepage": "https://developer.arm.com/downloads/-/gnu-rm",
     "license": "GPL-3.0-or-later",
     "url": "https://developer.arm.com/-/media/files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-win32.zip",
@@ -13,10 +13,10 @@
     },
     "autoupdate": {
         "url": "https://developer.arm.com/-/media/files/downloads/gnu-rm/$version/gcc-arm-none-eabi-$version-win32.zip",
-        "extract_dir": "gcc-arm-none-eabi-$version",
         "hash": {
             "url": "https://developer.arm.com/downloads/-/gnu-rm",
             "find": "gcc-arm-none-eabi-$version-win32.zip.*[\\s]*.*[\\s]*<dd>MD5:\\s?$md5"
-        }
+        },
+        "extract_dir": "gcc-arm-none-eabi-$version"
     }
 }
