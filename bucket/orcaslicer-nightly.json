@@ -17,7 +17,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/OrcaSlicer/OrcaSlicer/releases/tags/nightly-builds",
+        "github": "https://api.github.com/repos/OrcaSlicer/OrcaSlicer/releases/tags/nightly-builds",
         "script": "($page | ConvertFrom-Json).updated_at | Get-Date -UFormat %s",
         "regex": "^(\\d+)$"
     },

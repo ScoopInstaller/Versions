@@ -28,7 +28,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/zed-industries/zed/releases",
+        "github": "https://api.github.com/repos/zed-industries/zed/releases",
         "jsonpath": "$[?(@.prerelease == true)].tag_name",
         "regex": "v([\\w.-]+)-pre"
     },
