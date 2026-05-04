@@ -1,26 +1,18 @@
 {
-    "version": "0.1.0-beta.59",
-    "description": "The Native Terminal Emulator with a builtin AI Harness",
+    "version": "0.1.0-beta.60",
+    "description": "The Native Terminal Emulator with a builtin AI Harness (beta version).",
     "homepage": "https://con.nowledge.co/",
     "license": "MIT",
-    "notes": "We recommend turning off automatic updates within the app.",
+    "notes": "User data are stored in '$Env:AppData\\con-terminal', and are not persisted by Scoop.",
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/nowledge-co/con-terminal/releases/download/v0.1.0-beta.59/con-0.1.0-beta.59-windows-x86_64.zip",
-            "hash": "666469253666aed0fcabb4912e7da40a8ef513b6bf8ef656f241c211af96684e"
+            "url": "https://github.com/nowledge-co/con-terminal/releases/download/v0.1.0-beta.60/con-0.1.0-beta.60-windows-x86_64.zip",
+            "hash": "6ffa36b30c28d7306067dec8c3c03c6033453766549298ba172f49d884d7cc6c"
         }
     },
-    "post_install": [
-        "$appDataPath = \"$env:APPDATA\\con-terminal\"",
-        "$persistPath = \"$persist_dir\\Roaming\"",
-        "if (Test-Path $appDataPath) {",
-        "    Remove-Item $appDataPath -Recurse -Force",
-        "}",
-        "if (-Not (Test-Path $persistPath)) {",
-        "    New-Item -Path \"$persistPath\" -ItemType Directory | Out-Null",
-        "}",
-        "New-Item -ItemType Junction -Path \"$appDataPath\" -Target \"$persistPath\" | Out-Null"
-    ],
     "bin": [
         "con-app.exe",
         "con-cli.exe"
@@ -28,24 +20,22 @@
     "shortcuts": [
         [
             "con-app.exe",
-            "Con"
+            "Con Beta"
         ]
     ],
-    "post_uninstall": [
-        "$appDataPath = \"$env:APPDATA\\con-terminal\"",
-        "if (Test-Path $appDataPath) {",
-        "    Remove-Item $appDataPath -Recurse -Force",
-        "}"
-    ],
     "checkver": {
-        "url": "https://github.com/nowledge-co/con-terminal/releases/latest",
-        "re": "/tag/v?([\\d\\w.-]+)"
+        "github": "https://github.com/nowledge-co/con-terminal",
+        "jsonpath": "$.tag_name",
+        "regex": "v([\\w.-]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": "https://github.com/nowledge-co/con-terminal/releases/download/v$version/con-$version-windows-x86_64.zip"
             }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS-windows.txt"
         }
     }
 }
