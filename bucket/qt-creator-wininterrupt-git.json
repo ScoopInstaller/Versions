@@ -1,0 +1,30 @@
+{
+    "version": "19.0.1",
+    "description": "Qt Creator wininterrupt (GitHub releases build)",
+    "homepage": "https://doc.qt.io/qtcreator/index.html",
+    "license": "GPL-3.0-only",
+    "notes": [
+        "This package uses the GitHub releases build of the Qt Creator wininterrupt utility.",
+        "These builds are not officially supported. For official packages, see https://download.qt.io/official_releases/qtcreator",
+        "Only x64 builds are available from GitHub releases (no arm64).",
+        "Do not install alongside 'extras/qt-creator-wininterrupt' — both target the same parent app directory."
+    ],
+    "depends": "versions/qt-creator-git",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/qt-creator/qt-creator/releases/download/v19.0.1/wininterrupt-windows-x64-msvc-19.0.1.7z",
+            "hash": "sha256:d4c843d7a3daa1c203ed77c5797fe90251e5b1e8cc2a5a8409840d55e34faba9"
+        }
+    },
+    "post_install": "(Get-Item $dir\\bin\\win*interrupt.exe).Name | foreach { New-Item \"$(appdir qt-creator-git $global)\\current\\bin\\$_\" -ItemType HardLink -Target \"$dir\\bin\\$_\" -Force | Out-Null }",
+    "checkver": {
+        "github": "https://github.com/qt-creator/qt-creator"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/qt-creator/qt-creator/releases/download/v$version/wininterrupt-windows-x64-msvc-$version.7z"
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "version": "19.0.1",
+    "description": "IDE for development with the Qt framework (GitHub releases build)",
+    "homepage": "https://doc.qt.io/qtcreator/index.html",
+    "license": "GPL-3.0-only",
+    "notes": [
+        "This package uses the GitHub releases build of Qt Creator.",
+        "These builds are not officially supported. For official packages, see https://download.qt.io/official_releases/qtcreator",
+        "Only x64 builds are available from GitHub releases (no arm64).",
+        "Do not install alongside 'extras/qt-creator' — both create the same shim and shortcut."
+    ],
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/qt-creator/qt-creator/releases/download/v19.0.1/qtcreator-windows-x64-msvc-19.0.1.7z",
+            "hash": "sha256:d6bc6068587297ce2dc38787bc5ace43368f85ea59520117d2a702d59bd6e40f"
+        }
+    },
+    "bin": "bin\\qtcreator.exe",
+    "shortcuts": [
+        [
+            "bin\\qtcreator.exe",
+            "Qt Creator"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/qt-creator/qt-creator"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/qt-creator/qt-creator/releases/download/v$version/qtcreator-windows-x64-msvc-$version.7z"
+            }
+        }
+    }
+}

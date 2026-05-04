@@ -1,0 +1,33 @@
+{
+    "version": "19.0.1",
+    "description": "Qt Creator CDB Debugger Support (GitHub releases build)",
+    "homepage": "https://doc.qt.io/qtcreator/index.html",
+    "license": "GPL-3.0-only",
+    "notes": [
+        "This package uses the GitHub releases build of the Qt Creator CDB extension.",
+        "These builds are not officially supported. For official packages, see https://download.qt.io/official_releases/qtcreator",
+        "Only x64 builds are available from GitHub releases (no arm64).",
+        "Do not install alongside 'extras/qt-creator-cdb-ext' — both target the same parent app directory."
+    ],
+    "depends": "versions/qt-creator-git",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/qt-creator/qt-creator/releases/download/v19.0.1/qtcreatorcdbext-windows-x64-msvc-19.0.1.7z",
+            "hash": "sha256:cc042c1e5569c1ee5637dab034d02a8309b13214d6b32bcfc8655459d97f528a"
+        }
+    },
+    "post_install": [
+        "Remove-Item \"$(appdir qt-creator-git $global)\\current\\lib\\qtcreatorcdbext*\" -Force -Recurse",
+        "(Get-Item $dir\\lib\\qtcreatorcdbext*).Name | foreach { New-Item \"$(appdir qt-creator-git $global)\\current\\lib\\$_\" -ItemType Junction -Target \"$dir\\lib\\$_\" -Force | Out-Null }"
+    ],
+    "checkver": {
+        "github": "https://github.com/qt-creator/qt-creator"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/qt-creator/qt-creator/releases/download/v$version/qtcreatorcdbext-windows-x64-msvc-$version.7z"
+            }
+        }
+    }
+}
