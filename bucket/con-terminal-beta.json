@@ -3,7 +3,7 @@
     "description": "The Native Terminal Emulator with a builtin AI Harness (beta version).",
     "homepage": "https://con.nowledge.co/",
     "license": "MIT",
-    "notes": "User data are stored in '$Env:AppData\\con-terminal', and are not persisted by Scoop.",
+    "notes": "User data is stored in '$Env:AppData\\con-terminal', and is not persisted by Scoop.",
     "suggest": {
         "vcredist": "extras/vcredist2022"
     },
