@@ -10,13 +10,14 @@
         "Do not install alongside 'extras/qt-creator-wininterrupt' — both target the same parent app directory."
     ],
     "depends": "versions/qt-creator-git",
+    "pre_uninstall": "Get-Item \"$dir\bin\win*interrupt.exe\" -ErrorAction SilentlyContinue | foreach { Remove-Item \"$(appdir qt-creator-git $global)\current\bin\$($_.Name)\" -Force -ErrorAction SilentlyContinue }",
     "architecture": {
         "64bit": {
             "url": "https://github.com/qt-creator/qt-creator/releases/download/v19.0.1/wininterrupt-windows-x64-msvc-19.0.1.7z",
             "hash": "sha256:d4c843d7a3daa1c203ed77c5797fe90251e5b1e8cc2a5a8409840d55e34faba9"
         }
     },
-    "post_install": "(Get-Item $dir\\bin\\win*interrupt.exe).Name | foreach { New-Item \"$(appdir qt-creator-git $global)\\current\\bin\\$_\" -ItemType HardLink -Target \"$dir\\bin\\$_\" -Force | Out-Null }",
+    "post_install": "(Get-Item $dir\bin\win*interrupt.exe).Name | foreach { New-Item \"$(appdir qt-creator-git $global)\current\bin\$_\" -ItemType HardLink -Target \"$dir\bin\$_\" -Force | Out-Null }",
     "checkver": {
         "github": "https://github.com/qt-creator/qt-creator"
     },

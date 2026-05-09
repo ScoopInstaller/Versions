@@ -10,6 +10,7 @@
         "Do not install alongside 'extras/qt-creator-cdb-ext' — both target the same parent app directory."
     ],
     "depends": "versions/qt-creator-git",
+    "pre_uninstall": "Remove-Item \"$(appdir qt-creator-git $global)\current\lib\qtcreatorcdbext*\" -Force -Recurse -ErrorAction SilentlyContinue",
     "architecture": {
         "64bit": {
             "url": "https://github.com/qt-creator/qt-creator/releases/download/v19.0.1/qtcreatorcdbext-windows-x64-msvc-19.0.1.7z",
@@ -17,8 +18,8 @@
         }
     },
     "post_install": [
-        "Remove-Item \"$(appdir qt-creator-git $global)\\current\\lib\\qtcreatorcdbext*\" -Force -Recurse",
-        "(Get-Item $dir\\lib\\qtcreatorcdbext*).Name | foreach { New-Item \"$(appdir qt-creator-git $global)\\current\\lib\\$_\" -ItemType Junction -Target \"$dir\\lib\\$_\" -Force | Out-Null }"
+        "Remove-Item \"$(appdir qt-creator-git $global)\current\lib\qtcreatorcdbext*\" -Force -Recurse -ErrorAction SilentlyContinue",
+        "(Get-Item $dir\lib\qtcreatorcdbext*).Name | foreach { New-Item \"$(appdir qt-creator-git $global)\current\lib\$_\" -ItemType Junction -Target \"$dir\lib\$_\" -Force | Out-Null }"
     ],
     "checkver": {
         "github": "https://github.com/qt-creator/qt-creator"
