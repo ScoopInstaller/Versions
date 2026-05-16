@@ -6,10 +6,10 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.05.13/FreeCAD_weekly-2026.05.13-Windows-x86_64.7z",
-            "hash": "60f10c94653b8cc1b382e873fa81d9a7fc19924591d0debf7bc40aafb2503840"
+            "hash": "60f10c94653b8cc1b382e873fa81d9a7fc19924591d0debf7bc40aafb2503840",
+            "extract_dir": "FreeCAD_weekly-2026.05.13-Windows-x86_64"
         }
     },
-    "extract_dir": "FreeCAD_weekly-2026.05.13-Windows-x86_64",
     "bin": "bin\\FreeCADCmd.exe",
     "shortcuts": [
         [
@@ -20,14 +20,17 @@
     "checkver": {
         "github": "https://api.github.com/repos/FreeCAD/FreeCAD/releases",
         "jsonpath": "$[?(@.tag_name =~ /weekly/)].tag_name",
-        "regex": "-([\\d.]+)"
+        "regex": "weekly-([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-$version/FreeCAD_weekly-$version-Windows-x86_64.7z"
+                "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-$version/FreeCAD_weekly-$version-Windows-x86_64.7z",
+                "extract_dir": "FreeCAD_weekly-$version-Windows-x86_64"
             }
         },
-        "extract_dir": "FreeCAD_weekly-$version-Windows-x86_64"
+        "hash": {
+            "url": "$url-SHA256.txt"
+        }
     }
 }
