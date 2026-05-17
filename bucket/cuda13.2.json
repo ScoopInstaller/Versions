@@ -12,7 +12,7 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "http://developer.download.nvidia.com/compute/cuda/13.2.1/local_installers/cuda_13.2.1_windows.exe#/dl.7z",
+            "url": "https://developer.download.nvidia.com/compute/cuda/13.2.1/local_installers/cuda_13.2.1_windows.exe#/dl.7z",
             "hash": "md5:c02fb54402b917159053ce5b8fbee2cc",
             "env_add_path": [
                 "bin",
@@ -37,12 +37,12 @@
     },
     "checkver": {
         "url": "https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local",
-        "regex": "/cuda_(13\\.2\\.\\d+)_windows\\.exe"
+        "regex": "/cuda_(13\\.2\\.[\\d._]+)_windows\\.exe"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "http://developer.download.nvidia.com/compute/cuda/$matchHead/local_installers/cuda_$version_windows.exe#/dl.7z"
+                "url": "https://developer.download.nvidia.com/compute/cuda/$matchHead/local_installers/cuda_$version_windows.exe#/dl.7z"
             }
         },
         "hash": {
