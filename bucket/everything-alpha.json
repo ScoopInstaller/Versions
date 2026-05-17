@@ -4,10 +4,9 @@
     "homepage": "https://www.voidtools.com",
     "license": "MIT",
     "notes": [
-        "Note: Version 1.5 Alpha is no longer under development; to get the latest versions, switch to `everything-beta`.",
-        "You are responsible for migrating your data;",
-        "To migrate, uninstall this package, copy the persistent files over the beta files",
-        "(removing `-1.5a` from all filenames that contain it), and then re-initialize the service from the settings.",
+        "Everything 1.5 is now in BETA. The BETA version is available in Scoop as \"versions/everything-beta\".",
+        "For upgrade guide, please visit: https://www.voidtools.com/forum/viewtopic.php?t=17663#portable",
+        "",
         "To add Everything to right-click context menu, run:",
         "reg import \"$dir\\install-context.reg\""
     ],
