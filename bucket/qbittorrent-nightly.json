@@ -1,5 +1,5 @@
 {
-    "version": "26391000442",
+    "version": "26391414275",
     "description": "Free and reliable P2P Bittorent client.",
     "homepage": "https://github.com/qbittorrent/qBittorrent",
     "license": {
@@ -16,7 +16,7 @@
     "architecture": {
         "64bit": {
             "url": "https://nightly.link/qbittorrent/qBittorrent/workflows/ci_windows.yaml/master/qBittorrent-CI_Windows-x64_libtorrent-2.1.0-rc1.zip",
-            "hash": "30c4faf57d12f71a914e286572bd38f95c9e9252f01af0c093baa34236921985",
+            "hash": "245358d58f820363999c433ab451e584924979f34454fdd403811db23fe82123",
             "extract_dir": "qBittorrent"
         }
     },
@@ -68,9 +68,12 @@
         "github": "https://github.com/qbittorrent/qBittorrent",
         "script": [
             "$ci_workflows = Invoke-RestMethod 'https://api.github.com/repos/qbittorrent/qBittorrent/actions/workflows/ci_windows.yaml/runs?branch=master&status=success'",
-            "$ci_file = Invoke-RestMethod https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/.github/workflows/ci_windows.yaml",
-            "$libtorrent_version = ([regex]::Match($ci_file, '(?m)^\\s*- version:\\s*\"(?<version>[^\"]+)\"')).Groups['version'].Value",
-            "$ci_workflows.workflow_runs[0].id, $libtorrent_version -join ' '"
+            "if ((-not $ci_workflows.workflow_runs) -or ($ci_workflows.workflow_runs.Count -eq 0)) { throw 'No successful workflow runs found for ci_windows.yaml.' }",
+            "$run = $ci_workflows.workflow_runs[0]",
+            "$ci_file = Invoke-RestMethod \"https://raw.githubusercontent.com/qbittorrent/qBittorrent/$($run.head_sha)/.github/workflows/ci_windows.yaml\"",
+            "$match = [regex]::Match($ci_file, '(?m)^\\s*- version:\\s*\"(?<version>[^\"]+)\"')",
+            "if (-not $match.Success) { throw \"Failed to extract libtorrent version from ci_windows.yaml at $($run.head_sha).\" }",
+            "$run.id, $match.Groups['version'].Value -join ' '"
         ],
         "regex": "\\A(\\d+) (?<libtorrent>[0-9A-Za-z.-]+)\\Z"
     },
