@@ -25,7 +25,7 @@
     },
     "checkver": {
         "url": "https://groovy.apache.org/download.html",
-        "regex": "groovy-binary-([\\d.]+)\\.zip"
+        "regex": "groovy-binary-2\\.4\\.3\\.zip"
     },
     "autoupdate": {
         "url": "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/groovy-binary-$version.zip",
