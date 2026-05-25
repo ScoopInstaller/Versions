@@ -1,5 +1,5 @@
 {
-    "version": "26391414275",
+    "version": "26392204938",
     "description": "Free and reliable P2P Bittorent client.",
     "homepage": "https://github.com/qbittorrent/qBittorrent",
     "license": {
@@ -16,7 +16,7 @@
     "architecture": {
         "64bit": {
             "url": "https://nightly.link/qbittorrent/qBittorrent/workflows/ci_windows.yaml/master/qBittorrent-CI_Windows-x64_libtorrent-2.1.0-rc1.zip",
-            "hash": "245358d58f820363999c433ab451e584924979f34454fdd403811db23fe82123",
+            "hash": "869ff9018cc253d2bbf617061944e4576857dc7daa342e5ed96a0ebf43540626",
             "extract_dir": "qBittorrent"
         }
     },
@@ -65,17 +65,16 @@
         "script": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-associations.reg\" }"
     },
     "checkver": {
-        "github": "https://github.com/qbittorrent/qBittorrent",
+        "github": "https://api.github.com/repos/qbittorrent/qBittorrent/actions/workflows/ci_windows.yaml/runs?branch=master&status=success",
         "script": [
-            "$ci_workflows = Invoke-RestMethod 'https://api.github.com/repos/qbittorrent/qBittorrent/actions/workflows/ci_windows.yaml/runs?branch=master&status=success'",
-            "if ((-not $ci_workflows.workflow_runs) -or ($ci_workflows.workflow_runs.Count -eq 0)) { throw 'No successful workflow runs found for ci_windows.yaml.' }",
-            "$run = $ci_workflows.workflow_runs[0]",
-            "$ci_file = Invoke-RestMethod \"https://raw.githubusercontent.com/qbittorrent/qBittorrent/$($run.head_sha)/.github/workflows/ci_windows.yaml\"",
-            "$match = [regex]::Match($ci_file, '(?m)^\\s*- version:\\s*\"(?<version>[^\"]+)\"')",
-            "if (-not $match.Success) { throw \"Failed to extract libtorrent version from ci_windows.yaml at $($run.head_sha).\" }",
-            "$run.id, $match.Groups['version'].Value -join ' '"
+            "$ci_workflows = $page | ConvertFrom-Json",
+            "$ci_file = Invoke-RestMethod https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/.github/workflows/ci_windows.yaml",
+            "$libtorrent_version = ( $ci_file | Select-String 'libtorrent:\\n.*version:\\s*\"([^\"]+)\"').matches.groups[1].value",
+            "$output = @{'result' = \"$($ci_workflows.workflow_runs[0].id) $libtorrent_version\"} | ConvertTo-Json",
+            "Write-Output $output"
         ],
-        "regex": "\\A(\\d+) (?<libtorrent>[0-9A-Za-z.-]+)\\Z"
+        "jsonpath": "$.result",
+        "regex": "\\A(\\d+) (?<libtorrent>.+)\\Z"
     },
     "autoupdate": {
         "architecture": {
