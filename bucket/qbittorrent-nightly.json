@@ -1,5 +1,5 @@
 {
-    "version": "26360206616",
+    "version": "26391000442",
     "description": "Free and reliable P2P Bittorent client.",
     "homepage": "https://github.com/qbittorrent/qBittorrent",
     "license": {
@@ -15,8 +15,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://nightly.link/qbittorrent/qBittorrent/workflows/ci_windows.yaml/master/qBittorrent-CI_Windows-x64_libtorrent-2.0.12.zip",
-            "hash": "18246ac9281d47b20d9e643d5bac7b31d82bc01d985a4c535c3b25428f89fdd9",
+            "url": "https://nightly.link/qbittorrent/qBittorrent/workflows/ci_windows.yaml/master/qBittorrent-CI_Windows-x64_libtorrent-2.1.0-rc1.zip",
+            "hash": "30c4faf57d12f71a914e286572bd38f95c9e9252f01af0c093baa34236921985",
             "extract_dir": "qBittorrent"
         }
     },
@@ -65,18 +65,14 @@
         "script": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-associations.reg\" }"
     },
     "checkver": {
-        "url": "https://api.github.com/repos/qbittorrent/qBittorrent/actions/workflows/ci_windows.yaml/runs?branch=master&status=success",
+        "github": "https://github.com/qbittorrent/qBittorrent",
         "script": [
-            "$ci_workflows = $page | ConvertFrom-Json",
+            "$ci_workflows = Invoke-RestMethod 'https://api.github.com/repos/qbittorrent/qBittorrent/actions/workflows/ci_windows.yaml/runs?branch=master&status=success'",
             "$ci_file = Invoke-RestMethod https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/.github/workflows/ci_windows.yaml",
-            "$libtorrent_version = [regex]::Matches($ci_file, '(?m)^\\s*- version:\\s*\"(?<version>[^\"]+)\"') |",
-            "    ForEach-Object { $_.Groups['version'].Value } |",
-            "    Where-Object { $_ -notmatch '-' } |",
-            "    Sort-Object { [version]$_ } -Descending |",
-            "    Select-Object -First 1",
+            "$libtorrent_version = ([regex]::Match($ci_file, '(?m)^\\s*- version:\\s*\"(?<version>[^\"]+)\"')).Groups['version'].Value",
             "$ci_workflows.workflow_runs[0].id, $libtorrent_version -join ' '"
         ],
-        "regex": "\\A(\\d+) (?<libtorrent>[\\d.]+)\\Z"
+        "regex": "\\A(\\d+) (?<libtorrent>[0-9A-Za-z.-]+)\\Z"
     },
     "autoupdate": {
         "architecture": {
