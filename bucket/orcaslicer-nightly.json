@@ -18,7 +18,12 @@
     ],
     "checkver": {
         "github": "https://api.github.com/repos/OrcaSlicer/OrcaSlicer/releases/tags/nightly-builds",
-        "script": "($page | ConvertFrom-Json).updated_at | Get-Date -UFormat %s",
+        "script": [
+            "$release = $page | ConvertFrom-Json",
+            "$output = @{'result' = \"$(Get-Date $release.updated_at -UFormat %s)\"} | ConvertTo-Json -Compress",
+            "Write-Output $output"
+        ],
+        "jsonpath": "$.result",
         "regex": "^(\\d+)$"
     },
     "autoupdate": {
