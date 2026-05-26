@@ -17,7 +17,8 @@
     ],
     "checkver": {
         "github": "https://api.github.com/repos/arduino/arduino-ide/releases",
-        "regex": "tag/([\\d.]+(-rc\\d+)?)"
+        "jsonpath": "$..tag_name",
+        "regex": "([\\d.]+(-rc\\d+)?)"
     },
     "autoupdate": {
         "architecture": {

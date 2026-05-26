@@ -50,18 +50,18 @@
     ],
     "checkver": {
         "github": "https://github.com/NoMoreFood/putty-cac",
-        "regex": "/releases/tag/([\\w.]+)"
+        "regex": "([\\w.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/NoMoreFood/putty-cac/raw/0.83u1/binaries/puttycac-0.83u1-x64.zip"
+                "url": "https://github.com/NoMoreFood/putty-cac/raw/$version/binaries/puttycac-$version-x64.zip"
             },
             "32bit": {
-                "url": "https://github.com/NoMoreFood/putty-cac/raw/0.83u1/binaries/puttycac-0.83u1-x86.zip"
+                "url": "https://github.com/NoMoreFood/putty-cac/raw/$version/binaries/puttycac-$version-x86.zip"
             },
             "arm64": {
-                "url": "https://github.com/NoMoreFood/putty-cac/raw/0.83u1/binaries/puttycac-0.83u1-arm64.zip"
+                "url": "https://github.com/NoMoreFood/putty-cac/raw/$version/binaries/puttycac-$version-arm64.zip"
             }
         },
         "hash": {

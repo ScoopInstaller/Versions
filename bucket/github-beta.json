@@ -23,7 +23,8 @@
     ],
     "checkver": {
         "github": "https://api.github.com/repos/desktop/desktop/tags",
-        "regex": "tags/release-([\\d.]+-beta\\d+)\""
+        "jsonpath": "$..name",
+        "regex": "release-([\\d.]+-beta\\d+)"
     },
     "autoupdate": {
         "architecture": {

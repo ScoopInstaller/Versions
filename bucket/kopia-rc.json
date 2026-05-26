@@ -13,7 +13,7 @@
     "bin": "kopia.exe",
     "checkver": {
         "github": "https://github.com/kopia/kopia",
-        "regex": "tag/v([\\w.-]+)"
+        "regex": "v([\\w.-]+)"
     },
     "autoupdate": {
         "architecture": {
