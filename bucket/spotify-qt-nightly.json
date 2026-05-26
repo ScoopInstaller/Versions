@@ -23,7 +23,7 @@
     "checkver": {
         "github": "https://api.github.com/repos/kraxarn/spotify-qt-nightly/releases/latest",
         "jsonpath": "$.assets..name",
-        "regex": "spotify-qt-v([\\w.-]+)-win(?:64|32)\\.zip"
+        "regex": "spotify-qt-v([\\w.-]+)-(?:win64|woa64)\\.zip"
     },
     "autoupdate": {
         "architecture": {
