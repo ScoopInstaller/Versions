@@ -12,7 +12,7 @@
     "pre_install": [
         "# Rename old config file after app name changed",
         "if (Test-Path -Path \"$persist_dir\\LibreHardwareMonitor.config\" -PathType Leaf) {",
-        "    Rename-Item -Path \"$persist_dir\\LibreHardwareMonitor.config\" -NewName \"$persist_dir\\LibreHardwareMonitor.Windows.Forms.config\" -Force",
+        "    Rename-Item -Path \"$persist_dir\\LibreHardwareMonitor.config\" -NewName 'LibreHardwareMonitor.Windows.Forms.config' -Force",
         "}",
         "",
         "# Hardlinks cannot work properly here, as this app would create a new file instead of writing directly.",
