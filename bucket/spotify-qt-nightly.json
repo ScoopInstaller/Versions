@@ -22,7 +22,7 @@
     "bin": "spotify-qt.exe",
     "checkver": {
         "github": "https://api.github.com/repos/kraxarn/spotify-qt-nightly/releases/latest",
-        "jsonpath": "$.assets..name",
+        "jsonpath": "$.assets[*].name",
         "regex": "spotify-qt-v([\\w.-]+)-(?:win64|woa64)\\.zip"
     },
     "autoupdate": {
