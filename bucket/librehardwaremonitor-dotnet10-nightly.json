@@ -15,7 +15,7 @@
     "pre_install": [
         "# Rename old config file after app name changed",
         "if (Test-Path -Path \"$persist_dir\\LibreHardwareMonitor.config\" -PathType Leaf) {",
-        "    Rename-Item -Path \"$persist_dir\\LibreHardwareMonitor.config\" -NewName \"$persist_dir\\LibreHardwareMonitor.Windows.Forms.config\" -Force",
+        "    Rename-Item -Path \"$persist_dir\\LibreHardwareMonitor.config\" -NewName 'LibreHardwareMonitor.Windows.Forms.config' -Force",
         "}",
         "",
         "# Hardlinks cannot work properly here, as this app would create a new file instead of writing directly.",
@@ -47,13 +47,12 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://nightly.link/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/$version/LibreHardwareMonitor.Windows.Forms%20%28.NET%2010%29.zip",
-                "hash": {
-                    "url": "https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/$version/artifacts",
-                    "mode": "json",
-                    "jsonpath": "$.artifacts[?(@.name== 'LibreHardwareMonitor.Windows.Forms (.NET 10)')].digest"
-                }
+                "url": "https://nightly.link/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/$version/LibreHardwareMonitor.Windows.Forms%20%28.NET%2010%29.zip"
             }
+        },
+        "hash": {
+            "url": "https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/actions/runs/$version/artifacts",
+            "jsonpath": "$.artifacts[?(@.name== '$basenameNoExt')].digest"
         }
     }
 }
