@@ -21,8 +21,8 @@
     ],
     "checkver": {
         "github": "https://api.github.com/repos/qt-creator/qt-creator/releases/latest",
-        "jsonpath": "$..assets..name",
-        "regex": "qtcreator-windows-x64-msvc-([\\d.]+(?:-[a-z]+\\d+)+).7z"
+        "jsonpath": "$.tag_name",
+        "regex": "v([\\w.-]+)"
     },
     "autoupdate": {
         "architecture": {
