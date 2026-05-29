@@ -1,0 +1,43 @@
+{
+    "version": "b9404",
+    "description": "Inference of LLaMA model in pure C/C++ (CUDA 13.3 version)",
+    "homepage": "https://github.com/ggml-org/llama.cpp",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b9404/llama-b9404-bin-win-cuda-13.3-x64.zip",
+            "hash": "3ce93b4eb43f57e3e98caff1bfba008c82d7229e6ad8791649925d19fe0d8a24"
+        }
+    },
+    "bin": [
+        "llama-batched-bench.exe",
+        "llama-bench.exe",
+        "llama-cli.exe",
+        "llama-completion.exe",
+        "llama-fit-params.exe",
+        "llama-gemma3-cli.exe",
+        "llama-gguf-split.exe",
+        "llama-imatrix.exe",
+        "llama-llava-cli.exe",
+        "llama-minicpmv-cli.exe",
+        "llama-mtmd-cli.exe",
+        "llama-perplexity.exe",
+        "llama-quantize.exe",
+        "llama-qwen2vl-cli.exe",
+        "llama-server.exe",
+        "llama-tokenize.exe",
+        "llama-tts.exe"
+    ],
+    "persist": "models",
+    "checkver": {
+        "github": "https://github.com/ggml-org/llama.cpp",
+        "regex": "(b[\\d]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ggml-org/llama.cpp/releases/download/$version/llama-$version-bin-win-cuda-13.3-x64.zip"
+            }
+        }
+    }
+}
