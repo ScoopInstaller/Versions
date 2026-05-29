@@ -30,8 +30,7 @@
     ],
     "persist": "models",
     "checkver": {
-        "url": "https://api.github.com/repos/ggml-org/llama.cpp/releases/latest",
-        "jsonpath": "$.tag_name",
+        "github": "https://github.com/ggml-org/llama.cpp",
         "regex": "(b[\\d]+)"
     },
     "autoupdate": {
