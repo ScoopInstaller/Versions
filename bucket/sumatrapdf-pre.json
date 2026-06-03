@@ -37,7 +37,7 @@
         "script": [
             "$page -match 'next:\\s*(\\d+\\.\\d+)' | Out-Null",
             "$major_version = $matches[1]",
-            "$page = Invoke-WebRequest -Uri 'https://files2.sumatrapdfreader.org/software/sumatrapdf/sumatralatest.js' -UseBasicParsing",
+            "$page = (Invoke-WebRequest -Uri 'https://files2.sumatrapdfreader.org/software/sumatrapdf/sumatralatest.js' -UseBasicParsing).Content",
             "$page -match 'sumLatestVer\\s*=\\s*(\\d+);' | Out-Null",
             "$patch_version = $matches[1]",
             "Write-Output \"$major_version.$patch_version\""
