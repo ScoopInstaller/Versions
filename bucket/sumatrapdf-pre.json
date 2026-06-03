@@ -1,6 +1,6 @@
 {
-    "version": "18454",
-    "description": "PDF and eBook reader (pre-release)",
+    "version": "3.7.18454",
+    "description": "PDF and eBook reader (Pre-release).",
     "homepage": "https://www.sumatrapdfreader.org/free-pdf-reader",
     "license": "GPL-3.0-only,BSD-2-Clause",
     "architecture": {
@@ -33,16 +33,24 @@
         "sumatrapdfcache"
     ],
     "checkver": {
-        "url": "https://files2.sumatrapdfreader.org/software/sumatrapdf/sumatralatest.js",
-        "regex": "var sumLatestVer = (\\d+);"
+        "url": "https://www.sumatrapdfreader.org/docs/Version-history",
+        "script": [
+            "$page -match 'next:\\s*(\\d+\\.\\d+)' | Out-Null",
+            "$major_version = $matches[1]",
+            "$page = Invoke-WebRequest -Uri 'https://files2.sumatrapdfreader.org/software/sumatrapdf/sumatralatest.js' -UseBasicParsing",
+            "$page -match 'sumLatestVer\\s*=\\s*(\\d+);' | Out-Null",
+            "$patch_version = $matches[1]",
+            "Write-Output \"$major_version.$patch_version\""
+        ],
+        "regex": "^([\\d.]+)$"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.sumatrapdfreader.org/dl/prerel/$version/SumatraPDF-prerel-64.zip"
+                "url": "https://www.sumatrapdfreader.org/dl/prerel/$patchVersion/SumatraPDF-prerel-64.zip"
             },
             "arm64": {
-                "url": "https://www.sumatrapdfreader.org/dl/prerel/$version/SumatraPDF-prerel-arm64.zip"
+                "url": "https://www.sumatrapdfreader.org/dl/prerel/$patchVersion/SumatraPDF-prerel-arm64.zip"
             }
         }
     }
