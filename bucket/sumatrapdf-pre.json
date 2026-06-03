@@ -16,7 +16,7 @@
     "pre_install": [
         "$file = 'SumatraPDF-settings.txt'",
         "if (!(Test-Path \"$persist_dir\\$file\")) {",
-        "    Write-Host 'File' $file 'does not exists. Creating.' -f Yellow",
+        "    Write-Host 'File' $file 'does not exist. Creating.' -f Yellow",
         "    Set-Content \"$dir\\$file\" 'CheckForUpdates = false' -Encoding Ascii",
         "}",
         "Get-ChildItem \"$dir\\SumatraPDF-*.exe\" | Rename-Item -NewName 'SumatraPDF.exe'"
