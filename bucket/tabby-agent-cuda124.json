@@ -16,9 +16,7 @@
     "bin": "tabby.exe",
     "persist": ".tabby",
     "checkver": {
-        "github": "https://github.com/TabbyML/tabby",
-        "regex": "/tabby_x86_64-windows-msvc-(cuda\\d+).zip",
-        "replace": "${cudaversion}"
+        "github": "https://github.com/TabbyML/tabby"
     },
     "autoupdate": {
         "architecture": {
