@@ -21,8 +21,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/TabbyML/tabby/releases/download/v$version/tabby_x86_64-windows-msvc-cuda124.zip",
-                "extract_dir": "tabby_x86_64-windows-msvc-cuda",
+                "url": "https://github.com/TabbyML/tabby/releases/download/v$version/tabby_x86_64-windows-msvc-cuda124.zip"
             }
         }
     }
