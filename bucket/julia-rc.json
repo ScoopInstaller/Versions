@@ -1,8 +1,9 @@
 {
     "version": "1.13.0-rc1",
     "description": "The Julia programming language (Release Candidate)",
-    "homepage": "https://julialang.org",
+    "homepage": "https://julialang.org/",
     "license": "MIT",
+    "notes": "The `juliaup` tool supports installing and using different versions of Julia simultaneously.",
     "architecture": {
         "64bit": {
             "url": "https://julialang-s3.julialang.org/bin/winnt/x64/1.13/julia-1.13.0-rc1-win64.zip",
@@ -18,7 +19,7 @@
     "bin": "bin\\julia.exe",
     "checkver": {
         "url": "https://github.com/JuliaLang/www.julialang.org/raw/main/config.md",
-        "regex": "(?m:^upcoming_release = \"(.+)\"$)"
+        "regex": "(?m:^upcoming_release *= *\"([0-9.a-z-]+)\"$)"
     },
     "autoupdate": {
         "architecture": {
