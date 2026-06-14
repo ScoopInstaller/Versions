@@ -1,5 +1,5 @@
 {
-    "version": "26.01-1.5.7-r1",
+    "version": "v26.01-1.5.7-r1",
     "description": "7-Zip Zstandard is a multi-format file archiver based on 7-Zip that adds support for modern compression codecs including Zstandard, Brotli, LZ4, LZ5, Lizard, and Fast-LZMA2 while maintaining high compression ratios.",
     "homepage": "https://mcmilk.de/projects/7-Zip-zstd/",
     "license": {
@@ -47,7 +47,7 @@
         "github": "https://api.github.com/repos/mcmilk/7-Zip-zstd/releases/latest",
         "jsonpath": "$.assets[?(@.name =~ /7z(?!.+ndm)/i)].browser_download_url",
         "regex": "(?i)download/(?<tag>v?(?<sevenzip>[^-]+)-v?(?<zstd>[^-]+)-R(?<release>\\d+))/(?<prefix>[^\"]+)-(?:arm|x)",
-        "replace": "${sevenzip}-${zstd}-r${release}"
+        "replace": "v${sevenzip}-${zstd}-r${release}"
     },
     "autoupdate": {
         "architecture": {
