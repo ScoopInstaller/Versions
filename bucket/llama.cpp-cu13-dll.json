@@ -18,7 +18,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/ggml-org/llama.cpp/releases/download/$version/cudart-llama-bin-win-cuda-13.3-x64.zip"
+                "url": "https://github.com/ggml-org/llama.cpp/releases/download/$version/cudart-llama-bin-win-cuda-$matchCuda-x64.zip"
             }
         }
     }
