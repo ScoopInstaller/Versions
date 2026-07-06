@@ -1,7 +1,7 @@
 {
-    "version": "nightly",
+    "version": "20260706-c53ca64",
     "description": "GPU-accelerated terminal emulator (nightly builds)",
-    "homepage": "https://github.com/wez/wezterm",
+    "homepage": "https://github.com/wezterm/wezterm",
     "license": "Apache-2.0",
     "notes": [
         "Add \"Open with Wezterm\" as a context menu option by running:",
@@ -9,7 +9,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/wez/wezterm/releases/download/nightly/WezTerm-windows-nightly.zip"
+            "url": "https://github.com/wezterm/wezterm/releases/download/nightly/WezTerm-windows-nightly.zip",
+            "hash": "4e98f2d34e428a1920b929f3dae70896b2761516a44c980b96bd28b550033f75"
         }
     },
     "installer": {
@@ -42,5 +43,31 @@
     ],
     "uninstaller": {
         "script": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-context.reg\" *> $null }"
+    },
+    "checkver": {
+        "github": "https://api.github.com/repos/wezterm/wezterm/releases/tags/nightly",
+        "script": [
+            "$release = $page | ConvertFrom-Json",
+            "$date = Get-Date $release.updated_at -Format 'yyyyMMdd'",
+            "if ($release.target_commitish -match '^[0-9a-f]{40}$') {",
+            "    $commit = $release.target_commitish.Substring(0, 7)",
+            "} else {",
+            "    $commit = (Invoke-RestMethod 'https://api.github.com/repos/wezterm/wezterm/commits/nightly').sha.Substring(0, 7)",
+            "}",
+            "$output = @{'result' = \"$date-$commit\"} | ConvertTo-Json -Compress",
+            "Write-Output $output"
+        ],
+        "jsonpath": "$.result",
+        "regex": "(?<version>^\\d{8}-[0-9a-f]{7})"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/wezterm/wezterm/releases/download/nightly/WezTerm-windows-nightly.zip",
+                "hash": {
+                    "url": "$url.sha256"
+                }
+            }
+        }
     }
 }
