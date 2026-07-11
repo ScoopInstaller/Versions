@@ -20,7 +20,7 @@
     "persist": "shared",
     "checkver": {
         "url": "https://github.com/odin-lang/Odin/releases/latest",
-        "regex": "/releases/tag/dev-([\\d-]+)"
+        "regex": "/releases/tag/dev-([\\d-]+[a-z]?)"
     },
     "autoupdate": {
         "architecture": {
