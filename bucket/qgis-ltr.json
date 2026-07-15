@@ -1,15 +1,15 @@
 {
-    "version": "3.44.11-1",
+    "version": "3.44.12-1",
     "description": "A free and open source geographic information system (GIS)",
     "homepage": "https://www.qgis.org/",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://download.qgis.org/downloads/QGIS-OSGeo4W-3.44.11-1.msi",
-            "hash": "a95d7f247f34152c0f77fb738cd214df987d91e40f6fd6f9a98433cc2cf7dd18"
+            "url": "https://download.qgis.org/downloads/QGIS-OSGeo4W-3.44.12-1.msi",
+            "hash": "9138740d3dc691c20afd2151fa780afe36496df30fd9d2fa724d5a4efa46f270"
         }
     },
-    "extract_dir": "QGIS 3.44.11",
+    "extract_dir": "QGIS 3.44.12",
     "post_install": "& \"$dir\\etc\\postinstall.bat\" \"$(shortcut_folder $global)\\OSGeo4W\" \"%USERPROFILE%\\Desktop\" 0 1",
     "bin": [
         "OSGeo4W.bat",

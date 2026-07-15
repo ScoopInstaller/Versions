@@ -1,15 +1,15 @@
 {
-    "version": "3.44.11-1",
+    "version": "3.44.12-1",
     "description": "A free and open source geographic information system (GIS), with optional projection grids",
     "homepage": "https://www.qgis.org/",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://download.qgis.org/downloads/QGIS-Grids-OSGeo4W-3.44.11-1.msi",
-            "hash": "f221fe2e407f909c3f7c50177916454f31acccd52773a25399379d9f8f2b3f22"
+            "url": "https://download.qgis.org/downloads/QGIS-Grids-OSGeo4W-3.44.12-1.msi",
+            "hash": "5890d5b1c3a74a866456ace292070a80cc75e1123ce5d20d63f88d9e47944740"
         }
     },
-    "extract_dir": "QGIS 3.44.11",
+    "extract_dir": "QGIS 3.44.12",
     "post_install": "& \"$dir\\etc\\postinstall.bat\" \"$(shortcut_folder $global)\\OSGeo4W\" \"%USERPROFILE%\\Desktop\" 0 1",
     "bin": [
         "OSGeo4W.bat",
