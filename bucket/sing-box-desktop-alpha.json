@@ -1,0 +1,94 @@
+{
+    "version": "1.14.0-alpha.48",
+    "description": "Desktop GUI client for the sing-box universal proxy platform. (Alpha channel)",
+    "homepage": "https://sing-box.sagernet.org/",
+    "license": "GPL-3.0-or-later",
+    "notes": [
+        "This is the sing-box for Desktop GUI client (alpha channel).",
+        "For the lightweight stable CLI-only core (no GUI), install 'sing-box' from the Main bucket instead.",
+        "Windows will request administrator approval because the upstream installer deploys a protected application and system service.",
+        "This package cannot coexist with another sing-box Desktop channel because upstream uses a shared installation directory and service.",
+        "Use Scoop to update the app instead of the built-in updater."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-alpha.48/SFW-1.14.0-alpha.48-x64.exe",
+            "hash": "0d79abb2bfd5519f0f7a64c29ccf803196c42303a105714af24e4ea1ba708f7d"
+        },
+        "32bit": {
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-alpha.48/SFW-1.14.0-alpha.48-x86.exe",
+            "hash": "fb03b8734ded8a78424886bed09ae8399fca43a78cbd8b01b6ad55517f22e99c"
+        },
+        "arm64": {
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-alpha.48/SFW-1.14.0-alpha.48-arm64.exe",
+            "hash": "7fbd6ff8cdd7346ec57b3274d74cd4792cedf1c5b715d99fe6a5e9c0fbbf15dd"
+        }
+    },
+    "installer": {
+        "script": [
+            "$installer = Join-Path $dir $fname",
+            "$installerLiteral = $installer.Replace(\"'\", \"''\")",
+            "$elevatedScript = \"`$installer = '$installerLiteral'`r`n\" + @'",
+            "$ErrorActionPreference = 'Stop'",
+            "$uninstaller = Join-Path $env:ProgramFiles 'sing-box\\Uninstall sing-box.exe'",
+            "$wasInstalled = Test-Path $uninstaller",
+            "try {",
+            "    $process = Start-Process $installer -ArgumentList '/S' -Wait -PassThru",
+            "    if ($process.ExitCode -ne 0) { throw \"The upstream installer failed with exit code $($process.ExitCode).\" }",
+            "    $daemon = Join-Path $env:ProgramFiles 'sing-box\\resources\\daemon\\sing-box-daemon.exe'",
+            "    if (!(Test-Path $daemon)) { throw 'The installed sing-box daemon executable was not found.' }",
+            "    & $daemon service install",
+            "    if ($LASTEXITCODE -ne 0) { throw \"Failed to install the sing-box daemon service (exit code $LASTEXITCODE).\" }",
+            "} catch {",
+            "    if (!$wasInstalled -and (Test-Path $uninstaller)) { Start-Process $uninstaller -ArgumentList @('/allusers', '/S') -Wait | Out-Null }",
+            "    throw",
+            "}",
+            "'@",
+            "$encodedScript = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($elevatedScript))",
+            "$powershell = \"$env:SystemRoot\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\"",
+            "$process = Start-Process $powershell -Verb RunAs -Wait -PassThru -WindowStyle Hidden -ArgumentList @('-NoProfile', '-NonInteractive', '-EncodedCommand', $encodedScript)",
+            "if ($process.ExitCode -ne 0) { error \"Failed to install sing-box Desktop (exit code $($process.ExitCode)).\"; break }"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "$elevatedScript = @'",
+            "$ErrorActionPreference = 'Stop'",
+            "$uninstaller = Join-Path $env:ProgramFiles 'sing-box\\Uninstall sing-box.exe'",
+            "if (Test-Path $uninstaller) {",
+            "    $process = Start-Process $uninstaller -ArgumentList @('/allusers', '/S') -Wait -PassThru",
+            "    if ($process.ExitCode -ne 0) { throw \"The upstream uninstaller failed with exit code $($process.ExitCode).\" }",
+            "}",
+            "'@",
+            "$encodedScript = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($elevatedScript))",
+            "$powershell = \"$env:SystemRoot\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\"",
+            "$process = Start-Process $powershell -Verb RunAs -Wait -PassThru -WindowStyle Hidden -ArgumentList @('-NoProfile', '-NonInteractive', '-EncodedCommand', $encodedScript)",
+            "if ($process.ExitCode -ne 0) { error \"Failed to uninstall sing-box Desktop (exit code $($process.ExitCode)).\"; break }",
+            "$protocolKey = 'HKCU:\\Software\\Classes\\sing-box'",
+            "$commandKey = \"$protocolKey\\shell\\open\\command\"",
+            "if (Test-Path $commandKey) {",
+            "    $registeredCommand = (Get-Item $commandKey).GetValue('')",
+            "    $installedExecutable = Join-Path $env:ProgramFiles 'sing-box\\sing-box.exe'",
+            "    if ($registeredCommand -like ('\"' + $installedExecutable + '\"*')) { Remove-Item $protocolKey -Recurse -Force }",
+            "}"
+        ]
+    },
+    "checkver": {
+        "url": "https://api.github.com/repos/SagerNet/sing-box/releases?per_page=100",
+        "jsonpath": "$[?(@.prerelease == true)].tag_name",
+        "regex": "v([\\d.]+-alpha\\.\\d+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/SagerNet/sing-box/releases/download/v$version/SFW-$version-x64.exe"
+            },
+            "32bit": {
+                "url": "https://github.com/SagerNet/sing-box/releases/download/v$version/SFW-$version-x86.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/SagerNet/sing-box/releases/download/v$version/SFW-$version-arm64.exe"
+            }
+        }
+    }
+}
