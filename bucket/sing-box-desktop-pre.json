@@ -1,10 +1,10 @@
 {
-    "version": "1.14.0-alpha.50",
-    "description": "Desktop GUI client for the sing-box universal proxy platform. (Alpha channel)",
+    "version": "1.14.0-beta.1",
+    "description": "Desktop GUI client for the sing-box universal proxy platform. (Prerelease channel)",
     "homepage": "https://sing-box.sagernet.org/",
     "license": "GPL-3.0-or-later",
     "notes": [
-        "This is the sing-box for Desktop GUI client (alpha channel).",
+        "This is the sing-box for Desktop GUI client (prerelease channel).",
         "For the lightweight stable CLI-only core (no GUI), install 'sing-box' from the Main bucket instead.",
         "Windows will request administrator approval because the upstream installer deploys a protected application and system service.",
         "This package cannot coexist with another sing-box Desktop channel because upstream uses a shared installation directory and service.",
@@ -12,16 +12,16 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-alpha.50/SFW-1.14.0-alpha.50-x64.exe",
-            "hash": "bda84d6efc3b8a09245731671974d04ae9e20af3bbfe07e9c9ae4653cfbc67dc"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.1/SFW-1.14.0-beta.1-x64.exe",
+            "hash": "8394dfacb3bc62d6d73089e506e5cea1b56311c4f3093ae8558d3d9e3c571327"
         },
         "32bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-alpha.50/SFW-1.14.0-alpha.50-x86.exe",
-            "hash": "44f2eaff8ad2b5414dcc33021e4ebccc75bdd118356bc381e32a852fd3e4f9df"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.1/SFW-1.14.0-beta.1-x86.exe",
+            "hash": "7bdbccddb3be385fa9e5c2674c6bc9cc6f62f6ca4c23260955bc50098a957c38"
         },
         "arm64": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-alpha.50/SFW-1.14.0-alpha.50-arm64.exe",
-            "hash": "508a96fb9591a13c94070e68836cbe2b54c8e55f778c878117269ed7e940c49a"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.1/SFW-1.14.0-beta.1-arm64.exe",
+            "hash": "851ea20c543b4a2eb9221ee8e207be9e3c3c90fb98c95c11abf9a5f9e2e34e4e"
         }
     },
     "installer": {
@@ -76,7 +76,7 @@
     "checkver": {
         "url": "https://api.github.com/repos/SagerNet/sing-box/releases?per_page=100",
         "jsonpath": "$[?(@.prerelease == true)].tag_name",
-        "regex": "v([\\d.]+-alpha\\.\\d+)"
+        "regex": "v([\\d.]+-(?:alpha|beta|rc)\\.\\d+)"
     },
     "autoupdate": {
         "architecture": {
