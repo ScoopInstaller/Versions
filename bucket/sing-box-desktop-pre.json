@@ -1,5 +1,5 @@
 {
-    "version": "1.14.0-beta.4",
+    "version": "1.14.0-beta.5",
     "description": "Desktop GUI client for the sing-box universal proxy platform. (Prerelease channel)",
     "homepage": "https://sing-box.sagernet.org/",
     "license": "GPL-3.0-or-later",
@@ -12,16 +12,16 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.4/SFW-1.14.0-beta.4-x64.exe",
-            "hash": "a6b40b8eab51694a5f102ad3dd0a4f882a06c1a877a1e97feefe6a5247930a1e"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.5/SFW-1.14.0-beta.5-x64.exe",
+            "hash": "19a2dacd7e6809e86b5c1b78739a68c370c4c2a87479b0363ea2f2cdab488f87"
         },
         "32bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.4/SFW-1.14.0-beta.4-x86.exe",
-            "hash": "87f41f91113c63387de2c499292c2509f6114e58e26c36e9a0ced20b4b35930e"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.5/SFW-1.14.0-beta.5-x86.exe",
+            "hash": "20f919fc3d819b1011975d2ef3fac336919a2eedff7dad618a894aaec0678de0"
         },
         "arm64": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.4/SFW-1.14.0-beta.4-arm64.exe",
-            "hash": "ebcefb1dd9c40772ec90a08387fe5d88ad1f16bc3c7e528b1f475e461aca43ce"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.5/SFW-1.14.0-beta.5-arm64.exe",
+            "hash": "ffbbb6a3194f33d256a34f179d9fe90c9976d4807d9ca3dc2044c8a7d177624b"
         }
     },
     "installer": {
@@ -81,7 +81,19 @@
     },
     "checkver": {
         "url": "https://api.github.com/repos/SagerNet/sing-box/releases?per_page=100",
-        "jsonpath": "$[0].tag_name",
+        "script": [
+            "$releases = $page | ConvertFrom-Json",
+            "$candidates = foreach ($release in $releases) {",
+            "    if ($release.tag_name -notmatch '^v(?<version>(?<core>\\d+\\.\\d+\\.\\d+)(?:-(?<stage>alpha|beta|rc)\\.(?<stageNumber>\\d+))?)$') { continue }",
+            "    $version = $Matches.version",
+            "    $assetNames = @($release.assets.name)",
+            "    $requiredAssets = @('x64', 'x86', 'arm64') | ForEach-Object { \"SFW-$version-$_.exe\" }",
+            "    if (@($requiredAssets | Where-Object { $_ -notin $assetNames }).Count -gt 0) { continue }",
+            "    $stageRank = switch ($Matches.stage) { 'alpha' { 0 } 'beta' { 1 } 'rc' { 2 } default { 3 } }",
+            "    [PSCustomObject]@{ Tag = $release.tag_name; Core = [version]$Matches.core; StageRank = $stageRank; StageNumber = [int]$Matches.stageNumber }",
+            "}",
+            "$candidates | Sort-Object @{ Expression = 'Core'; Descending = $true }, @{ Expression = 'StageRank'; Descending = $true }, @{ Expression = 'StageNumber'; Descending = $true } | Select-Object -First 1 -ExpandProperty Tag"
+        ],
         "regex": "\\Av([\\d.]+(?:-(?:alpha|beta|rc)\\.\\d+)?)\\z"
     },
     "autoupdate": {
