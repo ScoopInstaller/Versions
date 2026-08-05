@@ -1,15 +1,15 @@
 {
-    "version": "0.16.2",
-    "description": "A simple GUI for Neovim (prerelease version)",
-    "homepage": "https://github.com/Kethku/neovide",
+    "version": "20260727-7f90c12",
+    "description": "A simple GUI for Neovim (nightly version)",
+    "homepage": "https://neovide.dev",
     "license": "MIT",
     "suggest": {
         "neovim": "neovim"
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/neovide/neovide/releases/download/0.16.2/neovide.exe.zip",
-            "hash": "d1e071d8bf676a500988820b852843e811fc8355396ce72e8f4c7ed2c744e2e2"
+            "url": "https://github.com/neovide/neovide/releases/download/nightly/neovide-windows-x86_64.zip",
+            "hash": "d57aab4d0ab4e08d6dc94f6fbea8c66ef9aaefb0d033dbb672d9243a2f7ce2c6"
         }
     },
     "bin": "neovide.exe",
@@ -20,13 +20,21 @@
         ]
     ],
     "checkver": {
-        "github": "https://api.github.com/repos/neovide/neovide/releases",
-        "jsonpath": "$[0].tag_name"
+        "github": "https://api.github.com/repos/neovide/neovide/releases/tags/nightly",
+        "script": [
+            "$release = $page | ConvertFrom-Json",
+            "$date = Get-Date $release.updated_at -Format 'yyyyMMdd'",
+            "$commit = $release.target_commitish",
+            "$output = @{'result' = \"$date-$commit\"} | ConvertTo-Json -Compress",
+            "Write-Output $output"
+        ],
+        "jsonpath": "$.result",
+        "regex": "(?<version>^\\d{8}-[0-9a-f]{7})"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/neovide/neovide/releases/download/$version/neovide.exe.zip"
+                "url": "https://github.com/neovide/neovide/releases/download/nightly/neovide-windows-x86_64.zip"
             }
         }
     }
