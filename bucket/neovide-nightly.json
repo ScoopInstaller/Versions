@@ -24,7 +24,7 @@
         "script": [
             "$release = $page | ConvertFrom-Json",
             "$updated = [regex]::Match($page, '\"updated_at\"\\s*:\\s*\"([^\"]+)\"').Groups[1].Value",
-            "$date = ([DateTimeOffset]::Parse($updated, [Globalization.CultureInfo]::InvariantCulture)).ToUniversalTime().ToString('yyyyMMdd')",
+            "$date = ([DateTimeOffset]::Parse($updated, [Globalization.CultureInfo]::InvariantCulture)).ToUniversalTime().ToString('yyyyMMdd', [Globalization.CultureInfo]::InvariantCulture)",
             "$commit = [string]$release.target_commitish",
             "if ($commit -notmatch '^[0-9a-fA-F]{7,40}$') { $commit = (Invoke-RestMethod \"https://api.github.com/repos/neovide/neovide/commits/$commit\").sha }",
             "$output = @{'result' = \"$date-$($commit.Substring(0, 7).ToLowerInvariant())\"} | ConvertTo-Json -Compress",
