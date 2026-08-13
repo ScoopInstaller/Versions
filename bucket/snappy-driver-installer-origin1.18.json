@@ -21,7 +21,7 @@
     },
     "installer": {
         "script": [
-            "if (Test-Path \"$persist_dir\\sdi.cfg\") { Move-Item \"$persist_dir\\sdi.cfg\" \"$persist_dir\\sdio.cfg\" | Out-Null }",
+            "if ((Test-Path \"$persist_dir\\sdi.cfg\") -and (-not (Test-Path \"$persist_dir\\sdio.cfg\"))) { Move-Item \"$persist_dir\\sdi.cfg\" \"$persist_dir\\sdio.cfg\" | Out-Null }",
             "if (-not (Test-Path \"$persist_dir\\sdio.cfg\")) { New-Item \"$dir\\sdio.cfg\" | Out-Null }"
         ]
     },
