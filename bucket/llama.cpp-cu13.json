@@ -7,6 +7,10 @@
         "64bit": {
             "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10723/llama-b10723-bin-win-cuda-13.3-x64.zip",
             "hash": "bf78f6a25292063351b3b16c176d3ec1ddd8b0bdb347372dec47afa682a09cd6"
+        },
+        "arm64": {
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10723/llama-b10723-bin-win-cuda-13.4-arm64.zip",
+            "hash": "db044d92a4900f0437a783c634e4750ea4c2dc4712610fbb3256a91bfbd4b374"
         }
     },
     "bin": [
@@ -32,12 +36,15 @@
     "checkver": {
         "github": "https://api.github.com/repos/ggml-org/llama.cpp/releases",
         "jsonpath": "$[*].assets[*].browser_download_url",
-        "regex": "download/(?<version>b[\\d]+)/llama-\\k<version>-bin-win-cuda-(?<cuda>13\\.\\d+)-x64\\.zip"
+        "regex": "download/(?<version>b[\\d]+)/llama-\\k<version>-bin-win-cuda-(?<cudax64>13\\.\\d+)-x64\\.zip.*cuda-(?<cudaarm64>13\\.\\d+)-arm64\\.zip"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/ggml-org/llama.cpp/releases/download/$version/llama-$version-bin-win-cuda-$matchCuda-x64.zip"
+                "url": "https://github.com/ggml-org/llama.cpp/releases/download/$version/llama-$version-bin-win-cuda-$matchCudax64-x64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/ggml-org/llama.cpp/releases/download/$version/llama-$version-bin-win-cuda-$matchCudaarm64-arm64.zip"
             }
         }
     }
