@@ -1,16 +1,16 @@
 {
-    "version": "b10549",
+    "version": "b10721",
     "description": "Inference of LLaMA model in pure C/C++ (CPU version)",
     "homepage": "https://github.com/ggml-org/llama.cpp",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10549/llama-b10549-bin-win-cpu-x64.zip",
-            "hash": "11d38f2ed878489b2c3d02b3d1a67683c02fbfb3d265876b9ede749a8dff5f1c"
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10721/llama-b10721-bin-win-cpu-x64.zip",
+            "hash": "7e20817d2b24164bd873c5d0747bd4b85f056e11ec3edeab503bcb61181a7273"
         },
         "arm64": {
-            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10549/llama-b10549-bin-win-cpu-arm64.zip",
-            "hash": "88453b6c9ca186885ac22b3505f5591381068d830ebc622a499af73a3607d8c2"
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10721/llama-b10721-bin-win-cpu-arm64.zip",
+            "hash": "6d851b267a3cb46fdff60f2810ae451229fd2f864ed974397847b06dae342587"
         }
     },
     "bin": [
@@ -34,8 +34,9 @@
     ],
     "persist": "models",
     "checkver": {
-        "github": "https://github.com/ggml-org/llama.cpp",
-        "regex": "(b[\\d]+)"
+        "github": "https://api.github.com/repos/ggml-org/llama.cpp/releases",
+        "jsonpath": "$[*].tag_name",
+        "regex": "\"(b[\\d]+)\""
     },
     "autoupdate": {
         "architecture": {
