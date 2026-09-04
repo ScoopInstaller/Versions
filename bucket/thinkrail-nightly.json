@@ -9,6 +9,9 @@
             "hash": "4939721a438c9972021ffeb2ac0bb9a46a04deed22da9519c1a8503ed05eeba6"
         }
     },
+    "env_set": {
+        "THINKRAIL_DATA_DIR": "$persist_dir"
+    },
     "bin": "thinkrail.exe",
     "checkver": {
         "github": "https://api.github.com/repos/JetBrains/thinkrail/releases",
