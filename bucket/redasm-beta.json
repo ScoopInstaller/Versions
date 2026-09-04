@@ -1,0 +1,34 @@
+{
+    "version": "4.0.0-beta2",
+    "description": "The Open Source Disassembler (Beta release)",
+    "homepage": "https://redasm.dev",
+    "license": "GPL-3.0-or-later",
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/redasm-dev/redasm/releases/download/v4.0.0-beta2/REDasm-4.0.0-beta2-windows-x86_64.zip",
+            "hash": "f30f69dfa95e56cfd997053befaeba3585843d368875c7ff51e5a6b893aa3d26",
+            "extract_dir": "redasm-windows-x86_64"
+        }
+    },
+    "bin": "redasm-gui.exe",
+    "shortcuts": [
+        [
+            "redasm-gui.exe",
+            "REDasm Disassembler (Beta)"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/redasm-dev/redasm",
+        "regex": "v?([\\d.]+-(?:beta|rc)\\d*|[\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/redasm-dev/redasm/releases/download/v$version/REDasm-$version-windows-x86_64.zip"
+            }
+        }
+    }
+}
