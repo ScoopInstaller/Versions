@@ -14,6 +14,10 @@
         "64bit": {
             "url": "https://dbeaver.io/files/ea/dbeaver-ce-26.2.1-windows-x86_64.zip",
             "hash": "d4b21c83697e1759adf1e432e7f933a625cd008152cfd96f810da32980cbbc45"
+        },
+        "arm64": {
+            "url": "https://dbeaver.io/files/ea/dbeaver-ce-26.2.1-windows-aarch64.zip",
+            "hash": "3bca3c1fea457e7c14631eb7a982b063a93d44fecaaaf81705ff5787728a8336"
         }
     },
     "extract_dir": "dbeaver",
@@ -42,7 +46,13 @@
         "architecture": {
             "64bit": {
                 "url": "https://dbeaver.io/files/ea/dbeaver-ce-$matchVer-windows-x86_64.zip"
+            },
+            "arm64": {
+                "url": "https://dbeaver.io/files/ea/dbeaver-ce-$matchVer-windows-aarch64.zip"
             }
+        },
+        "hash": {
+            "url": "$baseurl/checksum/$basename.sha256"
         }
     }
 }
