@@ -1,0 +1,33 @@
+{
+    "version": "5.0",
+    "description": "A graphical interface for Ghostscript",
+    "homepage": "http://www.ghostgum.com.au/software/gsview.htm",
+    "license": "Unknown",
+    "architecture": {
+        "32bit": {
+            "url": "http://www.ghostgum.com.au/download/gsv50w32.exe#/dl.7z",
+            "hash": "35afa580e02ccf0a08ecc3aec3d7a4f1e85b8e1e862a84fdc7a3a281bab06e3d",
+            "bin": [
+                [
+                    "gsview/gsview32.exe",
+                    "gsview"
+                ]
+            ]
+        },
+        "64bit": {
+            "url": "http://www.ghostgum.com.au/download/gsv50w64.exe#/dl.7z",
+            "hash": "80d0161abbb3cfb0ff08f3787c4959b8a41585ef1470dae4aea20341820d49af",
+            "bin": [
+                [
+                    "gsview/gsview64.exe",
+                    "gsview"
+                ]
+            ]
+        }
+    },
+    "note": [
+        "\"GSView\" version 5 and earlier was produced by Russell Lang at Ghostgum Software Pty Ltd..",
+        "This version exhibits problems with versions of GhostScript newer than 9.16.",
+        "This version is not recommended any longer."
+    ]
+}
