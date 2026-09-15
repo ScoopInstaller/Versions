@@ -1,0 +1,70 @@
+{
+    "version": "7.3.33",
+    "description": "A popular general-purpose scripting language that is especially suited to web development. (version 7.3)",
+    "homepage": "https://windows.php.net/",
+    "license": {
+        "identifier": "PHP-3.01",
+        "url": "https://secure.php.net/license/"
+    },
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://windows.php.net/downloads/releases/archives/php-7.3.33-nts-Win32-VC15-x64.zip",
+            "hash": "5eaf3cad80e678623f222a42c99bcefcc60eea359d407fb51e805afdb3b13e5e"
+        },
+        "32bit": {
+            "url": "https://windows.php.net/downloads/releases/archives/php-7.3.33-nts-Win32-VC15-x86.zip",
+            "hash": "5e65873d5fb9d63df17de991c736bac56389342851310bb84d8e2c22f6c9663e"
+        }
+    },
+    "pre_install": [
+        "# Create directory for custom PHP configuration",
+        "if (!(Test-Path \"$dir\\cli\\conf.d\")) {",
+        "    (New-Item -Type directory \"$dir\\cli\\conf.d\") | Out-Null",
+        "}"
+    ],
+    "post_install": [
+        "# Enable extensions to be found in installation-relative folder (the default is to search C:/php)",
+        "(Get-Content \"$dir\\cli\\php.ini\") | % { $_ -replace ';\\s?(extension_dir = \"ext\")', '$1' } | Set-Content \"$dir\\cli\\php.ini\""
+    ],
+    "bin": [
+        "php.exe",
+        "php-cgi.exe",
+        "phpdbg.exe"
+    ],
+    "persist": [
+        "cli",
+        [
+            "php.ini-production",
+            "cli\\php.ini"
+        ]
+    ],
+    "env_set": {
+        "PHP_INI_SCAN_DIR": "$dir\\cli;$dir\\cli\\conf.d;"
+    },
+    "checkver": {
+        "script": [
+            "$latestVersion = Select-String -InputObject $(Invoke-WebRequest \"https://windows.php.net/download/\").Content -Pattern \"php-(7\\.3\\.\\d+)-nts-Win32-(v.\\d+)+-x86\\.zip\" | Foreach-Object { $_.Matches }",
+            "if ($null -eq $latestVersion) {",
+            "$latestArchievedVersion = $(Select-String -InputObject $(Invoke-WebRequest \"https://windows.php.net/downloads/releases/archives/\").Content -Pattern \"php-(7\\.3\\.\\d+)-nts-Win32-(v.\\d+)+-x86\\.zip\" -AllMatches | Foreach-Object { $_.Matches } | Get-Unique | Sort-Object { [System.Version]$_.Groups[1].Value })[-1]",
+            "Write-Output \"$($latestArchievedVersion.Groups[1].Value) $($latestArchievedVersion.Groups[2].Value) archives/php\"",
+            "}",
+            "else {",
+            "Write-Output \"$($latestVersion.Groups[1].Value) $($latestVersion.Groups[2].Value) php\"",
+            "}"
+        ],
+        "regex": "(?<version>[\\d.]+) (?<build>.+) (?<past>.+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://windows.php.net/downloads/releases/$matchPast-$version-nts-Win32-$matchBuild-x64.zip"
+            },
+            "32bit": {
+                "url": "https://windows.php.net/downloads/releases/$matchPast-$version-nts-Win32-$matchBuild-x86.zip"
+            }
+        }
+    }
+}
