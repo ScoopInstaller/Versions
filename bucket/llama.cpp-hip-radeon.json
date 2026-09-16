@@ -1,5 +1,5 @@
 {
-    "version": "b11000",
+    "version": "b11007",
     "description": "Inference of LLaMA model in pure C/C++ (HIP/ROCm version for AMD GPUs)",
     "homepage": "https://github.com/ggml-org/llama.cpp",
     "license": "MIT",
@@ -9,8 +9,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11000/llama-b11000-bin-win-rocm-10.0-x64.zip",
-            "hash": "be1f63a58ca7980ad88371c59427b5b3faba1d249aa6d04735dbd44e21a4617b"
+            "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11007/llama-b11007-bin-win-rocm-10.0-x64.zip",
+            "hash": "4f4180f54aed93bc3ee8c39e337b197f243ac6af6dbaf16dba2df598d3033b78"
         }
     },
     "bin": [
