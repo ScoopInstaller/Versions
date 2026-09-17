@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0-nightly",
+    "description": "Non-linear video editor aiming to provide a fully-featured alternative to high-end professional video editing software.",
+    "homepage": "https://olivevideoeditor.org",
+    "license": "GPL-3.0-only",
+    "suggest": {
+        "vcredist2022": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/olive-editor/olive/releases/download/0.2.0-nightly/Olive-8ac191ce-Windows-x86_64-Portable.zip",
+            "hash": "b0ed9c8291093c29b01090ec49198af001c9d881c35f49ccf0f5030df994c4a5"
+        }
+    },
+    "extract_dir": "olive-editor",
+    "pre_install": [
+        "$ConfigFile = [string] [System.IO.Path]::Join($dir, 'config.xml')",
+        "if (-not [System.IO.File]::Exists($ConfigFile)) {",
+        "    $null = New-Item -Path $ConfigFile -ItemType File",
+        "    '<?xml version=\"1.0\" encoding=\"UTF-8\"?>', '<Configuration>', '</Configuration>' | ForEach-Object -Process {",
+        "        $null = Out-File -Append -FilePath $ConfigFile -Encoding 'UTF8' -InputObject $_",
+        "    }",
+        "}",
+        "$null = Remove-Item -Path \"$dir\\vc_redist.x64.exe\""
+    ],
+    "bin": "olive-editor.exe",
+    "shortcuts": [
+        [
+            "olive-editor.exe",
+            "Olive Editor"
+        ]
+    ],
+    "persist": "config.xml",
+    "checkver": {
+        "script": [
+            "$Releases = [PSCustomObject[]](Invoke-RestMethod -Method 'Get' -Uri 'https://api.github.com/repos/olive-editor/olive/releases')",
+            "$Latest = [PSCustomObject]($Releases.Where{$_.'prerelease'}[0])",
+            "$Latest.'tag_name', $Latest.'tag_name', $Latest.'assets'.'Name'.Where{$_.Endswith('Windows-x86_64-Portable.zip')}[0] -join '|'"
+        ],
+        "regex": "(?<version>.+)\\|(?<tagname>.+)\\|(?<filename>.+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/olive-editor/olive/releases/download/$matchTagname/$matchFilename"
+            }
+        }
+    }
+}
