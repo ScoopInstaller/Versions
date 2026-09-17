@@ -1,0 +1,89 @@
+{
+    "version": "1.8.0_2025-12-17",
+    "description": "An IDE for Leslie Lamport's TLA+ (Temporal Logic of Actions) language and its tools",
+    "homepage": "https://lamport.azurewebsites.net/tla/toolbox.html",
+    "license": "MIT",
+    "suggest": {
+        "pretty printer": [
+            "miktex",
+            "latex"
+        ]
+    },
+    "url": "https://github.com/tlaplus/tlaplus/releases/download/v1.8.0/TLAToolbox-1.8.0-win32.win32.x86_64.zip",
+    "hash": "sha1:58cf31e722b38f65f9dd32697f6b9cc024b01cda",
+    "extract_dir": "toolbox",
+    "pre_install": [
+        "$JDKDIR = Get-ChildItem -Attributes directory -Filter \"plugins/*openjdk*\" $dir  |",
+        "  Resolve-Path -Relative -RelativeBasePath $dir",
+        "@(",
+        "  \"@rem `\"$dir`\"\"",
+        "  \"@set TOOLS_JAR=`\"$dir\\tla2tools.jar`\"\"",
+        "  \"@set THIS_JAVA=`\"$dir\\${JDKDIR}\\jre\\bin\\java`\"\"",
+        "  '@%THIS_JAVA% -cp %TOOLS_JAR%  %*'",
+        ")  | Set-Content \"$dir\\tla2tools.cmd\" -Encoding ASCII",
+        "Write-Output \"`nChecking if class-modules exist for use with 'tla2tools':\"",
+        "@( 'tlc2.TLC', 'tlc2.REPL', 'pcal.trans', 'tla2tex.TLA', 'tla2sany.SANY' )",
+        "  | ForEach-Object -PipelineVariable modulename { $_ }",
+        "  | ForEach-Object { ($_ -replace '\\.', '/') + '.class' }",
+        "  | Resolve-Path -Relative -RelativeBasePath \"$dir/plugins/*tlatools*/\"",
+        "  | ForEach-Object { \"`t* $modulename -> $_\" }"
+    ],
+    "bin": [
+        [
+            "toolbox.exe",
+            "toolbox-pre"
+        ],
+        [
+            "tla2tools.cmd",
+            "tla2tools-pre"
+        ],
+        [
+            "tla2tools.cmd",
+            "tlc-pre",
+            "tlc2.TLC"
+        ],
+        [
+            "tla2tools.cmd",
+            "tlc-repl-pre",
+            "tlc2.REPL"
+        ],
+        [
+            "tla2tools.cmd",
+            "pcal-trans-pre",
+            "pcal.trans"
+        ],
+        [
+            "tla2tools.cmd",
+            "tla2sany-pre",
+            "tla2sany.SANY"
+        ],
+        [
+            "tla2tools.cmd",
+            "tla2tex-pre",
+            "tla2tex.TLA"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "toolbox.exe",
+            "TLA+ Toolbox Pre"
+        ]
+    ],
+    "persist": "configuration",
+    "checkver": {
+        "url": "https://api.github.com/repositories/50906927/releases",
+        "regex": "\"tag_name\":\\s*\"v(?<tag>[\\d.]+)\".*?\"updated_at\":\\s*\"(?<timestamp>[\\d-]+)T",
+        "replace": "$1_$2"
+    },
+    "autoupdate": {
+        "url": "https://github.com/tlaplus/tlaplus/releases/download/v$matchTag/TLAToolbox-$matchTag-win32.win32.x86_64.zip",
+        "hash": {
+            "url": "https://api.github.com/repos/tlaplus/tlaplus/releases/tags/v$matchTag",
+            "regex": "$sha1\\|$basename"
+        }
+    },
+    "##": [
+        "PowerShell's Quoting_Rules (*install fields): https://technet.microsoft.com/en-us/library/hh847740.aspx",
+        "https://github.com/tlaplus/tlaplus/blob/c8a59811fc90755b8f32f242f48ceca50c9a404b/README.md#L16-L30"
+    ]
+}
