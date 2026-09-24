@@ -1,0 +1,59 @@
+{
+    "version": "35507066782",
+    "description": "JPEG XL image format (.jxl) encode/decode tools (nightly version).",
+    "homepage": "https://jpeg.org/jpegxl",
+    "license": "BSD-3-Clause",
+    "architecture": {
+        "64bit": {
+            "url": "https://nightly.link/libjxl/libjxl/actions/runs/35507066782/jxl-x64-windows-static.zip",
+            "hash": "48156c5af45389c49ae4fb6b5008d4a61fb6d7c2d7d4a25c82ae7ceb1055ebc0",
+            "extract_dir": "x64-windows-static\\bin"
+        },
+        "32bit": {
+            "url": "https://nightly.link/libjxl/libjxl/actions/runs/35507066782/jxl-x86-windows-static.zip",
+            "hash": "b412b0610ef3e85ec6bd209fd725c67aa1e6f1a6293168b60e4485d18c89a274",
+            "extract_dir": "x86-windows-static\\bin"
+        }
+    },
+    "bin": [
+        "benchmark_xl.exe",
+        "butteraugli_main.exe",
+        "cjxl.exe",
+        "decode_and_encode.exe",
+        "display_to_hlg.exe",
+        "djxl_fuzzer_corpus.exe",
+        "djxl.exe",
+        "exr_to_pq.exe",
+        "generate_lut_template.exe",
+        "icc_simplify.exe",
+        "jxl_from_tree.exe",
+        "jxlinfo.exe",
+        "jxltran.exe",
+        "local_tone_map.exe",
+        "pq_to_hlg.exe",
+        "render_hlg.exe",
+        "ssimulacra_main.exe",
+        "ssimulacra2.exe",
+        "texture_to_cube.exe",
+        "tone_map.exe",
+        "xyb_range.exe"
+    ],
+    "checkver": {
+        "github": "https://api.github.com/repos/libjxl/libjxl/actions/workflows/release.yaml/runs?branch=main&status=completed",
+        "jsonpath": "$.workflow_runs[0].id"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://nightly.link/libjxl/libjxl/actions/runs/$version/jxl-x64-windows-static.zip"
+            },
+            "32bit": {
+                "url": "https://nightly.link/libjxl/libjxl/actions/runs/$version/jxl-x86-windows-static.zip"
+            }
+        },
+        "hash": {
+            "url": "https://api.github.com/repos/libjxl/libjxl/actions/runs/$version/artifacts",
+            "jsonpath": "$.artifacts[?(@.name == '$basename')].digest"
+        }
+    }
+}
