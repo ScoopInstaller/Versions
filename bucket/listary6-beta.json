@@ -3,7 +3,7 @@
     "description": "A revolutionary search utility (v6 beta).",
     "homepage": "https://help.listary.com/changelog-beta",
     "license": "Shareware",
-    "url": "https://dl.listary.net/beta/Listary.exe",
+    "url": "https://dl.listary.net/beta/Listary.exe#/dl.exe",
     "hash": "01ad053fa747bacf9ccc336156ed9d67ff449974ca19b6c14f914a60652984c8",
     "innosetup": true,
     "shortcuts": [
@@ -17,6 +17,6 @@
         "regex": "(?i)<version>\\s*(6(?:\\.\\d+)+)\\s*</version>"
     },
     "autoupdate": {
-        "url": "https://dl.listary.net/beta/Listary.exe"
+        "url": "https://dl.listary.net/beta/Listary.exe#/dl.exe"
     }
 }
