@@ -1,0 +1,40 @@
+{
+    "version": "b5130",
+    "description": "High-performance inference of OpenAI's Whisper automatic speech recognition (ASR) model (CUDA version)",
+    "homepage": "https://github.com/ggml-org/whisper.cpp",
+    "license": "MIT",
+    "notes": [
+        "Requires an NVIDIA GPU and a driver supporting the bundled CUDA runtime (currently CUDA 12.4, driver 527.41 or newer).",
+        "Whisper Model files are not included. You can download them here:",
+        "https://huggingface.co/ggerganov/whisper.cpp/tree/main"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ggml-org/whisper.cpp/releases/download/b5130/whisper-cublas-12.4.0-bin-x64.zip",
+            "hash": "af520ddd034d985b55dfeea3e465ed93653ba2aee1a55e865033edc548c272a7"
+        }
+    },
+    "extract_dir": "Release",
+    "bin": [
+        "whisper-bench.exe",
+        "whisper-cli.exe",
+        "whisper-command.exe",
+        "whisper-lsp.exe",
+        "whisper-quantize.exe",
+        "whisper-server.exe",
+        "whisper-stream.exe",
+        "whisper-talk-llama.exe",
+        "whisper-vad-speech-segments.exe"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/ggml-org/whisper.cpp/releases",
+        "regex": "/download/(?<version>b\\d+)/whisper-cublas-(?<cuda>12[\\d.]*)-bin-x64\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ggml-org/whisper.cpp/releases/download/$version/whisper-cublas-$matchCuda-bin-x64.zip"
+            }
+        }
+    }
+}
