@@ -1,5 +1,5 @@
 {
-    "version": "0.4.111",
+    "version": "0.4.112",
     "description": "Lightweight, cross-platform database client (MCP Server)",
     "homepage": "https://dbxio.com/en/docs/mcp",
     "license": "Apache-2.0",
@@ -9,12 +9,12 @@
     "notes": "Do not manage Scoop-installed DBX MCP Server in DBX Desktop application",
     "architecture": {
         "64bit": {
-            "url": "https://registry.npmjs.org/@dbx-app/mcp-win32-x64/-/mcp-win32-x64-0.4.111.tgz",
-            "hash": "sha512:45fa3e681f38d337349e907041077f1795da7b84a8bcb40f6e1b96dc96bac2d4cb7997e64ded426b12881cbe5e64a300a0d07bc6955cba86ae4c060db745c7ad"
+            "url": "https://registry.npmjs.org/@dbx-app/mcp-win32-x64/-/mcp-win32-x64-0.4.112.tgz",
+            "hash": "sha512:a3909255652db1a4d18dc08743fc6d28f32854ad96a456f47977a679f44b87067d8a3fccc78f03b7bb7b0b3c506e7b241736cf9bf46acad45fc31f1d141b3d60"
         },
         "arm64": {
-            "url": "https://registry.npmjs.org/@dbx-app/mcp-win32-arm64/-/mcp-win32-arm64-0.4.111.tgz",
-            "hash": "sha512:55fbb228645300177aaca8b89de3e9ccaa32a7064cb87cf64d86775554d7f503c31a40dd89b25168c01772b00f61c941faaa38dbdff92856c738003508ff631b"
+            "url": "https://registry.npmjs.org/@dbx-app/mcp-win32-arm64/-/mcp-win32-arm64-0.4.112.tgz",
+            "hash": "sha512:36a30e1b3f2ae6cc42a2b14a0b8e118ef8df732f26306c3394a618f1ec76c2ed3e299724f4f428ac83d9c4d87d8464a8537c633634a968ec530aa8e0696bb331"
         }
     },
     "extract_dir": "package\\bin",
