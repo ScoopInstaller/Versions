@@ -116,8 +116,8 @@
             }
         },
         "hash": {
-            "url": "https://www.python.org/downloads/release/python-$cleanVersion/",
-            "regex": "(?sm)$basename.*?$md5"
+            "url": "$url.spdx.json",
+            "jsonpath": "$.packages[?(@.downloadLocation == '$url')].checksums[?(@.algorithm == 'SHA256')].checksumValue"
         }
     }
 }
