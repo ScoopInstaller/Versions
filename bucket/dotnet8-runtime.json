@@ -1,0 +1,49 @@
+{
+    "version": "8.0.31",
+    "description": "Microsoft .NET 8.0 Runtime, installed from the ZIP archive without admin rights",
+    "homepage": "https://dotnet.microsoft.com/download/dotnet/8.0",
+    "license": "MIT",
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.31/dotnet-runtime-8.0.31-win-x64.zip",
+            "hash": "sha512:9c55c58694676ee64b0eed2cd6d8cbf58b9aa8288420acc66841e15ca0099c75d4af0182d23a641c2342e5a151a325df4a12fa0bde2e47c0fb7e9a33e7b09896"
+        },
+        "32bit": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.31/dotnet-runtime-8.0.31-win-x86.zip",
+            "hash": "sha512:c8d8597dcbfa09fa267dde0e04d628360ade272f6ec1dc46f8896a58712bb6ec19e8b9ed1a9061786b99e3b4723cfb4c438e06268b1120c3a568bcae54551c9c"
+        },
+        "arm64": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.31/dotnet-runtime-8.0.31-win-arm64.zip",
+            "hash": "sha512:4c01f325accb1abdea354b5a7c1422299c6d48b267dd86f4173962259542b25b8f2d19787be4b3753d7aaae9a99386fff9eb90581ffb6564e47bef932aaeeace"
+        }
+    },
+    "env_add_path": ".",
+    "env_set": {
+        "DOTNET_ROOT": "$dir"
+    },
+    "checkver": {
+        "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json",
+        "jsonpath": "$.releases-index[?(@.channel-version == '8.0')].latest-runtime",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://builds.dotnet.microsoft.com/dotnet/Runtime/$version/dotnet-runtime-$version-win-x64.zip"
+            },
+            "32bit": {
+                "url": "https://builds.dotnet.microsoft.com/dotnet/Runtime/$version/dotnet-runtime-$version-win-x86.zip"
+            },
+            "arm64": {
+                "url": "https://builds.dotnet.microsoft.com/dotnet/Runtime/$version/dotnet-runtime-$version-win-arm64.zip"
+            }
+        },
+        "hash": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/$majorVersion.$minorVersion/releases.json",
+            "regex": "(?s)$basename.*?$sha512"
+        }
+    }
+}
