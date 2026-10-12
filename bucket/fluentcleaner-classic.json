@@ -1,0 +1,43 @@
+{
+    "version": "26.09.01",
+    "description": "FluentCleaner is the transparent, community-powered CCleaner alternative for Windows.",
+    "homepage": "https://github.com/builtbybel/FluentCleaner",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/builtbybel/FluentCleaner/releases/download/26.09.01/FluentCleaner-Classic-net48.zip",
+            "hash": "42703e673cff81eb9d2ec7f8eacaaf93fa009915ffca40e54b63ba789d80fe85",
+            "extract_dir": "FluentCleaner-Classic-net48"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\settings.json\") -and (Test-Path \"$env:APPDATA\\FluentCleaner\")) {",
+        "    info \"Copying old '$env:APPDATA\\FluentCleaner' to '$persist_dir\"",
+        "    Copy-Item \"$env:APPDATA\\FluentCleaner\\*\" \"$dir\" -Exclude 'LOCK' -Recurse -Force",
+        "}  elseif (-not (Test-Path \"$persist_dir\\settings.json\")) { New-Item -Path \"$dir\\settings.json\" -ItemType File -Force | Out-Null }"
+    ],
+    "bin": [
+        "FluentCleaner.Classic.exe",
+        [
+            "FluentCleaner.Classic.exe",
+            "fluentcleaner"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "FluentCleaner.Classic.exe",
+            "FluentCleaner Classic"
+        ]
+    ],
+    "persist": "settings.json",
+    "checkver": {
+        "github": "https://github.com/builtbybel/FluentCleaner"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/builtbybel/FluentCleaner/releases/download/$version/FluentCleaner-Classic-net48.zip"
+            }
+        }
+    }
+}
