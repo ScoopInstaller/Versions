@@ -1,0 +1,49 @@
+{
+    "version": "8.0.31",
+    "description": "Microsoft ASP.NET Core 8.0 Runtime, including the .NET Runtime, installed from the ZIP archive without admin rights",
+    "homepage": "https://dotnet.microsoft.com/download/dotnet/8.0",
+    "license": "MIT",
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.31/aspnetcore-runtime-8.0.31-win-x64.zip",
+            "hash": "sha512:59a663650e4165bd73efdc3d91ca442b83112d4414030ba0b4e463eaed6a98af23ac7302c0c648072f185458bc07b14c7844ddc5a7557eeac2a014187f76f85e"
+        },
+        "32bit": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.31/aspnetcore-runtime-8.0.31-win-x86.zip",
+            "hash": "sha512:89383696b209c10c50ca312a8b25b9f284ab6122e3d5a72370cd28c408e5094cb7498328c5e6acf906efbdd8428a2c09ebc6cbfdb51cef724134a2e197df1520"
+        },
+        "arm64": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.31/aspnetcore-runtime-8.0.31-win-arm64.zip",
+            "hash": "sha512:b3d328d6b7d7151c331d95fef0fdfc03fc7b7d962e5757f2bb10ba270cb0e39d5237df4f65afe6d606e524f7dd49b8b34a57d9be0af88add166904d57c9ba220"
+        }
+    },
+    "env_add_path": ".",
+    "env_set": {
+        "DOTNET_ROOT": "$dir"
+    },
+    "checkver": {
+        "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json",
+        "jsonpath": "$.releases-index[?(@.channel-version == '8.0')].latest-runtime",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/$version/aspnetcore-runtime-$version-win-x64.zip"
+            },
+            "32bit": {
+                "url": "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/$version/aspnetcore-runtime-$version-win-x86.zip"
+            },
+            "arm64": {
+                "url": "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/$version/aspnetcore-runtime-$version-win-arm64.zip"
+            }
+        },
+        "hash": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/$majorVersion.$minorVersion/releases.json",
+            "regex": "(?s)$basename.*?$sha512"
+        }
+    }
+}
