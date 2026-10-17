@@ -1,20 +1,20 @@
 {
-    "version": "20261017-1d36d28",
+    "version": "20261017-ae32df1",
     "description": "DB Browser for SQLite (DB4S) project (nightly build)",
     "homepage": "https://github.com/sqlitebrowser/sqlitebrowser",
     "license": "MPL-2.0|GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/sqlitebrowser/sqlitebrowser/releases/download/continuous/DB.Browser.for.SQLite-dev-1d36d28-win-x64.zip",
-            "hash": "b54d067591c25e538a39ee33a1e8deaeaae1c6d2d015b314d37ca66e77bdfcee"
+            "url": "https://github.com/sqlitebrowser/sqlitebrowser/releases/download/continuous/DB.Browser.for.SQLite-dev-ae32df1-win-x64.zip",
+            "hash": "5f9256e2321e5c9194284a615391cb990800be499e0960affbb42784e1b8e172"
         },
         "32bit": {
-            "url": "https://github.com/sqlitebrowser/sqlitebrowser/releases/download/continuous/DB.Browser.for.SQLite-dev-1d36d28-win-x86.zip",
-            "hash": "b08f5fcbb238bcb47e2e993d1a5fa5eeda46ee63cc7737556afe6d0d636927e4"
+            "url": "https://github.com/sqlitebrowser/sqlitebrowser/releases/download/continuous/DB.Browser.for.SQLite-dev-ae32df1-win-x86.zip",
+            "hash": "6c685dd61e4c4b7fa5404735dba30f374f1e408c71e0c02a83d2171ec172599f"
         },
         "arm64": {
-            "url": "https://github.com/sqlitebrowser/sqlitebrowser/releases/download/continuous/DB.Browser.for.SQLite-dev-1d36d28-win-arm64.zip",
-            "hash": "2f3b215d95ef172a71af7503b6eda4606433edb70ff2454d24a58ba1c6e13c7d"
+            "url": "https://github.com/sqlitebrowser/sqlitebrowser/releases/download/continuous/DB.Browser.for.SQLite-dev-ae32df1-win-arm64.zip",
+            "hash": "5e30036e5033afeee692b76b68ced744ada1e71c8231f59380c99245029628ef"
         }
     },
     "bin": [
