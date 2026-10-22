@@ -2,8 +2,20 @@
     "version": "2026.10.21.220458",
     "description": "yt-dlp (official) master builds",
     "homepage": "https://github.com/yt-dlp/yt-dlp-master-builds",
+    "notes": [
+        "Requires a JavaScript runtime for full functionality (e.g., deno, node, bun).",
+        "By default yt-dlp prefers 'deno' — use `--js-runtimes <runtime>` as an argument, or edit `yt-dlp.conf` to override."
+    ],
     "license": "Freeware",
     "suggest": {
+        "js-runtime": [
+            "deno",
+            "nodejs",
+            "nodejs-lts",
+            "versions/nodejs22",
+            "bun",
+            "quickjs"
+        ],
         "ffmpeg": [
             "versions/ffmpeg-yt-dlp-nightly",
             "versions/ffmpeg-shared-yt-dlp-nightly"
