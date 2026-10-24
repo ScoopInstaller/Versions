@@ -1,15 +1,15 @@
 {
-    "version": "3.44.14-1",
+    "version": "3.44.15-2",
     "description": "A free and open source geographic information system (GIS), with optional projection grids",
     "homepage": "https://www.qgis.org/",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://download.qgis.org/downloads/QGIS-Grids-OSGeo4W-3.44.14-1.msi",
-            "hash": "ce8fe77bb105e3b2f6195b8b37e9cc365a797aa0b23d639e4fbcb744176c50e4"
+            "url": "https://download.qgis.org/downloads/QGIS-Grids-OSGeo4W-3.44.15-2.msi",
+            "hash": "bbe3a9d3733e4ef4ab54ff42e4903339b9e0f0466055f3c34659a9fed6d277f0"
         }
     },
-    "extract_dir": "QGIS 3.44.14",
+    "extract_dir": "QGIS 3.44.15",
     "post_install": [
         "if (-not $global) {",
         "  (Get-Content \"$dir\\etc\\postinstall\\qgis-ltr.bat\" -Raw).Replace('\"%WINDIR%\\regedit\" /s', '\"%SystemRoot%\\System32\\reg.exe\" import') |",
