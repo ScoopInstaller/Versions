@@ -1,0 +1,69 @@
+{
+    "version": "0.1.4-nightly.20261028.3814",
+    "description": "Desktop app for orchestrating AI coding agents like Claude Code, Codex, Cursor CLI and OpenCode (nightly version).",
+    "homepage": "https://t3.codes",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/pingdotgg/t3code/releases/download/v0.1.4-nightly.20261028.3814/T3-Code-0.1.4-nightly.20261028.3814-x64.exe#/dl.7z",
+            "hash": "sha512:d0803570fe2a02926357f6b2eeb040ce9d65a1121f56568114e4423269d078497c63b620b7b9e4b9e6f88d672b7be188d92648816b967ad6ea0c69adf81d3497"
+        },
+        "arm64": {
+            "url": "https://github.com/pingdotgg/t3code/releases/download/v0.1.4-nightly.20261028.3814/T3-Code-0.1.4-nightly.20261028.3814-arm64.exe#/dl.7z",
+            "hash": "sha512:d8cdc024000f75a6356e0254b7ca4ef8097bdfc767d187616f403781bccf72220f1cc16cbc37a990849d9ce50ad6132db5db1b9f2ce5738d1c131789d4e2754b"
+        }
+    },
+    "pre_install": [
+        "Get-Item \"$dir\\`$PLUGINSDIR\\app*.7z\" | Select-Object -First 1 | Expand-7zipArchive -DestinationPath $dir",
+        "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Force -Recurse -ErrorAction Ignore"
+    ],
+    "post_install": [
+        "if (Test-Path $env:USERPROFILE\\.t3) {",
+        "    Write-Host \"`r`nMove user config from non-portable version...\"",
+        "    Copy-Item -Path $env:USERPROFILE\\.t3\\* -Destination \"$persist_dir\\user\" -Force -Recurse -ErrorAction Stop | Out-Null",
+        "    Remove-Item $env:USERPROFILE\\.t3 -Force -Recurse",
+        "}",
+        "if (Test-Path $env:APPDATA\\t3code-v2) {",
+        "    Write-Host \"`r`nMove app config from non-portable version...\"",
+        "    Copy-Item -Path $env:APPDATA\\t3code-v2\\* -Destination \"$persist_dir\\app\" -Force -Recurse -ErrorAction Stop | Out-Null",
+        "    Remove-Item $env:APPDATA\\t3code-v2 -Force -Recurse",
+        "}",
+        "New-Item -ItemType Junction -Path $env:USERPROFILE\\.t3 -Target \"$persist_dir\\user\" | Out-Null",
+        "New-Item -ItemType Junction -Path $env:APPDATA\\t3code-v2 -Target \"$persist_dir\\app\" | Out-Null"
+    ],
+    "uninstaller": {
+        "script": [
+            "Remove-Item $env:USERPROFILE\\.t3 -Force -Recurse",
+            "Remove-Item $env:APPDATA\\t3code-v2 -Force -Recurse"
+        ]
+    },
+    "shortcuts": [
+        [
+            "T3 Code (Nightly).exe",
+            "T3 Code (Nightly)"
+        ]
+    ],
+    "persist": [
+        "user",
+        "app"
+    ],
+    "checkver": {
+        "github": "https://api.github.com/repos/pingdotgg/t3code/releases",
+        "jsonpath": "$[0].tag_name",
+        "regex": "^v(\\d+(?:\\.\\d+)+-nightly[\\d\\.]+)$"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/pingdotgg/t3code/releases/download/v$version/T3-Code-$version-x64.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/pingdotgg/t3code/releases/download/v$version/T3-Code-$version-arm64.exe#/dl.7z"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/nightly.yml",
+            "regex": "(?sm)$basename.*?$base64"
+        }
+    }
+}
