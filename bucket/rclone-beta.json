@@ -1,23 +1,23 @@
 {
-    "version": "1.76.0-beta.10630.105346375",
+    "version": "1.76.0-beta.10661.283277aa2",
     "description": "Sync files and directories to and from multiple cloud / FTP / HTTP hosters (beta version).",
     "homepage": "https://rclone.org",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://beta.rclone.org/v1.76.0-beta.10630.105346375/rclone-v1.76.0-beta.10630.105346375-windows-amd64.zip",
-            "extract_dir": "rclone-v1.76.0-beta.10630.105346375-windows-amd64",
-            "hash": "2925379355cbb6e9ce1c4828ed4dcfdacaf57e6ce2f627398ca03564e008db62"
+            "url": "https://beta.rclone.org/v1.76.0-beta.10661.283277aa2/rclone-v1.76.0-beta.10661.283277aa2-windows-amd64.zip",
+            "extract_dir": "rclone-v1.76.0-beta.10661.283277aa2-windows-amd64",
+            "hash": "a6ed2d7028cb405a270bd40734b22db1b356cbdf430ed3c8c93268c2cbe3f156"
         },
         "32bit": {
-            "url": "https://beta.rclone.org/v1.76.0-beta.10630.105346375/rclone-v1.76.0-beta.10630.105346375-windows-386.zip",
-            "extract_dir": "rclone-v1.76.0-beta.10630.105346375-windows-386",
-            "hash": "0911f36df80729cf11dacbb2ef3019f2610fc5c0ddacee1bf2cb4ec60676b6c0"
+            "url": "https://beta.rclone.org/v1.76.0-beta.10661.283277aa2/rclone-v1.76.0-beta.10661.283277aa2-windows-386.zip",
+            "extract_dir": "rclone-v1.76.0-beta.10661.283277aa2-windows-386",
+            "hash": "99f5b8b424c04a07bb14e66e46b5a185fd31db4a5b23f8b0d4a6a9f25ae2fecf"
         },
         "arm64": {
-            "url": "https://beta.rclone.org/v1.76.0-beta.10630.105346375/rclone-v1.76.0-beta.10630.105346375-windows-arm64.zip",
-            "hash": "2a9a541f2fd51e71b1a51a5d8a4800b80e39c97f3a17f3e61bf93dd4dd8c59d7",
-            "extract_dir": "rclone-v1.76.0-beta.10630.105346375-windows-arm64"
+            "url": "https://beta.rclone.org/v1.76.0-beta.10661.283277aa2/rclone-v1.76.0-beta.10661.283277aa2-windows-arm64.zip",
+            "hash": "f80f5807ed3c8036ef0848de48fa229c3cde2ae5096899b46dd0fc83ea843727",
+            "extract_dir": "rclone-v1.76.0-beta.10661.283277aa2-windows-arm64"
         }
     },
     "bin": [
