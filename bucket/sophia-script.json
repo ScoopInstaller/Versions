@@ -5,7 +5,10 @@
     "license": "MIT",
     "notes": [
         "This package provides Sophia Script for Windows 11, PowerShell 5.1 only.",
-        "Other editions: sophia-script-ps7, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019, sophia-script-ltsc2021."
+        "Other editions: sophia-script-ps7, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019, sophia-script-ltsc2021.",
+        "The Sophia and SophiaScript commands start powershell.exe and run Sophia.ps1 in Windows PowerShell 5.1. This works from any shell.",
+        "This edition needs Windows 11 build 26300.9445 or newer.",
+        "Sophia.ps1 is the preset. Your function selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
     "architecture": {
         "64bit": {
@@ -22,21 +25,24 @@
     "pre_install": [
         "$Build = [int](Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion' -Name CurrentBuild)",
         "$ProductName = Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion' -Name ProductName",
-        "if (-not (($Build -gt 19045) -and ($ProductName -notmatch 'LTSC 2024'))) {",
+        "$UBR = [int](Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion' -Name UBR)",
+        "if (-not ((($Build -gt 26300) -or (($Build -eq 26300) -and ($UBR -ge 9445))) -and ($ProductName -notmatch 'LTSC 2024'))) {",
         "    $AppDir = Split-Path -Path $dir -Parent",
         "    Remove-Item -LiteralPath $dir -Recurse -Force",
         "    if (-not (Get-ChildItem -LiteralPath $AppDir -Force)) { Remove-Item -LiteralPath $AppDir -Force }",
-        "    abort \"This package is for Windows 11, PowerShell 5.1. Detected: $ProductName (build $Build). Run 'scoop search sophia-script' to pick the right edition.\"",
+        "    abort \"This package is for Windows 11 (build 26300.9445 or newer), PowerShell 5.1. Detected: $ProductName (build $Build.$UBR). Run 'scoop search sophia-script' to pick the right edition.\"",
         "}"
     ],
     "bin": [
         [
-            "Sophia.ps1",
-            "Sophia"
+            "powershell.exe",
+            "Sophia",
+            "-NoProfile -ExecutionPolicy Bypass -Command \"& '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
         ],
         [
-            "Sophia.ps1",
-            "SophiaScript"
+            "powershell.exe",
+            "SophiaScript",
+            "-NoProfile -ExecutionPolicy Bypass -Command \"& '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
         ]
     ],
     "checkver": "github",

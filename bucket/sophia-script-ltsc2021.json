@@ -6,7 +6,7 @@
     "notes": [
         "This package provides Sophia Script for Windows 10 Enterprise LTSC 2021 only.",
         "Other editions: sophia-script, sophia-script-ps7, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019.",
-        "The Sophia and SophiaScript commands start a launcher. It runs Sophia.ps1 in Windows PowerShell 5.1 (powershell.exe) from any shell (PowerShell 5.1, PowerShell 7 or CMD).",
+        "The Sophia and SophiaScript commands start powershell.exe and run Sophia.ps1 in Windows PowerShell 5.1. This works from any shell.",
         "Sophia.ps1 is the preset. Your function selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
     "architecture": {
@@ -24,17 +24,18 @@
         "    Remove-Item -LiteralPath $dir -Recurse -Force",
         "    if (-not (Get-ChildItem -LiteralPath $AppDir -Force)) { Remove-Item -LiteralPath $AppDir -Force }",
         "    abort \"This package is for Windows 10 Enterprise LTSC 2021. Detected: $ProductName (build $Build). Run 'scoop search sophia-script' to pick the right edition.\"",
-        "}",
-        "Set-Content -LiteralPath \"$dir\\Sophia.cmd\" -Value '@echo off', 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"%~dp0Sophia.ps1\" %*' -Encoding Ascii"
+        "}"
     ],
     "bin": [
         [
-            "Sophia.cmd",
-            "Sophia"
+            "powershell.exe",
+            "Sophia",
+            "-NoProfile -ExecutionPolicy Bypass -Command \"& '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
         ],
         [
-            "Sophia.cmd",
-            "SophiaScript"
+            "powershell.exe",
+            "SophiaScript",
+            "-NoProfile -ExecutionPolicy Bypass -Command \"& '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
         ]
     ],
     "checkver": {

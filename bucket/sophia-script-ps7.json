@@ -6,8 +6,8 @@
     "notes": [
         "This package provides Sophia Script for Windows 11, PowerShell 7 only.",
         "Other editions: sophia-script, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019, sophia-script-ltsc2021.",
-        "The Sophia and SophiaScript commands start a launcher. It runs Sophia.ps1 in PowerShell 7 (pwsh.exe) from any shell (PowerShell 5.1, PowerShell 7 or CMD).",
         "This edition needs PowerShell 7.6 or newer.",
+        "The Sophia and SophiaScript commands start powershell.exe. It finds pwsh.exe, checks its version and runs Sophia.ps1 in PowerShell 7. This works from any shell.",
         "This edition needs Windows 11 build 26300.9445 or newer.",
         "Sophia.ps1 is the preset. Your function selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
@@ -38,17 +38,18 @@
         "}",
         "$PwshCommand = Get-Command -Name pwsh -ErrorAction SilentlyContinue | Select-Object -First 1",
         "if (-not $PwshCommand) { warn 'This edition runs on PowerShell 7.6 or newer only. Install it: scoop install main/pwsh' }",
-        "elseif ($PwshCommand.Version -lt [version]'7.6') { warn \"This edition needs PowerShell 7.6 or newer. Found: $($PwshCommand.Version). Update it: scoop update pwsh\" }",
-        "Set-Content -LiteralPath \"$dir\\Sophia.cmd\" -Value '@echo off', 'pwsh.exe -NoProfile -ExecutionPolicy Bypass -File \"%~dp0Sophia.ps1\" %*' -Encoding Ascii"
+        "elseif ($PwshCommand.Version -lt [version]'7.6') { warn \"This edition needs PowerShell 7.6 or newer. Found: $($PwshCommand.Version). Update it: scoop update pwsh\" }"
     ],
     "bin": [
         [
-            "Sophia.cmd",
-            "Sophia"
+            "powershell.exe",
+            "Sophia",
+            "-NoProfile -ExecutionPolicy Bypass -Command \"$p = Get-Command -Name pwsh.exe -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1; if (-not $p) { Write-Host 'PowerShell 7.6 or newer is required. Install it: scoop install main/pwsh' -ForegroundColor Red; exit 1 }; if ($p.Version -lt [version]'7.6') { Write-Host ('PowerShell 7.6 or newer is required. Found: ' + $p.Version + '. Update it: scoop update pwsh') -ForegroundColor Red; exit 1 }; & $p.Source -NoProfile -ExecutionPolicy Bypass -File '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
         ],
         [
-            "Sophia.cmd",
-            "SophiaScript"
+            "powershell.exe",
+            "SophiaScript",
+            "-NoProfile -ExecutionPolicy Bypass -Command \"$p = Get-Command -Name pwsh.exe -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1; if (-not $p) { Write-Host 'PowerShell 7.6 or newer is required. Install it: scoop install main/pwsh' -ForegroundColor Red; exit 1 }; if ($p.Version -lt [version]'7.6') { Write-Host ('PowerShell 7.6 or newer is required. Found: ' + $p.Version + '. Update it: scoop update pwsh') -ForegroundColor Red; exit 1 }; & $p.Source -NoProfile -ExecutionPolicy Bypass -File '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
         ]
     ],
     "checkver": "github",
