@@ -6,7 +6,8 @@
     "notes": [
         "This package provides Sophia Script for Windows 10 Enterprise LTSC 2021 only.",
         "Other editions: sophia-script, sophia-script-ps7, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019.",
-        "The Sophia and SophiaScript commands start powershell.exe and run Sophia.ps1 in Windows PowerShell 5.1. This works from any shell.",
+        "The Sophia and SophiaScript commands run Sophia.ps1 in Windows PowerShell 5.1 (powershell.exe). This works from any shell.",
+        "Run Sophia from an elevated terminal (Run as administrator). The preset stops without administrator rights.",
         "Sophia.ps1 is the preset. Your function selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
     "architecture": {
@@ -30,12 +31,12 @@
         [
             "powershell.exe",
             "Sophia",
-            "-NoProfile -ExecutionPolicy Bypass -Command \"& '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
+            "-NoProfile -ExecutionPolicy Bypass -File \"$dir\\Sophia.ps1\""
         ],
         [
             "powershell.exe",
             "SophiaScript",
-            "-NoProfile -ExecutionPolicy Bypass -Command \"& '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
+            "-NoProfile -ExecutionPolicy Bypass -File \"$dir\\Sophia.ps1\""
         ]
     ],
     "checkver": {

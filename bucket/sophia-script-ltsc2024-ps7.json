@@ -6,13 +6,11 @@
     "notes": [
         "This package provides Sophia Script for Windows 11 Enterprise LTSC 2024, PowerShell 7 only.",
         "Other editions: sophia-script, sophia-script-ps7, sophia-script-ltsc2024, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019, sophia-script-ltsc2021.",
-        "This edition needs PowerShell 7.6 or newer.",
-        "The Sophia and SophiaScript commands start powershell.exe. It finds pwsh.exe, checks its version and runs Sophia.ps1 in PowerShell 7. This works from any shell.",
+        "The Sophia and SophiaScript commands run Sophia.ps1 in PowerShell 7 (pwsh.exe). This works from any shell. The preset checks the PowerShell version itself and needs PowerShell 7.6 or newer.",
+        "Run Sophia from an elevated terminal (Run as administrator). The preset stops without administrator rights.",
         "Sophia.ps1 is the preset. Your function selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
-    "suggest": {
-        "PowerShell 7": "main/pwsh"
-    },
+    "depends": "main/pwsh",
     "architecture": {
         "64bit": {
             "url": "https://github.com/farag2/Sophia-Script-for-Windows/releases/download/8.1.0/Sophia.Script.for.Windows.11.LTSC.2024.PowerShell.7.v8.1.0.zip",
@@ -29,20 +27,25 @@
         "    if (-not (Get-ChildItem -LiteralPath $AppDir -Force)) { Remove-Item -LiteralPath $AppDir -Force }",
         "    abort \"This package is for Windows 11 Enterprise LTSC 2024, PowerShell 7. Detected: $ProductName (build $Build). Run 'scoop search sophia-script' to pick the right edition.\"",
         "}",
-        "$PwshCommand = Get-Command -Name pwsh -ErrorAction SilentlyContinue | Select-Object -First 1",
+        "$PwshCommand = Get-Command -Name pwsh.exe -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1",
         "if (-not $PwshCommand) { warn 'This edition runs on PowerShell 7.6 or newer only. Install it: scoop install main/pwsh' }",
-        "elseif ($PwshCommand.Version -lt [version]'7.6') { warn \"This edition needs PowerShell 7.6 or newer. Found: $($PwshCommand.Version). Update it: scoop update pwsh\" }"
+        "else {",
+        "    $PwshVersion = @(& $PwshCommand.Source -NoProfile -Command '$PSVersionTable.PSVersion.Major; $PSVersionTable.PSVersion.Minor')",
+        "    if (($PwshVersion.Count -lt 2) -or ([int]$PwshVersion[0] -lt 7) -or (([int]$PwshVersion[0] -eq 7) -and ([int]$PwshVersion[1] -lt 6))) {",
+        "        warn \"This edition needs PowerShell 7.6 or newer. Found: $($PwshVersion -join '.'). Update it: scoop update pwsh\"",
+        "    }",
+        "}"
     ],
     "bin": [
         [
-            "powershell.exe",
+            "pwsh.exe",
             "Sophia",
-            "-NoProfile -ExecutionPolicy Bypass -Command \"$p = Get-Command -Name pwsh.exe -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1; if (-not $p) { Write-Host 'PowerShell 7.6 or newer is required. Install it: scoop install main/pwsh' -ForegroundColor Red; exit 1 }; if ($p.Version -lt [version]'7.6') { Write-Host ('PowerShell 7.6 or newer is required. Found: ' + $p.Version + '. Update it: scoop update pwsh') -ForegroundColor Red; exit 1 }; & $p.Source -NoProfile -ExecutionPolicy Bypass -File '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
+            "-NoProfile -ExecutionPolicy Bypass -File \"$dir\\Sophia.ps1\""
         ],
         [
-            "powershell.exe",
+            "pwsh.exe",
             "SophiaScript",
-            "-NoProfile -ExecutionPolicy Bypass -Command \"$p = Get-Command -Name pwsh.exe -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1; if (-not $p) { Write-Host 'PowerShell 7.6 or newer is required. Install it: scoop install main/pwsh' -ForegroundColor Red; exit 1 }; if ($p.Version -lt [version]'7.6') { Write-Host ('PowerShell 7.6 or newer is required. Found: ' + $p.Version + '. Update it: scoop update pwsh') -ForegroundColor Red; exit 1 }; & $p.Source -NoProfile -ExecutionPolicy Bypass -File '$dir\\Sophia.ps1'; exit $LASTEXITCODE\""
+            "-NoProfile -ExecutionPolicy Bypass -File \"$dir\\Sophia.ps1\""
         ]
     ],
     "checkver": "github",
