@@ -6,10 +6,10 @@
     "notes": [
         "This package provides Sophia Script for Windows 11, PowerShell 7 only.",
         "Other editions: sophia-script, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019, sophia-script-ltsc2021.",
-        "The Sophia and SophiaScript commands run Sophia.ps1 in PowerShell 7 (pwsh.exe). This works from any shell. The preset checks the PowerShell version itself and needs PowerShell 7.6 or newer.",
+        "The Sophia and SophiaScript commands run Sophia.ps1 in PowerShell 7 from Scoop (main/pwsh). This works from any shell. The preset needs PowerShell 7.6 or newer.",
         "This edition needs Windows 11 build 26300.9445 or newer.",
         "Run Sophia from an elevated terminal (Run as administrator). The preset stops without administrator rights.",
-        "Sophia.ps1 is the preset. Your function selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
+        "Sophia.ps1 is the preset. Edit \"$dir\\Sophia.ps1\" before you run Sophia: select the functions you want. Your selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
     "depends": "main/pwsh",
     "architecture": {
@@ -34,23 +34,26 @@
         "    if (-not (Get-ChildItem -LiteralPath $AppDir -Force)) { Remove-Item -LiteralPath $AppDir -Force }",
         "    abort \"This package is for Windows 11 (build 26300.9445 or newer), PowerShell 7. Detected: $ProductName (build $Build.$UBR). Run 'scoop search sophia-script' to pick the right edition.\"",
         "}",
-        "$PwshCommand = Get-Command -Name pwsh.exe -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1",
-        "if (-not $PwshCommand) { warn 'This edition runs on PowerShell 7.6 or newer only. Install it: scoop install main/pwsh' }",
-        "else {",
-        "    $PwshVersion = @(& $PwshCommand.Source -NoProfile -Command '$PSVersionTable.PSVersion.Major; $PSVersionTable.PSVersion.Minor')",
-        "    if (($PwshVersion.Count -lt 2) -or ([int]$PwshVersion[0] -lt 7) -or (([int]$PwshVersion[0] -eq 7) -and ([int]$PwshVersion[1] -lt 6))) {",
-        "        warn \"This edition needs PowerShell 7.6 or newer. Found: $($PwshVersion -join '.'). Update it: scoop update pwsh\"",
-        "    }",
+        "$PwshPath = Join-Path -Path $dir -ChildPath '..\\..\\pwsh\\current\\pwsh.exe'",
+        "if (-not (Test-Path -LiteralPath $PwshPath)) {",
+        "    $AppDir = Split-Path -Path $dir -Parent",
+        "    Remove-Item -LiteralPath $dir -Recurse -Force",
+        "    if (-not (Get-ChildItem -LiteralPath $AppDir -Force)) { Remove-Item -LiteralPath $AppDir -Force }",
+        "    abort \"PowerShell 7 from Scoop was not found: $PwshPath. Install it in the same scope: scoop install main/pwsh\"",
+        "}",
+        "$PwshVersion = @(& $PwshPath -NoProfile -Command '$PSVersionTable.PSVersion.Major; $PSVersionTable.PSVersion.Minor')",
+        "if (($PwshVersion.Count -lt 2) -or ([int]$PwshVersion[0] -lt 7) -or (([int]$PwshVersion[0] -eq 7) -and ([int]$PwshVersion[1] -lt 6))) {",
+        "    warn \"This edition needs PowerShell 7.6 or newer. Found: $($PwshVersion -join '.'). Update it: scoop update pwsh\"",
         "}"
     ],
     "bin": [
         [
-            "pwsh.exe",
+            "..\\..\\pwsh\\current\\pwsh.exe",
             "Sophia",
             "-NoProfile -ExecutionPolicy Bypass -File \"$dir\\Sophia.ps1\""
         ],
         [
-            "pwsh.exe",
+            "..\\..\\pwsh\\current\\pwsh.exe",
             "SophiaScript",
             "-NoProfile -ExecutionPolicy Bypass -File \"$dir\\Sophia.ps1\""
         ]

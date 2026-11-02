@@ -9,7 +9,7 @@
         "The Sophia and SophiaScript commands run Sophia.ps1 in Windows PowerShell 5.1 (powershell.exe). This works from any shell.",
         "This edition needs Windows 11 build 26300.9445 or newer.",
         "Run Sophia from an elevated terminal (Run as administrator). The preset stops without administrator rights.",
-        "Sophia.ps1 is the preset. Your function selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
+        "Sophia.ps1 is the preset. Edit \"$dir\\Sophia.ps1\" before you run Sophia: select the functions you want. Your selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
     "architecture": {
         "64bit": {
