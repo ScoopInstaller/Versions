@@ -19,12 +19,13 @@
     },
     "pre_install": [
         "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-*.7z\" \"$dir\"",
+        "& \"$env:SystemRoot\\System32\\icacls.exe\" \"$dir\" /grant '*S-1-15-2-2:(OI)(CI)(RX)'",
         "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse -ErrorAction Ignore"
     ],
     "shortcuts": [
         [
             "OpenCode.exe",
-            "OpenCode"
+            "OpenCode v2"
         ]
     ],
     "checkver": {
