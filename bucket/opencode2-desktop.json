@@ -29,8 +29,8 @@
         ]
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/@opencode/cli/latest",
-        "jsonpath": "$.version"
+        "github": "https://api.github.com/repos/anomalyco/opencode/releases?per_page=100",
+        "jsonpath": "$[?(@.tag_name =~ /^v2\\./)].tag_name"
     },
     "autoupdate": {
         "architecture": {
