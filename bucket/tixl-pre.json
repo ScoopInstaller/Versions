@@ -1,0 +1,33 @@
+{
+    "version": "4.4.0.5",
+    "description": "An open source software to create realtime motion graphics.",
+    "homepage": "https://tixl.app",
+    "license": "MIT",
+    "suggest": {
+        ".NET Desktop Runtime 10.0": "versions/windowsdesktop-runtime-10.0"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/tixl3d/tixl/releases/download/v4.4.0.5/Tixl-v4.4.0.5.exe",
+            "hash": "sha256:2eef95c7d1148209dcaab84970e6fa6a87892ec0a0aa12dd929023959245bdaf"
+        }
+    },
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "TiXL.exe",
+            "TiXL"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/tixl3d/tixl/releases",
+        "jsonpath": "$[?(@.prerelease==true)].tag_name"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/tixl3d/tixl/releases/download/v$version/Tixl-v$version.exe"
+            }
+        }
+    }
+}
