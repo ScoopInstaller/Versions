@@ -24,9 +24,10 @@
         "$header = [byte[]](0, 0, 1, 0, 1, 0, 128, 128, 0, 0, 1, 0, 32, 0)",
         "$header += [BitConverter]::GetBytes([int]$png.Length) + [BitConverter]::GetBytes([int]22)",
         "[System.IO.File]::WriteAllBytes(\"$dir\\recaf.ico\", [byte[]]($header + $png))",
-        "Set-Content \"$dir\\recaf-alpha.bat\" '@start javaw.exe -jar \"%~dp0recaf-alpha.jar\" %*' -Encoding Ascii"
+        "Set-Content \"$dir\\recaf-alpha.bat\" '@start javaw.exe -jar \"%~dp0recaf-alpha.jar\" %*' -Encoding Ascii",
+        "Set-Content \"$dir\\recaf-alpha.cmd\" '@java.exe -jar \"%~dp0recaf-alpha.jar\" %*' -Encoding Ascii"
     ],
-    "bin": "recaf-alpha.jar",
+    "bin": "recaf-alpha.cmd",
     "shortcuts": [
         [
             "recaf-alpha.bat",
