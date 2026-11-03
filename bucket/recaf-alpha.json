@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/Col-E/Recaf/releases/download/4.0.0-alpha/recaf-4x-alpha-win-86-x64.jar#/recaf-alpha.jar",
+                "https://github.com/Col-E/Recaf/releases/download/4.0.0-alpha/recaf-4x-alpha-win-86-x64.jar#/recaf.jar",
                 "https://raw.githubusercontent.com/Col-E/Recaf/4.0.0-alpha/recaf-ui/src/main/resources/icons/logo.png#/recaf.png"
             ],
             "hash": [
@@ -24,13 +24,13 @@
         "$header = [byte[]](0, 0, 1, 0, 1, 0, 128, 128, 0, 0, 1, 0, 32, 0)",
         "$header += [BitConverter]::GetBytes([int]$png.Length) + [BitConverter]::GetBytes([int]22)",
         "[System.IO.File]::WriteAllBytes(\"$dir\\recaf.ico\", [byte[]]($header + $png))",
-        "Set-Content \"$dir\\recaf-alpha.bat\" '@start javaw.exe -jar \"%~dp0recaf-alpha.jar\" %*' -Encoding Ascii",
-        "Set-Content \"$dir\\recaf-alpha.cmd\" '@java.exe -jar \"%~dp0recaf-alpha.jar\" %*' -Encoding Ascii"
+        "Set-Content \"$dir\\recaf.bat\" '@start javaw.exe -jar \"%~dp0recaf.jar\" %*' -Encoding Ascii",
+        "Set-Content \"$dir\\recaf.cmd\" '@java.exe -jar \"%~dp0recaf.jar\" %*' -Encoding Ascii"
     ],
-    "bin": "recaf-alpha.cmd",
+    "bin": "recaf.cmd",
     "shortcuts": [
         [
-            "recaf-alpha.bat",
+            "recaf.bat",
             "Recaf (Alpha)",
             "",
             "recaf.ico"
@@ -51,7 +51,7 @@
         "architecture": {
             "64bit": {
                 "url": [
-                    "https://github.com/Col-E/Recaf/releases/download/$matchTag/$matchAsset#/recaf-alpha.jar",
+                    "https://github.com/Col-E/Recaf/releases/download/$matchTag/$matchAsset#/recaf.jar",
                     "https://raw.githubusercontent.com/Col-E/Recaf/$matchTag/recaf-ui/src/main/resources/icons/logo.png#/recaf.png"
                 ]
             }
