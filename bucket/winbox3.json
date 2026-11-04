@@ -34,5 +34,15 @@
                 ]
             ]
         }
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.mikrotik.com/routeros/winbox/$version/winbox64.exe"
+            },
+            "32bit": {
+                "url": "https://download.mikrotik.com/routeros/winbox/$version/winbox.exe"
+            }
+        }
     }
 }
