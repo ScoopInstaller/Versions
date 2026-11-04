@@ -8,7 +8,8 @@
         "Other editions: sophia-script, sophia-script-ps7, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019.",
         "The Sophia and SophiaScript commands always run Sophia.ps1 in Windows PowerShell 5.1 (powershell.exe).",
         "Run Sophia or SophiaScript in an elevated terminal (Run as administrator): Windows PowerShell, PowerShell 7 or CMD. The preset stops without administrator rights. It also stops in the VS Code terminal and in PowerShell ISE.",
-        "Sophia.ps1 is the preset. Edit \"$dir\\Sophia.ps1\" before you run Sophia: select the functions you want. Your selections are not kept on update. Keep a copy of your edited file. After each update, apply your selections to the new \"$dir\\Sophia.ps1\" again. Do not run the copy from another folder: it cannot load the Sophia module there."
+        "Sophia.ps1 is the preset. Edit \"$dir\\Sophia.ps1\" before you run Sophia: select the functions you want. Your selections are not kept on update. Keep a copy of your edited file. After each update, apply your selections to the new \"$dir\\Sophia.ps1\" again. Do not run the copy from another folder: it cannot load the Sophia module there.",
+        "Export-Associations saves Application_Associations.json in \"$dir\". Copy this file to another folder before you update or uninstall the package. Import-Associations lets you pick the file from any folder."
     ],
     "architecture": {
         "64bit": {
