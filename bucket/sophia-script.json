@@ -8,7 +8,6 @@
         "Other editions: sophia-script-ps7, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019, sophia-script-ltsc2021.",
         "The Sophia and SophiaScript commands always run Sophia.ps1 in Windows PowerShell 5.1 (powershell.exe).",
         "Run Sophia or SophiaScript in an elevated terminal (Run as administrator): Windows PowerShell, PowerShell 7 or CMD. The preset stops without administrator rights. It also stops in the VS Code terminal and in PowerShell ISE.",
-        "This edition needs Windows 11 build 26300.9445 or newer.",
         "Sophia.ps1 is the preset. Edit \"$dir\\Sophia.ps1\" before you run Sophia: select the functions you want. Your selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
     "architecture": {
@@ -23,17 +22,6 @@
             "extract_dir": "Sophia_Script_for_Windows_11_Arm_v8.1.0"
         }
     },
-    "pre_install": [
-        "$Build = [int](Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion' -Name CurrentBuild)",
-        "$ProductName = Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion' -Name ProductName",
-        "$UBR = [int](Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion' -Name UBR)",
-        "if (-not ((($Build -gt 26300) -or (($Build -eq 26300) -and ($UBR -ge 9445))) -and ($ProductName -notmatch 'LTSC 2024'))) {",
-        "    $AppDir = Split-Path -Path $dir -Parent",
-        "    Remove-Item -LiteralPath $dir -Recurse -Force",
-        "    if (-not (Get-ChildItem -LiteralPath $AppDir -Force)) { Remove-Item -LiteralPath $AppDir -Force }",
-        "    abort \"This package is for Windows 11 (build 26300.9445 or newer), PowerShell 5.1. Detected: $ProductName (build $Build.$UBR). Run 'scoop search sophia-script' to pick the right edition.\"",
-        "}"
-    ],
     "bin": [
         [
             "powershell.exe",

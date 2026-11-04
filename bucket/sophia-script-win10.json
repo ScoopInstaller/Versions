@@ -17,16 +17,6 @@
             "extract_dir": "Sophia_Script_for_Windows_10_v7.1.0"
         }
     },
-    "pre_install": [
-        "$Build = [int](Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion' -Name CurrentBuild)",
-        "$ProductName = Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion' -Name ProductName",
-        "if (-not ($Build -eq 19045)) {",
-        "    $AppDir = Split-Path -Path $dir -Parent",
-        "    Remove-Item -LiteralPath $dir -Recurse -Force",
-        "    if (-not (Get-ChildItem -LiteralPath $AppDir -Force)) { Remove-Item -LiteralPath $AppDir -Force }",
-        "    abort \"This package is for Windows 10, PowerShell 5.1. Detected: $ProductName (build $Build). Run 'scoop search sophia-script' to pick the right edition.\"",
-        "}"
-    ],
     "bin": [
         [
             "powershell.exe",
