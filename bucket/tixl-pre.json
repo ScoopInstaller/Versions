@@ -20,7 +20,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/tixl3d/tixl/releases",
+        "github": "https://api.github.com/repos/tixl3d/tixl/releases",
         "jsonpath": "$[0].tag_name",
         "regex": "^v(.*)$"
     },
