@@ -6,9 +6,9 @@
     "notes": [
         "This package provides Sophia Script for Windows 11, PowerShell 5.1 only.",
         "Other editions: sophia-script-ps7, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019, sophia-script-ltsc2021.",
-        "The Sophia and SophiaScript commands run Sophia.ps1 in Windows PowerShell 5.1 (powershell.exe). This works from any shell.",
+        "The Sophia and SophiaScript commands always run Sophia.ps1 in Windows PowerShell 5.1 (powershell.exe).",
+        "Run Sophia or SophiaScript in an elevated terminal (Run as administrator): Windows PowerShell, PowerShell 7 or CMD. The preset stops without administrator rights. It also stops in the VS Code terminal and in PowerShell ISE.",
         "This edition needs Windows 11 build 26300.9445 or newer.",
-        "Run Sophia from an elevated terminal (Run as administrator). The preset stops without administrator rights.",
         "Sophia.ps1 is the preset. Edit \"$dir\\Sophia.ps1\" before you run Sophia: select the functions you want. Your selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
     "architecture": {

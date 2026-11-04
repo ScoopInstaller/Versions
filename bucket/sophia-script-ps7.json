@@ -6,9 +6,9 @@
     "notes": [
         "This package provides Sophia Script for Windows 11, PowerShell 7 only.",
         "Other editions: sophia-script, sophia-script-ltsc2024, sophia-script-ltsc2024-ps7, sophia-script-win10, sophia-script-win10-ps7, sophia-script-ltsc2019, sophia-script-ltsc2021.",
-        "The Sophia and SophiaScript commands run Sophia.ps1 in PowerShell 7 from Scoop (main/pwsh). This works from any shell. The preset needs PowerShell 7.6 or newer.",
+        "The Sophia and SophiaScript commands always run Sophia.ps1 in PowerShell 7 from Scoop (main/pwsh). The preset needs PowerShell 7.6 or newer.",
+        "Run Sophia or SophiaScript in an elevated terminal (Run as administrator): Windows PowerShell, PowerShell 7 or CMD. The preset stops without administrator rights. It also stops in the VS Code terminal and in PowerShell ISE.",
         "This edition needs Windows 11 build 26300.9445 or newer.",
-        "Run Sophia from an elevated terminal (Run as administrator). The preset stops without administrator rights.",
         "Sophia.ps1 is the preset. Edit \"$dir\\Sophia.ps1\" before you run Sophia: select the functions you want. Your selections in it are not kept on update. Keep your own copy of the edited file and use it after each update."
     ],
     "depends": "main/pwsh",
@@ -34,7 +34,7 @@
         "    if (-not (Get-ChildItem -LiteralPath $AppDir -Force)) { Remove-Item -LiteralPath $AppDir -Force }",
         "    abort \"This package is for Windows 11 (build 26300.9445 or newer), PowerShell 7. Detected: $ProductName (build $Build.$UBR). Run 'scoop search sophia-script' to pick the right edition.\"",
         "}",
-        "$PwshPath = Join-Path -Path $dir -ChildPath '..\\..\\pwsh\\current\\pwsh.exe'",
+        "$PwshPath = Join-Path -Path $dir -ChildPath '..\\..\\..\\shims\\pwsh.exe'",
         "if (-not (Test-Path -LiteralPath $PwshPath)) {",
         "    $AppDir = Split-Path -Path $dir -Parent",
         "    Remove-Item -LiteralPath $dir -Recurse -Force",
@@ -48,12 +48,12 @@
     ],
     "bin": [
         [
-            "..\\..\\pwsh\\current\\pwsh.exe",
+            "..\\..\\..\\shims\\pwsh.exe",
             "Sophia",
             "-NoProfile -ExecutionPolicy Bypass -File \"$dir\\Sophia.ps1\""
         ],
         [
-            "..\\..\\pwsh\\current\\pwsh.exe",
+            "..\\..\\..\\shims\\pwsh.exe",
             "SophiaScript",
             "-NoProfile -ExecutionPolicy Bypass -File \"$dir\\Sophia.ps1\""
         ]
