@@ -1,6 +1,6 @@
 {
     "##": "Please keep the key properties of games/prismlauncher and versions/prismlauncher-git in sync.",
-    "version": "12.0.0-4281-26819ea",
+    "version": "12.0.0-4315-7cbd473",
     "description": "An open source Minecraft launcher with the ability to manage multiple instances, accounts and mods. Focused on user freedom and free redistributability.",
     "homepage": "https://prismlauncher.org/",
     "license": "GPL-3.0-only",
@@ -13,12 +13,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://nightly.link/PrismLauncher/PrismLauncher/actions/runs/42488003420/PrismLauncher-Windows-MSVC-Portable-26819ea-Debug.zip",
-            "hash": "c2e2df6344b1c8fa665b19a6e8bbd692dd1f3f05043afa422a25f9bda78fe288"
+            "url": "https://nightly.link/PrismLauncher/PrismLauncher/actions/runs/42508966002/PrismLauncher-Windows-MSVC-Portable-7cbd473-Debug.zip",
+            "hash": "aedde356e818dfcfbc4c0ec9c83d0fa015a9f6b28ec9faa9ee66d94c0e84324e"
         },
         "arm64": {
-            "url": "https://nightly.link/PrismLauncher/PrismLauncher/actions/runs/42488003420/PrismLauncher-Windows-MSVC-arm64-Portable-26819ea-Debug.zip",
-            "hash": "6e5975dba8db9b023d30f4942292f699c2fcc86172f6e175ee423fa3dc7fb7ee"
+            "url": "https://nightly.link/PrismLauncher/PrismLauncher/actions/runs/42508966002/PrismLauncher-Windows-MSVC-arm64-Portable-7cbd473-Debug.zip",
+            "hash": "0365bb60d5973a8b68cd752a09a0746356cca1173e1689e6a677b39dca6269bc"
         }
     },
     "pre_install": [
