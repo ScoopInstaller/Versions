@@ -1,11 +1,12 @@
 {
     "version": "2.2.7",
-    "description": "The open source AI coding agent. (v2)",
-    "homepage": "https://opencode.ai/v2",
+    "description": "The open source AI coding agent",
+    "homepage": "https://opencode.ai",
     "license": "MIT",
     "notes": [
-        "The v2 configuration is incompatible with v1. Uninstall 'opencode' first, then install this version.",
-        "See https://opencode.ai/v2/docs/migrate-v1/ for migration steps."
+        "For OpenCode v1, please install 'versions/opencode1'",
+        "The v2 configuration is incompatible with v1.",
+        "See https://opencode.ai/docs/migrate-v1/ for migration steps."
     ],
     "architecture": {
         "64bit": {
