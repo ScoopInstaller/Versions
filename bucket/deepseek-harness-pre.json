@@ -19,14 +19,16 @@
         "$content = Get-Content -Path $yaml | Foreach-Object {",
         "    if ($_.StartsWith('url')) { \"$($_.Replace('url', '# url')) # Disabled by Scoop\" } else { $_ }",
         "}",
-        "Set-Content $yaml -Value $content -Encoding ascii"
+        "Set-Content $yaml -Value $content -Encoding ascii",
+        "# The 'current' junction makes the app load duplicate modules and breaks settings saves; start from the real version dir",
+        "startmenu_shortcut \"$original_dir\\DeepSeek Harness.exe\" 'DeepSeek Harness (Preview)' $null $null $global",
+        "shim \"$original_dir\\resources\\runtime\\cli\\bin\\dsh.cmd\" $global 'dsh'"
     ],
-    "bin": "resources\\runtime\\cli\\bin\\dsh.cmd",
-    "shortcuts": [
-        [
-            "DeepSeek Harness.exe",
-            "DeepSeek Harness (Preview)"
-        ]
+    "post_uninstall": [
+        "# Remove shortcut and shim",
+        "rm_shim 'dsh' \"$(shimdir $global)\" $app",
+        "Write-Host \"Removing shortcut $(friendly_path \"$(shortcut_folder $global)\\DeepSeek Harness (Preview).lnk\")\"",
+        "Remove-Item \"$(shortcut_folder $global)\\DeepSeek Harness (Preview).lnk\" -Force -ErrorAction SilentlyContinue"
     ],
     "checkver": {
         "url": "https://download.deepseek.com/dsh-desk/feeds/win-x64/nightly.yml",
