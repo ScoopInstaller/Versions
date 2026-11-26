@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0-beta.4",
+    "description": "A modern download manager that supports all platforms.",
+    "homepage": "https://gopeed.com",
+    "license": {
+        "identifier": "GPL-3.0-or-later",
+        "url": "https://github.com/GopeedLab/gopeed/blob/HEAD/LICENSE"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://gopeed.com/api/download?tpl=Gopeed-v2.0.0-beta.4-windows-amd64-portable.zip#/Gopeed-v2.0.0-beta.4-windows-amd64-portable.zip",
+            "hash": "425afa8d3fa5f70578b7bc4a52859533d56cfadeb31cac2f2fd922af4c8e273c"
+        }
+    },
+    "bin": "gopeed.exe",
+    "shortcuts": [
+        [
+            "gopeed.exe",
+            "Gopeed"
+        ]
+    ],
+    "persist": "storage",
+    "checkver": {
+        "url": "https://api.github.com/repos/GopeedLab/gopeed/releases",
+        "jsonpath": "$[?(@.prerelease == true)].tag_name",
+        "regex": "v([\\d.]+-(?:alpha|beta|rc)[.\\d]*)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://gopeed.com/api/download?tpl=Gopeed-v$version-windows-amd64-portable.zip#/Gopeed-v$version-windows-amd64-portable.zip"
+            }
+        }
+    }
+}
